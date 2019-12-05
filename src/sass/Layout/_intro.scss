@@ -1,0 +1,94 @@
+.intro {
+  background-color: $bg-color;
+  .intro__content {
+    .intro__title {
+      h2 {
+        @include text($color-black-1, $fs-2, $fw-bold-1);
+      }
+    }
+    .intro__slider {
+      .intro-banner {
+        margin: 10px 0;
+        position: relative;
+        img {
+          max-width: 100%;
+        }
+        .banner_text {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          padding: 20px 0 20px 20px;
+          i,
+          span {
+            @include text($color-white-0, $fs-0, $fw-400 + 100);
+          }
+          i {
+            margin-right: 5px;
+            color: red;
+          }
+        }
+      }
+    }
+    .intro__manual {
+      padding: 50px 0;
+      .testimonials {
+        h2{
+          @include text($color-black-1,$fs-2,$fw-bold)
+        }
+        padding: $pd-2 + 8 0;
+        background-color: $color-gray-5;
+        .testimonials_items {
+          box-shadow: 0 1px 3px 0 rgba(20, 23, 28, 0.15);
+          padding: 25px;
+          background-color: $color-white-0;
+          border-radius: 3px;
+          .testimonials_items__info {
+            display: flex;
+            .testimonials__items__img {
+              width: 60px;
+              height: 60px;
+              img {
+                border-radius: 50%;
+              }
+            }
+            .testimonials_items__name {
+              padding: $pd-2;
+              span {
+                @include text($color-black-0, $fs-0 + 4, $fw-bold);
+              }
+            }
+          }
+          p {
+            @include text($color-black-0, $fs-0, $fw-normal);
+          }
+        }
+        .partners__logos {
+          display: flex;
+          justify-content: center;
+          text-align: center;
+          padding-top: 30px;
+          .logo-item {
+            margin: 0 20px;
+          }
+        }
+        .partner-text {
+          @include text($color-black-0, $fs-0, $fw-normal);
+          padding-top: 45px;
+        }
+        .partners__content {
+          .partners__items {
+            text-align: center;
+            padding: 75px;
+            a {
+              text-decoration: none;
+              @include text($color-black-0, $fs-0, $fw-bold);
+            }
+          }
+          .line-center {
+            border-right: 1px solid $color-gray-4;
+          }
+        }
+      }
+    }
+  }
+}

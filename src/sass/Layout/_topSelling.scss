@@ -1,0 +1,126 @@
+// .Top__selling {
+//   .Top__selling__title__section {
+//     display: flex;
+//     justify-content: space-between;
+//     h5 {
+//       color: $color-black-1;
+//       font-size: $fs-2;
+//       font-weight: $fw-bold-1;
+//     }
+//     a {
+//       text-decoration: none;
+//       color: $color-red-3;
+//       &:hover {
+//         color: $color-red-3;
+//       }
+//     }
+//   }
+//   .Top__selling__product {
+//     .card {
+//       position: relative;
+//       .sale {
+//         position: absolute;
+//         top: 8px;
+//         left: 8px;
+//         background-color: $color-red-5;
+//         text-align: center;
+//         width: 44px;
+//         height: 25px;
+//         color: $color-white-0;
+//       }
+//       .card-body {
+//         padding: 10px 10px;
+//         .new-tag {
+//           width: 38px;
+//           height: 18px;
+//           border-radius: 3px;
+//           margin-bottom: 8px;
+//           background-color: #17b99f;
+//           text-align: center;
+//           color: $color-white-0;
+//           font-size: 12px;
+//           font-weight: 400;
+//           font-style: normal;
+//           font-stretch: normal;
+//           line-height: normal;
+//           letter-spacing: -0.19px;
+//           text-transform: uppercase;
+//         }
+//         .star {
+//           i {
+//             color: #f5a623;
+//           }
+//         }
+//         .card-descripton-teacher {
+//           img {
+//             border-radius: 50%;
+//             width: 30px;
+//             height: 30px;
+//             margin-right: 10px;
+//           }
+//           span {
+//             color: $color-gray-4;
+//             font-size: 15px;
+//           }
+//         }
+//         .card-pirce {
+//           padding-top: $pd-2;
+//           display: flex;
+//           justify-content: space-between;
+
+//           .price-old {
+//             text-decoration: line-through;
+//             color: $color-black-2;
+//             font-weight: $fw-400;
+//             font-size: $fs-1 - 1;
+//           }
+//           .price-new {
+//             font-size: $fs-0;
+//             font-weight: $fw-bold-0;
+//             color: $color-red-5;
+//           }
+//         }
+//       }
+//     }
+//   }
+
+.Mystudent {
+  background-color: $bg-color;
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .student_content {
+    .card-title {
+      @include text($color-black-0, $fs-0, $fw-bold);
+    }
+    .card-text {
+      @include text($color-gray-4, $fs-1, $fw-normal);
+    }
+    .rating {
+      display: flex;
+      .rating-star {
+        @include text($color-yellow, $fs-1, $fw-normal);
+        margin-right: $mg-0;
+      }
+      span:nth-child(2) {
+        @include text($color-gray-4, $fs-1, $fw-bold);
+        margin-right: $mg-0;
+      }
+      span:last-child {
+        @include text($color-gray-4, $fs-1, $fw-normal);
+      }
+    }
+    .price {
+      text-align: right;
+      .old-price {
+        @include text($color-gray-4, $fs-1, $fw-normal);
+        text-decoration: line-through;
+      }
+      .new-price {
+        @include text($color-black-0, $fs-0, $fw-bold);
+      }
+    }
+  }
+}

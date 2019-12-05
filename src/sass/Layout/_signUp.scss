@@ -1,0 +1,97 @@
+.sign__up {
+  .singUp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .sign-up-logo {
+      img {
+        height: 40px;
+      }
+    }
+    .sign-up-text {
+      span {
+        @include text($color-red-5, $fs-1, $fw-bold-0);
+      }
+    }
+  }
+  .sign-up-content {
+    margin-top: 5%;
+    .title-sso {
+      h1 {
+        @include text($color-black-1, $fs-3 + 10, $fw-bold);
+
+        width: 85%;
+      }
+      p {
+        @include text($color-black-3, $fs-0, $fw-bold-0);
+      }
+    }
+    .google-facebook {
+      p {
+        @include text($color-black-4, $fs-1 + 1, $fw-bold-0);
+      }
+      button {
+        color: #fff;
+        background-color: $color-blue-0;
+        text-decoration: none;
+        width: 155px;
+        height: 45px;
+        border: none;
+        border-radius: 7px;
+        margin: 0 5px;
+        i {
+          margin: 0 5px;
+          font-size: 20px;
+        }
+      }
+      button:last-child {
+        color: #fff;
+        background-color: $color-red-5;
+        text-decoration: none;
+        width: 155px;
+        height: 45px;
+      }
+    }
+    .sign-form {
+      margin-top: 15px;
+      p {
+        @include text($color-black-4, $fs-1 + 1, $fw-bold-0);
+      }
+      form {
+        input {
+          width: 100%;
+          max-width: 320px;
+          border-radius: 4px;
+          padding: 0 20px;
+          border: none;
+          background-color: #e7eaec;
+          margin-bottom: 10px;
+        }
+        p {
+          max-width: 320px;
+          width: 100%;
+          font-size: $fs-1;
+          color: $color-black-1;
+          font-weight: normal;
+          margin: 10px 0;
+          line-height: 1.38;
+        }
+        .btn-sign {
+          color: #fff;
+          background-color: $color-red-5;
+          text-decoration: none;
+          width: 155px;
+          height: 45px;
+          border-radius: 26px;
+          border: none;
+        }
+        span {
+          margin-left: 30px;
+          a {
+            @include text($color-blue-1, $fs-1 + 1, $fw-bold-0);
+          }
+        }
+      }
+    }
+  }
+}

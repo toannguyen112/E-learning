@@ -1,0 +1,44 @@
+.slick-slider {
+  .slick-prev,
+  .slick-next {
+    display: none !important;
+  }
+
+  .slick-dots {
+    .slick-active {
+      button::before {
+        opacity: 1;
+        width: 10px;
+        height: 10px;
+        font-size: 12px;
+        color: $color-red-5 !important;
+      }
+    }
+  }
+}
+
+
+.owl-prev,
+.owl-next {
+    position: absolute;
+    top: 33%;
+    left: -3%;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%!important;
+    background-color: $color-white-0!important;
+    z-index: 3;
+    box-shadow: 0 0 1px 1px rgba(20, 23, 28, .1), 0 3px 1px 0 rgba(20, 23, 28, .1);
+    span {
+        @include text($color-blue, $fs-4, $fw-normal);
+        line-height: 0.6;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.owl-next {
+    left: unset;
+    right: -3%;
+}
