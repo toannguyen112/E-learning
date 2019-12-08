@@ -1,0 +1,265 @@
+.courseDetail-content {
+  margin-top: $mg-2 - 5;
+  .content {
+    .intro-title {
+      display: flex;
+      .teacher {
+        width: 25%;
+        display: flex;
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+        }
+        .teacher-name {
+          padding-left: $pd-0;
+          div:first-child {
+            @include text(#666, $fs-5, $fw-normal);
+          }
+        }
+      }
+      .category {
+        width: 50%;
+        padding-left: 3%;
+        display: flex;
+        span {
+          @include text($color-blue, 3rem, $fw-normal);
+        }
+        .category__name {
+          padding-left: $pd-0;
+          div:first-child {
+            @include text(#666, $fs-5, $fw-normal);
+          }
+        }
+      }
+      .rating {
+        width: 25%;
+        i {
+          color: $color-yellow;
+        }
+        p {
+          color: #666;
+        }
+      }
+    }
+    .description {
+      p {
+        color: #666;
+        margin-top: 2%;
+      }
+    }
+    .knowledge {
+      background-color: $color-gray-6;
+      padding: 2%;
+      border: 1px solid #dedfe0;
+      font-size: 0.9rem;
+      ul {
+        list-style: none;
+      }
+    }
+    .course__section {
+      h5 {
+        margin: 5% 0 3%;
+        font-weight: $fw-bold-1;
+      }
+      .section {
+        .section__item {
+          .section__header {
+            background: $color-gray-7;
+            padding: 2%;
+            font-size: 1.1rem;
+
+            .Preview {
+              background-color: $color-green-1;
+              @include text($color-white-0, $fs-1, $fw-bold-1);
+              padding: 5px;
+              margin-left: 20px;
+              border-radius: 5px;
+            }
+          }
+          .section__entry {
+            .gap {
+              background-color: rgba(0, 0, 0, 0.015);
+              padding: 2%;
+            }
+            .lesson {
+              .lesson_content {
+                div {
+                  padding: 10px 10px 10px 10px;
+                  border-top: 1px solid rgba(0, 0, 0, 0.05);
+                  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                }
+                ul {
+                  list-style: none;
+                  li {
+                    position: relative;
+                    padding: 2%;
+                    cursor: pointer;
+                    background-color: rgba(0, 0, 0, 0.015);
+                    border-bottom: 1px solid $color-gray-7;
+                    opacity: 0.7;
+                    &:hover {
+                      opacity: 1;
+                    }
+                    i {
+                      @include text($color-blue, $fs-6, $fw-normal);
+                      padding-right: 10px;
+                    }
+                    span {
+                      position: absolute;
+                      right: 2%;
+                      top: 10px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .sidebar {
+    .sidebar__info {
+      box-shadow: -1px 2px 15px -4px rgba(0, 0, 0, 0.75);
+      margin-top: 3%;
+      border-radius: 5px;
+      padding: $pd-0;
+      .info__img {
+        padding: $pd-0;
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      .info__inner {
+        padding: 7%;
+        .wishlist {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 10%;
+          .add__list {
+            display: flex;
+            align-items: center;
+            width: 50%;
+            .heart {
+              cursor: pointer;
+              text-align: center;
+              width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              border: 1px solid #aaa;
+              @include text($color-red-5, $fs-2, $fw-normal);
+            }
+            span {
+              @include text($color-gray-9, $fs-1, $fw-normal);
+              padding-left: 5%;
+            }
+          }
+          .price {
+            font-family: "Raleway", sans-serif;
+            @include text(#666, $fs-7, $fw-bold-1);
+          }
+        }
+        .add,
+        .buy {
+          width: 100%;
+          padding: 10px;
+        }
+        .add {
+          border: none;
+          background-color: $color-red-0;
+          margin-bottom: 3%;
+          @include text($color-white-0, $fs-0, $fw-bold-1);
+        }
+        .buy {
+          @extend .add;
+          color: #666;
+          background-color: #fff;
+          border: 1px solid $color-black-0;
+        }
+        .meta {
+          list-style: none;
+          li {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #dedfe0;
+            padding: 7% 0;
+            div {
+              font-weight: normal;
+              span {
+                @include text($color-black-0, $fs-0, $fw-bold);
+                font-family: "Raleway", sans-serif;
+              }
+            }
+            i {
+              @include text($color-blue-2, $fs-7 - 0.5, $fw-normal);
+            }
+          }
+        }
+        .coupon {
+          input {
+            width: 100%;
+            padding: 2% 0 2% 2%;
+          }
+        }
+      }
+    }
+    .sidebar__try {
+      @extend .sidebar__info;
+      padding: 7%;
+      h5 {
+        font-weight: 700;
+      }
+      p {
+        color: $color-gray-10;
+      }
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+    }
+  }
+}
+// viewing
+.viewing {
+  .product__items {
+    display: flex;
+    .product__item {
+      &:hover{
+        box-shadow: none;
+      }
+      width: 20%;
+      border: 1px solid #e1e2e4;
+      margin-right: 1.4%;
+      cursor: pointer;
+      color: #000;
+      box-shadow: -1px 2px 15px -4px rgba(0, 0, 0, 0.75);
+      transition: all 1s;
+      .item__info {
+      
+        padding: $pd-3;
+        h5 {
+          font-weight: bold;
+          font-size: 0.8rem;
+        }
+        h6 {
+          @include text($color-gray-9, $fs-5, $fw-normal);
+          padding: 5% 0;
+        }
+      }
+      .rating {
+        font-size: 0.9rem;
+        i {
+          color: $color-yellow;
+        }
+      }
+      h4 {
+        text-align: right;
+        @include text($color-black-0, $fs-8, $fw-bold);
+      }
+    }
+  }
+}
