@@ -55,6 +55,12 @@
       font-size: 0.9rem;
       ul {
         list-style: none;
+        li{
+          padding-bottom: 2%;
+          i{
+            margin-right: 2%;
+          }
+        }
       }
     }
     .course__section {
@@ -188,9 +194,10 @@
             padding: 7% 0;
             div {
               font-weight: normal;
+              font-family: "Raleway", sans-serif;
               span {
-                @include text($color-black-0, $fs-0, $fw-bold);
-                font-family: "Raleway", sans-serif;
+                @include text($color-black-0, $fs-2 - 1,$fw-bold);
+               
               }
             }
             i {
