@@ -11,7 +11,7 @@ export default class Header extends Component {
                                     <img className="img-fluid" src="https://edumall.vn/static/version1574786512/frontend/Edumall/winstrike/default/images/logo_full.svg" width="50%" alt="" />
                                 </div>
                                 <div className="header-control">
-                                    <input className="input-search" type="text" placeholder="tìm kiếm khóa học" />
+                                    <input className="input-search" type="text" placeholder="Search for anything" />
                                     <button className="btn-search"><i className="fa fa-search"></i></button>
                                 </div>
                             </div>
@@ -25,8 +25,8 @@ export default class Header extends Component {
 
                                 </div>
                                 <div className="header-user">
-                                    <button className="btn--white ">Đăng nhập</button>
-                                    <button className="btn--red">Đăng ký</button>
+                                    <button className="btn--white ">Login </button>
+                                    <button className="btn--red">Sign up</button>
                                 </div>
                             </div>
                         </div>

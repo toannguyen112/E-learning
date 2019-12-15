@@ -1,0 +1,143 @@
+.checkout {
+  color: #666;
+  padding: 5% 0;
+  .checkout__list {
+    h4 {
+      padding: 4% 0 4% 4%;
+      border-bottom: 1px solid $color-gray-12;
+      margin-bottom: 5%;
+    }
+    .cart__items {
+      overflow-y: scroll;
+      padding: 0 5%;
+      max-height: 300px;
+      .cart__item {
+        padding: 6% 0;
+        &:hover {
+          background-color: #f6f6f6;
+          cursor: pointer;
+        }
+        .item__thumb {
+          width: 100%;
+          height: 60px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        .item__info {
+          color: #000;
+          h6 {
+            font-weight: 700;
+            font-size: 0.8rem;
+            margin: 0 0 1%;
+          }
+          p {
+            font-size: 0.7rem;
+            margin: 0 0 1%;
+          }
+          h5 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 0;
+            color: #ec5252;
+          }
+        }
+      }
+    }
+  }
+  .checkout__payment {
+    h1 {
+      font-weight: $fw-bold-1;
+    }
+    .payment {
+      background-color: #f6f6f6;
+      border-radius: 7px;
+      .card {
+        background-color: transparent;
+        .card__header {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          border-bottom: 1px solid $color-gray-12;
+          padding: 3%;
+        }
+        .card__body {
+          padding: 3% !important;
+          form {
+            .card__name,
+            .card__number {
+              width: 100%;
+              padding: 1.5%;
+              margin: 1% 0;
+            }
+            .code {
+              .card__month,
+              .card__year {
+                width: 32%;
+                padding: 2%;
+                font-size: 1.2rem;
+                margin: 1% 1% 1% 0;
+              }
+              .card__code {
+                @extend .card__month;
+                padding: 1.5%;
+                margin: 1% 0 1% 2%;
+              }
+            }
+            .zip {
+              .country {
+                width: 65%;
+                padding: 3%;
+              }
+              .zipcode {
+                width: 32%;
+                padding: 2%;
+                font-size: 1.2rem;
+                margin: 1% 0 1% 3%;
+              }
+            }
+            .card__footer {
+              display: flex;
+              padding: 2% 0 ;
+              align-items: center;
+              button {
+                background-color: #ec5252;
+                color: #fff;
+                border: none;
+                width: 35%;
+                height: 60px;
+                font-weight: 700;
+                outline: none;
+                font-size: 1rem;
+                cursor: pointer;
+              }
+              p {
+                width: 35%;
+                font-size: 0.8rem;
+                padding: 0 3%;
+                margin: 0;
+                span {
+                  color: #40a0d2;
+                  font-weight: 700;
+                }
+              }
+              .lock {
+                width: 30%;
+                text-align: right;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                i {
+                  font-size: 2rem;
+                  margin-right: 2%;
+                  color: #aaa;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -9,18 +9,20 @@ import CourseDetail from './Screen/CourseDetail/CourseDetail';
 import Course from './Screen/Course/Course';
 import CartPage from './Screen/Cart/CartPage';
 import UserPage from './Screen/UserPage/UserPage';
+import CheckoutPage from './Screen/CheckoutPage/CheckoutPage';
 
 export default class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <Home/> */}
+        <Home/>
         {/* <SignUp/> */}
         {/* <Login /> */}
         {/* <CourseDetail/> */}
-        <Course/> 
+        {/* <Course/>  */}
 
         {/* <CartPage/> */}
+        {/* <CheckoutPage/> */}
         {/* <UserPage /> */}
       </div>
     )
