@@ -6,7 +6,7 @@ export default class TopSelling extends Component {
   render() {
     return (
       <section className="TopSelling">
-        <div className="TopSelling__content ">
+        <div className="TopSelling__content container-fluid ">
           <div className="row">
             <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
               <h3 className="title">Top Selling</h3>
@@ -366,6 +366,7 @@ export default class TopSelling extends Component {
                 </div>
               </div>
             </div>
+            
           </div>
         </div>
       </section>

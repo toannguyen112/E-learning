@@ -1,0 +1,121 @@
+.cart_page {
+  padding-top: 20px;
+  .cart__table {
+    width: 100%;
+    border: 1px solid #ebebeb;
+    thead {
+      color: #666;
+      font-size: 0.9rem;
+      tr {
+        th {
+          padding: 1.5% 0;
+        }
+      }
+    }
+    .cart__body {
+      .cart_item {
+        border-bottom: 1px solid #ebebeb;
+        .cart_thumbnail,
+        .cart_name,
+        .cart_price {
+          padding: 0.75rem;
+          vertical-align: middle;
+          border-top: 1px solid #dee2e6;
+        }
+        .cart_thumbnail {
+          text-align: center;
+          img {
+            width: 150px;
+            height: 80px;
+          }
+        }
+        .cart_name {
+          text-align: left;
+          div:first-child {
+            color: #000;
+            font-weight: 700;
+          }
+        }
+        .cart_price {
+          .amount {
+            color: #ec5252;
+            font-weight: 700;
+            i {
+              font-weight: 900;
+            }
+          }
+        }
+        .oldamount {
+          text-decoration: line-through;
+        }
+        .cart_remove {
+          vertical-align: middle;
+          text-align: center;
+        }
+      }
+      .cart__footer {
+        .cart__coupon {
+          padding: 20px;
+          input {
+            width: 30%;
+            padding: 1.4%;
+            border: 1px solid #ebebeb;
+            outline: none;
+            margin-right: 1%;
+          }
+          button {
+            background-color: #2abfd4;
+            color: #fff;
+            border: none;
+            width: 140px;
+            height: 44px;
+            font-weight: 700;
+            outline: none;
+            font-size: 1rem;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .cart_total {
+    border: 1px solid #ebebeb;
+    tr {
+      td {
+        padding: 0.75rem;
+        vertical-align: top;
+        border-top: 1px solid #ebebeb;
+        span {
+          font-size: 0.9rem;
+          font-weight: 700;
+          border-top: none;
+          color: #666;
+        }
+        a {
+          .add{
+            margin-bottom: 5%;
+            background-color: #2abfd4;
+            color: #fff;
+            border: none;
+            width: 100%;
+            height: 42px;
+            font-weight: 700;
+            outline: none;
+            font-size: 1rem;
+            cursor: pointer;
+          }
+          .continue{
+              @extend .add;
+              color: #666;
+              background-color: transparent;
+              border: 1px solid #666;
+          }
+        }
+      }
+      .amount {
+        color: #ec5252;
+        font-weight: bold;
+      }
+    }
+  }
+}

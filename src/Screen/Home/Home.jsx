@@ -18,7 +18,7 @@ export default class Home extends Component {
 
         return (
             <div className="wrapper">
-              <Slide bottom>
+            
                     {/* header  */}
                     <Header />
     
@@ -38,7 +38,7 @@ export default class Home extends Component {
                     {/* footer */}
                     <Footer />
                     {/*ScrollUpButton  */}
-              </Slide>
+              
                 <ScrollUpButton style={{ width: 75 }} ToggledStyle={{ right: 100 }} />
 
 

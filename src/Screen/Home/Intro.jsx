@@ -43,7 +43,7 @@ export default class Intro extends Component {
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
-                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_Edumallcombo_2_1.png"
+                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/child-reading-facebook-ai-tes_1.jpg"
                     alt=""
                   />
                   <div className="banner_text">
@@ -56,7 +56,7 @@ export default class Intro extends Component {
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
-                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_Edumallcombo_2_1.png"
+                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_ielts-min_2.png"
                     alt=""
                   />
                   <div className="banner_text">
@@ -69,7 +69,7 @@ export default class Intro extends Component {
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
-                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_Edumallcombo_2_1.png"
+                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_design-min_1_1_1_1.png"
                     alt=""
                   />
                   <div className="banner_text">
@@ -82,7 +82,7 @@ export default class Intro extends Component {
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
-                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_Edumallcombo_2_1.png"
+                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_bhonline-min_1_.png"
                     alt=""
                   />
                   <div className="banner_text">
@@ -95,7 +95,7 @@ export default class Intro extends Component {
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
-                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_Edumallcombo_2_1.png"
+                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_dtck-min_1_1.png"
                     alt=""
                   />
                   <div className="banner_text">
