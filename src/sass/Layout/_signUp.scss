@@ -1,11 +1,15 @@
 .sign__up {
+  padding-top: 30px;
   .singUp-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     .sign-up-logo {
+      font-weight: bold;
+      color: red;
       img {
-        height: 40px;
+        
+        width: 22%;
       }
     }
     .sign-up-text {
@@ -92,6 +96,11 @@
           }
         }
       }
+    }
+    .img-right{
+     img{
+      width: 100%;
+     }
     }
   }
 }

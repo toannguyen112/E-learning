@@ -1,0 +1,214 @@
+.admin {
+  position: relative;
+  .admin__header {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+    left: 0;
+  }
+}
+.admin__content {
+  padding: 0 20px;
+  .admin__manager {
+    background-color: #f6f6f6;
+    height: 100%;
+    position: fixed;
+    width: 15%;
+    z-index: 100;
+    top: 56px;
+    left: 0;
+    .title {
+      color: #1e90ff;
+      font-weight: 700;
+      font-size: 1.5rem;
+      padding: 20px 0;
+      border-bottom: 1px solid #e9e9e9;
+      text-align: center;
+    }
+    ul {
+      li {
+        padding: 5% 12%;
+        font-size: 1.3rem;
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+
+  .admin__dashboard {
+    position: absolute;
+    top: 40px;
+    right:0;
+    .title {
+      color: #1e90ff;
+      font-weight: 700;
+      font-size: 1.5rem;
+      padding: 20px 0;
+      border-bottom: 1px solid #e9e9e9;
+      text-align: center;
+    }
+
+    // dashboard
+    .dash__new {
+      margin-top: 2%;
+      color: #fff;
+      .dash__detail__comment {
+        background-color: #ff6384;
+        border: 3px solid #ff6384;
+        border-radius: 5px;
+        .dash__name {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          i {
+            font-size: 4rem;
+          }
+          .dash__number {
+            text-align: right;
+          }
+        }
+        .dash__more {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: #f6f6f6;
+          color: #ff6384;
+          padding: 3% 2%;
+          h6 {
+            font-size: 15px;
+            font-weight: bold;
+            margin: 0;
+          }
+          @extend .dash__name;
+          i {
+            font-size: 15px;
+          }
+        }
+      }
+      .dash__detail__user,
+      .dash__detail__course,
+      .dash__detail__messages {
+        @extend .dash__detail__comment;
+        background-color: #4bc0c0;
+        border: 3px solid #4bc0c0;
+        .dash__more {
+          color: #4bc0c0;
+        }
+      }
+      .dash__detail__course {
+        @extend .dash__detail__comment;
+        background-color: #36a2eb;
+        border: 3px solid #36a2eb;
+        .dash__more {
+          color: #36a2eb;
+        }
+      }
+      .dash__detail__messages {
+        background-color: #ffce56;
+        border: 3px solid #ffce56;
+        .dash__more {
+          color: #ffce56;
+        }
+      }
+    }
+    .dash__views {
+      margin-top: 20px;
+      .views__detail {
+        background-color: #f6f6f6;
+        padding: 5%;
+        h3 {
+          font-weight: bold;
+        }
+        .view__percent {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 2% 0;
+          .bage {
+            display: inline-block;
+            padding: 0.25em 0.4em;
+            font-size: 75%;
+            font-weight: 700;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: 0.25rem;
+          }
+          .badge-success {
+            color: #fff;
+            background-color: #28a745;
+          }
+          .badge-danger {
+            color: #fff;
+            background-color: #dc3545;
+          }
+          .badge-info {
+            color: #fff;
+            background-color: #17a2b8;
+          }
+          .badge-warning {
+            color: #212529;
+            background-color: #ffc107;
+          }
+        }
+      }
+    }
+
+    // course
+    .post_title,.users__manager {
+      .add__search,.add__user {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1% 0;
+        .add__course {
+          background-color: #28a745;
+          padding: 15px 35px;
+          border: none;
+          color: #fff;
+          font-weight: bold;
+        }
+        input {
+          width: 300px;
+          height: 40px;
+          padding: 0 1%;
+        }
+      }
+    }
+    .table {
+      width: 100%;
+      max-width: 100%;
+      thead {
+        tr {
+          th{
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+          }
+        }
+      }
+      tbody{
+        tr{
+        
+         
+          background-color: rgba(0,0,0,.05);
+          td{
+            padding: .75rem;
+            vertical-align: middle;
+            border-top: 1px solid #dee2e6;
+          
+            .name__wrapper{
+              img{
+               width: 114px;
+               height: 64px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

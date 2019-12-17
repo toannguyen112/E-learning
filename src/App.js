@@ -1,29 +1,26 @@
 import React, { Component } from 'react'
 import "./sass/main.scss"
 import "./App.css";
+import HomePage from './Screen/HomePage';
 
-import Home from "./Screen/Home/Home";
-import SignUp from './Screen/SignUp/SignUp';
-import Login from './Screen/Login/Login';
-import CourseDetail from './Screen/CourseDetail/CourseDetail';
-import Course from './Screen/Course/Course';
-import CartPage from './Screen/Cart/CartPage';
-import UserPage from './Screen/UserPage/UserPage';
-import CheckoutPage from './Screen/CheckoutPage/CheckoutPage';
+import CoursePage from './Screen/CoursePage';
+
+
 
 export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Home/>
+       {/* <HomePage/> */}
         {/* <SignUp/> */}
         {/* <Login /> */}
         {/* <CourseDetail/> */}
-        {/* <Course/>  */}
+        <CoursePage/> 
 
         {/* <CartPage/> */}
         {/* <CheckoutPage/> */}
         {/* <UserPage /> */}
+        {/* <AdminPage/> */}
       </div>
     )
   }
