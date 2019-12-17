@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-
+import { NavLink } from "react-router-dom";
 export default class Course extends Component {
   render() {
     return (
-      <div className="product__item">
-        <a href="">
+      <NavLink to="/CourseDetail" className="product__item">
+        <a>
           <div className="item__img">
             <img src="./img/item1.jpg" alt="" className="img-fluid" />
             <div className="img__overplay"></div>
@@ -65,7 +65,7 @@ export default class Course extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </NavLink>
     );
   }
 }

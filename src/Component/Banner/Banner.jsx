@@ -60,9 +60,9 @@ export default class Banner extends Component {
                         <div className="col-md-3" style={{ height: "100%" }}>
                             <div className="banner__tab">
                                 <ul>
-                                    <li><img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_29.png" alt="" /></li>
-                                    <li><img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_30.png" alt="" /></li>
-                                    <li><img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_31.png" alt="" /></li>
+                                    <li><img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_29.png"  /></li>
+                                    <li><img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_30.png"  /></li>
+                                    <li><img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_31.png" /></li>
                                 </ul>
                             </div>
                         </div>

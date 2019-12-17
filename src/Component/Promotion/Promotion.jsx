@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import PromotionCard from "./PromotionCard/PromotionCard";
+import PromotionCard from "./PromotionCard";
+import { Link } from "react-router-dom";
 
 export default class Promotion extends Component {
   render() {
@@ -8,10 +9,10 @@ export default class Promotion extends Component {
         <div className="promotion__content container">
           <div className="promotion__content__title__section ">
             <h5>Khuyến mãi</h5>
-            <a href="">
+            <Link to="/Courses">
               Xem thêm{" "}
               <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
-            </a>
+            </Link>
           </div>
           <div className="promotion__content__product">
             <div className="card " id="item-1">
@@ -28,4 +29,3 @@ export default class Promotion extends Component {
     );
   }
 }
- 

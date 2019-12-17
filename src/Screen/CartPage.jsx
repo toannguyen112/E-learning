@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-
+import Header from "../Component/Header/Header";
+import Footer from "../Component/Footer/Footer";
+import TopSelling from'../Component/Topselling/TopSelling'
 export default class CartPage extends Component {
     render() {
         return (
