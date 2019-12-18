@@ -5,7 +5,7 @@ export default class PromotionCard extends Component {
         return (
             <div className="card">
             <span className="sale">70%</span>
-            <img className="card-img-top" src="https://d1nzpkv5wwh1xf.cloudfront.net/320/k-5cac6776ce4b14365029fdae/20190502-duhq042504/du.jpg" alt />
+            <img className="card-img-top" src="https://d1nzpkv5wwh1xf.cloudfront.net/320/k-5cac6776ce4b14365029fdae/20190502-duhq042504/du.jpg" alt="" />
             <div className="card-body">
                 <div className="new-tag">Mới</div>
                 <h6 className="card-title">BẢN ĐỒ ĐỘT PHÁ KINH DOANH ONLINE 2019</h6>

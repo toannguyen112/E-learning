@@ -103,7 +103,7 @@ export default class User extends Component {
             <tr>
               <td>
                 <div className="name__wrapper d-flex">
-                  <img
+                  <img alt=""
                     src="/img/avatar.png"
                     style={{ height: "60px", width: "60px" }}
                   />
@@ -137,7 +137,7 @@ export default class User extends Component {
             <tr>
               <td>
                 <div className="name__wrapper d-flex">
-                  <img src="/img/avatar.png"  style={{ height: "60px", width: "60px" }} />
+                  <img src="/img/avatar.png" style={{ height: "60px", width: "60px" }} alt="" />
                   <div className="course__name ml-3">
                     <h6 style={{ fontWeight: "bold" }}>
                       minhhung.it99@gmail.com Member{" "}
@@ -157,10 +157,10 @@ export default class User extends Component {
                   data-toggle="modal"
                   data-target="#modelId"
                 >
-                 <i className="fa fa-pencil" aria-hidden="true" />
+                  <i className="fa fa-pencil" aria-hidden="true" />
                 </button>
                 <button className="btn btn-danger">
-                 <i className="fa fa-user-times" aria-hidden="true" />
+                  <i className="fa fa-user-times" aria-hidden="true" />
                 </button>
               </td>
             </tr>
@@ -168,7 +168,7 @@ export default class User extends Component {
             <tr>
               <td>
                 <div className="name__wrapper d-flex">
-                  <img src="/img/avatar.png"  style={{ height: "60px", width: "60px" }} />
+                  <img src="/img/avatar.png" style={{ height: "60px", width: "60px" }} alt="" />
                   <div className="course__name ml-3">
                     <h6 style={{ fontWeight: "bold" }}>
                       minhhung.it99@gmail.com Member{" "}
@@ -188,12 +188,12 @@ export default class User extends Component {
                   data-toggle="modal"
                   data-target="#modelId"
                 >
-             <i className="fa fa-pencil" aria-hidden="true" />
+                  <i className="fa fa-pencil" aria-hidden="true" />
 
 
                 </button>
                 <button className="btn btn-danger">
-                <i className="fa fa-user-times" aria-hidden="true" />
+                  <i className="fa fa-user-times" aria-hidden="true" />
 
                 </button>
               </td>

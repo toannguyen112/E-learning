@@ -10,7 +10,7 @@ export default class CourseDetailPage extends Component {
         <Header />
         <div className="courseDetail-content">
           <div className="container">
-            <div class="row">
+            <div className="row">
               <div className="col-sm-8 col-md-8 col-lg-8 col-xl-8 pl-0 content">
                 <div className="content__title">
                   <h1>Graphic Design Masterclass - Learn GREAT Design</h1>
@@ -25,7 +25,8 @@ export default class CourseDetailPage extends Component {
                   </div>
 
                   <div className="category">
-                    <span class="lnr lnr-layers"></span>
+                 <span className="lnr lnr-layers" />
+
                     <div className="category__name">
                       <div>Category</div>
                       <div>Apache, Computer Science, PHP, CSS, JS</div>
@@ -124,10 +125,8 @@ export default class CourseDetailPage extends Component {
                                 this course{" "}
                                 <span>
                                   {" "}
-                                  <i
-                                    class="fa fa-clock-o"
-                                    aria-hidden="true"
-                                  ></i>{" "}
+                                  <i className="fa fa-clock-o" aria-hidden="true" />
+{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -139,10 +138,8 @@ export default class CourseDetailPage extends Component {
                                 Working Files – Download These First{" "}
                                 <span>
                                   {" "}
-                                  <i
-                                    class="fa fa-clock-o"
-                                    aria-hidden="true"
-                                  ></i>{" "}
+                                 <i className="fa fa-clock-o" aria-hidden="true" />
+{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -171,10 +168,8 @@ export default class CourseDetailPage extends Component {
                                 Get In Total Control Of The Control Panel{" "}
                                 <span>
                                   {" "}
-                                  <i
-                                    class="fa fa-clock-o"
-                                    aria-hidden="true"
-                                  ></i>{" "}
+                                  <i className="fa fa-clock-o" aria-hidden="true" />
+{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -186,10 +181,8 @@ export default class CourseDetailPage extends Component {
                                 The Magic Of Auto Recovery{" "}
                                 <span>
                                   {" "}
-                                  <i
-                                    class="fa fa-clock-o"
-                                    aria-hidden="true"
-                                  ></i>{" "}
+                                  <i className="fa fa-clock-o" aria-hidden="true" />
+{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -201,10 +194,8 @@ export default class CourseDetailPage extends Component {
                                 Customize The Workspace{" "}
                                 <span>
                                   {" "}
-                                  <i
-                                    class="fa fa-clock-o"
-                                    aria-hidden="true"
-                                  ></i>{" "}
+                                  <i className="fa fa-clock-o" aria-hidden="true" />
+{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -232,10 +223,8 @@ export default class CourseDetailPage extends Component {
                                 Outside-The-Box Thinking With Grids{" "}
                                 <span>
                                   {" "}
-                                  <i
-                                    class="fa fa-clock-o"
-                                    aria-hidden="true"
-                                  ></i>{" "}
+                                 <i className="fa fa-clock-o" aria-hidden="true" />
+{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -247,10 +236,8 @@ export default class CourseDetailPage extends Component {
                                 Creating Saving And Opening Documents{" "}
                                 <span>
                                   {" "}
-                                  <i
-                                    class="fa fa-clock-o"
-                                    aria-hidden="true"
-                                  ></i>{" "}
+                                  <i className="fa fa-clock-o" aria-hidden="true" />
+{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -266,7 +253,7 @@ export default class CourseDetailPage extends Component {
               <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 pl-0 sidebar">
                 <div className="sidebar__info">
                   <div className="info__img">
-                    <img src="./img/item1.jpg" className="img-fluid" />
+                    <img src="./img/item1.jpg" className="img-fluid"  alt=""/>
                   </div>
                   <div className="info__inner">
                     <div className="wishlist">
@@ -323,7 +310,7 @@ export default class CourseDetailPage extends Component {
                     Get your team access to 3,500+ top Skilled courses anytime,
                     anywhere.
                   </p>
-                  <a href="">Try Skilled for Business</a>
+                  <a href="/face">Try Skilled for Business</a>
                 </div>
               </div>
             </div>

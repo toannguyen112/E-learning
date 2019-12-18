@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 
 import Dashboard from "../Component/Admin/Dashboard";
-import Course from "../Component/Admin/Course";
-import User from "../Component/Admin/User";
+
+import { Link } from "react-router-dom";
+// import Course from "../Component/Admin/Course";
+// import User from "../Component/Admin/User";
 export default class AdminPage extends Component {
   render() {
     return (
       <div className="admin">
         <div className="admin__header">
           <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
-            <a className="navbar-brand" href="#">
+            <Link to="admin" className="navbar-brand" >
               <i className="fa fa-cogs" aria-hidden="true"></i> Admin Panel
-            </a>
+            </Link>
             <button
               className="navbar-toggler d-lg-none"
               type="button"

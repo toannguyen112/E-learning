@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Profile from "./Profile";
-import Certificates from "./Certificates";
-import Edit from "./Edit";
-import Account from "./Account";
+// import Certificates from "./Certificates";
+// import Edit from "./Edit";
+// import Account from "./Account";
 
 export default class User extends Component {
   render() {

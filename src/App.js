@@ -23,14 +23,14 @@ export default class App extends Component {
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/home" component={HomePage} />
-            <Route exact path="/CourseDetail" component={CourseDetailPage} />
-            <Route exact path="/Courses" component={CoursesPage} />
-            <Route exact path="/Cart" component={CartPage} />
-            <Route exact path="/SignUp" component={SignUpPage} />
-            <Route exact path="/Login" component={LoginPage} />
-            <Route exact path="/Checkout" component={CheckoutPage} />
-            <Route exact path="/User" component={UserPage} />
-            <Route exact path="/AdminPage" component={AdminPage} />
+            <Route exact path="/coursedetail" component={CourseDetailPage} />
+            <Route exact path="/courses" component={CoursesPage} />
+            <Route exact path="/cart" component={CartPage} />
+            <Route exact path="/signup" component={SignUpPage} />
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/checkout" component={CheckoutPage} />
+            <Route exact path="/user" component={UserPage} />
+            <Route exact path="/admin" component={AdminPage} />
           </Switch>
         </BrowserRouter>
 

@@ -13,8 +13,9 @@
       }
     }
     .sign-up-text {
-      span {
-        @include text($color-red-5, $fs-1, $fw-bold-0);
+      a {
+        @include text($color-red-5, $fs-1 + 4, $fw-bold-0);
+        
       }
     }
   }

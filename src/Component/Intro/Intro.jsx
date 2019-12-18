@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Slider from "react-slick";
-import OwlCarousel from 'react-owl-carousel';
+
 
 export default class Intro extends Component {
   render() {
@@ -21,7 +20,8 @@ export default class Intro extends Component {
                     alt=""
                   />
                   <div className="banner_text">
-                    <i class="fa fa-money" aria-hidden="true"></i>
+                  <i className="fa fa-money" aria-hidden="true" />
+
                     <span>Edumall Combo Ngọc Thô Tỏa Sáng</span>
                   </div>
                 </div>
@@ -34,7 +34,8 @@ export default class Intro extends Component {
                     alt=""
                   />
                   <div className="banner_text">
-                    <i class="fa fa-money" aria-hidden="true"></i>
+                  <i className="fa fa-money" aria-hidden="true" />
+
                     <span>Edumall Combo Ngọc Thô Tỏa Sáng</span>
                   </div>
                 </div>
@@ -47,7 +48,8 @@ export default class Intro extends Component {
                     alt=""
                   />
                   <div className="banner_text">
-                    <i class="fa fa-money" aria-hidden="true"></i>
+                   <i className="fa fa-money" aria-hidden="true" />
+
                     <span>Edumall Combo Ngọc Thô Tỏa Sáng</span>
                   </div>
                 </div>
@@ -60,7 +62,8 @@ export default class Intro extends Component {
                     alt=""
                   />
                   <div className="banner_text">
-                    <i class="fa fa-money" aria-hidden="true"></i>
+                   <i className="fa fa-money" aria-hidden="true" />
+
                     <span>Edumall Combo Ngọc Thô Tỏa Sáng</span>
                   </div>
                 </div>
@@ -73,7 +76,8 @@ export default class Intro extends Component {
                     alt=""
                   />
                   <div className="banner_text">
-                    <i class="fa fa-money" aria-hidden="true"></i>
+                  <i className="fa fa-money" aria-hidden="true" />
+
                     <span>Edumall Combo Ngọc Thô Tỏa Sáng</span>
                   </div>
                 </div>
@@ -86,7 +90,8 @@ export default class Intro extends Component {
                     alt=""
                   />
                   <div className="banner_text">
-                    <i class="fa fa-money" aria-hidden="true"></i>
+                   <i className="fa fa-money" aria-hidden="true" />
+
                     <span>Edumall Combo Ngọc Thô Tỏa Sáng</span>
                   </div>
                 </div>
@@ -99,7 +104,8 @@ export default class Intro extends Component {
                     alt=""
                   />
                   <div className="banner_text">
-                    <i class="fa fa-money" aria-hidden="true"></i>
+                   <i className="fa fa-money" aria-hidden="true" />
+
                     <span>Edumall Combo Ngọc Thô Tỏa Sáng</span>
                   </div>
                 </div>

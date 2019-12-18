@@ -46,7 +46,7 @@ export default class CartPage extends Component {
                                             </td>
                                             <td className="cart_remove">
                                                 <div className="btn__remove">
-                                                    <a href="">
+                                                    <a href="https://www.facebook.com/">
                                                         <i className="fa fa-times"></i>
                                                     </a>
                                                 </div>
@@ -83,10 +83,10 @@ export default class CartPage extends Component {
                                             </tr>
                                             <tr>
                                                 <td colSpan="2">
-                                                    <a href="">
+                                                    <a href="https://www.facebook.com/">
                                                         <button className="add">PROCEED TO CHECKOUT</button>
                                                     </a>
-                                                    <a href="">
+                                                    <a href="https://www.facebook.com/">
                                                         <button className="continue">
                                                             CONTINUE SHOPPING
                             </button>

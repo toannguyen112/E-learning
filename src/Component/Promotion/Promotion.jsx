@@ -9,9 +9,10 @@ export default class Promotion extends Component {
         <div className="promotion__content container">
           <div className="promotion__content__title__section ">
             <h5>Khuyến mãi</h5>
-            <Link to="/Courses">
-              Xem thêm{" "}
-              <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+            <Link to="/courses">
+              Xem thêm
+              <i className="fa fa-arrow-circle-right" aria-hidden="true" />
+
             </Link>
           </div>
           <div className="promotion__content__product">
@@ -19,7 +20,7 @@ export default class Promotion extends Component {
               <img
                 className="card-img-top"
                 src="https://dvch1hlupt.cdn.hostvn.net/HOTDEAL.png"
-                alt
+                alt=""
               />
             </div>
             <PromotionCard />

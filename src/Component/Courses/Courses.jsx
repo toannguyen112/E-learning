@@ -12,60 +12,61 @@ export default class Courses extends Component {
                 <form className="search-form">
                   <ul className="search__menu">
                     <li>
-                      <select class="course__category">
+                      <select className="course__category">
                         <option>Category</option>
-                        <option class="level-0" value="21">
+                        <option className="level-0" value={21}>
                           Business&nbsp;&nbsp;(2)
                         </option>
-                        <option class="level-1" value="29">
+                        <option className="level-1" value={29}>
                           &nbsp;&nbsp;&nbsp;Finance&nbsp;&nbsp;(2)
                         </option>
-                        <option class="level-1" value="38">
+                        <option className="level-1" value={38}>
                           &nbsp;&nbsp;&nbsp;Management&nbsp;&nbsp;(1)
                         </option>
-                        <option class="level-1" value="55">
+                        <option className="level-1" value={55}>
                           &nbsp;&nbsp;&nbsp;Strategy&nbsp;&nbsp;(1)
                         </option>
-                        <option class="level-0" value="25">
+                        <option className="level-0" value={25}>
                           Creative&nbsp;&nbsp;(4)
                         </option>
-                        <option class="level-1" value="33">
+                        <option className="level-1" value={33}>
                           &nbsp;&nbsp;&nbsp;GraphicDesign&nbsp;&nbsp;(3)
                         </option>
-                        <option class="level-1" value="34">
+                        <option className="level-1" value={34}>
                           &nbsp;&nbsp;&nbsp;Guitar&nbsp;&nbsp;(1)
-                        </option>{" "}
-                        <option class="level-1" value="42">
+                        </option>
+                        {"{"}" "{"}"}
+                        <option className="level-1" value={42}>
                           &nbsp;&nbsp;&nbsp;Music&nbsp;&nbsp;(2)
                         </option>
-                        <option class="level-0" value="31">
+                        <option className="level-0" value={31}>
                           General&nbsp;&nbsp;(2)
                         </option>
-                        <option class="level-1" value="36">
+                        <option className="level-1" value={36}>
                           &nbsp;&nbsp;&nbsp;Health&nbsp;&nbsp;(1)
                         </option>
-                        <option class="level-1" value="58">
+                        <option className="level-1" value={58}>
                           &nbsp;&nbsp;&nbsp;Travel&nbsp;&nbsp;(1)
                         </option>
-                        <option class="level-1" value="60">
+                        <option className="level-1" value={60}>
                           &nbsp;&nbsp;&nbsp;Gaming&nbsp;&nbsp;(1)
                         </option>
-                        <option class="level-0" value="56">
+                        <option className="level-0" value={56}>
                           Technology&nbsp;&nbsp;(3)
                         </option>
-                        <option class="level-1" value="59">
+                        <option className="level-1" value={59}>
                           &nbsp;&nbsp;&nbsp;WebDevelopment&nbsp;&nbsp;(1)
                         </option>
-                        <option class="level-1" value="61">
+                        <option className="level-1" value={61}>
                           &nbsp;&nbsp;&nbsp;Hardware&nbsp;&nbsp;(1)
                         </option>
-                        <option class="level-1" value="62">
+                        <option className="level-1" value={62}>
                           &nbsp;&nbsp;&nbsp;OperatingSystems&nbsp;&nbsp;(3)
                         </option>
                       </select>
                     </li>
                     <li>
-                      <select class="status">
+                      <select className="status">
                         <option value="true">Course Status</option>
                         <option value="free">Free</option>
                         <option value="paid">Paid</option>
@@ -101,7 +102,7 @@ export default class Courses extends Component {
                   <span>
                     <i className="fa fa-th-list" aria-hidden="true" />
                   </span>
-                  <select class="sort__select" disabled="">
+                  <select className="sort__select" disabled>
                     <option value="newness">Sort by name high to low</option>
                     <option value="popularity">Sort by name low to high</option>
                     <option value="low">Sort by price low to high</option>
@@ -113,19 +114,19 @@ export default class Courses extends Component {
                 <div className="filter text-right">
                   <span>Showing 1–16 of 16 results</span>
                   <span>
-                    <a href="">
+                    <span>
                       Filter <i className="fa fa-filter" aria-hidden="true" />
-                    </a>
+                    </span>
                   </span>
                 </div>
               </div>
             </div>
             <div className="row sort__items">
               <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex px-0">
-                 <Course/>
-                 <Course/>
-                 <Course/>
-                 <Course/>
+                <Course />
+                <Course />
+                <Course />
+                <Course />
               </div>
             </div>
           </div>

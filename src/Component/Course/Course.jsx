@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 export default class Course extends Component {
   render() {
     return (
-      <NavLink to="/CourseDetail" className="product__item">
-        <a>
+      <NavLink style={{textDecoration : "none"}} to="/CourseDetail" className="product__item">
+        <div>
           <div className="item__img">
             <img src="./img/item1.jpg" alt="" className="img-fluid" />
             <div className="img__overplay"></div>
@@ -22,11 +22,12 @@ export default class Course extends Component {
             <div className="price">
               <span className="old__price">$199.99</span>
               <span className="new__price">
-                $19.99 <i class="fa fa-tag" aria-hidden="true"></i>
+                $19.99 <i className="fa fa-tag" aria-hidden="true" />
+
               </span>
             </div>
           </div>
-        </a>
+        </div>
 
         <div className="sub__info">
           <div className="info__content">

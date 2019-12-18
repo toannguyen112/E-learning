@@ -38,13 +38,13 @@ export default class SignUpForm extends Component {
                 />
                 <p className="rules">
                   Bằng cách nhấp vào Đăng ký, bạn đồng ý với{" "}
-                  <a href="">Điều khoản, Quy chế hoạt động </a> và
-                  <a href=""> Chính sách bảo mật </a>
+                  <a href="https://www.facebook.com/">Điều khoản, Quy chế hoạt động </a> và
+                  <a href="https://www.facebook.com/"> Chính sách bảo mật </a>
                   của Edumall.
                 </p>
                 <button className="btn-sign">Đăng kí</button>
                 <span>
-                  Đã có tài khoản ? <a href="">Đăng nhập</a>
+                  Đã có tài khoản ? <a href="https://www.facebook.com/">Đăng nhập</a>
                 </span>
               </form>
             </div>
@@ -53,7 +53,7 @@ export default class SignUpForm extends Component {
             <div className="img-right">
               <img
                 src="https://cdn.itviec.com/employers/blockdev/logo/social/QN3Ka1QtiUk8BgvR4sCurhH6/logo-03.png"
-                className="img-fluid"
+                className="img-fluid" alt=""
               />
             </div>
           </div>
