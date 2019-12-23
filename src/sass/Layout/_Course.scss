@@ -70,37 +70,41 @@
         box-shadow: -1px 2px 15px -4px rgba(0, 0, 0, 0.75);
         transition: all 1s;
         cursor: pointer;
-        &:hover {
-          -webkit-box-shadow: none;
-          -moz-box-shadow: none;
-          box-shadow: none;
-          .item__img {
-            .img__overplay {
-              opacity: 0.8;
-            }
-          }
-          .sub__info {
-            top: -14%;
-            visibility: visible;
-            opacity: 1;
-          }
-        }
-        &:last-child:hover {
-          .sub__info {
-            top: -14%;
-            left: -165%;
-            visibility: visible;
-            opacity: 1;
-          }
-        }
-        &:last-child {
-          .sub__info {
-            left: -165%;
-            &:before {
-              left: 96%;
-            }
-          }
-        }
+        // &:hover {
+        //   -webkit-box-shadow: none;
+        //   -moz-box-shadow: none;
+        //   box-shadow: none;
+        //   .item__img {
+        //     img{
+        //       width: 100%;
+        //       height: 250px;
+        //     }
+        //     .img__overplay {
+        //       opacity: 0.8;
+        //     }
+        //   }
+        //   .sub__info {
+        //     top: -14%;
+        //     visibility: visible;
+        //     opacity: 1;
+        //   }
+        // }
+        // &:last-child:hover {
+        //   .sub__info {
+        //     top: -14%;
+        //     left: -165%;
+        //     visibility: visible;
+        //     opacity: 1;
+        //   }
+        // }
+        // &:last-child {
+        //   .sub__info {
+        //     left: -165%;
+        //     &:before {
+        //       left: 96%;
+        //     }
+        //   }
+        // }
         div {
           text-decoration: none;
           color: #666;
@@ -110,7 +114,7 @@
             border-bottom: 2px solid #e1e2e4;
             img {
               width: 100%;
-              height: 100%;
+              height: 190px;
             }
             .img__overplay {
               position: absolute;
@@ -188,6 +192,7 @@
             z-index: 10;
           }
           .info__content {
+            
             .teacher {
               display: flex;
               justify-content: flex-start;
@@ -220,7 +225,7 @@
             }
             .add__cart {
               margin: 7% 0;
-              background-color: #2abfd4;
+              background-color: red;
               color: #fff;
               border: none;
               width: 100%;

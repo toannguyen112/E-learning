@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+import BannerItem from "./BannerItem";
 export default class Banner extends Component {
   render() {
+    let { courseCatalog } = this.props
     const settingBanner = {
       autoplaySpeed: 700,
       autoplay: true,
@@ -21,17 +23,12 @@ export default class Banner extends Component {
                   <h5>Danh mục</h5>
                   <ul>
                     <div>
-                      <li>
-                        <a href="https://www.facebook.com/">
-                          {" "}
-                          <i
-                            className="fa fa-commenting-o"
-                            aria-hidden="true"
-                          />
-                          Ngoại ngữ
-                        </a>
-                      </li>
-                      <li>
+                     {
+                       courseCatalog.map((item,index)=>{
+                         return  <BannerItem item={item} key={index} />
+                       })
+                     }
+                      {/* <li>
                         <a href="https://www.facebook.com/">
                           {" "}
                           <i className="fa fa-music" aria-hidden="true" />
@@ -51,8 +48,8 @@ export default class Banner extends Component {
                           <i className="fa fa-money" aria-hidden="true" />
                           Marketing
                         </a>
-                      </li>
-                      
+                      </li> */}
+
                     </div>
                   </ul>
                 </div>
@@ -86,13 +83,13 @@ export default class Banner extends Component {
               <div className="banner__tab">
                 <ul>
                   <li>
-                    <img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_29.png"  alt="" />
+                    <img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_29.png" alt="" />
                   </li>
                   <li>
                     <img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_30.png" alt="" />
                   </li>
                   <li>
-                    <img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_31.png"  alt=""/>
+                    <img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_31.png" alt="" />
                   </li>
                 </ul>
               </div>

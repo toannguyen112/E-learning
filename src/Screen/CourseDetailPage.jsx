@@ -3,8 +3,28 @@ import Header from "../Component/Header/Header";
 import Footer from "../Component/Footer/Footer";
 import Viewing from "../Component/Viewing/Viewing";
 
-export default class CourseDetailPage extends Component {
+import CourseService from "../Services/courseService";
+import reduxAction from "../Store/Action/action";
+import { FETCH_COURSE_DETAIL } from "../Store/Action/type";
+import { connect } from "react-redux";
+const courseService = new CourseService();
+class CourseDetailPage extends Component {
+  componentDidMount() {
+    // lấy tham số mã khóa học từ url
+    const { courseid } = this.props.match.params;
+    courseService
+      .fetchCourseDetail(courseid)
+      .then(res => {
+        this.props.dispatch(reduxAction(FETCH_COURSE_DETAIL, res.data));
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
   render() {
+    let { courseDetail } = this.props;
+    console.log(this.props.courseDetail);
+
     return (
       <div>
         <Header />
@@ -13,11 +33,11 @@ export default class CourseDetailPage extends Component {
             <div className="row">
               <div className="col-sm-8 col-md-8 col-lg-8 col-xl-8 pl-0 content">
                 <div className="content__title">
-                  <h1>Graphic Design Masterclass - Learn GREAT Design</h1>
+                  <h1>{courseDetail.tenKhoaHoc}</h1>
                 </div>
                 <div className="intro-title">
                   <div className="teacher">
-                    <img src="./img/teacher3.jpg" alt="" />
+                    <img src={courseDetail.hinhAnh} alt="" />
                     <div className="teacher-name">
                       <div>Teacher</div>
                       <div>Robert Richards</div>
@@ -25,7 +45,7 @@ export default class CourseDetailPage extends Component {
                   </div>
 
                   <div className="category">
-                 <span className="lnr lnr-layers" />
+                    <span className="lnr lnr-layers" />
 
                     <div className="category__name">
                       <div>Category</div>
@@ -39,7 +59,7 @@ export default class CourseDetailPage extends Component {
                     <i className="fa fa-star"></i>
                     <i className="fa fa-star"></i>
                     <span>3.5</span>
-                    <p>500 reviews</p>
+                    <p>{courseDetail.luotXem} reviews</p>
                   </div>
                 </div>
                 <div className="description">
@@ -125,8 +145,10 @@ export default class CourseDetailPage extends Component {
                                 this course{" "}
                                 <span>
                                   {" "}
-                                  <i className="fa fa-clock-o" aria-hidden="true" />
-{" "}
+                                  <i
+                                    className="fa fa-clock-o"
+                                    aria-hidden="true"
+                                  />{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -138,8 +160,10 @@ export default class CourseDetailPage extends Component {
                                 Working Files – Download These First{" "}
                                 <span>
                                   {" "}
-                                 <i className="fa fa-clock-o" aria-hidden="true" />
-{" "}
+                                  <i
+                                    className="fa fa-clock-o"
+                                    aria-hidden="true"
+                                  />{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -168,8 +192,10 @@ export default class CourseDetailPage extends Component {
                                 Get In Total Control Of The Control Panel{" "}
                                 <span>
                                   {" "}
-                                  <i className="fa fa-clock-o" aria-hidden="true" />
-{" "}
+                                  <i
+                                    className="fa fa-clock-o"
+                                    aria-hidden="true"
+                                  />{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -181,8 +207,10 @@ export default class CourseDetailPage extends Component {
                                 The Magic Of Auto Recovery{" "}
                                 <span>
                                   {" "}
-                                  <i className="fa fa-clock-o" aria-hidden="true" />
-{" "}
+                                  <i
+                                    className="fa fa-clock-o"
+                                    aria-hidden="true"
+                                  />{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -194,8 +222,10 @@ export default class CourseDetailPage extends Component {
                                 Customize The Workspace{" "}
                                 <span>
                                   {" "}
-                                  <i className="fa fa-clock-o" aria-hidden="true" />
-{" "}
+                                  <i
+                                    className="fa fa-clock-o"
+                                    aria-hidden="true"
+                                  />{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -223,8 +253,10 @@ export default class CourseDetailPage extends Component {
                                 Outside-The-Box Thinking With Grids{" "}
                                 <span>
                                   {" "}
-                                 <i className="fa fa-clock-o" aria-hidden="true" />
-{" "}
+                                  <i
+                                    className="fa fa-clock-o"
+                                    aria-hidden="true"
+                                  />{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -236,8 +268,10 @@ export default class CourseDetailPage extends Component {
                                 Creating Saving And Opening Documents{" "}
                                 <span>
                                   {" "}
-                                  <i className="fa fa-clock-o" aria-hidden="true" />
-{" "}
+                                  <i
+                                    className="fa fa-clock-o"
+                                    aria-hidden="true"
+                                  />{" "}
                                   15:32{" "}
                                 </span>{" "}
                               </li>
@@ -253,7 +287,11 @@ export default class CourseDetailPage extends Component {
               <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 pl-0 sidebar">
                 <div className="sidebar__info">
                   <div className="info__img">
-                    <img src="./img/item1.jpg" className="img-fluid"  alt=""/>
+                    <img
+                      src={courseDetail.hinhAnh}
+                      className="img-fluid"
+                      alt=""
+                    />
                   </div>
                   <div className="info__inner">
                     <div className="wishlist">
@@ -314,14 +352,27 @@ export default class CourseDetailPage extends Component {
                 </div>
               </div>
             </div>
-
-
           </div>
-          <Viewing />
+
         </div>
+        <Viewing />
+        
 
         <Footer />
       </div>
     );
   }
 }
+const mapStateToProps = state => ({
+  courseDetail: state.Course.courseDetail || {
+    maKhoaHoc: "",
+    tenKhoaHoc: "",
+    hinhAnh: "",
+    nguoiTao: {
+      taiKhoan: "",
+      hoTen: ""
+    }
+  }
+});
+
+export default connect(mapStateToProps, null)(CourseDetailPage);

@@ -1,0 +1,46 @@
+.viewing {
+  padding: 3% 0;
+  .product__items {
+    display: flex;
+    .product__item {
+      .item__img {
+        height: 150px;
+        img {
+          width: 100%;
+          height: 150px;
+        }
+      }
+      &:hover {
+        box-shadow: none;
+      }
+      width: 20%;
+      border: 1px solid #e1e2e4;
+      margin-right: 1.4%;
+      cursor: pointer;
+      color: #000;
+      box-shadow: -1px 2px 15px -4px rgba(0, 0, 0, 0.75);
+      transition: all 1s;
+      .item__info {
+        padding: $pd-3;
+        h5 {
+          font-weight: bold;
+          font-size: 0.8rem;
+        }
+        h6 {
+          @include text($color-gray-9, $fs-5, $fw-normal);
+          padding: 5% 0;
+        }
+      }
+      .rating {
+        font-size: 0.9rem;
+        i {
+          color: $color-yellow;
+        }
+      }
+      h4 {
+        text-align: right;
+        @include text($color-black-0, $fs-8, $fw-bold);
+      }
+    }
+  }
+}

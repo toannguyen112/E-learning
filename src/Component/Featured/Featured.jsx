@@ -11,6 +11,9 @@ export default class Featured extends Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
+
+
+
     return (
       <div className="featured">
         <div className="featured__content container">
@@ -18,9 +21,10 @@ export default class Featured extends Component {
             <div className="col-md-4 col-sm-4 featured__content__items ">
               <div className="featured__box">
                 <div className="featured__title">
-                  <h5>Đánh giá cao</h5>
+                  <h5>
+                    appreciate</h5>
                   <Link to="/courses">
-                    Xem thêm{" "}
+                  View more...
                     <i
                       className="fa fa-arrow-circle-right"
                       aria-hidden="true"
@@ -34,7 +38,7 @@ export default class Featured extends Component {
                       <div className="course">
                         <div className="course-img">
                           {" "}
-                          <img src="./img/item15.jpg" className="img-fluid"  alt=""/>
+                          <img src="./img/item15.jpg" className="img-fluid" alt="" />
                         </div>
                         <div className="course-description">
                           <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
@@ -243,10 +247,11 @@ export default class Featured extends Component {
             <div className="col-md-4 col-sm-4 featured__content__items ">
               <div className="featured__box">
                 <div className="featured__title">
-                  <h5>Đánh giá cao</h5>
+                  <h5>
+                    appreciate</h5>
                   <Link to="/courses">
-                    Xem thêm{" "}
-                   <i className="fa fa-arrow-circle-right" aria-hidden="true" />
+                   View more...
+                    <i className="fa fa-arrow-circle-right" aria-hidden="true" />
 
                   </Link>
                 </div>

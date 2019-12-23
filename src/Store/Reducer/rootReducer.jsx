@@ -1,10 +1,12 @@
-import { combineReducers } from 'redux';
-import course from './course'
+import { combineReducers } from "redux";
+import Course from "./course";
+import display from "./display"
+
 
 
 const rootReducer = combineReducers({
-    course 
-
+  Course,
+  display
 });
 
 export default rootReducer;

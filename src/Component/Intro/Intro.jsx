@@ -8,7 +8,7 @@ export default class Intro extends Component {
       <div className="intro">
         <div className="intro__content container">
           <div className="intro__title">
-            <h2>Hành trang nghề nghiệp cho bạn</h2>
+            <h2>Professional luggage for you</h2>
           </div>
           <div className="intro__slider">
             <div className="row">

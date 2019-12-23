@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 export default class Course extends Component {
   render() {
+    let {item}= this.props
     return (
-      <NavLink style={{textDecoration : "none"}} to="/CourseDetail" className="product__item">
+      <NavLink style={{textDecoration : "none"}} to={`/coursedetail/${item.maKhoaHoc}`} className="product__item">
         <div>
           <div className="item__img">
-            <img src="./img/item1.jpg" alt="" className="img-fluid" />
+            <img src={item.hinhAnh} alt="" className="img-fluid" />
             <div className="img__overplay"></div>
           </div>
           <div className="item__info">

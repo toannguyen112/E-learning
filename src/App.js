@@ -10,20 +10,53 @@ import CheckoutPage from "./Screen/CheckoutPage";
 import SignUpPage from "./Screen/SignUpPage";
 import UserPage from "./Screen/UserPage";
 import AdminPage from "./Screen/AdminPage";
-
+import CourseService from "./Services/courseService";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
+import reduxAction from "./Store/Action/action";
+import { FETCH_COURSES } from "./Store/Action/type";
 
-export default class App extends Component {
+import { FETCH_COURSES_CATALOG } from "./Store/Action/type";
+import { connect } from "react-redux";
+const courseService = new CourseService();
+
+class App extends Component {
+  componentDidMount() {
+    courseService
+      .fetchCourses()
+      .then(res => {
+        this.props.dispatch(reduxAction(FETCH_COURSES, res.data));
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    courseService
+      .fetchCourseCatalog()
+      .then(res => {
+        this.props.dispatch(reduxAction(FETCH_COURSES_CATALOG, res.data));
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    // courseService
+    //   .fixCourseImgServer()
+    //   .then(res => {
+    //     console.log(res.data);
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
+  }
   render() {
     return (
       <div className="App">
-
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/home" component={HomePage} />
-            <Route exact path="/coursedetail" component={CourseDetailPage} />
+            <Route exact path="/coursedetail/:courseid" component={CourseDetailPage} />
             <Route exact path="/courses" component={CoursesPage} />
             <Route exact path="/cart" component={CartPage} />
             <Route exact path="/signup" component={SignUpPage} />
@@ -33,8 +66,8 @@ export default class App extends Component {
             <Route exact path="/admin" component={AdminPage} />
           </Switch>
         </BrowserRouter>
-
       </div>
     );
   }
 }
+export default connect()(App);

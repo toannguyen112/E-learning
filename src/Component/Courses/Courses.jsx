@@ -1,8 +1,29 @@
 import React, { Component } from "react";
-import Pagination from "../Pagination/Pagination";
+// import Pagination from "../Pagination/Pagination";
 import Course from "../Course/Course";
-export default class Courses extends Component {
+import CourseService from "../../Services/courseService";
+import reduxAction from "../../Store/Action/action";
+import {FETCH_COURSE_PAGINATION} from '../../Store/Action/type'
+import { connect } from "react-redux";
+let courseService = new CourseService();
+
+ class Courses extends Component {
+  componentDidMount() {
+    courseService
+      .fethchCoursePagination()
+      .then(res => {
+        this.props.dispatch(reduxAction(FETCH_COURSE_PAGINATION, res.data));
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+
   render() {
+    let { courses } = this.props
+
+
     return (
       <div className="Course">
         <div className="search__box ">
@@ -123,17 +144,31 @@ export default class Courses extends Component {
             </div>
             <div className="row sort__items">
               <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex px-0">
-                <Course />
-                <Course />
-                <Course />
-                <Course />
+                <div className="row">
+
+                  {courses.map((item, index) => {
+                    return <div className="col-3" key={index}>
+                      <Course item={item} />
+                    </div>
+                  })}
+
+                </div>
+
               </div>
             </div>
           </div>
         </div>
 
-        <Pagination />
-      </div>
+        {/* <Pagination Courses={courses}  /> */}
+      </div> 
     );
   }
+
+
+
 }
+
+
+export default connect()(Courses)
+
+

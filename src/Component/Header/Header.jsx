@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Search from "../Search/Search";
 
 export default class Header extends Component {
   render() {
@@ -20,16 +21,9 @@ export default class Header extends Component {
                 />{" "}
                 CYBERIT
               </Link>
-              <div className="header-control">
-                <input
-                  className="input-search"
-                  type="text"
-                  placeholder="Search for anything"
-                />
-                <button className="btn-search">
-                  <i className="fa fa-search"></i>
-                </button>
-              </div>
+
+
+              <Search />
             </div>
             <div className="col-md-6  d-flex">
               <div className="header-card">
