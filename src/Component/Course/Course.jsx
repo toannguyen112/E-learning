@@ -1,18 +1,52 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
-export default class Course extends Component {
+import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { ADD_TO_CART } from "../../Store/Action/type";
+class Course extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showGoCart: false
+    };
+  }
+
+  onCart = course => {
+   
+    this.props.addToCart(course);
+    this.setState({
+      showGoCart: true
+    });
+  };
+
+
+
+   static getDerivedStateFromProps = (prevProps, nextState) => {
+    let cart = JSON.parse(localStorage.getItem("cart")) ? JSON.parse(localStorage.getItem("cart")) : [];
+    let index = cart.findIndex(item => {
+      return item.maKhoaHoc === prevProps.course.maKhoaHoc;
+    });
+    if (index !== -1) {
+      nextState.showGoCart = true
+    }
+    return null;
+
+
+
+  }
+
+  
   render() {
-    let {item}= this.props
+    let { course } = this.props;
     return (
-      <NavLink style={{textDecoration : "none"}} to={`/coursedetail/${item.maKhoaHoc}`} className="product__item">
-        <div>
+      <div className="product__item">
+        <Link to={`/coursedetail/${course.maKhoaHoc}`}>
           <div className="item__img">
-            <img src={item.hinhAnh} alt="" className="img-fluid" />
+            <img src={course.hinhAnh} alt="" className="img-fluid" />
             <div className="img__overplay"></div>
           </div>
           <div className="item__info">
-            <h5>Node.js, Express & MongoDB Dev to Deployment</h5>
-            <h6>Jose Portilla</h6>
+            <h5>{course.tenKhoaHoc}</h5>
             <div className="raiting">
               <i className="fa fa-star"></i>
               <i className="fa fa-star"></i>
@@ -24,11 +58,10 @@ export default class Course extends Component {
               <span className="old__price">$199.99</span>
               <span className="new__price">
                 $19.99 <i className="fa fa-tag" aria-hidden="true" />
-
               </span>
             </div>
           </div>
-        </div>
+        </Link>
 
         <div className="sub__info">
           <div className="info__content">
@@ -36,7 +69,7 @@ export default class Course extends Component {
               <img src="/img/teacher.jpg" className="img-fluid" alt="" />
               <h6>George Richards</h6>
             </div>
-            <h5>Node.js, Express & MongoDB Dev to Deployment</h5>
+            <h5>{course.tenKhoaHoc}</h5>
             <p>
               In this 8.5 hour course you will learn by example building 2 real
               world server-side applications from scratch all the way up to
@@ -55,7 +88,17 @@ export default class Course extends Component {
                 <i className="fa fa-signal" aria-hidden="true" /> Advanced
               </div>
             </div>
-            <button className="add__cart">ADD TO CART</button>
+            {this.state.showGoCart ? (
+              <Link to="/cart">
+                <button className="add__cart" style={{ backgroundColor: "blue" }}>
+                  GO TO CART
+              </button>
+              </Link>
+            ) : (
+                <button className="add__cart" onClick={() => this.onCart(course)}>
+                  ADD TO CART
+              </button>
+              )}
             <div className="wishlist">
               <div className="add__list">
                 <div className="heart">
@@ -67,7 +110,20 @@ export default class Course extends Component {
             </div>
           </div>
         </div>
-      </NavLink>
+      </div>
     );
   }
 }
+
+const mapDispatchToProps = dispatch => {    
+  return {
+    addToCart: course => {
+      dispatch({
+        type: ADD_TO_CART,
+        payload: course
+      });
+    }
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Course);

@@ -3,26 +3,26 @@ import React, { Component } from "react";
 import Course from "../Course/Course";
 import CourseService from "../../Services/courseService";
 import reduxAction from "../../Store/Action/action";
-import {FETCH_COURSE_PAGINATION} from '../../Store/Action/type'
+import { FETCH_COURSE_PAGINATION } from "../../Store/Action/type";
+import { SEARCH_COURSES } from "../../Store/Action/type";
 import { connect } from "react-redux";
 let courseService = new CourseService();
 
- class Courses extends Component {
-  componentDidMount() {
-    courseService
-      .fethchCoursePagination()
-      .then(res => {
-        this.props.dispatch(reduxAction(FETCH_COURSE_PAGINATION, res.data));
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
-
+class Courses extends Component {
+  // componentDidMount() {
+  //   courseService
+  //     .fethchCoursePagination()
+  //     .then(res => {
+  //       this.props.dispatch(reduxAction(FETCH_COURSE_PAGINATION, res.data));
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // }
 
   render() {
-    let { courses } = this.props
-
+    let { courses } = this.props;
+    let { searchKeyword } = this.props.display;
 
     return (
       <div className="Course">
@@ -133,7 +133,10 @@ let courseService = new CourseService();
               </div>
               <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 pl-0">
                 <div className="filter text-right">
-                  <span>Showing 1–16 of 16 results</span>
+                  <span>
+                    Showing 1–{courses.length} of {this.props.courses.length}{" "}
+                    results
+                  </span>
                   <span>
                     <span>
                       Filter <i className="fa fa-filter" aria-hidden="true" />
@@ -144,31 +147,71 @@ let courseService = new CourseService();
             </div>
             <div className="row sort__items">
               <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex px-0">
-                <div className="row">
-
-                  {courses.map((item, index) => {
-                    return <div className="col-3" key={index}>
-                      <Course item={item} />
-                    </div>
-                  })}
-
+                <div className="row " style={{ width: "100%" }}>
+                  {this.showCourseItem(courses, searchKeyword)}
                 </div>
-
               </div>
             </div>
           </div>
         </div>
 
         {/* <Pagination Courses={courses}  /> */}
-      </div> 
+      </div>
     );
   }
 
+  showCourseItem = (courses, serchKeyword) => {
+    let result = null;
+    let newArr = [...courses];
+    if (courses && courses.length >= 0) {
+      if (serchKeyword && serchKeyword.length > 0) {
+        newArr = newArr.filter(
+          item =>
+            item.tenKhoaHoc
+              .toLowerCase()
+              .indexOf(serchKeyword.toLowerCase().trim()) !== -1
+        );
+
+        result = newArr.map((course, index) => {
+          return (
+            <div className="col-3" key={index}>
+              <Course course={course} />
+            </div>
+          );
+        });
+
+      } else {
+        result = newArr.map((course, index) => {
+          return (
+            <div className="col-3" key={index}>
+              <Course course={course} />
+            </div>
+          );
+        });
 
 
+      }
+    }
+
+    return result
+
+  };
 }
 
+const mapStateToProps = state => ({
+  display: state.display,
+  courses: state.Course.course
+});
 
-export default connect()(Courses)
+const mapDispatchToProps = dispatch => {
+  return {
+    handleSearch: keyword => {
+      dispatch({
+        type: SEARCH_COURSES,
+        payload: keyword
+      });
+    }
+  };
+};
 
-
+export default connect(mapStateToProps, mapDispatchToProps)(Courses);

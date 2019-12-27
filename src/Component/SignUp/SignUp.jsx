@@ -4,12 +4,14 @@ import SignUpForm from './SignUpForm'
 
 export default class SignUp extends Component {
     render() {
+        let { history } = this.props
+
         return (
             <div className="sign__up">
                 <div className="container">
-                   <SignUpHeader/>
-                   <SignUpForm/>
-                   
+                    <SignUpHeader />
+                    <SignUpForm history={history} />
+
                 </div>
             </div >
         )

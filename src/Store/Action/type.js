@@ -8,6 +8,10 @@ export const FETCH_COURSES_DETAIL = "FETCH_COURSES_DETAIL";
 export const FETCH_COURSE_PAGINATION = "FETCH_COURSE_PAGINATION";
 //user
 export const LOGIN = 'LOGIN';
+export const SIGNUP = 'SIGNUP';
+
 
 export const SEARCH_COURSES = "SEARCH_COURSES";
+export const ADD_TO_CART = "ADD_TO_CART";
+export const DELETE_CART ="DELETE_CART";
 

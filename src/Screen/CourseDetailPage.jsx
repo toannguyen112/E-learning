@@ -12,14 +12,14 @@ class CourseDetailPage extends Component {
   componentDidMount() {
     // lấy tham số mã khóa học từ url
     const { courseid } = this.props.match.params;
-    courseService
-      .fetchCourseDetail(courseid)
-      .then(res => {
-        this.props.dispatch(reduxAction(FETCH_COURSE_DETAIL, res.data));
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    // courseService
+    //   .fetchCourseDetail(courseid)
+    //   .then(res => {
+    //     this.props.dispatch(reduxAction(FETCH_COURSE_DETAIL, res.data));
+    //   })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
   }
   render() {
     let { courseDetail } = this.props;
@@ -353,10 +353,8 @@ class CourseDetailPage extends Component {
               </div>
             </div>
           </div>
-
         </div>
         <Viewing />
-        
 
         <Footer />
       </div>

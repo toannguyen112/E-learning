@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import BannerItem from "./BannerItem";
+import { Link } from "react-router-dom";
 export default class Banner extends Component {
   render() {
     let { courseCatalog } = this.props
@@ -20,14 +21,14 @@ export default class Banner extends Component {
             <div className="col-md-3" style={{ width: "100%" }}>
               <div className="banner__menu">
                 <div className="banner__menu__content">
-                  <h5>Danh mục</h5>
+                  <h5>Catagory</h5>
                   <ul>
                     <div>
-                     {
-                       courseCatalog.map((item,index)=>{
-                         return  <BannerItem item={item} key={index} />
-                       })
-                     }
+                      {
+                        courseCatalog.map((item, index) => {
+                          return <BannerItem item={item} key={index} />
+                        })
+                      }
                       {/* <li>
                         <a href="https://www.facebook.com/">
                           {" "}
@@ -49,7 +50,8 @@ export default class Banner extends Component {
                           Marketing
                         </a>
                       </li> */}
-
+                      
+                      <li> <Link to="/courses">view more ...</Link></li>
                     </div>
                   </ul>
                 </div>
@@ -60,19 +62,19 @@ export default class Banner extends Component {
                 <Slider {...settingBanner}>
                   <div>
                     <img
-                      src="https://dvch1hlupt.cdn.hostvn.net/button/image/app_540x540.png"
+                      src="https://dvch1hlupt.cdn.hostvn.net/button/image/Rectangle_4_-_540x540.png"
                       alt=""
                     />
                   </div>
                   <div>
                     <img
-                      src="https://dvch1hlupt.cdn.hostvn.net/button/image/540x540_44.png"
+                      src="https://dvch1hlupt.cdn.hostvn.net/button/image/1_540x540_.png"
                       alt=""
                     />
                   </div>
                   <div>
                     <img
-                      src="https://dvch1hlupt.cdn.hostvn.net/button/image/540x540_44.png"
+                      src="https://dvch1hlupt.cdn.hostvn.net/button/image/540x540_48.png"
                       alt=""
                     />
                   </div>
@@ -83,13 +85,13 @@ export default class Banner extends Component {
               <div className="banner__tab">
                 <ul>
                   <li>
-                    <img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_29.png" alt="" />
+                    <img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_32.png" alt="" />
                   </li>
                   <li>
-                    <img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_30.png" alt="" />
+                    <img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_33.png" alt="" />
                   </li>
                   <li>
-                    <img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_31.png" alt="" />
+                    <img src="https://dvch1hlupt.cdn.hostvn.net/button/image/255x160_34.png" alt="" />
                   </li>
                 </ul>
               </div>

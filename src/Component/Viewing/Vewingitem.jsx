@@ -8,7 +8,7 @@ export default class Viewingitem extends Component {
                 <div className="item__img">
                     <img
                         src={course.hinhAnh}
-                        alt=""
+                        
                         className="img-fluid"
                     />
                 </div>

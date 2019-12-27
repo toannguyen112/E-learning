@@ -8,8 +8,7 @@ const display = (state = initialState, { type, payload }) => {
     switch (type) {
 
         case SEARCH_COURSES:
-            state.searchKeyword =  payload;
-            return {...state}
+            return {...state,searchKeyword : payload}
            
         default:
             return state

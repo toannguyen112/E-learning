@@ -16,7 +16,7 @@ class HomePage extends Component {
     return (
       <div className="wrapper">
         {/* header  */}
-        <Header />
+        <Header history={this.props.history} />
 
         {/* banner */}
         <Banner courseCatalog={this.props.courseCatalog} />

@@ -8,7 +8,7 @@ export default class Login extends Component {
             <div className="sign__up">
                 <div className="container">
                     <LoginHeader/>
-                    <LoginForm/>
+                    <LoginForm history={this.props.history}/>
                    
                 </div>
             </div >

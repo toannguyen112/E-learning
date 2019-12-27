@@ -8,7 +8,7 @@ export default class SearchItem extends Component {
       <Link style={{ textDecoration: "none" }}  to={`/coursedetail/${course.maKhoaHoc}`}>
         <div className="search__form__item">
           <div className="search__img ">
-            <img className="img-fluid" src={course.hinhAnh} />
+            <img className="img-fluid" src={course.hinhAnh} alt="hinhanh" />
           </div>
           <div className="form__info">
             <h6>{course.tenKhoaHoc}</h6>

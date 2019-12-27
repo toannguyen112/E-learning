@@ -1,4 +1,5 @@
 .Course {
+  background-color: $bg-color;
   .search__box {
     padding-top: 20px;
     .search-form {
@@ -66,101 +67,66 @@
         position: relative;
         width: 250px;
         margin-right: 1.4%;
-        border: 1px solid #e1e2e4;
+        margin: 10px;
         box-shadow: -1px 2px 15px -4px rgba(0, 0, 0, 0.75);
         transition: all 1s;
         cursor: pointer;
-        // &:hover {
-        //   -webkit-box-shadow: none;
-        //   -moz-box-shadow: none;
-        //   box-shadow: none;
-        //   .item__img {
-        //     img{
-        //       width: 100%;
-        //       height: 250px;
-        //     }
-        //     .img__overplay {
-        //       opacity: 0.8;
-        //     }
-        //   }
-        //   .sub__info {
-        //     top: -14%;
-        //     visibility: visible;
-        //     opacity: 1;
-        //   }
-        // }
-        // &:last-child:hover {
-        //   .sub__info {
-        //     top: -14%;
-        //     left: -165%;
-        //     visibility: visible;
-        //     opacity: 1;
-        //   }
-        // }
-        // &:last-child {
-        //   .sub__info {
-        //     left: -165%;
-        //     &:before {
-        //       left: 96%;
-        //     }
-        //   }
-        // }
-        div {
-          text-decoration: none;
-          color: #666;
-          .item__img {
-            position: relative;
+
+        text-decoration: none;
+        color: #666;
+        .item__img {
+         
+          width: 100%;
+          height: 200px;
+          border-bottom: 2px solid #e1e2e4;
+          img {
             width: 100%;
-            border-bottom: 2px solid #e1e2e4;
-            img {
-              width: 100%;
-              height: 190px;
-            }
-            .img__overplay {
-              position: absolute;
-              background-color: rgba(0, 0, 0, 0.5);
-              width: 100%;
-              height: 100%;
-              top: 0;
-              left: 0;
-              cursor: pointer;
-              opacity: 0;
-              transition: all 0.5s;
+            height: 100%;
+          }
+          .img__overplay {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.5s;
+          }
+        }
+        .item__info {
+          background-color: #fff;
+          padding: 5%;
+
+          h5 {
+            font-size: 0.9rem;
+            font-weight: 700;
+          }
+          h6 {
+            padding: 5% 0;
+            font-size: 0.9rem;
+            color: #aaa;
+          }
+          .raiting {
+            font-size: 0.9rem;
+            i {
+              color: #ffce55;
+              font-weight: 900;
             }
           }
-          .item__info {
-            background-color: #fff;
-            padding: 5%;
-
-            h5 {
-              font-size: 0.9rem;
-              font-weight: 700;
-            }
-            h6 {
-              padding: 5% 0;
-              font-size: 0.9rem;
+          .price {
+            text-align: right;
+            padding: 5% 1%;
+            .old__price {
+              margin-right: 2%;
+              text-decoration: line-through;
               color: #aaa;
             }
-            .raiting {
-              font-size: 0.9rem;
-              i {
-                color: #ffce55;
-                font-weight: 900;
-              }
-            }
-            .price {
-              text-align: right;
-              padding: 5% 1%;
-              .old__price {
-                margin-right: 2%;
-                text-decoration: line-through;
-                color: #aaa;
-              }
-              .new__price {
-                font-size: 1.4rem;
-                font-weight: 700;
-                color: #ec5252;
-              }
+            .new__price {
+              font-size: 1.4rem;
+              font-weight: 700;
+              color: #ec5252;
             }
           }
         }
@@ -192,7 +158,6 @@
             z-index: 10;
           }
           .info__content {
-            
             .teacher {
               display: flex;
               justify-content: flex-start;

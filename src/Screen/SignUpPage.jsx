@@ -3,8 +3,9 @@ import SignUp from '../Component/SignUp/SignUp'
 
 export default class SignUpPage extends Component {
     render() {
+       
         return (
-           <SignUp/>
+           <SignUp  history ={this.props.history}/>
         )
     }
 }

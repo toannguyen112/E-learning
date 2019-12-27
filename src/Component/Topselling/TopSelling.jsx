@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Topsellingitem from "./Topsellingitem";
+import Course from "../Course/Course";
 
 
 export default class TopSelling extends Component {
@@ -31,7 +31,7 @@ export default class TopSelling extends Component {
     let result = [];
     if(courseList && courseList.length > 0){
       for(let i = 0 ;i < 5 ; i++){
-        result.push(<Topsellingitem key={i} course={courseList[i]} />)
+        result.push(<Course key={i} course={courseList[i]} />)
       }
     }
 

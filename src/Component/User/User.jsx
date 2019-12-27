@@ -1,21 +1,29 @@
 import React, { Component } from "react";
 import Profile from "./Profile";
+
 // import Certificates from "./Certificates";
 // import Edit from "./Edit";
 // import Account from "./Account";
 
+
+
 export default class User extends Component {
+  
+  
   render() {
+    let userLogin = JSON.parse(localStorage.getItem("userLogin")) || {};
+  
+    
     return (
       <div className="user">
         <div className="container">
           <div className="row">
-            <div class="col-md-3 user__category">
+            <div className="col-md-3 user__category">
               <div className="user__avatar">
                 <img className="img-fluid" src="/img/avatar.png" alt="" />
               </div>
               <div className="user__info">
-                <h5>toannguyen</h5>
+                <h5>{userLogin.hoTen }</h5>
                 <p>Front-end Developer</p>
               </div>
               <div className="user__edit">

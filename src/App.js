@@ -18,6 +18,7 @@ import { FETCH_COURSES } from "./Store/Action/type";
 
 import { FETCH_COURSES_CATALOG } from "./Store/Action/type";
 import { connect } from "react-redux";
+// import Header from "./Component/Header/Header";
 const courseService = new CourseService();
 
 class App extends Component {
@@ -53,6 +54,7 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
+         
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route exact path="/home" component={HomePage} />

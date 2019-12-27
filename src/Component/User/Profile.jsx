@@ -85,7 +85,7 @@ export default class Profile extends Component {
                 <div className="product__items">
                 <Viewing />
                 </div>
-                <button class="showmore">SHOW MORE</button>
+                <button className="showmore">SHOW MORE</button>
               </div>
 
               <div
@@ -98,7 +98,7 @@ export default class Profile extends Component {
                   <Viewing />
                 </div>
 
-                <button class="showmore">SHOW MORE</button>
+                <button className="showmore">SHOW MORE</button>
               </div>
               <div
                 className="tab-pane fade"
@@ -106,7 +106,7 @@ export default class Profile extends Component {
                 role="tabpanel"
                 aria-labelledby="pills-contact-tab"
               >
-                <table class="table table-striped table__quiz">
+                <table className="table table-striped table__quiz">
                   <thead>
                     <tr>
                       <th>COURSE</th>
@@ -121,7 +121,7 @@ export default class Profile extends Component {
                       <td>Final Middle Quiz</td>
                       <td>83%</td>
                       <td>
-                        <span class="lnr lnr-checkmark-circle"></span> Passed
+                        <span className="lnr lnr-checkmark-circle"></span> Passed
                       </td>
                     </tr>
                     <tr>
@@ -129,7 +129,7 @@ export default class Profile extends Component {
                       <td>Final Middle Quiz</td>
                       <td>67%</td>
                       <td>
-                        <span class="lnr lnr-cross"></span> Failed
+                        <span className="lnr lnr-cross"></span> Failed
                       </td>
                     </tr>
                     <tr>
@@ -137,15 +137,7 @@ export default class Profile extends Component {
                       <td>Final Middle Quiz</td>
                       <td>75%</td>
                       <td>
-                        <span class="lnr lnr-checkmark-circle"></span> Passed
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>How to be a DJ? Make Electronic Music</td>
-                      <td>Final Middle Quiz</td>
-                      <td>33%</td>
-                      <td>
-                        <span class="lnr lnr-cross"></span> Failed
+                        <span className="lnr lnr-cross"></span> Failed
                       </td>
                     </tr>
                     <tr>
@@ -153,7 +145,7 @@ export default class Profile extends Component {
                       <td>Final Middle Quiz</td>
                       <td>75%</td>
                       <td>
-                        <span class="lnr lnr-checkmark-circle"></span> Passed
+                        <span className="lnr lnr-checkmark-circle"></span> Passed
                       </td>
                     </tr>
                     <tr>
@@ -161,7 +153,7 @@ export default class Profile extends Component {
                       <td>Final Middle Quiz</td>
                       <td>33%</td>
                       <td>
-                        <span class="lnr lnr-cross"></span> Failed
+                        <span className="lnr lnr-cross"></span> Failed
                       </td>
                     </tr>
                   </tbody>

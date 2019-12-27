@@ -1,48 +1,43 @@
-import { FETCH_COURSES, FETCH_COURSES_CATALOG, FETCH_COURSE_DETAIL, FETCH_COURSE_PAGINATION } from '../Action/type'
+import { FETCH_COURSES, FETCH_COURSES_CATALOG, FETCH_COURSE_DETAIL } from '../Action/type';
+import data from '../../Services/data.json'
 const initialState = {
-    course: [],
+    course: data,
     courseCatalog: [],
     courseDetail: null,
-    coursePagination  :  {
-        currentPage: "",
-        count: "",
-        totalPages: "",
-        totalCount: "",
-        items: []
-    }
+
 }
 
 
 
 
-const Course = (state = initialState, { type, payload }) => {
+const Course = (state = initialState, action) => {
 
 
-    switch (type) {
+    switch (action.type) {
         case FETCH_COURSES: {
-            state.course = payload
-            return { ...state }
+            let mangCapNhat = [...state.course]
+            mangCapNhat = [...mangCapNhat, action.payload]
+            return { ...state };
         }
 
         case FETCH_COURSES_CATALOG: {
-            state.courseCatalog = payload
+            state.courseCatalog = action.payload
             return { ...state }
 
         }
 
         case FETCH_COURSE_DETAIL: {
-            state.courseDetail = payload
-            return { ...state }
+           state.courseDetail = action.payload
 
         }
 
-        case FETCH_COURSE_PAGINATION: {
-            state.coursePagination.items = payload.items
-            state.coursePagination.currentPage = payload.currentPage
-            state.coursePagination.count = payload.count
-            state.coursePagination.totalPages = payload.totalPages
-            return { ...state }
-        }
+        // case FETCH_COURSE_PAGINATION: {
+        //     state.coursePagination.items = action.payload.items
+        //     state.coursePagination.currentPage = action.payload.currentPage
+        //     state.coursePagination.count = action.payload.count
+        //     state.coursePagination.totalPages = action.payload.totalPages
+        //     return { ...state }
+        // }
 
         default:
             return state

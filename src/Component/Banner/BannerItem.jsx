@@ -1,18 +1,17 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class BannerItem extends Component {
     render() {
         let { item } = this.props
         return (
             <li>
-                <a href="https://www.facebook.com/">
-                    {" "}
-                    <i
-                        className="fa fa-commenting-o"
-                        aria-hidden="true"
-                    />
+                <Link to="/courses">
+                   
+                   <i className="fa fa-plus" aria-hidden="true" />
+
                     {item.tenDanhMuc}
-                </a>
+                </Link>
             </li>
         )
     }

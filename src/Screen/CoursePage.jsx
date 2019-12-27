@@ -5,14 +5,14 @@ import Courses from "../Component/Courses/Courses";
 import { connect } from "react-redux";
 
 class CoursePage extends Component {
- 
+
 
   render() {
-    let { courses } = this.props;
+    let { courses, history } = this.props;
 
     return (
       <div>
-        <Header />
+        <Header history={history} />
         <Courses courses={courses} />
         <Footer />
       </div>
@@ -22,8 +22,9 @@ class CoursePage extends Component {
 
 const mapStateTopProp = state => {
   return {
+    
     courses: state.Course.course
   };
 };
 
-export default connect(mapStateTopProp)(CoursePage);
+export default connect(mapStateTopProp, null)(CoursePage);
