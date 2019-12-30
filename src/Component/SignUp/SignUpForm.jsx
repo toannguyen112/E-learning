@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
-import settings from '../../config/settings'
 import { connect } from "react-redux";
 import UserService from '../../Services/userService'
 import { notify } from '../notify/Notify'

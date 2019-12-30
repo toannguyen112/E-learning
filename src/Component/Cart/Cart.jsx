@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import CartItem from '../Cart/CartItem'
-import reduxAction from '../../Store/Action/action'
 import { DELETE_CART } from '../../Store/Action/type'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'

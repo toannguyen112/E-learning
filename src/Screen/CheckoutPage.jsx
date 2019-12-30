@@ -8,7 +8,7 @@ export default class CheckoutPage extends Component {
     return (
       <div>
         <Header />
-        <Checkout/>
+        <Checkout history={this.props.history}/>
         <Footer />
       </div>
     );

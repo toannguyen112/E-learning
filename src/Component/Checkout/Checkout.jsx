@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 
 class Checkout extends Component {
   render() {
-    let { cart } = this.props
+    let { cart, history } = this.props
     return (
       <section className="checkout">
         <div className="container">
@@ -16,7 +16,7 @@ class Checkout extends Component {
                 {
                   cart.map((course, index) => {
                     return (
-                      <CheckoutItem course={course} key={index} />
+                      <CheckoutItem course={course} key={index}  />
                     )
                   })
                 }
@@ -24,7 +24,7 @@ class Checkout extends Component {
             </div>
             <div className="col-sm-8 col-md-8 col-lg-8 col-xl-8 checkout__payment">
               <h1>Total : $0</h1>
-              <CheckoutPayment />
+              <CheckoutPayment  history={history}/>
             </div>
           </div>
         </div>

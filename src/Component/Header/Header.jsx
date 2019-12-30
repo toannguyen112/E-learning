@@ -42,7 +42,7 @@ class Header extends Component {
 </Link>
             </li>
             <li className="drop-item">
-              <a href="">Danh Sách Yêu Thích</a>
+              <a href="#">Danh Sách Yêu Thích</a>
             </li>
             <li className="drop-item">
               <a href="" onClick={this.handleLogOut}>

@@ -36,7 +36,7 @@ class LoginForm extends Component {
 
       })
       .catch(error => {
-        notify("", "Đăng nhập Tfhất bại  ");
+        notify("", "Đăng nhập thất bại  ");
       });
   };
 

@@ -27,6 +27,8 @@ class Course extends Component {
       return item.maKhoaHoc === prevProps.course.maKhoaHoc;
     });
     if (index !== -1) {
+      console.log("toan dep trai");
+      
       nextState.showGoCart = true
     }
     return null;
@@ -37,6 +39,8 @@ class Course extends Component {
 
   
   render() {
+    console.log(this.state.showGoCart);
+    
     let { course } = this.props;
     return (
       <div className="product__item">
@@ -88,17 +92,17 @@ class Course extends Component {
                 <i className="fa fa-signal" aria-hidden="true" /> Advanced
               </div>
             </div>
-            {this.state.showGoCart ? (
+            {this.state.showGoCart ? 
               <Link to="/cart">
                 <button className="add__cart" style={{ backgroundColor: "blue" }}>
                   GO TO CART
               </button>
               </Link>
-            ) : (
+             : 
                 <button className="add__cart" onClick={() => this.onCart(course)}>
                   ADD TO CART
               </button>
-              )}
+              }
             <div className="wishlist">
               <div className="add__list">
                 <div className="heart">

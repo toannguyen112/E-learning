@@ -7,7 +7,7 @@ export default class UserPage extends Component {
   render() {
     return (
       <div>
-        <Header />
+        <Header history={this.props.history} />
         <User/>
         <Footer />
       </div>

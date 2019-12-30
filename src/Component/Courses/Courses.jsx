@@ -1,28 +1,32 @@
 import React, { Component } from "react";
 // import Pagination from "../Pagination/Pagination";
 import Course from "../Course/Course";
-import CourseService from "../../Services/courseService";
-import reduxAction from "../../Store/Action/action";
-import { FETCH_COURSE_PAGINATION } from "../../Store/Action/type";
-import { SEARCH_COURSES } from "../../Store/Action/type";
+import Pagination from "react-pagination-js";
+import "react-pagination-js/dist/styles.css";
 import { connect } from "react-redux";
-let courseService = new CourseService();
 
 class Courses extends Component {
-  // componentDidMount() {
-  //   courseService
-  //     .fethchCoursePagination()
-  //     .then(res => {
-  //       this.props.dispatch(reduxAction(FETCH_COURSE_PAGINATION, res.data));
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // }
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      currentPage: 1
+    }
+  }
+
+  changeCurrentPage = numPage => {
+    this.setState({ currentPage: numPage });
+    //fetch a data
+    //or update a query to get data
+  };
+  
+ 
 
   render() {
     let { courses } = this.props;
-    let { searchKeyword } = this.props.display;
+    let { searchKeyword } = this.props
+    console.log(searchKeyword);
+    
 
     return (
       <div className="Course">
@@ -156,22 +160,25 @@ class Courses extends Component {
         </div>
 
         {/* <Pagination Courses={courses}  /> */}
+        <Pagination
+          currentPage={this.state.currentPage}
+          totalPages={10}
+          changeCurrentPage={this.changeCurrentPage}
+          
+        />
+         <h2>current Page:{this.state.currentPage}</h2>
       </div>
     );
   }
 
-  showCourseItem = (courses, serchKeyword) => {
+  showCourseItem = (courses, searchKeyword) => {
     let result = null;
     let newArr = [...courses];
-    if (courses && courses.length >= 0) {
-      if (serchKeyword && serchKeyword.length > 0) {
-        newArr = newArr.filter(
-          item =>
-            item.tenKhoaHoc
-              .toLowerCase()
-              .indexOf(serchKeyword.toLowerCase().trim()) !== -1
-        );
-
+    if (courses && courses.length > 0) {
+      if ( searchKeyword && searchKeyword.length > 0) {
+        newArr = newArr.filter(item => item.tenKhoaHoc.toLowerCase().indexOf(searchKeyword.toLowerCase().trim()) !== -1);
+      
+        
         result = newArr.map((course, index) => {
           return (
             <div className="col-3" key={index}>
@@ -199,19 +206,19 @@ class Courses extends Component {
 }
 
 const mapStateToProps = state => ({
-  display: state.display,
+  searchKeyword: state.display.searchKeyword,
   courses: state.Course.course
 });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    handleSearch: keyword => {
-      dispatch({
-        type: SEARCH_COURSES,
-        payload: keyword
-      });
-    }
-  };
-};
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     handleSearch: keyword => {
+//       dispatch({
+//         type: SEARCH_COURSES,
+//         payload: keyword
+//       });
+//     }
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Courses);
+export default connect(mapStateToProps)(Courses);

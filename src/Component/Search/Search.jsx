@@ -13,19 +13,17 @@ class Search extends Component {
 
   showSearchIem = (courses, searchKeyword) => {
     let res = null;
-    if (courses.length > 0) {
-      if (searchKeyword > 0 && searchKeyword.length !== "") {
-        courses = courses.filter(
-          course =>
-            course.tenKhoaHoc
-              .toLowerCase()
-              .indexOf(searchKeyword.toLowerCase().trim()) !== -1
-        );
+    if (searchKeyword.length > 0 && searchKeyword.length !== "") {
+      courses = courses.filter(
+        course =>
+          course.tenKhoaHoc
+            .toLowerCase()
+            .indexOf(searchKeyword.toLowerCase().trim()) !== -1
+      );
 
-        res = courses.map((course, index) => {
-          return <SearchItem course={course} key={index} />;
-        });
-      }
+      res = courses.map((course, index) => {
+        return <SearchItem course={course} key={index} />;
+      });
     }
     return res;
   };
@@ -48,8 +46,7 @@ class Search extends Component {
 
   render() {
     let { courses } = this.props;
-    let { searchKeyword } = this.props;
-    console.log(searchKeyword);
+    let { searchKeyword } = this.props.display;
 
     return (
       <div className="header-control search">
@@ -77,7 +74,8 @@ class Search extends Component {
   }
 }
 const mapStateToProps = state => ({
-  courses: state.Course.course
+  courses: state.Course.course,
+  display: state.display
 });
 
 const mapDispatchToProps = dispatch => {

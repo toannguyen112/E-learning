@@ -2,13 +2,14 @@ import React, { Component } from "react";
 
 export default class Account extends Component {
   render() {
+    let {userProfile} = this.props
     return (
       <div className="acount">
         <h1>My Account</h1>
         <form action="">
           <div className="email">
             <h4>
-              Your email address is: <span>nguyentoan@gmail.com</span>
+              Your email address is: <span>{userProfile.email}</span>
             </h4>
           </div>
           <div className="password">

@@ -50,8 +50,8 @@ export default class Banner extends Component {
                           Marketing
                         </a>
                       </li> */}
-                      
-                      <li> <Link to="/courses">view more ...</Link></li>
+
+                      <li> <Link style={{ color: "red" }} to="/courses">View more ...</Link></li>
                     </div>
                   </ul>
                 </div>

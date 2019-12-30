@@ -3,12 +3,13 @@ import Course from "./course";
 import display from "./display"
 import cart from '../Reducer/cart'
 import currentUser from '../Reducer/currentUser'
-
+import editUser from '../Reducer/editUser'
 const rootReducer = combineReducers({
   Course,
   display,
   cart,
-  currentUser
+  currentUser,
+  editUser
 });
 
 export default rootReducer;

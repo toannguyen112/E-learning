@@ -1,7 +1,7 @@
 import { FETCH_COURSES, FETCH_COURSES_CATALOG, FETCH_COURSE_DETAIL } from '../Action/type';
-import data from '../../Services/data.json'
+// import data from '../../Services/data.json'
 const initialState = {
-    course: data,
+    course: [],
     courseCatalog: [],
     courseDetail: null,
 
@@ -15,9 +15,8 @@ const Course = (state = initialState, action) => {
 
     switch (action.type) {
         case FETCH_COURSES: {
-            let mangCapNhat = [...state.course]
-            mangCapNhat = [...mangCapNhat, action.payload]
-            return { ...state };
+            state.course = action.payload
+            return {...state}
         }
 
         case FETCH_COURSES_CATALOG: {
@@ -28,6 +27,7 @@ const Course = (state = initialState, action) => {
 
         case FETCH_COURSE_DETAIL: {
            state.courseDetail = action.payload
+           return {...state}
 
         }
 
@@ -40,7 +40,7 @@ const Course = (state = initialState, action) => {
         // }
 
         default:
-            return state
+            return {...state}
     }
 }
 export default Course
