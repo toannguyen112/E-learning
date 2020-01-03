@@ -58,7 +58,7 @@ class Cart extends Component {
                     <tr>
                       <td style={{ fontWeight: "bold" }}>Total</td>
                       <td className="amount" style={{ fontSize: "1.4rem" }}>
-                        ${Math.ceil(19.99 * cart.length)}
+                        ${19.99 * cart.length}
                       </td>
                     </tr>
                     <tr>

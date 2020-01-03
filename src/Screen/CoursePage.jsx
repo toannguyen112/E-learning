@@ -3,26 +3,45 @@ import Header from "../Component/Header/Header";
 import Footer from "../Component/Footer/Footer";
 import Courses from "../Component/Courses/Courses";
 import { connect } from "react-redux";
-
+import Fade from 'react-reveal/Fade';
+import Loader from '../Component/Loader/Loader'
 class CoursePage extends Component {
 
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      loading: true
+    }
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      });
+    }, 1000);
+  }
 
   render() {
     let { courses, history } = this.props;
 
     return (
-      <div>
+      <>
         <Header history={history} />
-        <Courses courses={courses} />
+        {
+          this.state.loading ? <Loader /> : <Fade bottom><Courses courses={courses} /></Fade>
+        }
+
         <Footer />
-      </div>
+      </>
     );
   }
 }
 
 const mapStateTopProp = state => {
   return {
-    
+
     courses: state.Course.course
   };
 };

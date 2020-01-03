@@ -3,7 +3,7 @@ import { LOGIN } from "./type";
 import { settings } from "../../config/settings";
 import reduxAction from "./action";
 import {restConnector} from '../../Services/index'
-export const userLoginAction = (userLogin, history) => {
+export const addCourse = (course) => {
     return dispatch => {
         restConnector({
             method: "POST",

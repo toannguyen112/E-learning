@@ -3,12 +3,30 @@ import Header from "../Component/Header/Header";
 import Footer from "../Component/Footer/Footer";
 
 import  Cart  from "../Component/Cart/Cart";
+import Loader from "../Component/Loader/Loader";
 export default class CartPage extends Component {
+
+
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      loading: true
+    }
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      });
+    }, 1000);
+  }
   render() {
     return (
       <div>
         <Header />
-        <Cart />
+        {this.state.loading ? <Loader/> : <Cart />}
 
         <Footer />
       </div>

@@ -1,4 +1,4 @@
-import { FETCH_COURSES, FETCH_COURSES_CATALOG, FETCH_COURSE_DETAIL } from '../Action/type';
+import { FETCH_COURSES, FETCH_COURSES_CATALOG, FETCH_COURSE_DETAIL, ADD_COURSE, DELETE_COURSE } from '../Action/type';
 // import data from '../../Services/data.json'
 const initialState = {
     course: [],
@@ -16,7 +16,7 @@ const Course = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_COURSES: {
             state.course = action.payload
-            return {...state}
+            return { ...state }
         }
 
         case FETCH_COURSES_CATALOG: {
@@ -26,9 +26,22 @@ const Course = (state = initialState, action) => {
         }
 
         case FETCH_COURSE_DETAIL: {
-           state.courseDetail = action.payload
-           return {...state}
+            state.courseDetail = action.payload
+            return { ...state }
 
+        }
+
+        case ADD_COURSE: {
+            let newArr = [...this.state.course];
+            newArr.push(action.payload)
+            state.course = newArr
+            return { ...state }
+        }
+        case DELETE_COURSE: {
+            let newArr = [...state.course]
+            newArr = state.course.filter(course => course.maKhoaHoc !== action.payload)
+            state.course = newArr
+            return { ...state }
         }
 
         // case FETCH_COURSE_PAGINATION: {
@@ -40,7 +53,7 @@ const Course = (state = initialState, action) => {
         // }
 
         default:
-            return {...state}
+            return { ...state }
     }
 }
 export default Course

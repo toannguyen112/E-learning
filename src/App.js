@@ -24,7 +24,7 @@ const courseService = new CourseService();
 
 class App extends Component {
   componentDidMount() {
-    
+
     courseService
       .fetchCourses()
       .then(res => {
@@ -56,20 +56,20 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-         
+
           <Switch>
-           
+            <Route exact path="/admin" component={AdminPage} />
             <Route exact path="/" component={HomePage} />
             <Route exact path="/home" component={HomePage} />
-            <Route exact path="/coursedetail/:courseid" component={CourseDetailPage}  />
+            <Route exact path="/coursedetail/:courseid" component={CourseDetailPage} />
             <Route exact path="/courses" component={CoursesPage} />
             <Route exact path="/cart" component={CartPage} />
             <Route exact path="/signup" component={SignUpPage} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/checkout" component={CheckoutPage} />
             {/* <Route exact path="/user" component={UserPage} /> */}
-            <Auth path="/user" Component={UserPage}/>
-            <Route exact path="/admin" component={AdminPage} />
+            <Auth path="/user" Component={UserPage} />
+
           </Switch>
         </BrowserRouter>
       </div>

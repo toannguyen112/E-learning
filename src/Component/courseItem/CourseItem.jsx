@@ -19,6 +19,11 @@ class CourseItem extends Component {
     console.log("them thanh cong");
   };
 
+  buyNow =(course)=>{
+    this.props.dispatch(reduxAction("ADD_TO_CART", course));
+    this.props.history.push("/cart")
+  }
+
   static getDerivedStateFromProps = (props, state) => {
     console.log("getDerivedStateFromProps");
 
@@ -322,19 +327,22 @@ class CourseItem extends Component {
                     <Link to="/cart">
                       <button
                         className="add"
-                        style={{ backgroundColor: "blue" }}
+                        style={{ backgroundColor: "blue",  color: "white" }}
                       >
                         GO TO CART
                       </button>
                     </Link>
                   ) : (
-                    <button
-                      className="add"
-                      onClick={() => this.addcart(courseDetail)}
-                    >
-                      ADD TO CART
+                      <button
+                        style={{ backgroundColor: "white", border: "1px solid gray", color: "gray" }}
+                        className="add"
+                        onClick={() => this.addcart(courseDetail)}
+                      >
+                        ADD TO CART
                     </button>
-                  )}
+                    )}
+
+                  <button className="add" onClick={() => this.buyNow(courseDetail)} >BUY NOW</button>
 
                   <ul className="meta">
                     <li>

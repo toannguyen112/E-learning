@@ -16,15 +16,15 @@ class Checkout extends Component {
                 {
                   cart.map((course, index) => {
                     return (
-                      <CheckoutItem course={course} key={index}  />
+                      <CheckoutItem course={course} key={index} />
                     )
                   })
                 }
               </div>
             </div>
             <div className="col-sm-8 col-md-8 col-lg-8 col-xl-8 checkout__payment">
-              <h1>Total : $0</h1>
-              <CheckoutPayment  history={history}/>
+              <h1>Total : {Math.ceil((cart.length * 19.99) * (20/100))}$</h1>
+              <CheckoutPayment history={history} />
             </div>
           </div>
         </div>

@@ -160,13 +160,13 @@ class Courses extends Component {
         </div>
 
         {/* <Pagination Courses={courses}  /> */}
-        <Pagination
+        {/* <Pagination
           currentPage={this.state.currentPage}
           totalPages={10}
           changeCurrentPage={this.changeCurrentPage}
           
         />
-         <h2>current Page:{this.state.currentPage}</h2>
+         <h2>current Page:{this.state.currentPage}</h2> */}
       </div>
     );
   }

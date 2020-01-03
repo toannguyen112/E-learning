@@ -27,7 +27,7 @@ class Course extends Component {
       return item.maKhoaHoc === prevProps.course.maKhoaHoc;
     });
     if (index !== -1) {
-      console.log("toan dep trai");
+     
       
       nextState.showGoCart = true
     }

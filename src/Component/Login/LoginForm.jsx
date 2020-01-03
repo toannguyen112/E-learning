@@ -11,8 +11,10 @@ class LoginForm extends Component {
     super(props);
 
     this.state = {
-      taiKhoan: "",
-      matKhau: ""
+      user: {
+        taiKhoan: "",
+        matKhau: ""
+      }
     };
   }
 
@@ -31,8 +33,16 @@ class LoginForm extends Component {
         this.props.dispatch(reduxAction(LOGIN, res.data));
         // restConnector.default.headers["Authorization"] =
         //   "Bearer" + res.data.accessToken;
-        this.props.history.push("./");
-        notify("", "Đăng nhập  Thành công");
+        let user =JSON.parse(localStorage.getItem("userLogin"))
+        if(user.maLoaiNguoiDung === "HV")
+        {
+          this.props.history.push("./");
+          notify("", "Đăng nhập  Thành công");
+        }
+        if(user.maLoaiNguoiDung === "GV"){
+          this.props.history.push("./admin");
+        }
+       
 
       })
       .catch(error => {

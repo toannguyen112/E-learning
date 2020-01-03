@@ -10,6 +10,7 @@
     "react": "^16.9.0",
     "react-chartjs-2": "^2.8.0",
     "react-dom": "^16.9.0",
+    "react-loader-spinner": "^3.1.5",
     "react-owl-carousel": "^2.3.1",
     "react-pagination-js": "^2.0.0",
     "react-redux": "^7.1.3",

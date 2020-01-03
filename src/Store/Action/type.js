@@ -4,7 +4,8 @@ export const FETCH_COURSES = "FETCH_COURSES";
 export const FETCH_COURSES_CATALOG = "FETCH_COURSES_CATALOG";
 export const FETCH_COURSES_DETAIL = "FETCH_COURSES_DETAIL";
 
-
+export const ADD_COURSE = "ADD_COURSE";
+export const DELETE_COURSE = "DELETE_COURSE"
 export const FETCH_COURSE_PAGINATION = "FETCH_COURSE_PAGINATION";
 //user
 export const LOGIN = 'LOGIN';
@@ -13,5 +14,5 @@ export const SIGNUP = 'SIGNUP';
 
 export const SEARCH_COURSES = "SEARCH_COURSES";
 export const ADD_TO_CART = "ADD_TO_CART";
-export const DELETE_CART ="DELETE_CART";
+export const DELETE_CART = "DELETE_CART";
 
