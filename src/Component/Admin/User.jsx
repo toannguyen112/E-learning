@@ -1,7 +1,68 @@
 import React, { Component } from "react";
+import UserItem from "./UserItem";
+import UserService from "../../Services/userService";
+import { connect } from "react-redux";
+import { ADD_USER, SEARCH_USER, DELETE_USER } from "../../Store/Action/type";
+import { notify } from "../notify/Notify";
+let userService = new UserService();
+class User extends Component {
+  constructor(props) {
+    super(props);
 
-export default class User extends Component {
+    this.state = {
+      user: {
+        taiKhoan: "",
+        matKhau: "",
+        hoTen: "",
+        soDT: "",
+        maLoaiNguoiDung: "HV",
+        maNhom: "GP01",
+        email: ""
+      },
+      search: ""
+    };
+  }
+
+  onChange = e => {
+    this.setState(
+      {
+        user: {
+          ...this.state.user,
+          [e.target.name]: e.target.value
+        }
+      },
+      console.log(this.state.user)
+    );
+  };
+
+  onChangeSearch = e => {
+    let { search } = this.state;
+    this.setState(
+      {
+        search: e.target.value
+      },
+      this.props.handleSearch(search)
+    );
+  };
+
+  onAddUser = () => {
+    
+    userService
+      .addUser(this.state.user)
+      .then(res => {
+        this.props.addUser(res.data);
+        notify("", "Thêm thành công");
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
   render() {
+    let { userList, searchKeyword } = this.props;
+
+    console.log(searchKeyword);
+
     return (
       <div>
         <div className="title">
@@ -17,7 +78,13 @@ export default class User extends Component {
             >
               <i className="fa fa-plus mr-1"></i> ADD User
             </button>
-            <input type="text" name="search" placeholder="Search User" />
+            <input
+              type="text"
+              name="search"
+              placeholder="Search User"
+              onChange={this.onChangeSearch}
+              value={this.state.search}
+            />
           </div>
         </div>
         {/* modal */}
@@ -46,32 +113,61 @@ export default class User extends Component {
               </div>
               <div className="modal-body">
                 <div className="form-group">
-                  <label>User Name : </label>
-                  <input type="text" style={{ width: "100%" }} />
+                  <label>Tài khoản : </label>
+                  <input
+                    name="taiKhoan"
+                    type="text"
+                    style={{ width: "100%" }}
+                    onChange={this.onChange}
+                  />
                 </div>
 
                 <div className="form-group">
-                  <label>Password : </label>
-                  <input type="text" style={{ width: "100%" }} />
+                  <label>mật khẩu : </label>
+                  <input
+                    name="matKhau"
+                    type="text"
+                    style={{ width: "100%" }}
+                    onChange={this.onChange}
+                  />
                 </div>
 
                 <div className="form-group">
-                  <label>Full Name : </label>
-                  <input type="text" style={{ width: "100%" }} />
+                  <label>Họ Tên : </label>
+                  <input
+                    name="hoTen"
+                    type="text"
+                    style={{ width: "100%" }}
+                    onChange={this.onChange}
+                  />
                 </div>
 
                 <div className="form-group">
                   <label>Email : </label>
-                  <input type="text" style={{ width: "100%" }} />
+                  <input
+                    name="email"
+                    type="text"
+                    style={{ width: "100%" }}
+                    onChange={this.onChange}
+                  />
                 </div>
 
                 <div className="form-group">
                   <label>Phone : </label>
-                  <input type="text" style={{ width: "100%" }} />
+                  <input
+                    name="soDT"
+                    type="text"
+                    style={{ width: "100%" }}
+                    onChange={this.onChange}
+                  />
                 </div>
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-danger">
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={this.onAddUser}
+                >
                   Add
                 </button>
                 <button
@@ -99,108 +195,58 @@ export default class User extends Component {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>
-                <div className="name__wrapper d-flex">
-                  <img alt=""
-                    src="/img/avatar.png"
-                    style={{ height: "60px", width: "60px" }}
-                  />
-                  <div className="course__name ml-3">
-                    <h6 style={{ fontWeight: "bold" }}>
-                      toannguyen.it99@gmail.com Member{" "}
-                    </h6>
-                    <span className="badge badge-info">development</span>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <h6>Toan Nguyen</h6>
-              </td>
-              <td>5636363463</td>
-              <td>s@ff.ddd</td>
-              <td>
-                <button
-                  className="btn btn-info mr-2"
-                  data-toggle="modal"
-                  data-target="#modelId"
-                >
-                  <i className="fa fa-pencil" aria-hidden="true" />
-                </button>
-                <button className="btn btn-danger">
-                  <i className="fa fa-user-times" aria-hidden="true" />
-                </button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <div className="name__wrapper d-flex">
-                  <img src="/img/avatar.png" style={{ height: "60px", width: "60px" }} alt="" />
-                  <div className="course__name ml-3">
-                    <h6 style={{ fontWeight: "bold" }}>
-                      minhhung.it99@gmail.com Member{" "}
-                    </h6>
-                    <span className="badge badge-info">development</span>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <h6>Toan Nguyen</h6>
-              </td>
-              <td>63363636363</td>
-              <td>toannguyen@gmail.com</td>
-              <td>
-                <button
-                  className="btn btn-info mr-2"
-                  data-toggle="modal"
-                  data-target="#modelId"
-                >
-                  <i className="fa fa-pencil" aria-hidden="true" />
-                </button>
-                <button className="btn btn-danger">
-                  <i className="fa fa-user-times" aria-hidden="true" />
-                </button>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <div className="name__wrapper d-flex">
-                  <img src="/img/avatar.png" style={{ height: "60px", width: "60px" }} alt="" />
-                  <div className="course__name ml-3">
-                    <h6 style={{ fontWeight: "bold" }}>
-                      minhhung.it99@gmail.com Member{" "}
-                    </h6>
-                    <span className="badge badge-info">development</span>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <h6>Toan Nguyen</h6>
-              </td>
-              <td>64674747475869</td>
-              <td>trantienhuy@gmail.com</td>
-              <td>
-                <button
-                  className="btn btn-info mr-2"
-                  data-toggle="modal"
-                  data-target="#modelId"
-                >
-                  <i className="fa fa-pencil" aria-hidden="true" />
-
-
-                </button>
-                <button className="btn btn-danger">
-                  <i className="fa fa-user-times" aria-hidden="true" />
-
-                </button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody>{this.showUser(userList, searchKeyword)}</tbody>
         </table>
       </div>
     );
   }
+
+  showUser = (userList, searchKeyword) => {
+    let result = null;
+    let newArr = [...userList];
+    if (userList && userList.length > 0) {
+      if (searchKeyword && searchKeyword.length > 0) {
+        newArr = newArr.filter(
+          item =>
+            item.taiKhoan
+              .toLowerCase()
+              .indexOf(searchKeyword.toLowerCase().trim()) !== -1
+        );
+
+        result = newArr.map((user, index) => {
+          return <UserItem user={user} key={index} />;
+        });
+      } else {
+        result = newArr.map((user, index) => {
+          return <UserItem user={user} key={index} />;
+        });
+      }
+    }
+
+    return result;
+  };
 }
+const mapStateToProps = state => ({
+  userList: state.user,
+  searchKeyword: state.display.searchKeyword
+});
+
+const mapDispatchToProps = dispatch => {
+  return {
+    handleSearch: keyword => {
+      dispatch({
+        type: SEARCH_USER,
+        payload: keyword
+      });
+    },
+
+    addUser: user => {
+      dispatch({
+        type: ADD_USER,
+        payload: user
+      });
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(User);

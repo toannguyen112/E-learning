@@ -2,12 +2,15 @@ import React, { Component } from "react";
 import CourseItem from "./CourseItem";
 import CourseModal from "./CourseModal";
 import { connect } from "react-redux";
-import { SEARCH_COURSES ,DELETE_COURSE } from '../../Store/Action/type'
+import {
+  SEARCH_COURSES,
+  DELETE_COURSE,
+  ADD_COURSE
+} from "../../Store/Action/type";
 
 class Course extends Component {
   render() {
-
-    let { course, searchKeyword } = this.props
+    let { course, searchKeyword } = this.props;
     console.log(course);
 
     return (
@@ -16,7 +19,10 @@ class Course extends Component {
           <i className="fa fa-user"></i>
           My Course
         </div>
-        <CourseModal handleSearch={this.props.handleSearch} addCourse={this.props.addCourse} />
+        <CourseModal
+          handleSearch={this.props.handleSearch}
+          addCourse={this.props.addCourse}
+        />
 
         <table className="table">
           <thead>
@@ -30,55 +36,43 @@ class Course extends Component {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
-            {this.showCourse(course, searchKeyword)}
-
-
-
-
-
-          </tbody>
+          <tbody>{this.showCoursesItem(course, searchKeyword)}</tbody>
         </table>
       </div>
     );
   }
 
+  showCoursesItem = (courses, searchKeyword) => {
+    let result = [];
+    if (courses.length > 0) {
+      if (searchKeyword.length > 0 && searchKeyword.length !== "") {
+        courses = courses.filter(
+          course =>
+            course.tenKhoaHoc
+              .toLowerCase()
+              .indexOf(searchKeyword.toLowerCase().trim()) !== -1
+        );
+      }
 
-  showCourse = (courses, searchKeyword) => {
-    let result = null;
-    let newArr = [...courses];
-    if (courses && courses.length > 0) {
-      if (searchKeyword && searchKeyword.length > 0) {
-        newArr = newArr.filter(item => item.tenKhoaHoc.toLowerCase().indexOf(searchKeyword.toLowerCase().trim()) !== -1);
-
-
-        result = newArr.map((course, index) => {
-          return (
-            <CourseItem course={course} key={index} />
-          );
-        });
-
-      } else {
-        result = newArr.map((course, index) => {
-          return (
-            <CourseItem course={course} key={index}  deleteCourse={this.props.deleteCourse}/>
-          );
-        });
-
-
+      for (let index = courses.length - 1; index >= 0; index--) {
+        result.push(
+          <CourseItem
+            key={index}
+            course={courses[index]}
+            deleteCourse={this.props.deleteCourse}
+            showEditCourse={this.props.showEditCourse}
+          />
+        );
       }
     }
-
     return result;
-  }
+  };
 }
 
-
-const mapStateToProps = (state) => ({
-
+const mapStateToProps = state => ({
   searchKeyword: state.display.searchKeyword,
   course: state.Course.course
-})
+});
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -94,8 +88,14 @@ const mapDispatchToProps = dispatch => {
         type: DELETE_COURSE,
         payload: maKhoaHoc
       });
-    }
-,
+    },
+
+    addCourse: course => {
+      dispatch({
+        type: ADD_COURSE,
+        payload: course
+      });
+    },
 
     editCourse: course => {
       dispatch({
@@ -103,12 +103,7 @@ const mapDispatchToProps = dispatch => {
         payload: course
       });
     }
-
-   
   };
 };
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Course)
-
-
+export default connect(mapStateToProps, mapDispatchToProps)(Course);

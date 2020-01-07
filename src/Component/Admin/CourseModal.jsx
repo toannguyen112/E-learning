@@ -1,74 +1,69 @@
 import React, { Component } from "react";
-import CourseService from '../../Services/courseService'
+import CourseService from "../../Services/courseService";
 import { ADD_COURSE } from "../../Store/Action/type";
 import { connect } from "react-redux";
-import reduxAction from '../../Store/Action/action'
+import reduxAction from "../../Store/Action/action";
 import { UUID } from "./UUID";
+import { notify } from "../notify/Notify";
 let courseService = new CourseService();
 let ngayTao = new Date();
-let user = JSON.parse(localStorage.getItem("userLogin"))
+
 class CourseModal extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       course: {
-
         tenKhoaHoc: "",
+        biDanh: "",
         moTa: "",
-        hinhAnh: '/img/default-image.jpg',
-        maKhoaHoc: UUID(),
+        hinhAnh: "",
+        maKhoaHoc: "",
         ngayTao: `${ngayTao.getDate()}/${ngayTao.getMonth()}/${ngayTao.getFullYear()}`,
         maNhom: "GP01",
         luotXem: 155,
         danhGia: 0,
-        taiKhoanNguoiTao: "Admin",
-        maDanhMucKhoaHoc: user.taiKhoan
+        taiKhoanNguoiTao: "cuongnt5",
+        maDanhMucKhoaHoc: "Design"
       },
       search: ""
-    }
+    };
   }
-
 
   onChangeSearch = e => {
-    this.setState({
-      search: e.target.value
-    }, this.props.handleSearch(this.state.search))
-  }
+    this.setState(
+      {
+        search: e.target.value
+      },
+      this.props.handleSearch(this.state.search)
+    );
+  };
+
+ 
 
   onChange = e => {
     this.setState({
       course: {
         ...this.state.course,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.value
       }
-    })
-  }
-
+    });
+  };
 
   onAddCourse = () => {
-
-
-    
-    courseService.addCourse(
-      {
-        ...this.state.course
-
-      }
-
-
-    ).then(res => {
-      console.log(res.data);
-      this.props.dispatch(reduxAction(ADD_COURSE, res.data))
-
-    }).catch(err => {
-      console.log("lỗi");
-
-    })
-  }
-  render() {
     console.log(this.state.course);
 
+    courseService
+      .addCourse(this.state.course)
+      .then(res => {
+        this.props.addCourse(res.data);
+        notify("", "thêm thành công");
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  };
+  render() {
     return (
       <div>
         <div className="row post_title">
@@ -77,10 +72,17 @@ class CourseModal extends Component {
               className="add__course"
               data-toggle="modal"
               data-target="#modelId"
+            
             >
               <i className="fa fa-plus mr-1"></i> ADD COURSE
             </button>
-            <input onChange={this.onChangeSearch} type="text" name="search" placeholder="Search Course" value={this.state.search} />
+            <input
+              onChange={this.onChangeSearch}
+              type="text"
+              name="search"
+              placeholder="Search Course"
+              value={this.state.search}
+            />
           </div>
         </div>
 
@@ -109,29 +111,58 @@ class CourseModal extends Component {
               </div>
               <div className="modal-body">
                 <div className="form-group">
-                  <label>Course's Name</label>
-                  <input type="text" style={{ width: "100%" }} name="tenKhoaHoc" value={this.state.tenKhoaHoc} onChange={this.onChange} />
+                  <label>Tên khóa học</label>
+                  <input
+                    type="text"
+                    style={{ width: "100%" }}
+                    name="tenKhoaHoc"
+                    value={this.state.tenKhoaHoc}
+                    onChange={this.onChange}
+                  />
                 </div>
 
                 <div className="form-group">
-                  <label>Description</label>
-                  <input type="text" style={{ width: "100%" }} name="moTa" onChange={this.onChange} value={this.state.moTa} />
+                  <label>Mã khóa học</label>
+                  <input
+                    type="text"
+                    style={{ width: "100%" }}
+                    name="maKhoaHoc"
+                    value={this.state.maKhoaHoc}
+                    onChange={this.onChange}
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label>Mô tả</label>
+                  <input
+                    type="text"
+                    style={{ width: "100%" }}
+                    name="moTa"
+                    onChange={this.onChange}
+                    value={this.state.moTa}
+                  />
                 </div>
 
                 <div className="form-group">
                   <label>Image</label>
-                  <input onChange={this.onChange}
+                  <input
+                    onChange={this.onChange}
                     value={this.state.hinhAnh}
                     style={{ width: "100%" }}
                     name="hinhAnh"
-                    type="text"
+                    type="file"
                     className="form-control"
-                    defaultValue="/img/default-image.jpg"
                   />
                 </div>
+
+
               </div>
               <div className="modal-footer">
-                <button type="button" className="btn btn-danger" onClick={this.onAddCourse}>
+                <button
+                  type="button"
+                  className="btn btn-danger"
+                  onClick={this.onAddCourse}
+                >
                   Add
                 </button>
                 <button
@@ -150,5 +181,7 @@ class CourseModal extends Component {
   }
 }
 
-export default connect()(CourseModal)
 
+
+
+export default connect()(CourseModal);

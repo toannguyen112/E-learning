@@ -31,8 +31,7 @@ class LoginForm extends Component {
         localStorage.setItem(settings.userLogin, JSON.stringify(res.data));
         localStorage.setItem(settings.token, res.data.accessToken);
         this.props.dispatch(reduxAction(LOGIN, res.data));
-        // restConnector.default.headers["Authorization"] =
-        //   "Bearer" + res.data.accessToken;
+       
         let user =JSON.parse(localStorage.getItem("userLogin"))
         if(user.maLoaiNguoiDung === "HV")
         {

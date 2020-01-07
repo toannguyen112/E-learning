@@ -1,6 +1,6 @@
 import { resConnector } from "../Services/index";
 
-const user = JSON.parse(localStorage.getItem("userLogin"));
+// let user = localStorage.getItem("userLogin")
 class CourseService {
   fetchCourses() {
     return resConnector({
@@ -31,12 +31,41 @@ class CourseService {
   }
 
   addCourse(course) {
-   
+    let user = JSON.parse(localStorage.getItem("userLogin"));
 
     return resConnector({
       url: `/api/QuanLyKhoaHoc/ThemKhoaHoc`,
       method: "POST",
       data: course,
+      headers: {
+        Authorization: "Bearer  " + user.accessToken
+      }
+    });
+  }
+
+  deleteCourse(maKhoaHoc) {
+    let user = JSON.parse(localStorage.getItem("userLogin"));
+
+    return resConnector({
+      url: `api/QuanLyKhoaHoc/XoaKhoaHoc?maKhoaHoc=${maKhoaHoc}`,
+      method: "DELETE",
+
+      headers: {
+        Authorization: "Bearer  " + user.accessToken
+      }
+    });
+  }
+
+
+
+  updateCourse(course) {
+    let user = JSON.parse(localStorage.getItem("userLogin"));
+
+    return resConnector({
+      url: `api/QuanLyKhoaHoc/CapNhatKhoaHoc`,
+      method: "PUT",
+      data: course,
+
       headers: {
         Authorization: "Bearer  " + user.accessToken
       }

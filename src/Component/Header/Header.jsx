@@ -38,8 +38,10 @@ class Header extends Component {
           </div>
           <ul className="dropdown dropdown-menu">
             <li className="drop-item">
-              <Link to="/user">Thông Tin Tài Khoản<i className="fa fa-user mx-5" />
-</Link>
+              <Link to="/user">
+                Thông Tin Tài Khoản
+                <i className="fa fa-user mx-5" />
+              </Link>
             </li>
             <li className="drop-item">
               <a href="#">Danh Sách Yêu Thích</a>
@@ -47,7 +49,6 @@ class Header extends Component {
             <li className="drop-item">
               <a href="" onClick={this.handleLogOut}>
                 Đăng xuất <i className="fa fa-power-off mx-3" />
-
               </a>
             </li>
           </ul>
@@ -56,14 +57,14 @@ class Header extends Component {
     }
   };
   handleLogOut = () => {
-    this.props.setCurrentUser({});
+    // this.props.setCurrentUser({});
     localStorage.removeItem("userLogin");
     notify("", "Đăng xuất thành công");
   };
 
   render() {
     let { cart } = this.props;
-    let {searchKeyword} = this.props.display
+    let { searchKeyword } = this.props.display;
     return (
       <header className="header ">
         <div className="header__content container ">
@@ -83,14 +84,16 @@ class Header extends Component {
                 CYBERIT
               </Link>
 
-              <Search searchKeyword={searchKeyword} history={this.props.history} />
+              <Search
+                searchKeyword={searchKeyword}
+                history={this.props.history}
+              />
             </div>
             <div className="col-md-6  d-flex">
               <div className="header-card">
                 <Link to="/cart" style={{ textDecoration: "none" }}>
                   <div className="alert-cart">
                     <i className="fa fa-shopping-cart" />
-
 
                     <span>{cart.length}</span>
                   </div>
@@ -118,21 +121,21 @@ class Header extends Component {
 
 const mapStateToProps = state => {
   return {
-    display :  state.display,
+    display: state.display,
     cart: state.cart,
     currentUser: state.currentUser
   };
 };
 
-const mapDispatchToProps = (dispatch, props) => {
-  return {
-    setCurrentUser: user => {
-      dispatch({
-        type: "SET_CURRENT_USER",
-        user
-      });
-    }
-  };
-};
+  // const mapDispatchToProps = (dispatch, props) => {
+  //   return {
+  //     setCurrentUser: user => {
+  //       dispatch({
+  //         type: "SET_CURRENT_USER",
+  //         user
+  //       });
+  //     }
+  //   };
+  // };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps)(Header);

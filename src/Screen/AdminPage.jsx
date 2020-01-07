@@ -9,7 +9,7 @@ import Admin from "../Component/Admin/Admin";
 export default class AdminPage extends Component {
   render() {
     return (
-      <Admin/>
+      <Admin history= {this.props.history}/>
     );
   }
 }

@@ -3,16 +3,33 @@ import { Link } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Course from "./Course";
 import User from "./User";
+import UserService from "../../Services/userService";
+import reduxAction from "../../Store/Action/action";
+import { FETCH_USER } from "../../Store/Action/type";
+import { connect } from "react-redux";
+import { notify } from "../notify/Notify";
+let userService = new UserService();
 
-export default class Admin extends Component {
+class Admin extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       dasboard: false,
-      courses: true,
-      users: false
+      courses: false,
+      users: true
     };
+  }
+
+  componentDidMount() {
+    userService
+      .fetchListUser()
+      .then(res => {
+        this.props.dispatch(reduxAction(FETCH_USER, res.data));
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   handleChangeMenu = param => {
@@ -38,6 +55,15 @@ export default class Admin extends Component {
     }
   };
 
+
+  signOut = () => {
+    this.props.dispatch(reduxAction("SET_CURRENT_USER", {}))
+    localStorage.removeItem("userLogin");
+    notify("", "Đăng xuất thành công");
+    this.props.history.push("/login")
+
+  }
+
   render() {
     return (
       <div className="admin">
@@ -60,17 +86,16 @@ export default class Admin extends Component {
             <div className="collapse navbar-collapse" id="collapsibleNavId">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <a className="nav-link" href="/">
+                  <Link to="/" className="nav-link" >
                     <i className="fa fa-home" aria-hidden="true" /> Home
-    </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#1">
+                  <a className="nav-link" href="#1" onClick={this.signOut}>
                     <i className="fa fa-power-off" aria-hidden="true" /> SignOut
-    </a>
+                  </a>
                 </li>
               </ul>
-
             </div>
           </nav>
         </div>
@@ -120,3 +145,8 @@ export default class Admin extends Component {
     );
   }
 }
+
+
+
+
+export default connect()(Admin);
