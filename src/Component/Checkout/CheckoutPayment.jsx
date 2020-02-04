@@ -1,23 +1,22 @@
 import React, { Component } from "react";
 import { notify } from "../notify/Notify";
+import { connect } from "react-redux";
+import { reduxAction } from "../../Store/Action/action";
+import { PAYMENT } from "../../Store/Action/type";
 
-export default class CheckoutPayment extends Component {
+class CheckoutPayment extends Component {
   pay = () => {
     let cart = JSON.parse(localStorage.getItem("cart"));
     let user = localStorage.getItem("userLogin");
     if (user) {
-      if (cart.length >  0 ) {
+      if (cart.length > 0) {
+        localStorage.removeItem("cart");
+        this.props.dispatch(reduxAction(PAYMENT, []));
         notify("", "Thanh toán thành công");
         this.props.history.push("/");
-
-      }
-      else{
+      } else {
         notify("", "Giỏ hàng trống");
       }
-      
-
-
-
     } else {
       notify("", "Yêu cầu đăng nhập tài khoản");
       this.props.history.push("/login");
@@ -98,3 +97,5 @@ export default class CheckoutPayment extends Component {
     );
   }
 }
+
+export default connect()(CheckoutPayment);

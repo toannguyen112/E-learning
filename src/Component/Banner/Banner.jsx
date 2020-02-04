@@ -18,7 +18,7 @@ export default class Banner extends Component {
       <div className="banner">
         <div className="banner__content container">
           <div className="row">
-            <div className="col-md-3" style={{ width: "100%" }}>
+            <div className="col-md-3 col-sm-3 col-lg-3 col-xl-3" style={{ width: "100%" }}>
               <div className="banner__menu">
                 <div className="banner__menu__content">
                   <h5>Catagory</h5>
@@ -57,7 +57,7 @@ export default class Banner extends Component {
                 </div>
               </div>
             </div>
-            <div className="col-md-6" style={{ height: "100%" }}>
+            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-6" style={{ height: "100%" }}>
               <div className="banner__slide">
                 <Slider {...settingBanner}>
                   <div>

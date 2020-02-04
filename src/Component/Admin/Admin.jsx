@@ -15,9 +15,9 @@ class Admin extends Component {
     super(props);
 
     this.state = {
-      dasboard: false,
+      dasboard: true,
       courses: false,
-      users: true
+      users: false
     };
   }
 
@@ -55,14 +55,12 @@ class Admin extends Component {
     }
   };
 
-
   signOut = () => {
-    this.props.dispatch(reduxAction("SET_CURRENT_USER", {}))
+    this.props.dispatch(reduxAction("SET_CURRENT_USER", {}));
     localStorage.removeItem("userLogin");
-    notify("", "Đăng xuất thành công");
-    this.props.history.push("/login")
-
-  }
+    notify("success", "Đăng xuất thành công");
+    this.props.history.push("/login");
+  };
 
   render() {
     return (
@@ -86,7 +84,7 @@ class Admin extends Component {
             <div className="collapse navbar-collapse" id="collapsibleNavId">
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item">
-                  <Link to="/" className="nav-link" >
+                  <Link to="/" className="nav-link">
                     <i className="fa fa-home" aria-hidden="true" /> Home
                   </Link>
                 </li>
@@ -107,15 +105,24 @@ class Admin extends Component {
                 Management
               </div>
               <ul>
-                <li onClick={() => this.handleChangeMenu("dasboard")}>
+                <li
+                  className={this.state.dasboard ? "active" : ""}
+                  onClick={() => this.handleChangeMenu("dasboard")}
+                >
                   <i className="fa fa-database"></i>
                   Dashboard
                 </li>
-                <li onClick={() => this.handleChangeMenu("courses")}>
+                <li
+                  className={this.state.courses ? "active" : ""}
+                  onClick={() => this.handleChangeMenu("courses")}
+                >
                   <i className="fa fa-graduation-cap"></i>
                   Courses
                 </li>
-                <li onClick={() => this.handleChangeMenu("users")}>
+                <li
+                  className={this.state.users ? "active" : ""}
+                  onClick={() => this.handleChangeMenu("users")}
+                >
                   <i className="fa fa-user"></i>
                   Users 20
                 </li>
@@ -145,8 +152,5 @@ class Admin extends Component {
     );
   }
 }
-
-
-
 
 export default connect()(Admin);

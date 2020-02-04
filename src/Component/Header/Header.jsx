@@ -13,10 +13,10 @@ class Header extends Component {
       return (
         <div className="header-user">
           <Link to="/login" className="btn--white ">
-            Đăng nhập{" "}
+            Login{" "}
           </Link>
           <Link to="/signup" className="btn--red">
-            Đăng kí
+            Sign up
           </Link>
         </div>
       );
@@ -40,7 +40,7 @@ class Header extends Component {
             <li className="drop-item">
               <Link to="/user">
                 Thông Tin Tài Khoản
-                <i className="fa fa-user mx-5" />
+               
               </Link>
             </li>
             <li className="drop-item">
@@ -57,9 +57,10 @@ class Header extends Component {
     }
   };
   handleLogOut = () => {
-    // this.props.setCurrentUser({});
+   
     localStorage.removeItem("userLogin");
-    notify("", "Đăng xuất thành công");
+    notify("success", "Đăng xuất thành công");
+  
   };
 
   render() {
@@ -68,8 +69,8 @@ class Header extends Component {
     return (
       <header className="header ">
         <div className="header__content container ">
-          <div className="row">
-            <div className="col-md-6 d-flex">
+          <div className="row ">
+            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-6 d-flex">
               <Link
                 to="/"
                 style={{ textDecoration: "none" }}
@@ -77,11 +78,11 @@ class Header extends Component {
               >
                 <img
                   className="img-fluid mr-2"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjerlRIrbpIb5fWowESAjTpxE8NUAQcJ8ScyunzGOvCvgTjtgwpg&s"
-                  width="50%"
+                  src="https://edumall.vn/static/version1578239592/frontend/Edumall/winstrike/default/images/logo_full.svg"
+
                   alt=""
                 />{" "}
-                CYBERIT
+
               </Link>
 
               <Search
@@ -89,7 +90,7 @@ class Header extends Component {
                 history={this.props.history}
               />
             </div>
-            <div className="col-md-6  d-flex">
+            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-6  d-flex">
               <div className="header-card">
                 <Link to="/cart" style={{ textDecoration: "none" }}>
                   <div className="alert-cart">
@@ -127,15 +128,15 @@ const mapStateToProps = state => {
   };
 };
 
-  // const mapDispatchToProps = (dispatch, props) => {
-  //   return {
-  //     setCurrentUser: user => {
-  //       dispatch({
-  //         type: "SET_CURRENT_USER",
-  //         user
-  //       });
-  //     }
-  //   };
-  // };
+// const mapDispatchToProps = (dispatch, props) => {
+//   return {
+//     setCurrentUser: user => {
+//       dispatch({
+//         type: "SET_CURRENT_USER",
+//         user
+//       });
+//     }
+//   };
+// };
 
 export default connect(mapStateToProps)(Header);

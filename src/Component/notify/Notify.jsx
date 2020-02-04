@@ -1,12 +1,11 @@
-import Swal from 'sweetalert2';
-import 'sweetalert2/src/sweetalert2.scss'
+import Swal from "sweetalert2";
 
 export const notify = (type, text) => {
-    return Swal.fire({
-        type,
-        text,
-        title: '',
-        showConfirmButton: true,
-        timer: 1500
-    })
-}
+  return Swal.fire({
+    position: "center",
+    icon: type,
+    title: text,
+    showConfirmButton: false,
+    timer: 2000
+  });
+};

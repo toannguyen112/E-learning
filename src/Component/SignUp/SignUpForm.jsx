@@ -32,13 +32,13 @@ class SignUpForm extends Component {
     e.preventDefault();
     userService.UserSignUp(this.state).then((res) => {
 
-      notify("", "Đăng kí thành công")
+      notify("success", "Đăng kí thành công")
       this.props.history.push("/login")
 
 
 
     }).catch((error) => {
-      notify("", "Đăng kí thất bại")
+      notify("error", "Đăng kí thất bại")
 
     })
 
@@ -51,11 +51,13 @@ class SignUpForm extends Component {
         <div className="row">
           <div className="col-md-6">
             <div className="title-sso">
-              <h1>Nền tảng giáo dục trực tuyến lớn nhất Đông Nam Á</h1>
-              <p>Nơi mọi người chia sẻ , khám phá và học hỏi bất cứ điều gì</p>
+              <h1>
+                The largest online education platform in Southeast Asia</h1>
+              <p>
+                Where people share, discover, and learn anything</p>
             </div>
             <div className="google-facebook">
-              <p>Đăng ký nhanh với</p>
+              <p>Register fast with</p>
               <button href="">
                 <i className="fa fa-facebook-official" aria-hidden="true"></i>
                 <span>Facebook</span>
@@ -66,12 +68,12 @@ class SignUpForm extends Component {
               </button>
             </div>
             <div className="sign-form">
-              <p> Hoặc đăng kí ngay</p>
+              <p>Or register now</p>
               <form onSubmit={this.onSubmit}>
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Họ Tên"
+                  placeholder="Full name"
                   onChange={this.onChange}
                   name="hoTen"
                 />
@@ -85,29 +87,31 @@ class SignUpForm extends Component {
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Tài Khoản"
+                  placeholder="Username"
                   onChange={this.onChange}
                   name="taiKhoan"
                 />
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Mật khẩu"
+                  placeholder="Password"
                   onChange={this.onChange}
                   name="matKhau"
                 />
                 <p className="rules">
-                  Bằng cách nhấp vào Đăng ký, bạn đồng ý với{" "}
+
+                  By clicking Sign up, you agree to{" "}
                   <a href="https://www.facebook.com/">
-                    Điều khoản, Quy chế hoạt động{" "}
+
+                    Terms, Operation Regulations{" "}
                   </a>{" "}
-                  và
-                  <a href="https://www.facebook.com/"> Chính sách bảo mật </a>
-                  của Edumall.
+                  and
+                  <a href="https://www.facebook.com/"> Privacy Policy </a>
+                  of Edumall.
                 </p>
-                <button className="btn-sign">Đăng kí</button>
+                <button className="btn-sign">Sign up</button>
                 <span>
-                  Đã có tài khoản ? <Link to="/login">Đăng nhập</Link>
+                Already have an account ? <Link to="/login">Login</Link>
                 </span>
               </form>
             </div>

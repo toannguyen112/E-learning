@@ -7,13 +7,13 @@ export default class LoginHeader extends Component {
       <div className="singUp-header">
         <Link to="/" className="sign-up-logo"  style={{textDecoration : "none"}} >
           <img className="img-fluid mr-2"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjerlRIrbpIb5fWowESAjTpxE8NUAQcJ8ScyunzGOvCvgTjtgwpg&s"
+            src="https://edumall.vn/static/version1578239592/frontend/Edumall/winstrike/default/images/logo_full.svg"
            alt=""
           />{" "}
-          CYBERIT
+          
         </Link>
         <div className="sign-up-text">
-          <Link  to="/SignUp">Đăng kí tài khoản mới</Link>
+          <Link  to="/SignUp">Register for a new account</Link>
         </div>
       </div>
     );

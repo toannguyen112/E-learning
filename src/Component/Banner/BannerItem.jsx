@@ -13,6 +13,7 @@ export default class BannerItem extends Component {
                     {item.tenDanhMuc}
                 </Link>
             </li>
+            
         )
     }
 }

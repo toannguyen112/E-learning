@@ -60,7 +60,7 @@ class Search extends Component {
             placeholder="Type Keyword"
             autoComplete="off"
           />
-          <div className="search__result">
+          <div className={this.state.keyword.length > 0 ? "search__result" : "search__result hiddenForm"}>
             <div className="search__form">
               {this.showSearchIem(courses, searchKeyword)}
             </div>

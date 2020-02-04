@@ -1,5 +1,9 @@
 .header {
-  z-index: 9999;
+  
+  width: 100%;
+
+  z-index: 100;
+  top : 0;
   background-color: $color-white-0;
   transition: all ease 0.3s;
   box-shadow: 0 0 15px #d1d1d1;
@@ -18,7 +22,6 @@
       font-size: 15px;
       font-weight: bold;
       img {
-        width: 50%;
         text-align: center;
       }
     }
@@ -71,7 +74,7 @@
       display: flex;
       align-items: center;
       &:hover {
-        background-color:#f4f7f8
+        background-color: #f4f7f8;
       }
       cursor: pointer;
       position: relative;

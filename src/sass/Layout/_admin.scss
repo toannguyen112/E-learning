@@ -31,10 +31,21 @@
         cursor: pointer;
         padding: 5% 12%;
         font-size: 1.3rem;
+
+        &:hover {
+          background-color: rgb(124, 189, 253);
+          color:white;
+          transform: scale(1.1);
+       }
         i {
           margin-right: 5px;
         }
       }
+      li.active {
+        background-color: dodgerblue;
+        color:white;
+        transform: scale(1.1);
+    }
     }
   }
 

@@ -5,7 +5,7 @@ import Certificates from "./Certificates";
 import Edit from "./Edit";
 import Account from "./Account";
 import { connect } from "react-redux";
-import reduxAction from '../../Store/Action/action'
+import reduxAction from "../../Store/Action/action";
 let userService = new UserService();
 
 class User extends Component {
@@ -16,9 +16,7 @@ class User extends Component {
       profile: true,
       certificates: false,
       account: false,
-      edit: false,
-      // userProfile: {}
-
+      edit: false
     };
   }
 
@@ -27,22 +25,18 @@ class User extends Component {
     userService
       .personalInfo(userLogin.taiKhoan)
       .then(res => {
-       
         // this.setState(prve => {
         //   return { userProfile: res.data };
         // });
-        this.props.dispatch(reduxAction("USER_PROFILE",res.data))
-       
+        this.props.dispatch(reduxAction("USER_PROFILE", res.data));
       })
       .catch(err => {
         console.log(err);
       });
   }
 
-
-
   handleChangeMenu = param => {
-    this.setState(state => {
+    this.setState(() => {
       return {
         profile: false,
         certificates: false,
@@ -53,14 +47,9 @@ class User extends Component {
     });
   };
 
-
-
-
-
-
   showMenu = () => {
     let { profile, certificates, account, edit } = this.state;
-    let {userProfile}= this.props
+    let { userProfile } = this.props;
     if (profile) {
       return <Profile />;
     } else if (certificates) {
@@ -73,10 +62,8 @@ class User extends Component {
   };
 
   render() {
-
     let { userProfile } = this.props;
     console.log(userProfile);
-    
 
     return (
       <div className="user">
@@ -86,11 +73,13 @@ class User extends Component {
               <div className="user__avatar">
                 <img className="img-fluid" src="/img/avatar.png" alt="" />
               </div>
-              <div className="user__info">
-                <h5> Name : {userProfile.hoTen} </h5>
-                <p>Tài khoản : {userProfile.taiKhoan} </p>
-                <p>Mật Khẩu : {userProfile.matKhau} </p>
-                <p>Email : {userProfile.email}</p>
+              <div className="user__info ">
+                <h5> {userProfile.hoTen} </h5>
+                <div>
+                  <p>User : {userProfile.taiKhoan} </p>
+                  <p>Password : {userProfile.matKhau} </p>
+                </div>
+
                 <p>Front-end Developer</p>
               </div>
               <div className="user__edit">
@@ -106,7 +95,7 @@ class User extends Component {
                     }`}
                   onClick={() => this.handleChangeMenu("certificates")}
                 >
-                  <i className="fa fa-certificate" aria-hidden="true" />
+                  <i className="fa fa-certificate mr-2" aria-hidden="true" />
                   Certificates
                 </div>
                 <div
@@ -115,14 +104,14 @@ class User extends Component {
                     }`}
                   onClick={() => this.handleChangeMenu("account")}
                 >
-                  <i className="fa fa-user" aria-hidden="true" />
+                  <i className="fa fa-user mr-2" aria-hidden="true" />
                   Account
                 </div>
                 <div
                   className={`edit__profile ${this.state.edit ? "active" : ""}`}
                   onClick={() => this.handleChangeMenu("edit")}
                 >
-                  <i className="fa fa-cogs" aria-hidden="true" />
+                  <i className="fa fa-cogs mr-2" aria-hidden="true" />
                   Edit Profile
                 </div>
               </div>
@@ -135,14 +124,10 @@ class User extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    userProfile: state.editUser
+  };
+};
 
-const mapStateToProps = (state) => {
-  return{
-    userProfile : state.editUser
-  }
-}
-
-
-
-
-export default connect(mapStateToProps)(User)
+export default connect(mapStateToProps)(User);

@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "../Action/type";
+import { ADD_TO_CART, PAYMENT } from "../Action/type";
 import { DELETE_CART } from '../Action/type'
 let data = JSON.parse(localStorage.getItem("cart"))
 const initialState = data ? data : [];
@@ -28,6 +28,10 @@ const Cart = (state = initialState, { type, payload }) => {
       cartUpdate.splice(index, 1)
       state = cartUpdate
       localStorage.setItem("cart", JSON.stringify(cartUpdate));
+      return [...state]
+    }
+    case PAYMENT: {
+      state = payload;
       return [...state]
     }
 

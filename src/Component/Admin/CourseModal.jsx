@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+
 import CourseService from "../../Services/courseService";
-import { ADD_COURSE } from "../../Store/Action/type";
+
 import { connect } from "react-redux";
-import reduxAction from "../../Store/Action/action";
-import { UUID } from "./UUID";
+
 import { notify } from "../notify/Notify";
 let courseService = new CourseService();
 let ngayTao = new Date();
@@ -15,7 +15,7 @@ class CourseModal extends Component {
     this.state = {
       course: {
         tenKhoaHoc: "",
-        biDanh: "",
+        biDanh: "angular",
         moTa: "",
         hinhAnh: "",
         maKhoaHoc: "",
@@ -39,8 +39,6 @@ class CourseModal extends Component {
     );
   };
 
- 
-
   onChange = e => {
     this.setState({
       course: {
@@ -57,7 +55,16 @@ class CourseModal extends Component {
       .addCourse(this.state.course)
       .then(res => {
         this.props.addCourse(res.data);
-        notify("", "thêm thành công");
+
+        notify("success", "thêm thành công");
+        courseService
+          .updateImg(this.state.course.hinhAnh, res.tenKhoaHoc)
+          .then(res => {
+            console.log("update thành công");
+          })
+          .catch(err => {
+            console.log(err);
+          });
       })
       .catch(err => {
         console.log(err);
@@ -72,7 +79,6 @@ class CourseModal extends Component {
               className="add__course"
               data-toggle="modal"
               data-target="#modelId"
-            
             >
               <i className="fa fa-plus mr-1"></i> ADD COURSE
             </button>
@@ -154,8 +160,6 @@ class CourseModal extends Component {
                     className="form-control"
                   />
                 </div>
-
-
               </div>
               <div className="modal-footer">
                 <button
@@ -180,8 +184,5 @@ class CourseModal extends Component {
     );
   }
 }
-
-
-
 
 export default connect()(CourseModal);

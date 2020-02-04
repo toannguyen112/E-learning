@@ -71,5 +71,25 @@ class CourseService {
       }
     });
   }
+
+
+  updateImg(file,tenKhoaHoc) {
+    let user = JSON.parse(localStorage.getItem("userLogin"));
+    let form_data = new FormData();
+    form_data.append("file", file);
+    form_data.append("tenKhoaHoc",tenKhoaHoc);
+    return resConnector({
+      url: `api/QuanLyKhoaHoc/UploadHinhAnhKhoaHoc`,
+      method: "POST",
+      data: form_data,
+
+      headers: {
+        Authorization: "Bearer" + user.accessToken
+      }
+    });
+  }
+
+
+
 }
 export default CourseService;

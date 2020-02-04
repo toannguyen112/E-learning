@@ -53,6 +53,7 @@ class Course extends Component {
               .indexOf(searchKeyword.toLowerCase().trim()) !== -1
         );
       }
+      
 
       for (let index = courses.length - 1; index >= 0; index--) {
         result.push(

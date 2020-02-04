@@ -5,8 +5,10 @@ export default class PromotionCard extends Component {
     render() {
 
         let { courseList } = this.props
+        console.log(courseList);
+
         return (
-            <NavLink to={`/coursedetail/${courseList.maKhoaHoc}`} style={{textDecoration : "none"}} className="card">
+            <NavLink to={`/coursedetail/${courseList.maKhoaHoc}`} style={{ textDecoration: "none" }} className="card">
                 <span className="sale">70%</span>
                 <img className="card-img-top" src={courseList.hinhAnh} alt="" />
                 <div className="card-body">

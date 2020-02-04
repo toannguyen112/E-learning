@@ -6,7 +6,7 @@ import {
   DELETE_COURSE,
   UPDATE_COURSE
 } from "../Action/type";
-// import data from '../../Services/data.json'
+import data from "../../Services/data.json";
 const initialState = {
   course: [],
   courseCatalog: [],
@@ -17,6 +17,8 @@ const Course = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_COURSES: {
       state.course = action.payload;
+
+      console.log(state.course);
       return { ...state };
     }
 

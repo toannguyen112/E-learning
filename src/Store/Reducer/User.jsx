@@ -1,4 +1,4 @@
-import { FETCH_USER, ADD_USER, DELETE_USER,EDIT_USER, UPDATE_USER } from "../Action/type"
+import { FETCH_USER, ADD_USER, DELETE_USER, UPDATE_USER } from "../Action/type"
 
 const initialState = []
 

@@ -19,10 +19,10 @@ class CourseItem extends Component {
     console.log("them thanh cong");
   };
 
-  buyNow =(course)=>{
+  buyNow = course => {
     this.props.dispatch(reduxAction("ADD_TO_CART", course));
-    this.props.history.push("/cart")
-  }
+    this.props.history.push("/cart");
+  };
 
   static getDerivedStateFromProps = (props, state) => {
     console.log("getDerivedStateFromProps");
@@ -42,9 +42,8 @@ class CourseItem extends Component {
   };
 
   render() {
-    let { courseDetail, course } = this.props;
-    console.log(this.state.showGotoCart);
-    console.log(this.props.course);
+    let { courseDetail } = this.props;
+
 
     return (
       <div className="courseDetail-content">
@@ -311,6 +310,14 @@ class CourseItem extends Component {
                     className="img-fluid"
                     alt=""
                   />
+
+                  <div className="overplay">
+                    <div className="play">
+                       
+                     
+                    </div>
+
+                  </div>
                 </div>
                 <div className="info__inner">
                   <div className="wishlist">
@@ -327,14 +334,18 @@ class CourseItem extends Component {
                     <Link to="/cart">
                       <button
                         className="add"
-                        style={{ backgroundColor: "blue",  color: "white" }}
+                        style={{ backgroundColor: "blue", color: "white" }}
                       >
                         GO TO CART
                       </button>
                     </Link>
                   ) : (
                       <button
-                        style={{ backgroundColor: "white", border: "1px solid gray", color: "gray" }}
+                        style={{
+                          backgroundColor: "white",
+                          border: "1px solid gray",
+                          color: "gray"
+                        }}
                         className="add"
                         onClick={() => this.addcart(courseDetail)}
                       >
@@ -342,7 +353,12 @@ class CourseItem extends Component {
                     </button>
                     )}
 
-                  <button className="add" onClick={() => this.buyNow(courseDetail)} >BUY NOW</button>
+                  <button
+                    className="add"
+                    onClick={() => this.buyNow(courseDetail)}
+                  >
+                    BUY NOW
+                  </button>
 
                   <ul className="meta">
                     <li>
@@ -391,6 +407,59 @@ class CourseItem extends Component {
               </div>
             </div>
           </div>
+          {/* <div className="comment">
+            <h3>Comment</h3>
+            <ul className="list-unstyled">
+              <li className="media">
+                <img
+                  style={{ width: "50px" }}
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeoirDDx5qpZJEx1Y48hciu8DF6pqYQ3VWQOJfs_Vmb7envDS3&s"
+                  className="mr-3"
+                  alt="..."
+                />
+                <div className="media-body">
+                  <h5 className="mt-0 mb-1">List-based media object</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                  scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+                  nisi vulputate fringilla. Donec lacinia congue felis in
+                  faucibus.
+                </div>
+              </li>
+              <li className="media my-4">
+                <img
+                  src="https://i.pinimg.com/564x/49/5c/f8/495cf86b50c49a4561dcfcbfb7a9df4a.jpg"
+                  className="mr-3"
+                  alt="..."
+                  style={{ width: "50px" }}
+                />
+                <div className="media-body">
+                  <h5 className="mt-0 mb-1">List-based media object</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                  scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+                  nisi vulputate fringilla. Donec lacinia congue felis in
+                  faucibus.
+                </div>
+              </li>
+              <li className="media">
+                <img
+                  src="https://i.pinimg.com/236x/96/f3/f8/96f3f8bfc1c7237cb66ccc700293dfe1.jpg"
+                  className="mr-3"
+                  alt="..."
+                  style={{ width: "50px" }}
+                />
+                <div className="media-body">
+                  <h5 className="mt-0 mb-1">List-based media object</h5>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                  scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+                  nisi vulputate fringilla. Donec lacinia congue felis in
+                  faucibus.
+                </div>
+              </li>
+            </ul>
+          </div> */}
         </div>
       </div>
     );

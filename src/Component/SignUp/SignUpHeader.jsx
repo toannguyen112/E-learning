@@ -6,10 +6,10 @@ export default class SignUpHeader extends Component {
         return (
             <div className="singUp-header">
                         <Link to="/"  style={{textDecoration : "none"}} className="sign-up-logo">
-                        <img className="img-fluid mr-2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjerlRIrbpIb5fWowESAjTpxE8NUAQcJ8ScyunzGOvCvgTjtgwpg&s" width="50%" alt="" /> CYBERIT
+                        <img className="img-fluid mr-2" src="https://edumall.vn/static/version1578239592/frontend/Edumall/winstrike/default/images/logo_full.svg"  alt="" /> 
                         </Link>
                         <div className="sign-up-text">
-                            <Link to="/Login">Đăng nhập</Link>
+                            <Link to="/Login">Login now</Link>
                         </div>
                     </div>
         )

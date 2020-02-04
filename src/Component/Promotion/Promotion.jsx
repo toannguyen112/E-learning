@@ -24,9 +24,10 @@ export default class Promotion extends Component {
       <div className="promotion">
         <div className="promotion__content container">
           <div className="promotion__content__title__section ">
-            <h5>Khuyến mãi</h5>
+            <h5>
+              Promotion</h5>
             <Link to="/courses">
-            View more...
+              View more...
               <i className="fa fa-arrow-circle-right" aria-hidden="true" />
 
             </Link>

@@ -54,7 +54,7 @@ class User extends Component {
         notify("", "Thêm thành công");
       })
       .catch(err => {
-        console.log(err);
+        notify("", "tài khoản hoặc email đã tồn tại");
       });
   };
 

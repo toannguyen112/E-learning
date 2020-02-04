@@ -1,95 +1,108 @@
 .header-control {
-    input {
-      width: 360px;
-      height: 38px;
-      border: none;
-      background-color: $bg-color;
-      margin-left: 35px;
-      padding: 0 14px;
-      outline: none;
+  input {
+    width: 360px;
+    height: 38px;
+    border: none;
+    background-color: $bg-color;
+    margin-left: 35px;
+    padding: 0 14px;
+    outline: none;
+  }
+  position: relative;
+  input:focus ~ .search__result {
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    visibility: visible;
+
+    .search__form {
+      visibility: visible;
+      opacity: 1;
     }
-    position: relative;
-    .input-search:focus ~ .search__result {
-      width: 100%;
+  }
+  .search__result {
+    color: black;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+
+    width: 100%;
+    z-index: 100;
+    visibility: visible;
+
+    .search__form {
       background-color: #fff;
-      border: none;
-      outline: none;
-      visibility: visible;
-      .search__form {
-        visibility: visible;
-        opacity: 1;
-      }
-    }
-    .search__result {
-      color: black;
       position: absolute;
-      top: 100%;
-      left: 0%;
-     
-      width: 100%;
+      top: 20%;
+      left: 30px;
+
+      width: 95%;
+      height: auto;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.5s;
+      text-align: left;
       z-index: 100;
-      visibility: visible;
+      border-bottom-left-radius: 12px;
+      border-bottom-right-radius: 12px;
+      visibility: hidden;
+      opacity: 0;
+      .search__form__item {
+        width: 100%;
+        height: 100px;
 
-      .search__form {
-        background-color: #fff;
-        position: absolute;
-        top: 20%;
-        left: 30px;
-
-        width: 95%;
-        height: auto;
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
-        visibility: hidden;
-        opacity: 0;
-        transition: 0.5s;
-        text-align: left;
-        z-index: 100;
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
-        .search__form__item {
-          width: 100%;
-
-          display: flex;
-          font-weight: bold;
-          margin-bottom: 5%;
-          padding: 0 2%;
-          border-bottom: 1px solid $color-gray-12;
-          .search__img {
-            width: 40%;
+        display: flex;
+        font-weight: 700;
+        margin-bottom: 5%;
+        padding: 1% 2%;
+        border-bottom: 1px solid $color-gray-12;
+        .search__img {
+          width: 40%;
+          height: 100px;
+          img {
+            width: 100%;
+            height: 80%;
           }
-          .form__info {
-            text-decoration: none;
-            width: 60%;
-            margin-left: 3%;
-            h6 {
-              font-size: 30px;
-              font-weight: bold;
-            }
-            p {
-              font-size: 20px;
-              color: black;
-              font-weight: 400;
-            }
+        }
+        .form__info {
+          text-decoration: none;
+          width: 60%;
+          margin-left: 3%;
+          height: 50px;
+          h6 {
+            font-size: 0.9rem;
+            font-weight: 700;
+          }
+          p {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 400;
           }
         }
       }
     }
-    .btn-search {
-      height: 38px;
-      background-color: #df322f;
-      width: 40px;
-      box-shadow: none;
-      border-radius: 4px !important;
-      border: none;
-      outline: none;
-
-      i {
-        color: white;
-      }
-    }
-    width: 80%;
-
-    display: flex;
-    align-items: center;
   }
+  .search__result.hiddenForm {
+    display: none;
+  }
+  .btn-search {
+    height: 38px;
+    background-color: #df322f;
+    width: 40px;
+    box-shadow: none;
+    border-radius: 4px !important;
+    border: none;
+    outline: none;
+
+    i {
+      color: white;
+    }
+  }
+  width: 80%;
+
+  display: flex;
+  align-items: center;
+}

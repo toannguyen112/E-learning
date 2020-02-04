@@ -5,6 +5,7 @@ import Courses from "../Component/Courses/Courses";
 import { connect } from "react-redux";
 import Fade from 'react-reveal/Fade';
 import Loader from '../Component/Loader/Loader'
+import ScrollUpButton from "react-scroll-up-button";
 class CoursePage extends Component {
 
   constructor(props) {
@@ -33,7 +34,10 @@ class CoursePage extends Component {
           this.state.loading ? <Loader /> : <Fade bottom><Courses courses={courses} /></Fade>
         }
 
+        {/* <Courses/> */}
+
         <Footer />
+        <ScrollUpButton EasingType="linear" />
       </>
     );
   }

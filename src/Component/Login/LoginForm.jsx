@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { settings } from '../../config/settings'
+import { settings } from "../../config/settings";
 import UserService from "../../Services/userService";
 import reduxAction from "../../Store/Action/action";
 import { LOGIN } from "../../Store/Action/type";
 import { connect } from "react-redux";
-import { notify } from '../notify/Notify'
+import { notify } from "../notify/Notify";
 let userService = new UserService();
 class LoginForm extends Component {
   constructor(props) {
@@ -20,7 +20,7 @@ class LoginForm extends Component {
 
   onChange = e => {
     this.setState({
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
   onSumit = e => {
@@ -31,21 +31,18 @@ class LoginForm extends Component {
         localStorage.setItem(settings.userLogin, JSON.stringify(res.data));
         localStorage.setItem(settings.token, res.data.accessToken);
         this.props.dispatch(reduxAction(LOGIN, res.data));
-       
-        let user =JSON.parse(localStorage.getItem("userLogin"))
-        if(user.maLoaiNguoiDung === "HV")
-        {
+
+        let user = JSON.parse(localStorage.getItem("userLogin"));
+        if (user.maLoaiNguoiDung === "HV") {
           this.props.history.push("./");
-          notify("", "Đăng nhập  Thành công");
+          notify("success", "Đăng nhập  Thành công");
         }
-        if(user.maLoaiNguoiDung === "GV"){
+        if (user.maLoaiNguoiDung === "GV") {
           this.props.history.push("./admin");
         }
-       
-
       })
       .catch(error => {
-        notify("", "Đăng nhập thất bại  ");
+        notify("error", "Đăng nhập thất bại  ");
       });
   };
 
@@ -55,11 +52,11 @@ class LoginForm extends Component {
         <div className="row">
           <div className="col-md-6 col-sm-6  col-lg-6">
             <div className="title-sso">
-              <h1>Nền tảng giáo dục trực tuyến lớn nhất Đông Nam Á</h1>
-              <p>Nơi mọi người chia sẻ , khám phá và học hỏi bất cứ điều gì</p>
+              <h1>The largest online education platform in Southeast Asia</h1>
+              <p>Where people share, discover, and learn anything</p>
             </div>
             <div className="google-facebook">
-              <p>Đăng ký nhanh với</p>
+              <p>Register fast with</p>
               <button href="">
                 <i className="fa fa-facebook-official" aria-hidden="true"></i>
                 <span>Facebook</span>
@@ -70,26 +67,26 @@ class LoginForm extends Component {
               </button>
             </div>
             <div className="sign-form">
-              <p> Hoặc đăng kí ngay</p>
+              <p> Or register now</p>
               <form onSubmit={this.onSumit}>
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Tài Khoản"
+                  placeholder="username"
                   name="taiKhoan"
                   onChange={this.onChange}
                 />
                 <input
                   type="text"
                   className="form-control"
-                  placeholder="Mật khẩu"
+                  placeholder="password"
                   name="matKhau"
                   onChange={this.onChange}
                 />
 
-                <button className="btn-sign">Đăng nhập</button>
+                <button className="btn-sign">Login</button>
                 <span>
-                  <a href="https://www.facebook.com/">Quên mật khẩu</a>
+                  <a href="https://www.facebook.com/">Forgot password</a>
                 </span>
               </form>
             </div>

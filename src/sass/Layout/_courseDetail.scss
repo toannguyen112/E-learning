@@ -1,120 +1,122 @@
 .courseDetail-content {
   margin-top: $mg-2 - 5;
-  .content {
-    .intro-title {
-      display: flex;
-      .teacher {
-        width: 25%;
+  .row {
+    .content {
+      .intro-title {
         display: flex;
-        img {
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
+        .teacher {
+          width: 25%;
+          display: flex;
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+          .teacher-name {
+            padding-left: $pd-0;
+            div:first-child {
+              @include text(#666, $fs-5, $fw-normal);
+            }
+          }
         }
-        .teacher-name {
-          padding-left: $pd-0;
-          div:first-child {
-            @include text(#666, $fs-5, $fw-normal);
+        .category {
+          width: 50%;
+          padding-left: 3%;
+          display: flex;
+          span {
+            @include text($color-blue, 3rem, $fw-normal);
+          }
+          .category__name {
+            padding-left: $pd-0;
+            div:first-child {
+              @include text(#666, $fs-5, $fw-normal);
+            }
+          }
+        }
+        .rating {
+          width: 25%;
+          i {
+            color: $color-yellow;
+          }
+          p {
+            color: #666;
           }
         }
       }
-      .category {
-        width: 50%;
-        padding-left: 3%;
-        display: flex;
-        span {
-          @include text($color-blue, 3rem, $fw-normal);
-        }
-        .category__name {
-          padding-left: $pd-0;
-          div:first-child {
-            @include text(#666, $fs-5, $fw-normal);
-          }
-        }
-      }
-      .rating {
-        width: 25%;
-        i {
-          color: $color-yellow;
-        }
+      .description {
         p {
           color: #666;
+          margin-top: 2%;
         }
       }
-    }
-    .description {
-      p {
-        color: #666;
-        margin-top: 2%;
-      }
-    }
-    .knowledge {
-      background-color: $color-gray-6;
-      padding: 2%;
-      border: 1px solid #dedfe0;
-      font-size: 0.9rem;
-      ul {
-        list-style: none;
-        li{
-          padding-bottom: 2%;
-          i{
-            margin-right: 2%;
-          }
-        }
-      }
-    }
-    .course__section {
-      h5 {
-        margin: 5% 0 3%;
-        font-weight: $fw-bold-1;
-      }
-      .section {
-        .section__item {
-          .section__header {
-            background: $color-gray-7;
-            padding: 2%;
-            font-size: 1.1rem;
-
-            .Preview {
-              background-color: $color-green-1;
-              @include text($color-white-0, $fs-1, $fw-bold-1);
-              padding: 5px;
-              margin-left: 20px;
-              border-radius: 5px;
+      .knowledge {
+        background-color: $color-gray-6;
+        padding: 2%;
+        border: 1px solid #dedfe0;
+        font-size: 0.9rem;
+        ul {
+          list-style: none;
+          li {
+            padding-bottom: 2%;
+            i {
+              margin-right: 2%;
             }
           }
-          .section__entry {
-            .gap {
-              background-color: rgba(0, 0, 0, 0.015);
+        }
+      }
+      .course__section {
+        h5 {
+          margin: 5% 0 3%;
+          font-weight: $fw-bold-1;
+        }
+        .section {
+          .section__item {
+            .section__header {
+              background: $color-gray-7;
               padding: 2%;
+              font-size: 1.1rem;
+
+              .Preview {
+                background-color: $color-green-1;
+                @include text($color-white-0, $fs-1, $fw-bold-1);
+                padding: 5px;
+                margin-left: 20px;
+                border-radius: 5px;
+              }
             }
-            .lesson {
-              .lesson_content {
-                div {
-                  padding: 10px 10px 10px 10px;
-                  border-top: 1px solid rgba(0, 0, 0, 0.05);
-                  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-                }
-                ul {
-                  list-style: none;
-                  li {
-                    position: relative;
-                    padding: 2%;
-                    cursor: pointer;
-                    background-color: rgba(0, 0, 0, 0.015);
-                    border-bottom: 1px solid $color-gray-7;
-                    opacity: 0.7;
-                    &:hover {
-                      opacity: 1;
-                    }
-                    i {
-                      @include text($color-blue, $fs-6, $fw-normal);
-                      padding-right: 10px;
-                    }
-                    span {
-                      position: absolute;
-                      right: 2%;
-                      top: 10px;
+            .section__entry {
+              .gap {
+                background-color: rgba(0, 0, 0, 0.015);
+                padding: 2%;
+              }
+              .lesson {
+                .lesson_content {
+                  div {
+                    padding: 10px 10px 10px 10px;
+                    border-top: 1px solid rgba(0, 0, 0, 0.05);
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+                  }
+                  ul {
+                    list-style: none;
+                    li {
+                      position: relative;
+                      padding: 2%;
+                      cursor: pointer;
+                      background-color: rgba(0, 0, 0, 0.015);
+                      border-bottom: 1px solid $color-gray-7;
+                      opacity: 0.7;
+                      &:hover {
+                        opacity: 1;
+                      }
+                      i {
+                        @include text($color-blue, $fs-6, $fw-normal);
+                        padding-right: 10px;
+                      }
+                      span {
+                        position: absolute;
+                        right: 2%;
+                        top: 10px;
+                      }
                     }
                   }
                 }
@@ -124,109 +126,133 @@
         }
       }
     }
-  }
-  .sidebar {
-    .sidebar__info {
-      box-shadow: -1px 2px 15px -4px rgba(0, 0, 0, 0.75);
-      margin-top: 3%;
-      border-radius: 5px;
-      padding: $pd-0;
-      .info__img {
+    .sidebar {
+      .sidebar__info {
+        box-shadow: -1px 2px 15px -4px rgba(0, 0, 0, 0.75);
+        margin-top: 3%;
+        border-radius: 5px;
         padding: $pd-0;
-        width: 100%;
-        img {
+        .info__img {
+          position: relative;
+          padding: $pd-0;
           width: 100%;
-          height: 250px;
+          img {
+            width: 100%;
+            height: 250px;
+          }
+
+          .overplay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            .play {
+            
+              transition: all 0.2s;
+              cursor: pointer;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              text-align: center;
+              width: 70px;
+              height: 70px;
+              border-radius: 50%;
+              background-color: black;
+              background: url("https://www.udemy.com/staticx/udemy/js/webpack/icon-play.ac3f32ecb72a0c3f674fa5a3f3062a56.svg")
+                no-repeat;
+            }
+          }
         }
-      }
-      .info__inner {
-        padding: 7%;
-        .wishlist {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          margin-bottom: 10%;
-          .add__list {
+        .info__inner {
+          padding: 7%;
+          .wishlist {
             display: flex;
             align-items: center;
-            width: 50%;
-            .heart {
-              cursor: pointer;
-              text-align: center;
-              width: 30px;
-              height: 30px;
-              border-radius: 50%;
-              border: 1px solid #aaa;
-              @include text($color-red-5, $fs-2, $fw-normal);
-            }
-            span {
-              @include text($color-gray-9, $fs-1, $fw-normal);
-              padding-left: 5%;
-            }
-          }
-          .price {
-            font-family: "Raleway", sans-serif;
-            @include text(#666, $fs-7, $fw-bold-1);
-          }
-        }
-        .add,
-        .buy {
-          width: 100%;
-          padding: 10px;
-        }
-        .add {
-          border: none;
-          background-color: $color-red-0;
-          margin-bottom: 3%;
-          @include text($color-white-0, $fs-0, $fw-bold-1);
-        }
-        .buy {
-          @extend .add;
-          color: #666;
-          background-color: #fff;
-          border: 1px solid $color-black-0;
-        }
-        .meta {
-          list-style: none;
-          li {
-            display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid #dedfe0;
-            padding: 7% 0;
-            div {
-              font-weight: normal;
-              font-family: "Raleway", sans-serif;
+            margin-bottom: 10%;
+            .add__list {
+              display: flex;
+              align-items: center;
+              width: 50%;
+              .heart {
+                cursor: pointer;
+                text-align: center;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: 1px solid #aaa;
+                @include text($color-red-5, $fs-2, $fw-normal);
+              }
               span {
-                @include text($color-black-0, $fs-2 - 1,$fw-bold);
-               
+                @include text($color-gray-9, $fs-1, $fw-normal);
+                padding-left: 5%;
               }
             }
-            i {
-              @include text($color-blue-2, $fs-7 - 0.5, $fw-normal);
+            .price {
+              font-family: "Raleway", sans-serif;
+              @include text(#666, $fs-7, $fw-bold-1);
+            }
+          }
+          .add,
+          .buy {
+            width: 100%;
+            padding: 10px;
+          }
+          .add {
+            border: none;
+            background-color: $color-red-0;
+            margin-bottom: 3%;
+            @include text($color-white-0, $fs-0, $fw-bold-1);
+          }
+          .buy {
+            @extend .add;
+            color: #666;
+            background-color: #fff;
+            border: 1px solid $color-black-0;
+          }
+          .meta {
+            list-style: none;
+            li {
+              display: flex;
+              justify-content: space-between;
+              border-bottom: 1px solid #dedfe0;
+              padding: 7% 0;
+              div {
+                font-weight: normal;
+                font-family: "Raleway", sans-serif;
+                span {
+                  @include text($color-black-0, $fs-2 - 1, $fw-bold);
+                }
+              }
+              i {
+                @include text($color-blue-2, $fs-7 - 0.5, $fw-normal);
+              }
+            }
+          }
+          .coupon {
+            input {
+              width: 100%;
+              padding: 2% 0 2% 2%;
             }
           }
         }
-        .coupon {
-          input {
-            width: 100%;
-            padding: 2% 0 2% 2%;
-          }
+      }
+      .sidebar__try {
+        @extend .sidebar__info;
+        padding: 7%;
+        h5 {
+          font-weight: 700;
         }
-      }
-    }
-    .sidebar__try {
-      @extend .sidebar__info;
-      padding: 7%;
-      h5 {
-        font-weight: 700;
-      }
-      p {
-        color: $color-gray-10;
-      }
-      a {
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 700;
+        p {
+          color: $color-gray-10;
+        }
+        a {
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: 700;
+        }
       }
     }
   }

@@ -8,6 +8,7 @@ import { createStore, applyMiddleware, compose } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./Store/Reducer/rootReducer";
 import reduxThunk from "redux-thunk";
+import 'sweetalert2/src/sweetalert2.scss'
 
 const composeEnhancers =
   typeof window === "object" && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__

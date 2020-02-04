@@ -8,7 +8,6 @@ import {
   EDIT_COURSE
 } from "../../Store/Action/type";
 import { connect } from "react-redux";
-import _ from "lodash";
 
 let courseService = new CourseService();
 class CourseItem extends Component {
@@ -85,8 +84,7 @@ class CourseItem extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     console.log("getDerivedStateFromProps");
-    
-    
+
     if (nextProps.editCourse.maKhoaHoc !== prevState.course.maKhoaHoc) {
       return {
         ...prevState,

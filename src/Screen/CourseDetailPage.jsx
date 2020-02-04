@@ -12,15 +12,13 @@ import CourseItem from "../Component/courseItem/CourseItem";
 import Loader from "../Component/Loader/Loader";
 const courseService = new CourseService();
 class CourseDetailPage extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       loading: true
-    }
+    };
   }
-
 
   componentDidMount() {
     // lấy tham số mã khóa học từ url
@@ -34,34 +32,28 @@ class CourseDetailPage extends Component {
         console.log(err);
       });
 
-
-      setTimeout(() => {
-        this.setState({
-          loading: false
-        });
-      }, 1000);
+    setTimeout(() => {
+      this.setState({
+        loading: false
+      });
+    }, 1000);
   }
-
-  // componentWillUnmount(){
-  //   clearTimeout()
-  // }
-
-
-
-
-
-
-
-
 
   render() {
     let { courseDetail, course } = this.props;
 
-
     return (
       <div>
         <Header history={this.props.history} />
-        {this.state.loading ? <Loader /> : <CourseItem courseDetail={courseDetail} course={course} history={this.props.history} />}
+        {this.state.loading ? (
+          <Loader />
+        ) : (
+          <CourseItem
+            courseDetail={courseDetail}
+            course={course}
+            history={this.props.history}
+          />
+        )}
         {/* <Viewing /> */}
 
         <Footer />

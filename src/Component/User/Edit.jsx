@@ -55,7 +55,7 @@ class Edit extends Component {
           <div className="fullname">
             <div className="row">
               <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                <label>Tài Khoản :</label>
+                <label>User :</label>
                 <input
                   name="taiKhoan"
                   type="text"
@@ -67,7 +67,7 @@ class Edit extends Component {
               </div>
 
               <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                <label>Mật khẩu:</label>
+                <label>Pass:</label>
                 <input
                   type="text"
                   value={this.state.matKhau}
@@ -79,7 +79,7 @@ class Edit extends Component {
             </div>
           </div>
           <div className="position">
-            <label>Họ Tên:</label>
+            <label> Name:</label>
             <input
               name="hoTen"
               value={this.state.hoTen}

@@ -1,32 +1,16 @@
 import React, { Component } from "react";
 // import Pagination from "../Pagination/Pagination";
 import Course from "../Course/Course";
-import Pagination from "react-pagination-js";
+import Pagination from '../Pagination/Pagination'
 import "react-pagination-js/dist/styles.css";
 import { connect } from "react-redux";
+import CourseOfcourses from "../Course/CourseOfcourses";
 
 class Courses extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-      currentPage: 1
-    }
-  }
-
-  changeCurrentPage = numPage => {
-    this.setState({ currentPage: numPage });
-    //fetch a data
-    //or update a query to get data
-  };
-  
- 
-
   render() {
     let { courses } = this.props;
-    let { searchKeyword } = this.props
+    let { searchKeyword } = this.props;
     console.log(searchKeyword);
-    
 
     return (
       <div className="Course">
@@ -150,23 +134,12 @@ class Courses extends Component {
               </div>
             </div>
             <div className="row sort__items">
-              <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 d-flex px-0">
-                <div className="row " style={{ width: "100%" }}>
-                  {this.showCourseItem(courses, searchKeyword)}
-                </div>
-              </div>
+              {this.showCourseItem(courses, searchKeyword)}
             </div>
           </div>
+          <Pagination/>
         </div>
 
-        {/* <Pagination Courses={courses}  /> */}
-        {/* <Pagination
-          currentPage={this.state.currentPage}
-          totalPages={10}
-          changeCurrentPage={this.changeCurrentPage}
-          
-        />
-         <h2>current Page:{this.state.currentPage}</h2> */}
       </div>
     );
   }
@@ -175,33 +148,33 @@ class Courses extends Component {
     let result = null;
     let newArr = [...courses];
     if (courses && courses.length > 0) {
-      if ( searchKeyword && searchKeyword.length > 0) {
-        newArr = newArr.filter(item => item.tenKhoaHoc.toLowerCase().indexOf(searchKeyword.toLowerCase().trim()) !== -1);
-      
-        
+      if (searchKeyword && searchKeyword.length > 0) {
+        newArr = newArr.filter(
+          item =>
+            item.tenKhoaHoc
+              .toLowerCase()
+              .indexOf(searchKeyword.toLowerCase().trim()) !== -1
+        );
+
         result = newArr.map((course, index) => {
           return (
             <div className="col-3" key={index}>
-              <Course course={course} />
+              <CourseOfcourses course={course} />
             </div>
           );
         });
-
       } else {
         result = newArr.map((course, index) => {
           return (
-            <div className="col-3" key={index}>
-              <Course course={course} />
+            <div className="col-3 my-3" key={index}>
+              <CourseOfcourses course={course} />
             </div>
           );
         });
-
-
       }
     }
 
-    return result
-
+    return result;
   };
 }
 

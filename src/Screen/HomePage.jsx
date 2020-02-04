@@ -8,10 +8,11 @@ import TopSelling from "../Component/Topselling/TopSelling";
 import Featured from "../Component/Featured/Featured";
 import Intro from "../Component/Intro/Intro";
 import Footer from "../Component/Footer/Footer";
-// import ScrollUpButton from "react-scroll-up-button";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "../Component/Loader/Loader";
+import ScrollUpButton from "react-scroll-up-button";
+
+
 import { connect } from "react-redux";
+import LoadingBackground from "../Component/LoadingBackground/loadingBackground";
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -34,7 +35,7 @@ class HomePage extends Component {
       <div className="wrapper">
         {this.state.loading ? (
           <div>
-            <Loader />
+            <LoadingBackground />
           </div>
         ) : (
           <Fragment>
@@ -52,6 +53,7 @@ class HomePage extends Component {
             <Countdown />
 
             <Footer />
+            <ScrollUpButton EasingType="linear" />
           </Fragment>
         )}
       </div>
