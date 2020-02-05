@@ -35,14 +35,14 @@ class LoginForm extends Component {
         let user = JSON.parse(localStorage.getItem("userLogin"));
         if (user.maLoaiNguoiDung === "HV") {
           this.props.history.push("./");
-          notify("success", "Đăng nhập  Thành công");
+          notify("success", "Logged in successfully");
         }
         if (user.maLoaiNguoiDung === "GV") {
           this.props.history.push("./admin");
         }
       })
       .catch(error => {
-        notify("error", "Đăng nhập thất bại  ");
+        notify("error", "Login failed ");
       });
   };
 

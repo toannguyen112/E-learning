@@ -38,7 +38,7 @@ export default class Featured extends Component {
                       <div className="course">
                         <div className="course-img">
                           {" "}
-                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSiKqyQ3ALybcn6dIZm-KUIWJfaJBHYqzPJRoZqBYGPO7HqshIs" className="img-fluid" alt="" />
+                          <img src="/img/item1.jpg" className="img-fluid" alt="" />
                         </div>
                         <div className="course-description">
                           <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
@@ -58,7 +58,7 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTVOGWxx2oLHxBB9M7_LGXA7pdtIzW0-xmMRaMOZq3nfW3nDrMP"
+                            src="/img/item2.jpg"
                             alt=""
                             className="img-fluid"
                           />
@@ -81,7 +81,7 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQLE_INS9VKwnZ8p8e_Y3Cnx7WKIAG6GDe82QTdD8KCwGtByc6o"
+                            src="/img/item3.jpg"
                             alt=""
                             className="img-fluid"
                           />
@@ -106,7 +106,7 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="./img/item1.jpg"
+                            src="./img/item4.jpg"
                             alt=""
                             className="img-fluid"
                           />
@@ -129,7 +129,7 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSfYj1cAYxysG84KAoj9WaqE7r496dL8yYCZs29HavSCEYu-5Qa"
+                            src="/img/item5.jpg"
                             alt=""
                             className="img-fluid"
                           />
@@ -152,7 +152,7 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTXl6dObtguKQoDVFABv6jM5uu7KyeXBrY15OQPEfEj1CZ5cJIO"
+                            src="/img/item6.jpg"
                             alt=""
                             className="img-fluid"
                           />
@@ -177,7 +177,7 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTf4VFgDvtzX4kRRF5mVMwBSElGxDtWasNmAt5-6MIWe7-3m2xA"
+                            src="/img/item7.jpg"
                             alt=""
                             className="img-fluid"
                           />

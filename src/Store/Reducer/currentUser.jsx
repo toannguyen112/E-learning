@@ -1,10 +1,10 @@
-import { LOGIN } from "../Action/type";
+import { SET_CURRENT_USER } from "../Action/type";
 
 const initialState = {};
 
 const currentUser = (state = initialState, { type, payload }) => {
   switch (type) {
-    case LOGIN:
+    case SET_CURRENT_USER:
       state = payload;
       return { ...state };
 

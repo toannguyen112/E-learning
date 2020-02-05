@@ -11,6 +11,7 @@ export const PAYMENT = "PAYMENT"
 //user
 export const LOGIN = "LOGIN";
 export const SIGNUP = "SIGNUP";
+export const SET_CURRENT_USER = "SET_CURRENT_USER"
 export const UPDATE_COURSE = "UPDATE_COURSE"
 export const EDIT_COURSE = "EDIT_COURSE"
 export const ADD_USER = "ADD_USER";

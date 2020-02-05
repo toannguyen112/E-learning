@@ -23,37 +23,20 @@ export default class Banner extends Component {
                 <div className="banner__menu__content">
                   <h5>Catagory</h5>
                   <ul>
-                    <div>
-                      {
-                        courseCatalog.map((item, index) => {
-                          return <BannerItem item={item} key={index} />
-                        })
-                      }
-                      {/* <li>
-                        <a href="https://www.facebook.com/">
-                          {" "}
-                          <i className="fa fa-music" aria-hidden="true" />
-                          Âm nhạc
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://www.facebook.com/">
-                          {" "}
-                          <i className="fa fa-laptop" aria-hidden="true" />
-                          Công nghệ thông tin
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://www.facebook.com/">
-                          {" "}
-                          <i className="fa fa-money" aria-hidden="true" />
-                          Marketing
-                        </a>
-                      </li> */}
 
-                      <li> <Link style={{ color: "red" }} to="/courses">View more ...</Link></li>
-                    </div>
+                    {
+                      courseCatalog.map((item, index) => {
+                        return <BannerItem item={item} key={index} />
+                      })
+                    }
+
+
+                    <li> <Link style={{ color: "red" }} to="/courses">View more ...</Link></li>
+                    
                   </ul>
+
+
+
                 </div>
               </div>
             </div>
@@ -98,6 +81,8 @@ export default class Banner extends Component {
             </div>
           </div>
         </div>
+
+
       </div>
     );
   }

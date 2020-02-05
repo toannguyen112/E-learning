@@ -18,38 +18,22 @@ class Course extends Component {
     });
   };
 
-  // static getDerivedStateFromProps = (prevProps, nextState) => {
-  //   let cart = JSON.parse(localStorage.getItem("cart"))
-  //     ? JSON.parse(localStorage.getItem("cart"))
-  //     : [];
-  //   let index = cart.findIndex(item => {
-  //     return item.maKhoaHoc === prevProps.course.maKhoaHoc;
-  //   });
-  //   if (index !== -1) {
-  //     nextState.showGoCart = true;
-  //   }
-  //   return null;
-  // };
-
   componentDidMount() {
-
-    let {course} = this.props
+    let { course } = this.props;
     let cart = JSON.parse(localStorage.getItem("cart"))
-        ? JSON.parse(localStorage.getItem("cart"))
-        : [];
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
 
     let index = cart.findIndex(item => {
-        return item.maKhoaHoc === course.maKhoaHoc;
+      return item.maKhoaHoc === course.maKhoaHoc;
     });
 
-
     if (index !== -1) {
-        this.setState({
-            showGoCart : true
-        })   
+      this.setState({
+        showGoCart: true
+      });
     }
-
-}
+  }
 
   render() {
     console.log(this.state.showGoCart);
@@ -57,7 +41,10 @@ class Course extends Component {
     let { course } = this.props;
     return (
       <div className="product__item">
-        <Link to={`/coursedetail/${course.maKhoaHoc}`}  style={{textDecoration : "none"}}>
+        <Link
+          to={`/coursedetail/${course.maKhoaHoc}`}
+          style={{ textDecoration: "none" }}
+        >
           <div className="item__img">
             <img className="img-fluid" src={course.hinhAnh} alt="item" />
             <div className="img__overlay" />

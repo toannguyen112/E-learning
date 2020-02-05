@@ -37,16 +37,16 @@ class Header extends Component {
             </div>
           </div>
           <ul className="dropdown dropdown-menu">
-            <li className="drop-item">
-              <Link to="/user">
+            <Link to="/user" style={{ textDecoration: "none" }}>
+              <li className="drop-item">
                 Thông Tin Tài Khoản
-               
-              </Link>
+
             </li>
+            </Link>
             <li className="drop-item">
               <a href="#">Danh Sách Yêu Thích</a>
             </li>
-            <li className="drop-item">
+            <li className="drop-item" style={{ cursor: "pointer" }}>
               <a href="" onClick={this.handleLogOut}>
                 Đăng xuất <i className="fa fa-power-off mx-3" />
               </a>
@@ -57,10 +57,12 @@ class Header extends Component {
     }
   };
   handleLogOut = () => {
-   
+    this.props.setCurrentUser({});
     localStorage.removeItem("userLogin");
-    notify("success", "Đăng xuất thành công");
-  
+    notify("success", "Logged out successfully");
+
+    this.props.history.push("/")
+
   };
 
   render() {
@@ -128,15 +130,15 @@ const mapStateToProps = state => {
   };
 };
 
-// const mapDispatchToProps = (dispatch, props) => {
-//   return {
-//     setCurrentUser: user => {
-//       dispatch({
-//         type: "SET_CURRENT_USER",
-//         user
-//       });
-//     }
-//   };
-// };
+const mapDispatchToProps = (dispatch, props) => {
+  return {
+    setCurrentUser: user => {
+      dispatch({
+        type: "SET_CURRENT_USER",
+        user
+      });
+    }
+  };
+};
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

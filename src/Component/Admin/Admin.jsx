@@ -33,13 +33,13 @@ class Admin extends Component {
   }
 
   handleChangeMenu = param => {
-    this.setState(state => {
+    this.setState(() => {
       return {
         dasboard: false,
         courses: false,
         users: false,
-
         [param]: true
+
       };
     });
   };
@@ -59,7 +59,7 @@ class Admin extends Component {
     this.props.dispatch(reduxAction("SET_CURRENT_USER", {}));
     localStorage.removeItem("userLogin");
     notify("success", "Đăng xuất thành công");
-    this.props.history.push("/login");
+    this.props.history.push("/");
   };
 
   render() {
