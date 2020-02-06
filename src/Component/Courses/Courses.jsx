@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-// import Pagination from "../Pagination/Pagination";
-import Course from "../Course/Course";
+
 import Pagination from '../Pagination/Pagination'
 import "react-pagination-js/dist/styles.css";
 import { connect } from "react-redux";
@@ -137,7 +136,7 @@ class Courses extends Component {
               {this.showCourseItem(courses, searchKeyword)}
             </div>
           </div>
-          <Pagination/>
+          <Pagination />
         </div>
 
       </div>

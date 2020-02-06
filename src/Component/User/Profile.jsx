@@ -106,7 +106,7 @@ export default class Profile extends Component {
                   {/* <Viewing /> */}
 
                   <div className="card">
-                    <img className="card-img-top" src="holder.js/100x180/" alt />
+                    <img className="card-img-top" src="holder.js/100x180/" alt="img" />
                     <div className="card-body">
                       <h4 className="card-title">Title</h4>
                       <p className="card-text">Text</p>

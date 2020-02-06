@@ -13,6 +13,7 @@ import ScrollUpButton from "react-scroll-up-button";
 
 import { connect } from "react-redux";
 import LoadingBackground from "../Component/LoadingBackground/loadingBackground";
+import Hotline from "../Component/Hotline/Hotline";
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -38,24 +39,25 @@ class HomePage extends Component {
             <LoadingBackground />
           </div>
         ) : (
-          <Fragment>
-            <Header history={this.props.history} />
+            <Fragment>
+              <Header history={this.props.history} />
 
-            <Banner courseCatalog={this.props.courseCatalog} />
+              <Banner courseCatalog={this.props.courseCatalog} />
 
-            <Promotion courseList={this.props.courseList} />
+              <Promotion courseList={this.props.courseList} />
 
-            <TopSelling courseList={this.props.courseList} />
+              <TopSelling courseList={this.props.courseList} />
 
-            <Featured courseList={this.props.courseList} />
+              <Featured courseList={this.props.courseList} />
 
-            <Intro />
-            <Countdown />
+              <Intro />
+              <Countdown />
 
-            <Footer />
-            <ScrollUpButton EasingType="linear" />
-          </Fragment>
-        )}
+              <Footer />
+              <ScrollUpButton EasingType="linear" />
+              <Hotline />
+            </Fragment>
+          )}
       </div>
     );
   }

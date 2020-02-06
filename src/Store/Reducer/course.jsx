@@ -6,7 +6,7 @@ import {
   DELETE_COURSE,
   UPDATE_COURSE
 } from "../Action/type";
-import data from "../../Services/data.json";
+
 const initialState = {
   course: [],
   courseCatalog: [],

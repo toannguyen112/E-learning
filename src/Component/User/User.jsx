@@ -83,7 +83,7 @@ class User extends Component {
                 <p>Front-end Developer</p>
               </div>
               <div className="user__edit">
-                <button
+                <button style={{ outline: "none" }}
                   className="btn-profile"
                   onClick={() => this.handleChangeMenu("profile")}
                 >

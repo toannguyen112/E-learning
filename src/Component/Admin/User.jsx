@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import UserItem from "./UserItem";
 import UserService from "../../Services/userService";
 import { connect } from "react-redux";
-import { ADD_USER, SEARCH_USER, DELETE_USER } from "../../Store/Action/type";
+import { ADD_USER, SEARCH_USER } from "../../Store/Action/type";
 import { notify } from "../notify/Notify";
 let userService = new UserService();
 class User extends Component {

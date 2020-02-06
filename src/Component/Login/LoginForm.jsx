@@ -84,7 +84,7 @@ class LoginForm extends Component {
                   onChange={this.onChange}
                 />
 
-                <button className="btn-sign">Login</button>
+                <button style={{ outline: "none" }} className="btn-sign">Login</button>
                 <span>
                   <a href="https://www.facebook.com/">Forgot password</a>
                 </span>

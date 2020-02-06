@@ -32,13 +32,13 @@ class SignUpForm extends Component {
     e.preventDefault();
     userService.UserSignUp(this.state).then((res) => {
 
-      notify("success", "Đăng kí thành công")
+      notify("success", "Registration successful")
       this.props.history.push("/login")
 
 
 
     }).catch((error) => {
-      notify("error", "Đăng kí thất bại")
+      notify("error", "Registration failed")
 
     })
 
@@ -109,9 +109,9 @@ class SignUpForm extends Component {
                   <a href="https://www.facebook.com/"> Privacy Policy </a>
                   of Edumall.
                 </p>
-                <button className="btn-sign">Sign up</button>
+                <button style={{ outline: "none" }} className="btn-sign">Sign up</button>
                 <span>
-                Already have an account ? <Link to="/login">Login</Link>
+                  Already have an account ? <Link to="/login">Login</Link>
                 </span>
               </form>
             </div>

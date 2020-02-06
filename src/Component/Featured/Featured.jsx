@@ -358,7 +358,7 @@ export default class Featured extends Component {
                           {" "}
                           <img
                             src="./img/item11.jpg"
-                            className="img-fluid"
+                            className="img-fluid" alt="img"
                           />
                         </div>
                         <div className="course-description">
@@ -449,7 +449,7 @@ export default class Featured extends Component {
                       <div className="course">
                         <div className="course-img">
                           {" "}
-                          <img
+                          <img alt="img"
                             src="./img/item15.jpg"
                             className="img-fluid"
                           />

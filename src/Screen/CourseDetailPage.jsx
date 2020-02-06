@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "../Component/Header/Header";
 import Footer from "../Component/Footer/Footer";
-import Viewing from "../Component/Viewing/Viewing";
+
 import reduxAction from "../Store/Action/action";
 import CourseService from "../Services/courseService";
 

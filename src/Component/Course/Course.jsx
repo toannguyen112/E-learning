@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { ADD_TO_CART } from "../../Store/Action/type";
-import Loader from "react-loader-spinner";
+
 import LoaderButton from "../LoaderButton/LoaderButton";
 class Course extends Component {
   constructor(props) {
@@ -18,14 +18,13 @@ class Course extends Component {
     this.props.addToCart(course);
 
     this.setState({
-      showGoCart: true,
+      showGoCart: true
     });
-
 
     setTimeout(() => {
       this.setState({
         loader: true
-      })
+      });
     }, 1000);
   };
 
@@ -43,14 +42,8 @@ class Course extends Component {
       this.setState({
         showGoCart: true,
         loader: true
-
       });
     }
-
-
-
-
-
   }
 
   render() {
@@ -95,11 +88,11 @@ class Course extends Component {
         <span className="best__seller">BEST</span>
         <div className="sub__info">
           <p>last update : 11/02/2000</p>
-          <span>Find the right instructor for you</span>
+          <span>{course.tenKhoaHoc}</span>
           <div className="sub-bestseller">
             <div>BESTSELLER</div>
-            <div>
-              in <span>Data AnaLysis</span>
+            <div className="d-flex ml-2">
+              in <div className="ml-1"> Data AnaLysis</div>
             </div>
             <div>Development</div>
           </div>
@@ -120,8 +113,10 @@ class Course extends Component {
             </div>
           </div>
           <div className="sub-text">
-            Complete Data Science Training: Mathematics, Statistics, Python,
-            Advanced Statistics in Python, Machine & Deep
+            <p>
+              Complete Data Science Training: Mathematics, Statistics, Python,
+              Advanced Statistics in Python, Machine & Deep
+            </p>
           </div>
 
           <div className="sub-list">
@@ -131,12 +126,10 @@ class Course extends Component {
                 scientist
               </li>
               <li>
-                The course provides the entire toolbox you need to become a data
-                scientist
+                Understand the difference between Groups and Sets
               </li>
               <li>
-                The course provides the entire toolbox you need to become a data
-                scientist
+                Create and use Static Sets
               </li>
             </ul>
           </div>
@@ -145,15 +138,16 @@ class Course extends Component {
               {this.state.showGoCart ? (
                 <div>
                   <Link to="/cart">
-
-                    {this.state.loader ? <button
-                      className="go_toCart"
-                      style={{ backgroundColor: "blue" }}
-                    >
-                      Go to cart
-                    </button> : <LoaderButton />}
-
-
+                    {this.state.loader ? (
+                      <button
+                        className="go_toCart"
+                        
+                      >
+                        Go to cart
+                      </button>
+                    ) : (
+                        <LoaderButton />
+                      )}
                   </Link>
                 </div>
               ) : (

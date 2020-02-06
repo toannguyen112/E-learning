@@ -25,7 +25,7 @@ export default class BannerItem extends Component {
             <div className="banner-img">
               <img className="img-fluid" src="./img/item1.jpg" alt="" />
               <div className="banner-heart">
-                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                <i className="fa fa-heart-o" aria-hidden="true"></i>
               </div>
             </div>
             <div className="banner-text">
@@ -47,7 +47,7 @@ export default class BannerItem extends Component {
             <div className="banner-img">
               <img className="img-fluid" src="./img/item3.jpg" alt="" />
               <div className="banner-heart">
-                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                <i className="fa fa-heart-o" aria-hidden="true"></i>
               </div>
             </div>
             <div className="banner-text">

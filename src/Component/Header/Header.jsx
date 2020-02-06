@@ -38,18 +38,15 @@ class Header extends Component {
           </div>
           <ul className="dropdown dropdown-menu">
             <Link to="/user" style={{ textDecoration: "none" }}>
-              <li className="drop-item">
-                Thông Tin Tài Khoản
-
-            </li>
+              <li className="drop-item">Thông Tin Tài Khoản</li>
             </Link>
             <li className="drop-item">
-              <a href="#">Danh Sách Yêu Thích</a>
+              <span href="face.com">Danh Sách Yêu Thích</span>
             </li>
             <li className="drop-item" style={{ cursor: "pointer" }}>
-              <a href="" onClick={this.handleLogOut}>
+              <span href="#" onClick={this.handleLogOut}>
                 Đăng xuất <i className="fa fa-power-off mx-3" />
-              </a>
+              </span>
             </li>
           </ul>
         </div>
@@ -61,8 +58,7 @@ class Header extends Component {
     localStorage.removeItem("userLogin");
     notify("success", "Logged out successfully");
 
-    this.props.history.push("/")
-
+    this.props.history.push("/");
   };
 
   render() {
@@ -81,10 +77,8 @@ class Header extends Component {
                 <img
                   className="img-fluid mr-2"
                   src="https://edumall.vn/static/version1578239592/frontend/Edumall/winstrike/default/images/logo_full.svg"
-
                   alt=""
                 />{" "}
-
               </Link>
 
               <Search
@@ -102,12 +96,11 @@ class Header extends Component {
                   </div>
                 </Link>
 
-                <div>
+                <div className="alert-cart">
                   <i className="fa fa-heart" aria-hidden="true" />
                 </div>
 
                 <div className="alert-cart">
-                  {" "}
                   <i className="fa fa-bell" />
                   <span>5</span>
                 </div>

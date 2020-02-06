@@ -19,6 +19,7 @@ import { FETCH_COURSES } from "./Store/Action/type";
 
 import { FETCH_COURSES_CATALOG } from "./Store/Action/type";
 import { connect } from "react-redux";
+import FavoritesPage from "./Screen/FavoritesPage";
 const courseService = new CourseService();
 
 class App extends Component {
@@ -59,7 +60,8 @@ class App extends Component {
             <Route exact path="/signup" component={SignUpPage} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/checkout" component={CheckoutPage} />
-            {/* <Route exact path="/user" component={UserPage} /> */}
+            <Route exact path="/favorites" component={FavoritesPage} />
+            
             <Auth path="/user" Component={UserPage} />
           </Switch>
         </BrowserRouter>
