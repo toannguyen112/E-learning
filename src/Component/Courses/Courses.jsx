@@ -158,7 +158,7 @@ class Courses extends Component {
 
         result = newArr.map((course, index) => {
           return (
-            <div className="col-3" key={index}>
+            <div className="col-md-3 col-sm-3 my-3" key={index}>
               <CourseOfcourses course={course} />
             </div>
           );
@@ -166,7 +166,7 @@ class Courses extends Component {
       } else {
         result = newArr.map((course, index) => {
           return (
-            <div className="col-3 my-3" key={index}>
+            <div className="col-md-3 col-sm-3 my-3" key={index}>
               <CourseOfcourses course={course} />
             </div>
           );

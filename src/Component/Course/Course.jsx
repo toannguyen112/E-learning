@@ -2,20 +2,31 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { ADD_TO_CART } from "../../Store/Action/type";
+import Loader from "react-loader-spinner";
+import LoaderButton from "../LoaderButton/LoaderButton";
 class Course extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      showGoCart: false
+      showGoCart: false,
+      loader: false
     };
   }
 
   onCart = course => {
     this.props.addToCart(course);
+
     this.setState({
-      showGoCart: true
+      showGoCart: true,
     });
+
+
+    setTimeout(() => {
+      this.setState({
+        loader: true
+      })
+    }, 1000);
   };
 
   componentDidMount() {
@@ -30,9 +41,16 @@ class Course extends Component {
 
     if (index !== -1) {
       this.setState({
-        showGoCart: true
+        showGoCart: true,
+        loader: true
+
       });
     }
+
+
+
+
+
   }
 
   render() {
@@ -76,6 +94,83 @@ class Course extends Component {
         </Link>
         <span className="best__seller">BEST</span>
         <div className="sub__info">
+          <p>last update : 11/02/2000</p>
+          <span>Find the right instructor for you</span>
+          <div className="sub-bestseller">
+            <div>BESTSELLER</div>
+            <div>
+              in <span>Data AnaLysis</span>
+            </div>
+            <div>Development</div>
+          </div>
+
+          <div className="sub-info">
+            <div>
+              <i className="fa fa-play"></i>
+              93 Lectures
+            </div>
+            <div>
+              <i className="fa fa-clock-o" aria-hidden="true" /> 11.5 Hours
+            </div>
+            <div>
+              <i className="fa fa-sliders" aria-hidden="true" /> All levels
+            </div>
+            <div>
+              <i className="fa fa-cc" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div className="sub-text">
+            Complete Data Science Training: Mathematics, Statistics, Python,
+            Advanced Statistics in Python, Machine & Deep
+          </div>
+
+          <div className="sub-list">
+            <ul>
+              <li>
+                The course provides the entire toolbox you need to become a data
+                scientist
+              </li>
+              <li>
+                The course provides the entire toolbox you need to become a data
+                scientist
+              </li>
+              <li>
+                The course provides the entire toolbox you need to become a data
+                scientist
+              </li>
+            </ul>
+          </div>
+          <div className="sub-button">
+            <div className="sub-btn-addtocart">
+              {this.state.showGoCart ? (
+                <div>
+                  <Link to="/cart">
+
+                    {this.state.loader ? <button
+                      className="go_toCart"
+                      style={{ backgroundColor: "blue" }}
+                    >
+                      Go to cart
+                    </button> : <LoaderButton />}
+
+
+                  </Link>
+                </div>
+              ) : (
+                  <button
+                    className="add__cart"
+                    onClick={() => this.onCart(course)}
+                  >
+                    Add to cart
+                </button>
+                )}
+            </div>
+            <div className="sub-heart">
+              <i className="fa fa-heart-o" aria-hidden="true"></i>
+            </div>
+          </div>
+        </div>
+        {/* <div className="sub__info">
           <div className="info__content">
             <div className="teacher">
               <img className="img-fluid" src="/img/teacher.jpg" alt="teacher" />
@@ -130,7 +225,7 @@ class Course extends Component {
               <span className="price">$19.99</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     );
   }

@@ -24,7 +24,7 @@ export default class Featured extends Component {
                   <h5>
                     appreciate</h5>
                   <Link to="/courses">
-                  View more...
+                    View more...
                     <i
                       className="fa fa-arrow-circle-right"
                       aria-hidden="true"
@@ -41,7 +41,7 @@ export default class Featured extends Component {
                           <img src="/img/item1.jpg" className="img-fluid" alt="" />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>Node js</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -64,7 +64,7 @@ export default class Featured extends Component {
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>IOS</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -87,7 +87,7 @@ export default class Featured extends Component {
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>React js</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -112,7 +112,7 @@ export default class Featured extends Component {
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>Angular 4</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -158,7 +158,7 @@ export default class Featured extends Component {
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>Swift</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -250,7 +250,7 @@ export default class Featured extends Component {
                   <h5>
                     appreciate</h5>
                   <Link to="/courses">
-                   View more...
+                    View more...
                     <i className="fa fa-arrow-circle-right" aria-hidden="true" />
 
                   </Link>
@@ -263,13 +263,13 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://d1nzpkv5wwh1xf.cloudfront.net/320/k-57ac2d8c047c990776574ffe/20170817-thayanh_linhnt19_17817/duonglt11.png"
+                            src="./img/item7.jpg"
                             alt=""
                             className="img-fluid"
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>MySQL</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -286,13 +286,13 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://d1nzpkv5wwh1xf.cloudfront.net/320/k-57ac2d8c047c990776574ffe/20170817-thayanh_linhnt19_17817/loild03.png"
+                            src="./img/item8.jpg"
                             alt=""
                             className="img-fluid"
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>SQL</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -309,13 +309,13 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://d1nzpkv5wwh1xf.cloudfront.net/320/k-5768aeb1047c995f75fdbf6b/20170817-anhdaidienmoi_thinh/thangpp01.png"
+                            src="./img/item9.jpg"
                             alt=""
                             className="img-fluid"
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>Vue js</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -334,13 +334,13 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://d1nzpkv5wwh1xf.cloudfront.net/320/k-57ac2d8c047c990776574ffe/20170817-thayanh_linhnt19_17817/duonglt11.png"
+                            src="./img/item10.jpg"
                             alt=""
                             className="img-fluid"
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>Android</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -357,13 +357,12 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://d1nzpkv5wwh1xf.cloudfront.net/320/k-57ac2d8c047c990776574ffe/20170817-thayanh_linhnt19_17817/loild03.png"
-                            alt=""
+                            src="./img/item11.jpg"
                             className="img-fluid"
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>Angular js</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -380,13 +379,13 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://d1nzpkv5wwh1xf.cloudfront.net/320/k-5768aeb1047c995f75fdbf6b/20170817-anhdaidienmoi_thinh/thangpp01.png"
+                            src="./img/item12.jpg"
                             alt=""
                             className="img-fluid"
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>React js</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -405,13 +404,13 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://d1nzpkv5wwh1xf.cloudfront.net/320/k-57ac2d8c047c990776574ffe/20170817-thayanh_linhnt19_17817/duonglt11.png"
+                            src="./img/item13.jpg"
                             alt=""
                             className="img-fluid"
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>Mobile</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -428,13 +427,13 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://d1nzpkv5wwh1xf.cloudfront.net/320/k-57ac2d8c047c990776574ffe/20170817-thayanh_linhnt19_17817/loild03.png"
+                            src="./img/item14.jpg"
                             alt=""
                             className="img-fluid"
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>Node js</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -451,13 +450,12 @@ export default class Featured extends Component {
                         <div className="course-img">
                           {" "}
                           <img
-                            src="https://d1nzpkv5wwh1xf.cloudfront.net/320/k-5768aeb1047c995f75fdbf6b/20170817-anhdaidienmoi_thinh/thangpp01.png"
-                            alt=""
+                            src="./img/item15.jpg"
                             className="img-fluid"
                           />
                         </div>
                         <div className="course-description">
-                          <p>Ts. Lê Thẩm Dương - Chiến lược tài chính</p>
+                          <p>React js</p>
                           <div className="star-rating">
                             <i className="fa fa-star"></i>
                             <i className="fa fa-star"></i>
@@ -482,14 +480,14 @@ export default class Featured extends Component {
                   />
                 </div>
                 <div>
-                  <img
+                  <img 
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/360x434_41.png"
                     className="img-fluid"
                     alt=""
                   />
                 </div>
                 <div>
-                  <img
+                  <img 
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/360x434_39.png"
                     className="img-fluid"
                     alt=""

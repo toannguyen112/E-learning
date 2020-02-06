@@ -19,22 +19,8 @@ class CourseOfcourses extends Component {
     });
   };
 
-  //   static getDerivedStateFromProps = (prevProps, nextState) => {
-  //     let cart = JSON.parse(localStorage.getItem("cart"))
-  //       ? JSON.parse(localStorage.getItem("cart"))
-  //       : [];
-  //     let index = cart.findIndex(item => {
-  //       return item.maKhoaHoc === prevProps.course.maKhoaHoc;
-  //     });
-  //     if (index !== -1) {
-  //       nextState.showGoCart = true;
-  //     }
-  //     return null;
-  //   };
-
   componentDidMount() {
-
-    let { course } = this.props
+    let { course } = this.props;
     let cart = JSON.parse(localStorage.getItem("cart"))
       ? JSON.parse(localStorage.getItem("cart"))
       : [];
@@ -46,15 +32,17 @@ class CourseOfcourses extends Component {
     if (index !== -1) {
       this.setState({
         showGoCart: true
-      })
+      });
     }
-
   }
   render() {
     let { course } = this.props;
     return (
       <div className="card">
-        <Link to={`/coursedetail/${course.maKhoaHoc}`} style={{ textDecoration: "none" }}>
+        <Link
+          to={`/coursedetail/${course.maKhoaHoc}`}
+          style={{ textDecoration: "none" }}
+        >
           <div className="card-img">
             <img className="img-fluid" src={course.hinhAnh} alt="" />
           </div>
@@ -67,29 +55,32 @@ class CourseOfcourses extends Component {
             <i className="fa fa-star"></i>
             <i className="fa fa-star"></i>
             <i className="fa fa-star"></i>
-
-
-          </div></Link>
+          </div>
+        </Link>
         <div className="button">
           <div>
             <span className="old__price mr-1">$199.99</span>
-            <span>$199   <i class="fa fa-tag"></i></span>
+            <span>
+              $199 <i class="fa fa-tag"></i>
+            </span>
           </div>
 
-
-
           {this.state.showGoCart ? (
-            <span className="btn-goToCart"><i style={{ color: "blue" }} className="fa fa-check" aria-hidden="true"></i></span>
+            <Link to="/cart">
+              <span className="btn-goToCart">
+                <i
+                  style={{ color: "blue" }}
+                  className="fa fa-check"
+                  aria-hidden="true"
+                ></i>
+              </span></Link>
           ) : (
-              <span className="btn-addToCart"
-                onClick={() => this.onCart(course)}><i className="fa fa-cart-plus" aria-hidden="true" />
+              <span className="btn-addToCart" onClick={() => this.onCart(course)}>
+                <i className="fa fa-cart-plus" aria-hidden="true" />
               </span>
             )}
         </div>
-
-
       </div>
-      
     );
   }
 }

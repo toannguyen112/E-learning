@@ -29,7 +29,29 @@ export default class BannerItem extends Component {
               </div>
             </div>
             <div className="banner-text">
-              <div>Nền tảng tiếng Anh cho..</div>
+              <div> Lorem ipsum dolor sit amet ..</div>
+              <div className="rating">
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+                <i className="fa fa-star"></i>
+              </div>
+              <div className="price-wrapper">
+                <span className="price">$19.99</span>
+                <span className="old-price">$30</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="banner-info-item ">
+            <div className="banner-img">
+              <img className="img-fluid" src="./img/item3.jpg" alt="" />
+              <div className="banner-heart">
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+              </div>
+            </div>
+            <div className="banner-text">
+              <div> Lorem ipsum dolor sit amet ..</div>
               <div className="rating">
                 <i className="fa fa-star"></i>
                 <i className="fa fa-star"></i>
