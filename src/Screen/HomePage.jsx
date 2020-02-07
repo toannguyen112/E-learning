@@ -66,7 +66,8 @@ class HomePage extends Component {
 const mapStateToProps = state => {
   return {
     courseList: state.Course.course,
-    courseCatalog: state.Course.courseCatalog
+    courseCatalog: state.Course.courseCatalog,
+   
   };
 };
 export default connect(mapStateToProps)(HomePage);

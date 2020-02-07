@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { ADD_TO_CART } from "../../Store/Action/type";
+import { ADD_TO_CART, ADD_COURSE_FAVORIES } from "../../Store/Action/type";
 
 import LoaderButton from "../LoaderButton/LoaderButton";
 class Course extends Component {
@@ -125,12 +125,8 @@ class Course extends Component {
                 The course provides the entire toolbox you need to become a data
                 scientist
               </li>
-              <li>
-                Understand the difference between Groups and Sets
-              </li>
-              <li>
-                Create and use Static Sets
-              </li>
+              <li>Understand the difference between Groups and Sets</li>
+              <li>Create and use Static Sets</li>
             </ul>
           </div>
           <div className="sub-button">
@@ -139,12 +135,7 @@ class Course extends Component {
                 <div>
                   <Link to="/cart">
                     {this.state.loader ? (
-                      <button
-                        className="go_toCart"
-                        
-                      >
-                        Go to cart
-                      </button>
+                      <button className="go_toCart">Go to cart</button>
                     ) : (
                         <LoaderButton />
                       )}
@@ -160,66 +151,10 @@ class Course extends Component {
                 )}
             </div>
             <div className="sub-heart">
-              <i className="fa fa-heart-o" aria-hidden="true"></i>
+              <i onClick={() => this.props.addCourseFavories(course)} className="fa fa-heart-o" aria-hidden="true"></i>
             </div>
           </div>
         </div>
-        {/* <div className="sub__info">
-          <div className="info__content">
-            <div className="teacher">
-              <img className="img-fluid" src="/img/teacher.jpg" alt="teacher" />
-              <h6>George Richards</h6>
-            </div>
-            <h5>
-              {course.tenKhoaHoc.length > 45
-                ? course.tenKhoaHoc.substr(0, 45) + "..."
-                : course.tenKhoaHoc}
-            </h5>
-            <p>
-              {course.moTa.length > 200
-                ? course.moTa.substr(0, 200) + "..."
-                : course.moTa}
-            </p>
-            <div className="meta">
-              <div>
-                <i className="fa fa-signal" /> Advanced
-              </div>
-              <div>
-                <i className="fa fa-list-ul" /> 6 Lectures
-              </div>
-              <div>
-                <i className="fa fa-clock" /> 6 Hours
-              </div>
-            </div>
-            {this.state.showGoCart ? (
-              <Link to="/cart">
-                <button
-                  className="add__cart"
-                  style={{ backgroundColor: "blue" }}
-                >
-                  GO TO CART
-                </button>
-              </Link>
-            ) : (
-              <button
-                className="add__cart"
-                style={{ backgroundColor: "red" }}
-                onClick={() => this.onCart(course)}
-              >
-                ADD TO CART
-              </button>
-            )}
-            <div className="wishlist">
-              <div className="add__list">
-                <div className="heart">
-                  <i className="lnr lnr-heart" />
-                </div>
-                <span>Add to Wishlist</span>
-              </div>
-              <span className="price">$19.99</span>
-            </div>
-          </div>
-        </div> */}
       </div>
     );
   }
@@ -230,6 +165,13 @@ const mapDispatchToProps = dispatch => {
     addToCart: course => {
       dispatch({
         type: ADD_TO_CART,
+        payload: course
+      });
+    },
+
+    addCourseFavories: course => {
+      dispatch({
+        type: ADD_COURSE_FAVORIES,
         payload: course
       });
     }

@@ -37,12 +37,14 @@ class Header extends Component {
             </div>
           </div>
           <ul className="dropdown dropdown-menu">
-            <Link to="/user" style={{ textDecoration: "none" }}>
+            <Link to="./user" style={{ textDecoration: "none" }}>
               <li className="drop-item">Thông Tin Tài Khoản</li>
             </Link>
-            <li className="drop-item">
-              <span href="face.com">Danh Sách Yêu Thích</span>
-            </li>
+            <Link to="./favorites" style={{ textDecoration: "none" }}>
+              <li className="drop-item">
+                <span href="face.com">Danh Sách Yêu Thích</span>
+              </li>
+            </Link>
             <li className="drop-item" style={{ cursor: "pointer" }}>
               <span href="#" onClick={this.handleLogOut}>
                 Đăng xuất <i className="fa fa-power-off mx-3" />
@@ -62,7 +64,7 @@ class Header extends Component {
   };
 
   render() {
-    let { cart } = this.props;
+    let { cart, courseFavories } = this.props;
     let { searchKeyword } = this.props.display;
     return (
       <header className="header ">
@@ -96,9 +98,11 @@ class Header extends Component {
                   </div>
                 </Link>
 
-                <div className="alert-cart">
-                  <i className="fa fa-heart" aria-hidden="true" />
-                </div>
+                <Link to="./favorites" style={{ textDecoration: "none" }}>
+                  <div className="alert-cart">
+                    <i className="fa fa-heart" aria-hidden="true" />
+                    <span>{courseFavories.length}</span>
+                  </div></Link>
 
                 <div className="alert-cart">
                   <i className="fa fa-bell" />
@@ -119,7 +123,8 @@ const mapStateToProps = state => {
   return {
     display: state.display,
     cart: state.cart,
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
+    courseFavories: state.courseFavories
   };
 };
 

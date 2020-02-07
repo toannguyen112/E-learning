@@ -6,14 +6,16 @@ import currentUser from '../Reducer/currentUser'
 import editUser from '../Reducer/editUser'
 import editCourse from '../Reducer/editCourse'
 import user from '../Reducer/User'
+import courseFavories from '../Reducer/courseFavories'
 const rootReducer = combineReducers({
   Course,
   display,
   cart,
   currentUser,
-  editUser,
+  editUser, 
   editCourse,
-  user
+  user,
+  courseFavories
 });
 
 export default rootReducer;

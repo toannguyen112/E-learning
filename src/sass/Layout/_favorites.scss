@@ -1,0 +1,143 @@
+.favories {
+  background-color: $bg-color;
+  padding: 30px 0;
+  .favories-content {
+    .favories-left {
+      border-radius: 5px;
+      background-color: #fff;
+      .favories-member {
+        padding: 20px;
+        display: flex;
+        .favories-img {
+          width: 30%;
+
+          img {
+            width: 48px;
+            height: 48px;
+
+            border-radius: 50%;
+          }
+        }
+        .favories-info {
+          width: 70%;
+          span:nth-child(1) {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+          }
+          span:nth-child(2) {
+            font-size: 12px;
+          }
+        }
+      }
+      .favories-content {
+        ul {
+          li {
+            color: #464646;
+            cursor: pointer;
+            padding: 20px;
+            &:hover {
+              color: #df322f;
+              background-color: #f4f7f8;
+            }
+          }
+          li.active {
+            border-left: 4px solid #df322f;
+            font-weight: 400;
+            background-color: #fff;
+            color: #df322f !important;
+            box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+
+    .favories-right {
+      padding: 20px;
+      border-radius: 5px;
+      background-color: #fff;
+      h3 {
+        font-size: 18px;
+        font-weight: 400;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: 2.22;
+        letter-spacing: normal;
+        text-align: left;
+        color: #000;
+      }
+      .favories-right-cards {
+        position: relative;
+        .favories-card {
+          border: solid 1px #e7eaec;
+          border-radius: 10px;
+          .favories-card-img {
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .favories-card-info {
+            padding: 10px 7px;
+            span {
+              padding: 5px;
+              background-color: #17b99f;
+              font-size: 12px;
+              font-weight: 600;
+              color: #fff;
+              letter-spacing: -0.2px;
+              text-align: center;
+              border-radius: 4px;
+            }
+            p {
+              margin-top: 20px;
+              font-size: 13px;
+              height: 34px;
+              font-weight: bold;
+            }
+            .favories-author {
+              display: flex;
+              .favories-author-img {
+                img {
+                  width: 30px;
+                  height: 30px;
+                  margin-right: 10px;
+                  border-radius: 50%;
+                }
+              }
+            }
+            .favories-price {
+              text-align: right;
+              color: #006fba;
+            }
+          }
+          .favories-delete {
+            
+            position: absolute;
+            top: 8px;
+            right: 12%;
+
+            font-size: 20px;
+
+            i {
+              visibility: hidden;
+              border-radius: 5px;
+              margin: 5px 5px;
+              cursor: pointer;
+              background-color: red;
+
+              color: white;
+              padding: 5px;
+            }
+          }
+
+          &:hover {
+            i {
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+  }
+}

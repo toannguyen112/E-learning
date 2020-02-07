@@ -12,13 +12,13 @@ class CheckoutPayment extends Component {
       if (cart.length > 0) {
         localStorage.removeItem("cart");
         this.props.dispatch(reduxAction(PAYMENT, []));
-        notify("", "Thanh toán thành công");
+        notify("success", "Payment succsess");
         this.props.history.push("/");
       } else {
-        notify("", "Giỏ hàng trống");
+        notify("error", "Cart is empty");
       }
     } else {
-      notify("", "Yêu cầu đăng nhập tài khoản");
+      notify("error", "Account login required");
       this.props.history.push("/login");
     }
   };

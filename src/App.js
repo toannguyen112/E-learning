@@ -61,7 +61,7 @@ class App extends Component {
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/checkout" component={CheckoutPage} />
             <Route exact path="/favorites" component={FavoritesPage} />
-            
+
             <Auth path="/user" Component={UserPage} />
           </Switch>
         </BrowserRouter>
