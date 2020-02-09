@@ -18,6 +18,7 @@ export default class HeaderItemNotify extends Component {
           <p style={{ fontSize: "11px" }}>
             Nhập Q50 giảm ngày 50k cho Top20 khóa học chất lượng caoF
           </p>
+          <p style={{ color: "red", fontSize: "9px" }}>31/12/2019 lúc 01:00f</p>
         </div>
       </div>
     );

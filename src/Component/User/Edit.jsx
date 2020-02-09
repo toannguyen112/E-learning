@@ -37,10 +37,10 @@ class Edit extends Component {
       .then(res => {
         this.props.editUser(res.data);
         console.log(res);
-        notify("", "Sửa thành công ");
+        notify("success", "Sửa thành công ");
       })
       .catch(err => {
-        notify("", "Email đã tồn tại ");
+        notify("error", "Email đã tồn tại ");
       });
   };
 

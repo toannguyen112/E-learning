@@ -92,7 +92,7 @@ class SignUpForm extends Component {
                   name="taiKhoan"
                 />
                 <input
-                  type="text"
+                  type="password"
                   className="form-control"
                   placeholder="Password"
                   onChange={this.onChange}
