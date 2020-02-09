@@ -137,21 +137,25 @@ class Course extends Component {
                     {this.state.loader ? (
                       <button className="go_toCart">Go to cart</button>
                     ) : (
-                        <LoaderButton />
-                      )}
+                      <LoaderButton />
+                    )}
                   </Link>
                 </div>
               ) : (
-                  <button
-                    className="add__cart"
-                    onClick={() => this.onCart(course)}
-                  >
-                    Add to cart
+                <button
+                  className="add__cart"
+                  onClick={() => this.onCart(course)}
+                >
+                  Add to cart
                 </button>
-                )}
+              )}
             </div>
             <div className="sub-heart">
-              <i onClick={() => this.props.addCourseFavories(course)} className="fa fa-heart-o" aria-hidden="true"></i>
+              <i
+                onClick={() => this.props.addCourseFavories(course)}
+                className="fa fa-heart-o"
+                aria-hidden="true"
+              ></i>
             </div>
           </div>
         </div>

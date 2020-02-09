@@ -1,12 +1,31 @@
-import React, { Component } from 'react'
-import CartItem from '../Cart/CartItem'
-import { DELETE_CART } from '../../Store/Action/type'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import React, { Component } from "react";
+import CartItem from "../Cart/CartItem";
+import { DELETE_CART } from "../../Store/Action/type";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 class Cart extends Component {
+  showCartItem = cart => {
+    if (this.props.cart.length > 0) {
+      return cart.map((course, index) => {
+        return (
+          <CartItem
+            course={course}
+            key={index}
+            deleteCart={this.props.deleteCart}
+          />
+        );
+      });
+    }
+    return (
+      <p className="text-center my-4" style={{ fontWeight: "400" }}>
+        cart is empty <i className="fa fa-shopping-cart" aria-hidden="true" />{" "}
+        (0)
+      </p>
+    );
+  };
 
   render() {
-    let { cart } = this.props
+    let { cart } = this.props;
     console.log(this.props.cart);
 
     return (
@@ -23,14 +42,7 @@ class Cart extends Component {
                   </tr>
                 </thead>
                 <tbody className="cart__body">
-
-                  {
-                    cart.map((course, index) => {
-                      return (
-                        <CartItem course={course} key={index} deleteCart={this.props.deleteCart} />
-                      )
-                    })
-                  }
+                  {this.showCartItem(cart)}
 
                   <tr className="cart__footer">
                     <td colSpan="3" className="cart__coupon text-left">
@@ -53,7 +65,9 @@ class Cart extends Component {
                     </tr>
                     <tr>
                       <td>Subtotal</td>
-                      <td className="amount">${Math.ceil(19.99 * cart.length)}</td>
+                      <td className="amount">
+                        ${Math.ceil(19.99 * cart.length)}
+                      </td>
                     </tr>
                     <tr>
                       <td style={{ fontWeight: "bold" }}>Total</td>
@@ -69,7 +83,7 @@ class Cart extends Component {
                         <Link to="/">
                           <button className="continue">
                             CONTINUE SHOPPING
-                        </button>
+                          </button>
                         </Link>
                       </td>
                     </tr>
@@ -80,26 +94,25 @@ class Cart extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     cart: state.cart
-  }
-}
+  };
+};
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     deleteCart: course => {
       dispatch({
         type: DELETE_CART,
         payload: course
-      })
+      });
     }
-  }
-}
+  };
+};
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(Cart)
+export default connect(mapStateToProps, mapDispatchToProps)(Cart);

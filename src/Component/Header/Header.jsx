@@ -4,6 +4,9 @@ import Search from "../Search/Search";
 import { connect } from "react-redux";
 import _ from "lodash";
 import { notify } from "../notify/Notify";
+import HeaderItem from "./HeaderItem";
+import HeaderItemCourseFavories from "./HeaderItemCourseFavories";
+import HeaderItemNotify from "./HeaderItemNotify";
 
 class Header extends Component {
   checkShowAccout = currentUser => {
@@ -60,12 +63,42 @@ class Header extends Component {
     localStorage.removeItem("userLogin");
     notify("success", "Logged out successfully");
 
-    this.props.history.push("/");
+   
   };
+
+  showHeaderCartItem = cart => {
+    if (cart.length > 0) {
+      return cart.map((item, index) => {
+        return <HeaderItem course={item} key={index} />;
+      });
+    } else {
+      return <div>cart (0)</div>;
+    }
+  };
+
+  showHeaderCourseFavories = courseFavories => {
+    if (courseFavories.length > 0) {
+      return courseFavories.map((item, index) => {
+        return <HeaderItemCourseFavories courseFavories={item} key={index} />;
+      });
+    } else {
+      return <div>item (0)</div>;
+    }
+  };
+
+  showNotifily = () => {
+    let result = [];
+    for (let i = 0; i < 4; i++) {
+      result.push(<HeaderItemNotify/>)
+    }
+    return result
+  }
 
   render() {
     let { cart, courseFavories } = this.props;
     let { searchKeyword } = this.props.display;
+    console.log(cart);
+
     return (
       <header className="header ">
         <div className="header__content container ">
@@ -93,8 +126,13 @@ class Header extends Component {
                 <Link to="/cart" style={{ textDecoration: "none" }}>
                   <div className="alert-cart">
                     <i className="fa fa-shopping-cart" />
-
                     <span>{cart.length}</span>
+
+                    <div className="header-cart-items">
+                      <div className="header-cart-item">
+                        {this.showHeaderCartItem(cart)}
+                      </div>
+                    </div>
                   </div>
                 </Link>
 
@@ -102,11 +140,22 @@ class Header extends Component {
                   <div className="alert-cart">
                     <i className="fa fa-heart" aria-hidden="true" />
                     <span>{courseFavories.length}</span>
-                  </div></Link>
+                    <div className="header-cart-items">
+                      <div className="header-cart-item">
+                        {this.showHeaderCourseFavories(courseFavories)}
+                      </div>
+                    </div>
+                  </div>
+                </Link>
 
                 <div className="alert-cart">
                   <i className="fa fa-bell" />
                   <span>5</span>
+                  <div className="header-cart-items">
+                    <div className="header-cart-item">
+                      {this.showNotifily()}
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -128,7 +177,7 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = (dispatch, props) => {
+const mapDispatchToProps = dispatch => {
   return {
     setCurrentUser: user => {
       dispatch({

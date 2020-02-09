@@ -112,7 +112,6 @@
             }
           }
           .favories-delete {
-            
             position: absolute;
             top: 8px;
             right: 12%;
@@ -134,6 +133,31 @@
           &:hover {
             i {
               visibility: visible;
+            }
+          }
+        }
+
+        .favories-alert {
+          width: 100%;
+          div {
+            h3 {
+              font-size: 18px;
+              line-height: 1;
+              letter-spacing: normal;
+              text-align: center;
+              color: #464646;
+              margin: 15px;
+            }
+            p {
+              text-align: center;
+              span {
+               
+                font-size: 14px;
+                padding: 11px;
+                border-radius: 7px;
+                background-color: #df322f;
+                color: #fff;
+              }
             }
           }
         }

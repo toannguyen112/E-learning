@@ -2,27 +2,38 @@ import React, { Component } from "react";
 import FavoriesItem from "./FavoriesItem";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import { DELETE_COURSE_FAVORIES, ADD_TO_CART } from "../../Store/Action/type";
 
 class Favories extends Component {
   showCourseFavories = () => {
-    let courseFavo = JSON.parse(localStorage.getItem("courseFavorites"));
-    console.log(courseFavo);
-    
     let { courseFavories } = this.props;
-    if (courseFavories.length > 0 ) {
+    if (courseFavories.length > 0) {
       return courseFavories.map((course, index) => {
         return (
           <div className="col-md-3" key={index}>
-            <FavoriesItem course={course} />
+            <FavoriesItem
+              course={course}
+              deleteCoureseFavorites={this.props.deleteCoureseFavorites}
+              addToCart={this.props.addToCart}
+              history={this.props.history}
+            />
           </div>
         );
       });
     } else {
-      return <p>Ko co khoa hoc yeu thich nao duoc chon</p>;
+      return (
+        <div className="favories-alert">
+          <div>
+            <h3>You do not have any courses in your favorite list!</h3>
+            <p>
+              <span>Discover thousands of courses on Edumall</span>
+            </p>
+          </div>
+        </div>
+      );
     }
   };
   render() {
-    let { courseFavories } = this.props;
     return (
       <div className="favories">
         <div className="favories-content container">
@@ -44,9 +55,7 @@ class Favories extends Component {
                 </div>
                 <div className="favories-content">
                   <ul>
-                    <Link to="./user" style={{ textDecoration: "none" }}>
-                      <li>Account information</li>
-                    </Link>
+
                     <li className="active">Favorites list</li>
                   </ul>
                 </div>
@@ -54,16 +63,9 @@ class Favories extends Component {
             </div>
             <div className="col-md-9">
               <div className="favories-right">
-                <h3>Danh sách yêu thích</h3>
+                <h3>Favorites list</h3>
                 <div className="row favories-right-cards">
-                  {// courseFavories.map((course, index) => {
-                    //   return (
-                    //     <div className="col-md-3" key={index}>
-                    //       <FavoriesItem course={course} />
-                    //     </div>
-                    //   )
-                    // })
-                    this.showCourseFavories()}
+                  {this.showCourseFavories()}
                 </div>
               </div>
             </div>
@@ -80,4 +82,22 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(Favories);
+const mapDispatchToProps = dispatch => {
+  return {
+    deleteCoureseFavorites: course => {
+      dispatch({
+        type: DELETE_COURSE_FAVORIES,
+        payload: course
+      });
+    },
+
+    addToCart: course => {
+      dispatch({
+        type: ADD_TO_CART,
+        payload: course
+      });
+    }
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Favories);

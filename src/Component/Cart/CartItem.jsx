@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class CartItem extends Component {
   render() {
-    let { course ,deleteCart } = this.props;
+    let { course, deleteCart } = this.props;
     return (
       <tr className="cart_item">
         <td className="cart_thumbnail">
@@ -22,11 +22,14 @@ export default class CartItem extends Component {
         </td>
         <td className="cart_remove">
           <div className="btn__remove">
-          <i style={{ cursor: "pointer" }} className="fa fa-times"  onClick={() => deleteCart(course)} ></i>
+            
+         <i style={{ cursor: "pointer" }} className="fa fa-trash" aria-hidden="true" onClick={() => deleteCart(course)} />
+
 
           </div>
         </td>
       </tr>
     );
+
   }
 }

@@ -71,7 +71,7 @@ class User extends Component {
           <div className="row">
             <div className="col-md-3 user__category">
               <div className="user__avatar">
-                <img className="img-fluid" src="/img/avatar.png" alt="" />
+                <img className="img-fluid" src="http://graph.facebook.com/v2.10/172902427148211/picture" alt="" />
               </div>
               <div className="user__info ">
                 <h5> {userProfile.hoTen} </h5>

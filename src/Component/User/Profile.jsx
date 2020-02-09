@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Viewing from "../Viewing/Viewing";
 
-
 export default class Profile extends Component {
   render() {
     return (
@@ -84,14 +83,6 @@ export default class Profile extends Component {
               >
                 <div className="product__items">
                   <Viewing />
-
-                  {/* <div className="card">
-                    <img className="card-img-top" src="holder.js/100x180/" alt />
-                    <div className="card-body">
-                      <h4 className="card-title">Title</h4>
-                      <p className="card-text">Text</p>
-                    </div>
-                  </div> */}
                 </div>
                 <button className="showmore">SHOW MORE</button>
               </div>
@@ -103,16 +94,19 @@ export default class Profile extends Component {
                 aria-labelledby="pills-profile-tab"
               >
                 <div className="product__items">
-                  {/* <Viewing /> */}
+                  <Viewing />
 
                   <div className="card">
-                    <img className="card-img-top" src="holder.js/100x180/" alt="img" />
+                    <img
+                      className="card-img-top"
+                      src="holder.js/100x180/"
+                      alt="img"
+                    />
                     <div className="card-body">
                       <h4 className="card-title">Title</h4>
                       <p className="card-text">Text</p>
                     </div>
                   </div>
-
                 </div>
 
                 <button className="showmore">SHOW MORE</button>
@@ -138,7 +132,8 @@ export default class Profile extends Component {
                       <td>Final Middle Quiz</td>
                       <td>83%</td>
                       <td>
-                        <span className="lnr lnr-checkmark-circle"></span> Passed
+                        <span className="lnr lnr-checkmark-circle"></span>{" "}
+                        Passed
                       </td>
                     </tr>
                     <tr>
@@ -162,7 +157,8 @@ export default class Profile extends Component {
                       <td>Final Middle Quiz</td>
                       <td>75%</td>
                       <td>
-                        <span className="lnr lnr-checkmark-circle"></span> Passed
+                        <span className="lnr lnr-checkmark-circle"></span>{" "}
+                        Passed
                       </td>
                     </tr>
                     <tr>
