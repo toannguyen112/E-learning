@@ -25,6 +25,9 @@ const courseFavories = (state = initialState, { type, payload }) => {
       courseFavorise.splice(index, 1);
       state = courseFavorise;
       localStorage.setItem("courseFavorites", JSON.stringify(courseFavorise));
+
+
+      return courseFavorise
     }
 
     default:

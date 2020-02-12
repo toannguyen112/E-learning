@@ -54,7 +54,6 @@ class CourseDetailPage extends Component {
             history={this.props.history}
           />
         )}
-        {/* <Viewing /> */}
 
         <Footer />
       </div>

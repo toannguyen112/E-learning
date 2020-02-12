@@ -292,6 +292,9 @@
                 i {
                   color: red;
                   font-size: 30px;
+                  &:hover{
+                    color: gray;
+                  }
                 }
               }
             }

@@ -34,7 +34,7 @@ class CoursePage extends Component {
           this.state.loading ? <Loader /> : <Fade bottom><Courses courses={courses} /></Fade>
         }
 
-        {/* <Courses/> */}
+       
 
         <Footer />
         <ScrollUpButton EasingType="linear" />

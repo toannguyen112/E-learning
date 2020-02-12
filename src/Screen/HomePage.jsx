@@ -10,7 +10,6 @@ import Intro from "../Component/Intro/Intro";
 import Footer from "../Component/Footer/Footer";
 import ScrollUpButton from "react-scroll-up-button";
 
-
 import { connect } from "react-redux";
 import LoadingBackground from "../Component/LoadingBackground/loadingBackground";
 import Hotline from "../Component/Hotline/Hotline";
@@ -28,7 +27,7 @@ class HomePage extends Component {
       this.setState({
         loading: false
       });
-    }, 1000);
+    }, 3000);
   }
 
   render() {
@@ -39,25 +38,25 @@ class HomePage extends Component {
             <LoadingBackground />
           </div>
         ) : (
-            <Fragment>
-              <Header history={this.props.history} />
+          <Fragment>
+            <Header history={this.props.history} />
 
-              <Banner courseCatalog={this.props.courseCatalog} />
+            <Banner courseCatalog={this.props.courseCatalog} />
 
-              <Promotion courseList={this.props.courseList} />
+            <Promotion courseList={this.props.courseList} />
 
-              <TopSelling courseList={this.props.courseList} />
+            <TopSelling courseList={this.props.courseList} />
 
-              <Featured courseList={this.props.courseList} />
+            <Featured courseList={this.props.courseList} />
 
-              <Intro />
-              <Countdown />
+            <Intro />
+            <Countdown />
 
-              <Footer />
-              <ScrollUpButton EasingType="linear" />
-              <Hotline />
-            </Fragment>
-          )}
+            <Footer />
+            <ScrollUpButton EasingType="linear" />
+            <Hotline />
+          </Fragment>
+        )}
       </div>
     );
   }
@@ -66,8 +65,7 @@ class HomePage extends Component {
 const mapStateToProps = state => {
   return {
     courseList: state.Course.course,
-    courseCatalog: state.Course.courseCatalog,
-   
+    courseCatalog: state.Course.courseCatalog
   };
 };
 export default connect(mapStateToProps)(HomePage);

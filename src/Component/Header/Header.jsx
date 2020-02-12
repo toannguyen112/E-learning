@@ -9,6 +9,37 @@ import HeaderItemCourseFavories from "./HeaderItemCourseFavories";
 import HeaderItemNotify from "./HeaderItemNotify";
 
 class Header extends Component {
+
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      arrNotify: [
+        {
+          title: " 10% discount coupon ",
+          hinhAnh:
+            "https://dvch1hlupt.cdn.hostvn.net/notification/image/1_1_3.png",
+          moTa: " Receive VNTRIP 10% voucher instantly for any course purchased",
+          time: "25/11/2019 at 03:00"
+        },
+        {
+          title: " Online payment down 10%",
+          hinhAnh:
+            "https://dvch1hlupt.cdn.hostvn.net/notification/image/khuye_n_ma_i_16.png",
+          moTa: " Receive VNTRIP 10% voucher instantly for any course purchased",
+          time: "25/11/2019 at 03:00"
+        },
+        {
+          title: " Enter DEAL200",
+          hinhAnh:
+            "https://dvch1hlupt.cdn.hostvn.net/notification/image/1_1_3.png",
+          moTa:
+            " Receive VNTRIP 10% voucher instantly for any course purchased",
+          time: "25/11/2019 at 03:00"
+        }
+      ]
+    };
+  }
   checkShowAccout = currentUser => {
     let userLogin = JSON.parse(localStorage.getItem("userLogin"));
 
@@ -63,7 +94,7 @@ class Header extends Component {
     localStorage.removeItem("userLogin");
     notify("success", "Logged out successfully");
 
-   
+
   };
 
   showHeaderCartItem = cart => {
@@ -87,12 +118,12 @@ class Header extends Component {
   };
 
   showNotifily = () => {
-    let result = [];
-    for (let i = 0; i < 4; i++) {
-      result.push(<HeaderItemNotify/>)
-    }
-    return result
-  }
+    
+
+    return this.state.arrNotify.map((item, index) => {
+      return <HeaderItemNotify item={item} key={index} />;
+    });
+  };
 
   render() {
     let { cart, courseFavories } = this.props;

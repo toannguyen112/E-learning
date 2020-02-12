@@ -7,7 +7,7 @@ export default class BannerItem extends Component {
     return (
       <li>
         <Link to="/courses">
-          <i className="fa fa-plus" aria-hidden="true" />
+          
 
           {item.tenDanhMuc}
         </Link>
