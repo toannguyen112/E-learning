@@ -71,8 +71,6 @@
         }
 
         .header-cart-items {
-          
-
           box-shadow: -2px 3px 21px -4px rgba(0, 0, 0, 0.75);
           width: 300px;
           border-radius: 10px;
@@ -85,13 +83,12 @@
           display: none;
 
           animation: headercart ease-in 0.1s;
-         
 
           .header-item {
             cursor: pointer;
             margin: 7px 0;
             padding: 10px 10px;
-            
+
             .header-img {
               img {
                 width: 100%;
@@ -110,7 +107,6 @@
               background-color: rgb(238, 241, 242);
             }
           }
-
 
           &:before {
             position: absolute;
@@ -182,7 +178,7 @@
     }
 
     .dropdown-menu {
-      width: 100%;
+      width: 200px;
       border-radius: 7px;
       border: 0;
       margin-top: 17px;
@@ -204,14 +200,14 @@
       }
 
       .drop-item {
+        text-align: center;
         display: block;
         width: 100%;
         padding: 17px 10px;
         clear: both;
         font-weight: 400;
         color: #212529;
-        text-align: inherit;
-        white-space: nowrap;
+
         background-color: transparent;
         border: 0;
         &:hover {
@@ -228,6 +224,7 @@
       }
     }
     .dropdown-menu::before {
+     
       left: 50%;
       transform: translateX(-50%);
       border: 6px solid;

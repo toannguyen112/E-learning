@@ -8,7 +8,7 @@ export default class Promotion extends Component {
     let result = [];
     if (courseList && courseList.length > 0) {
 
-      for (let i = 0; i < 8; i++) {
+      for (let i = 2; i < 10; i++) {
         result.push(<PromotionCard key={i} courseList={courseList[i]} />)
 
 

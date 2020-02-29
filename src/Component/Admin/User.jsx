@@ -46,15 +46,16 @@ class User extends Component {
   };
 
   onAddUser = () => {
-    
+
     userService
       .addUser(this.state.user)
       .then(res => {
         this.props.addUser(res.data);
-        notify("", "Thêm thành công");
+        notify("success", "success");
       })
       .catch(err => {
-        notify("", "tài khoản hoặc email đã tồn tại");
+        notify("error",
+          "Account or email already exists");
       });
   };
 

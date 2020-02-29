@@ -9,7 +9,6 @@ import HeaderItemCourseFavories from "./HeaderItemCourseFavories";
 import HeaderItemNotify from "./HeaderItemNotify";
 
 class Header extends Component {
-
   constructor(props) {
     super(props);
 
@@ -19,14 +18,16 @@ class Header extends Component {
           title: " 10% discount coupon ",
           hinhAnh:
             "https://dvch1hlupt.cdn.hostvn.net/notification/image/1_1_3.png",
-          moTa: " Receive VNTRIP 10% voucher instantly for any course purchased",
+          moTa:
+            " Receive VNTRIP 10% voucher instantly for any course purchased",
           time: "25/11/2019 at 03:00"
         },
         {
           title: " Online payment down 10%",
           hinhAnh:
             "https://dvch1hlupt.cdn.hostvn.net/notification/image/khuye_n_ma_i_16.png",
-          moTa: " Receive VNTRIP 10% voucher instantly for any course purchased",
+          moTa:
+            " Receive VNTRIP 10% voucher instantly for any course purchased",
           time: "25/11/2019 at 03:00"
         },
         {
@@ -72,17 +73,20 @@ class Header extends Component {
           </div>
           <ul className="dropdown dropdown-menu">
             <Link to="./user" style={{ textDecoration: "none" }}>
-              <li className="drop-item">Thông Tin Tài Khoản</li>
+              <li className="drop-item">
+                <span>Account</span>
+                <i className="fa fa-user-o ml-2" aria-hidden="true" />
+              </li>
             </Link>
             <Link to="./favorites" style={{ textDecoration: "none" }}>
               <li className="drop-item">
-                <span href="face.com">Danh Sách Yêu Thích</span>
+                <span>Favorites</span>
+                <i className="fa fa-heart-o ml-2" aria-hidden="true" />
               </li>
             </Link>
             <li className="drop-item" style={{ cursor: "pointer" }}>
-              <span href="#" onClick={this.handleLogOut}>
-                Đăng xuất <i className="fa fa-power-off mx-3" />
-              </span>
+              <span onClick={this.handleLogOut}>Log out</span>
+              <i className="fa fa-power-off ml-3" aria-hidden="true" />
             </li>
           </ul>
         </div>
@@ -93,8 +97,7 @@ class Header extends Component {
     this.props.setCurrentUser({});
     localStorage.removeItem("userLogin");
     notify("success", "Logged out successfully");
-
-
+   
   };
 
   showHeaderCartItem = cart => {
@@ -118,8 +121,6 @@ class Header extends Component {
   };
 
   showNotifily = () => {
-    
-
     return this.state.arrNotify.map((item, index) => {
       return <HeaderItemNotify item={item} key={index} />;
     });

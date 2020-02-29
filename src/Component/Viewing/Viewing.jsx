@@ -7,7 +7,7 @@ class Viewing extends Component {
   showViewItem = (course) => {
     let res = []
     if (course && course.length > 0) {
-      for (let i = 0; i < 4; i++) {
+      for (let i = 2; i < 7; i++) {
         res.push(<Viewingitem course={course[i]} key={i} />)
       }
     }

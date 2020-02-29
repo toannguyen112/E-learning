@@ -1,5 +1,4 @@
 .banner {
-  
   position: relative;
   background-color: #eef1f2;
   padding: $pd-2;
@@ -165,5 +164,12 @@
         }
       }
     }
+  }
+}
+
+@media all and (max-width: 480px) {
+  .banner__slide,
+  .col-md-3:nth-child(3) {
+    display: none;
   }
 }

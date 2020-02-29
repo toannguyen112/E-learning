@@ -37,10 +37,10 @@ class Edit extends Component {
       .then(res => {
         this.props.editUser(res.data);
         console.log(res);
-        notify("success", "Sửa thành công ");
+        notify("success", "success ");
       })
       .catch(err => {
-        notify("error", "Email đã tồn tại ");
+        notify("error", "Error");
       });
   };
 
@@ -82,7 +82,7 @@ class Edit extends Component {
             <label> Name:</label>
             <input
               name="hoTen"
-              value={this.state.hoTen}
+              value={userProfile.hoTen}
               type="text"
               placeholder={userProfile.hoTen}
               onChange={this.onChange}

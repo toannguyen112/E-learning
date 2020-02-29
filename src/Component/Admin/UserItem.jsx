@@ -41,15 +41,6 @@ class UserItem extends Component {
   handleUpdate = () => {
     let { user } = this.state;
 
-    // courseService.updateCourse(this.state.course).then(res => {
-    //     console.log(res.data);
-    //     this.props.dispatch(reduxAction(UPDATE_COURSE, res.data))
-
-    // }).catch(err => {
-    //     console.log(err);
-
-    // })
-
     this.props.dispatch(reduxAction(UPDATE_USER, user));
   };
 
@@ -73,10 +64,10 @@ class UserItem extends Component {
         console.log(res.data);
 
         this.props.dispatch(reduxAction(DELETE_USER, taiKhoan));
-        notify("", "Xóa thành công");
+        notify("success", "success");
       })
       .catch(err => {
-        notify("", "tài khoản này ko thể xóa");
+        notify("error", "This account cannot be deleted");
       });
   };
 

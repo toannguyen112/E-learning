@@ -28,7 +28,7 @@ export default class TopSelling extends Component {
   showViewingItem = courseList => {
     let result = [];
     if (courseList && courseList.length > 0) {
-      for (let i = 0; i < 5; i++) {
+      for (let i = 1; i < 6; i++) {
         result.push(<Course key={i} course={courseList[i]} />);
       }
     }

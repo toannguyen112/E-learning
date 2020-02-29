@@ -56,10 +56,10 @@ class CourseItem extends Component {
         console.log(res.data);
 
         this.props.dispatch(reduxAction(DELETE_COURSE, maKhoaHoc));
-        notify("", "Xóa thành công");
+        notify("success", "Delete success");
       })
       .catch(err => {
-        notify("", "Khóa học đã ghi danh học viên nên ko thể xóa");
+        notify("", "The course has registered students and cannot be deleted");
       });
   };
 
@@ -70,14 +70,7 @@ class CourseItem extends Component {
     let { course } = this.state;
     console.log(this.state.course);
 
-    // courseService.updateCourse(this.state.course).then(res => {
-    //     console.log(res.data);
-    //     this.props.dispatch(reduxAction(UPDATE_COURSE, res.data))
-
-    // }).catch(err => {
-    //     console.log(err);
-
-    // })
+   
 
     this.props.dispatch(reduxAction(UPDATE_COURSE, course));
   };

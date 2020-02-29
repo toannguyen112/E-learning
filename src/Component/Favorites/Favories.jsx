@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import FavoriesItem from "./FavoriesItem";
-import { Link } from "react-router-dom";
+
 import { connect } from "react-redux";
 import { DELETE_COURSE_FAVORIES, ADD_TO_CART } from "../../Store/Action/type";
 

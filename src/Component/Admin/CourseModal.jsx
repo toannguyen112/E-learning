@@ -56,7 +56,7 @@ class CourseModal extends Component {
       .then(res => {
         this.props.addCourse(res.data);
 
-        notify("success", "thêm thành công");
+        notify("success", "Add success");
         courseService
           .updateImg(this.state.course.hinhAnh, res.tenKhoaHoc)
           .then(res => {
@@ -67,7 +67,7 @@ class CourseModal extends Component {
           });
       })
       .catch(err => {
-        console.log(err);
+        notify("error", "Add error");
       });
   };
   render() {

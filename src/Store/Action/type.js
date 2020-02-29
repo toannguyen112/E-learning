@@ -8,7 +8,7 @@ export const ADD_COURSE = "ADD_COURSE";
 export const DELETE_COURSE = "DELETE_COURSE";
 export const FETCH_COURSE_PAGINATION = "FETCH_COURSE_PAGINATION";
 export const PAYMENT = "PAYMENT"
-//user
+
 export const LOGIN = "LOGIN";
 export const SIGNUP = "SIGNUP";
 export const SET_CURRENT_USER = "SET_CURRENT_USER"

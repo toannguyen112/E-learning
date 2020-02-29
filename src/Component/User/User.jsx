@@ -25,9 +25,6 @@ class User extends Component {
     userService
       .personalInfo(userLogin.taiKhoan)
       .then(res => {
-        // this.setState(prve => {
-        //   return { userProfile: res.data };
-        // });
         this.props.dispatch(reduxAction("USER_PROFILE", res.data));
       })
       .catch(err => {
@@ -71,19 +68,28 @@ class User extends Component {
           <div className="row">
             <div className="col-md-3 user__category">
               <div className="user__avatar">
-                <img className="img-fluid" src="http://graph.facebook.com/v2.10/172902427148211/picture" alt="" />
+                <img
+                  className="img-fluid"
+                  src="http://graph.facebook.com/v2.10/172902427148211/picture"
+                  alt=""
+                />
               </div>
               <div className="user__info ">
                 <h5> {userProfile.hoTen} </h5>
                 <div>
-                  <p>User : {userProfile.taiKhoan} </p>
-                  <p>Password : {userProfile.matKhau} </p>
+                  <p>
+                    <span>User</span> : {userProfile.taiKhoan}{" "}
+                  </p>
+                  <p>
+                    <span>Password</span> : {userProfile.matKhau}{" "}
+                  </p>
                 </div>
 
                 <p>Front-end Developer</p>
               </div>
               <div className="user__edit">
-                <button style={{ outline: "none" }}
+                <button
+                  style={{ outline: "none" }}
                   className="btn-profile"
                   onClick={() => this.handleChangeMenu("profile")}
                 >
@@ -92,7 +98,7 @@ class User extends Component {
                 <div
                   className={`edit__profile ${
                     this.state.certificates ? "active" : ""
-                    }`}
+                  }`}
                   onClick={() => this.handleChangeMenu("certificates")}
                 >
                   <i className="fa fa-certificate mr-2" aria-hidden="true" />
@@ -101,7 +107,7 @@ class User extends Component {
                 <div
                   className={`edit__profile ${
                     this.state.account ? "active" : ""
-                    }`}
+                  }`}
                   onClick={() => this.handleChangeMenu("account")}
                 >
                   <i className="fa fa-user mr-2" aria-hidden="true" />

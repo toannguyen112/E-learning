@@ -58,7 +58,7 @@ class Admin extends Component {
   signOut = () => {
     this.props.dispatch(reduxAction("SET_CURRENT_USER", {}));
     localStorage.removeItem("userLogin");
-    notify("success", "Đăng xuất thành công");
+    notify("success", "Logged out successfully");
     this.props.history.push("/");
   };
 
@@ -124,23 +124,10 @@ class Admin extends Component {
                   onClick={() => this.handleChangeMenu("users")}
                 >
                   <i className="fa fa-user"></i>
-                  Users 20
+                  Users 
                 </li>
-                <li>
-                  <i
-                    className="fa fa-commenting-o"
-                    onClick={() => this.handleChangeMenu("Messages")}
-                  ></i>
-                  Messages 6
-                </li>
-                <li>
-                  <i className="fa fa-graduation-cap"></i>
-                  Rules
-                </li>
-                <li>
-                  <i className="fa fa-graduation-cap"></i>
-                  Utilities
-                </li>
+               
+                
               </ul>
             </div>
           </div>

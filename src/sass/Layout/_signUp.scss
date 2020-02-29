@@ -105,3 +105,15 @@
     }
   }
 }
+
+
+
+@media all and ( max-width: 480px) {
+ .sign-up-content{
+   .col-md-6:nth-child(2){
+     .img-fluid{
+       display: none;
+     }
+   }
+ }
+ }

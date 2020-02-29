@@ -1,38 +1,4 @@
 .Course {
- 
-  
-  .search__box {
-    padding-top: 20px;
-    .search-form {
-      .search__menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        li {
-          margin-right: 5px;
-          width: 100%;
-          .course__category {
-            width: 300px;
-            height: 50px;
-          }
-          .status,
-          .search__input {
-            @extend .course__category;
-          }
-          .search__button {
-            width: 200px;
-            height: 50px;
-            font-weight: 700;
-            outline: none;
-            border: none;
-            font-style: $fs-6;
-            background-color: $color-blue-3;
-            color: $color-white-0;
-          }
-        }
-      }
-    }
-  }
   .courses {
     .sort__filter {
       margin: 3% 0;
@@ -65,7 +31,7 @@
     }
     .sort__items {
       .card {
-        &:hover{
+        &:hover {
           box-shadow: none;
         }
         overflow: hidden;
@@ -103,11 +69,11 @@
           .btn-addToCart {
             font-size: 30px;
           }
-          .btn-goToCart{
-           @extend .btn-addToCart
+          .btn-goToCart {
+            @extend .btn-addToCart;
           }
         }
-        .card-body{
+        .card-body {
           width: 100%;
           height: 70px;
         }

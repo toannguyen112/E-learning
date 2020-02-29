@@ -26,7 +26,7 @@ export default class UserPage extends Component {
     return (
       <div>
         <Header history={this.props.history} />
-       {this.state.loading ? <Loader/> :  <User/>}
+       {this.state.loading ? <Loader/> :  <User history={this.props.history}/>}
         <Footer />
       </div>
     );
