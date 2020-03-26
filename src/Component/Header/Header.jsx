@@ -143,7 +143,7 @@ class Header extends Component {
               >
                 <img
                   className="img-fluid mr-2"
-                  src="https://edumall.vn/static/version1578239592/frontend/Edumall/winstrike/default/images/logo_full.svg"
+                  src="https://edumall.vn/static/version1585153576/frontend/Edumall/winstrike/default/images/logo_full.svg"
                   alt=""
                 />{" "}
               </Link>

@@ -67,7 +67,7 @@ class CourseService {
       data: course,
 
       headers: {
-        Authorization: "Bearer  " + user.accessToken
+        Authorization: "Bearer " + user.accessToken
       }
     });
   }
