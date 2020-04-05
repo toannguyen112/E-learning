@@ -97,6 +97,7 @@ class Header extends Component {
     this.props.setCurrentUser({});
     localStorage.removeItem("userLogin");
     notify("success", "Logged out successfully");
+   this.props.history.push("/")
    
   };
 

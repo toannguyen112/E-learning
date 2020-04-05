@@ -76,14 +76,7 @@ class User extends Component {
               </div>
               <div className="user__info ">
                 <h5> {userProfile.hoTen} </h5>
-                <div>
-                  <p>
-                    <span>User</span> : {userProfile.taiKhoan}{" "}
-                  </p>
-                  <p>
-                    <span>Password</span> : {userProfile.matKhau}{" "}
-                  </p>
-                </div>
+
 
                 <p>Front-end Developer</p>
               </div>
@@ -98,7 +91,7 @@ class User extends Component {
                 <div
                   className={`edit__profile ${
                     this.state.certificates ? "active" : ""
-                  }`}
+                    }`}
                   onClick={() => this.handleChangeMenu("certificates")}
                 >
                   <i className="fa fa-certificate mr-2" aria-hidden="true" />
@@ -107,7 +100,7 @@ class User extends Component {
                 <div
                   className={`edit__profile ${
                     this.state.account ? "active" : ""
-                  }`}
+                    }`}
                   onClick={() => this.handleChangeMenu("account")}
                 >
                   <i className="fa fa-user mr-2" aria-hidden="true" />

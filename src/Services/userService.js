@@ -1,7 +1,7 @@
 import { resConnector } from "../Services/index";
 
 
-
+const accessToken = localStorage.getItem("userLogin") ? JSON.parse(localStorage.getItem("userLogin")).accessToken : null;
 class UserService {
   UserSignUp(user) {
     return resConnector({
@@ -20,61 +20,61 @@ class UserService {
   }
 
   personalInfo(taiKhoan) {
-    const userLogin = JSON.parse(localStorage.getItem("userLogin"))
+
     return resConnector({
       method: "POST",
       url: "/api/QuanLyNguoiDung/ThongTinTaiKhoan",
       data: { taiKhoan },
       headers: {
-        Authorization: "Bearer  " + userLogin.accessToken
+        Authorization: "Bearer " + accessToken
       }
     });
   }
 
   fixPersonalUser(userpro) {
-    const userLogin = JSON.parse(localStorage.getItem("userLogin"))
+
     return resConnector({
       url: "/api/QuanLyNguoiDung/CapNhatThongTinNguoiDung",
       method: "PUT",
       data: userpro,
       headers: {
-        Authorization: "Bearer  " + userLogin.accessToken
+        Authorization: "Bearer " + accessToken
       }
     });
   }
 
   fetchListUser() {
-    const userLogin = JSON.parse(localStorage.getItem("userLogin"))
+
     return resConnector({
       url: "/api/QuanLyNguoiDung/LayDanhSachNguoiDung?MaNhom=GP01",
       method: "GET",
 
       headers: {
-        Authorization: "Bearer  " + userLogin.accessToken
+        Authorization: "Bearer " + accessToken
       }
     });
   }
 
   addUser(user) {
-    const userLogin = JSON.parse(localStorage.getItem("userLogin"))
+
     return resConnector({
       url: "/api/QuanLyNguoiDung/ThemNguoiDung",
       method: "POST",
       data: user,
       headers: {
-        Authorization: "Bearer  " + userLogin.accessToken
+        Authorization: "Bearer " + accessToken
       }
     });
   }
 
   deleteUser(taiKhoan) {
-    const userLogin = JSON.parse(localStorage.getItem("userLogin"))
+
     return resConnector({
       url: `/api/QuanLyNguoiDung/XoaNguoiDung?TaiKhoan=${taiKhoan}`,
       method: "DELETE",
 
       headers: {
-        Authorization: "Bearer  " + userLogin.accessToken
+        Authorization: "Bearer " + accessToken
       }
     });
   }

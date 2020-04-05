@@ -1,6 +1,5 @@
 import { resConnector } from "../Services/index";
-
-// let user = localStorage.getItem("userLogin")
+const accessToken = localStorage.getItem("userLogin") ? JSON.parse(localStorage.getItem("userLogin")).accessToken : null;
 class CourseService {
   fetchCourses() {
     return resConnector({
@@ -31,27 +30,27 @@ class CourseService {
   }
 
   addCourse(course) {
-    let user = JSON.parse(localStorage.getItem("userLogin"));
+
 
     return resConnector({
       url: `/api/QuanLyKhoaHoc/ThemKhoaHoc`,
       method: "POST",
       data: course,
       headers: {
-        Authorization: "Bearer  " + user.accessToken
+        Authorization: "Bearer " + accessToken
       }
     });
   }
 
   deleteCourse(maKhoaHoc) {
-    let user = JSON.parse(localStorage.getItem("userLogin"));
+
 
     return resConnector({
       url: `api/QuanLyKhoaHoc/XoaKhoaHoc?maKhoaHoc=${maKhoaHoc}`,
       method: "DELETE",
 
       headers: {
-        Authorization: "Bearer  " + user.accessToken
+        Authorization: "Bearer " + accessToken
       }
     });
   }
@@ -59,7 +58,7 @@ class CourseService {
 
 
   updateCourse(course) {
-    let user = JSON.parse(localStorage.getItem("userLogin"));
+
 
     return resConnector({
       url: `api/QuanLyKhoaHoc/CapNhatKhoaHoc`,
@@ -67,24 +66,24 @@ class CourseService {
       data: course,
 
       headers: {
-        Authorization: "Bearer " + user.accessToken
+        Authorization: "Bearer " + accessToken
       }
     });
   }
 
 
-  updateImg(file,tenKhoaHoc) {
-    let user = JSON.parse(localStorage.getItem("userLogin"));
+  updateImg(file, tenKhoaHoc) {
+
     let form_data = new FormData();
     form_data.append("file", file);
-    form_data.append("tenKhoaHoc",tenKhoaHoc);
+    form_data.append("tenKhoaHoc", tenKhoaHoc);
     return resConnector({
       url: `api/QuanLyKhoaHoc/UploadHinhAnhKhoaHoc`,
       method: "POST",
       data: form_data,
 
       headers: {
-        Authorization: "Bearer" + user.accessToken
+        Authorization: "Bearer " + accessToken
       }
     });
   }
