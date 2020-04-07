@@ -50,23 +50,20 @@ class Course extends Component {
     console.log(this.state.showGoCart);
 
     let { course } = this.props;
+
     return (
-      <div className="product__item">
-        <Link
-          to={`/coursedetail/${course.maKhoaHoc}`}
-          style={{ textDecoration: "none" }}
-        >
-          <div className="item__img">
-            <img className="img-fluid" src={course.hinhAnh} alt="item" />
-            <div className="img__overlay" />
-          </div>
+      <div className="product__item col-3" to={`/coursedetail/${course.maKhoaHoc}`}>
+
+        <div className="product__item__content">
+
+          <img className="product__item__img" src={course.hinhAnh} alt="item" />
           <div className="item__info">
-            <h5>
+            <div className="Course__name">
               {course.tenKhoaHoc.length > 45
                 ? course.tenKhoaHoc.substr(0, 45) + "..."
                 : course.tenKhoaHoc}
-            </h5>
-            <h6>Jose Portilla</h6>
+            </div>
+            <span className="Course__author">Jose Portilla</span>
             <div className="rating">
               <i className="fa fa-star" />
               <i className="fa fa-star" />
@@ -79,48 +76,44 @@ class Course extends Component {
             </div>
             <div className="price">
               <span className="old__price">$199.99</span>
-              <span className="price">
+              <span className="new__price">
                 $19.99 <i className="fa fa-tag"></i>
               </span>
             </div>
           </div>
-        </Link>
-        <span className="best__seller">BEST</span>
-        <div className="sub__info">
-          <p>last update : 11/02/2000</p>
-          <span>{course.tenKhoaHoc}</span>
-          <div className="sub-bestseller">
-            <div>BESTSELLER</div>
-            <div className="d-flex ml-2">
-              in <div className="ml-1"> Data AnaLysis</div>
-            </div>
-            <div>Development</div>
-          </div>
+          <div className="sub__info">
+            <p className="lastUpdate">last update : 11/02/2000</p>
+            <h4 className="course__name">{course.tenKhoaHoc}</h4>
+            <div className="sub-bestseller">
 
-          <div className="sub-info">
-            <div>
-              <i className="fa fa-play"></i>
+              <div className="d-flex ml-2">
+                in <div className="ml-1"> Data AnaLysis</div>
+              </div>
+              <div>Development</div>
+            </div>
+
+            <div className="sub__info__body">
+              <div>
+                <i className="fa fa-play"></i>
               93 Lectures
             </div>
-            <div>
-              <i className="fa fa-clock-o" aria-hidden="true" /> 11.5 Hours
+              <div>
+                <i className="fa fa-clock-o" aria-hidden="true" /> 11.5 Hours
             </div>
-            <div>
-              <i className="fa fa-sliders" aria-hidden="true" /> All levels
+              <div>
+                <i className="fa fa-sliders" aria-hidden="true" /> All levels
             </div>
-            <div>
-              <i className="fa fa-cc" aria-hidden="true"></i>
+              <div>
+                <i className="fa fa-cc" aria-hidden="true"></i>
+              </div>
             </div>
-          </div>
-          <div className="sub-text">
-            <p>
-              Complete Data Science Training: Mathematics, Statistics, Python,
-              Advanced Statistics in Python, Machine & Deep
+            <div className="sub__text">
+              <p>
+                Complete Data Science Training: Mathematics, Statistics, Python,
+                Advanced Statistics in Python, Machine & Deep
             </p>
-          </div>
-
-          <div className="sub-list">
-            <ul>
+            </div>
+            <ul className="sub__body__list">
               <li>
                 The course provides the entire toolbox you need to become a data
                 scientist
@@ -128,39 +121,46 @@ class Course extends Component {
               <li>Understand the difference between Groups and Sets</li>
               <li>Create and use Static Sets</li>
             </ul>
-          </div>
-          <div className="sub-button">
-            <div className="sub-btn-addtocart">
-              {this.state.showGoCart ? (
-                <div>
+            <div className="sub__button">
+              <div className="sub__button-addtocart">
+                {this.state.showGoCart ? (
                   <Link to="/cart">
                     {this.state.loader ? (
-                      <button className="go_toCart">Go to cart</button>
+                      <button className=" btn-handle go_toCart">Go to cart</button>
                     ) : (
-                      <LoaderButton />
-                    )}
+                        <LoaderButton className="loading" />
+                      )}
                   </Link>
-                </div>
-              ) : (
-                <button
-                  className="add__cart"
-                  onClick={() => this.onCart(course)}
-                >
-                  Add to cart
-                </button>
-              )}
-            </div>
-            <div className="sub-heart">
-              <i
-                onClick={() => this.props.addCourseFavories(course)}
-                className="fa fa-heart-o"
-                aria-hidden="true"
-              ></i>
+
+                ) : (
+                    <button
+                      className=" btn-handle add__cart"
+                      onClick={() => this.onCart(course)}
+                    >
+                      Add to cart
+                    </button>
+                  )}
+              </div>
+              <div className="sub__heart">
+                <i
+                  onClick={() => this.props.addCourseFavories(course)}
+                  className="fa fa-heart-o"
+                  aria-hidden="true"
+                ></i>
+              </div>
             </div>
           </div>
+
+
+
+
+
         </div>
+
+
       </div>
-    );
+    )
+
   }
 }
 

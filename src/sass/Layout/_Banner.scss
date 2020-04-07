@@ -167,9 +167,18 @@
   }
 }
 
-@media all and (max-width: 480px) {
-  .banner__slide,
-  .col-md-3:nth-child(3) {
-    display: none;
+@media screen and (min-width: 740px) and (max-width: 1024px) {
+  .banner__content{
+    
+    .banner__caterory,.banner__pr-2{
+      display: none;
+    }
+    .banner__pr{
+      .banner__slide{
+        img{
+          height: 400px;
+        }
+      }
+    }
   }
 }

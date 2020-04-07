@@ -97,8 +97,8 @@ class Header extends Component {
     this.props.setCurrentUser({});
     localStorage.removeItem("userLogin");
     notify("success", "Logged out successfully");
-   this.props.history.push("/")
-   
+    this.props.history.push("/")
+
   };
 
   showHeaderCartItem = cart => {
@@ -136,7 +136,7 @@ class Header extends Component {
       <header className="header ">
         <div className="header__content container ">
           <div className="row ">
-            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-6 d-flex">
+            <div className="col-6 d-flex header__left">
               <Link
                 to="/"
                 style={{ textDecoration: "none" }}
@@ -154,7 +154,7 @@ class Header extends Component {
                 history={this.props.history}
               />
             </div>
-            <div className="col-md-6 col-sm-6 col-lg-6 col-xl-6  d-flex">
+            <div className="col-6  d-flex  header__right">
               <div className="header-card">
                 <Link to="/cart" style={{ textDecoration: "none" }}>
                   <div className="alert-cart">
@@ -194,6 +194,10 @@ class Header extends Component {
 
               {this.checkShowAccout(this.props.currentUser)}
             </div>
+            <div className="col-6 menu__bar">
+             <i className="fa fa-bars" aria-hidden="true" />
+            </div>
+
           </div>
         </div>
       </header>

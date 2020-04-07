@@ -33,12 +33,7 @@ class HomePage extends Component {
   render() {
     return (
       <div className="wrapper">
-        {this.state.loading ? (
-          <div>
-            <LoadingBackground />
-          </div>
-        ) : (
-          <Fragment>
+        <Fragment>
             <Header history={this.props.history} />
 
             <Banner courseCatalog={this.props.courseCatalog} />
@@ -56,7 +51,6 @@ class HomePage extends Component {
             <ScrollUpButton EasingType="linear" />
             <Hotline />
           </Fragment>
-        )}
       </div>
     );
   }
