@@ -46,7 +46,7 @@ class Header extends Component {
 
     if (_.isEmpty(currentUser) && !userLogin) {
       return (
-        <div className="header-user">
+        <div className="header-user nav-item">
           <Link to="/login" className="btn--white ">
             Login{" "}
           </Link>
@@ -130,32 +130,41 @@ class Header extends Component {
   render() {
     let { cart, courseFavories } = this.props;
     let { searchKeyword } = this.props.display;
-    
+
 
     return (
       <header className="header ">
-        <div className="header__content container ">
-          <div className="row ">
-            <div className="col-6 d-flex header__left">
-              <Link
-                to="/"
-                style={{ textDecoration: "none" }}
-                className="header-image"
-              >
-                <img
-                  className="img-fluid mr-2"
-                  src="https://edumall.vn/static/version1585153576/frontend/Edumall/winstrike/default/images/logo_full.svg"
-                  alt=""
-                />{" "}
-              </Link>
 
-              <Search
+        <nav className="navbar navbar-expand-sm  navbar-expand-md header__content container navbar-light bg-white">
+          <div className="d-flex header__left">
+            <Link
+              to="/"
+              style={{ textDecoration: "none" }}
+              className="header-image"
+            >
+              <img
+                className="img-fluid mr-2"
+                src="https://edumall.vn/static/version1585153576/frontend/Edumall/winstrike/default/images/logo_full.svg"
+                alt=""
+              />{" "}
+            </Link>
+
+
+          </div>
+          <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse header__right" id="collapsibleNavId">
+
+
+
+
+            <ul class="navbar-nav">
+              <Search 
                 searchKeyword={searchKeyword}
                 history={this.props.history}
               />
-            </div>
-            <div className="col-6  d-flex  header__right">
-              <div className="header-card">
+              <div className="header-card  nav-item">
                 <NavLink to="/cart" style={{ textDecoration: "none" }}>
                   <div className="alert-cart">
                     <i className="fa fa-shopping-cart" />
@@ -191,16 +200,19 @@ class Header extends Component {
                   </div>
                 </div>
               </div>
-
               {this.checkShowAccout(this.props.currentUser)}
-            </div>
-            <div className="col-6 menu__bar">
-             <i className="fa fa-bars" aria-hidden="true" />
-            </div>
 
+            </ul>
           </div>
-        </div>
+
+        </nav>
+
+
+
+
       </header>
+
+
     );
   }
 }

@@ -49,8 +49,8 @@ class Search extends Component {
     let { searchKeyword } = this.props.display;
 
     return (
-      <div className="header-control search">
-        <form onSubmit={this.onSubmit} className="d-flex">
+      <div className="header-control search nav-item ">
+        <form onSubmit={this.onSubmit} className="form d-flex">
           <input
             name="search"
             onChange={this.onChange}

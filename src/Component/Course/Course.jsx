@@ -52,7 +52,7 @@ class Course extends Component {
     let { course } = this.props;
 
     return (
-      <div className="product__item col-3" to={`/coursedetail/${course.maKhoaHoc}`}>
+      <div className="product__item col-md-3 col-sm-12 mt-2" to={`/coursedetail/${course.maKhoaHoc}`}>
 
         <div className="product__item__content">
 

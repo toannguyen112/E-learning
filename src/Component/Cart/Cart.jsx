@@ -4,7 +4,7 @@ import { DELETE_CART } from "../../Store/Action/type";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 class Cart extends Component {
-  showCartItem = cart => {
+  showCartItem = (cart) => {
     if (this.props.cart.length > 0) {
       return cart.map((course, index) => {
         return (
@@ -26,7 +26,6 @@ class Cart extends Component {
 
   render() {
     let { cart } = this.props;
-    console.log(this.props.cart);
 
     return (
       <div className="cart_page">
@@ -98,20 +97,20 @@ class Cart extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    cart: state.cart
+    cart: state.cart,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    deleteCart: course => {
+    deleteCart: (course) => {
       dispatch({
         type: DELETE_CART,
-        payload: course
+        payload: course,
       });
-    }
+    },
   };
 };
 

@@ -1,12 +1,15 @@
 .header-control {
+  
+  display: flex;
+  align-items: center;
   input {
-    width: 360px;
-    height: 38px;
+    
     border: none;
     background-color: $bg-color;
     margin-left: 35px;
     padding: 0 14px;
     outline: none;
+   
   }
   position: relative;
   input:focus ~ .search__result {
@@ -101,8 +104,6 @@
       color: white;
     }
   }
-  width: 80%;
+  
 
-  display: flex;
-  align-items: center;
 }

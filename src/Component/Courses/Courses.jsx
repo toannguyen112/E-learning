@@ -13,12 +13,12 @@ class Courses extends Component {
 
     return (
       <div className="Course">
-       
+
 
         <div className="courses">
           <div className="container">
             <div className="row sort__filter align-items-center">
-              <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 pl-0">
+              <div className="col-md-6 col-sm-12 py-3">
                 <div className="sort">
                   <span>
                     <i className="fa fa-th-list" aria-hidden="true" />
@@ -34,7 +34,7 @@ class Courses extends Component {
                   </select>
                 </div>
               </div>
-              <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 pl-0">
+              <div className="col-md-6 col-sm-12 py-3">
                 <div className="filter text-right">
                   <span>
                     Showing 1–{courses.length} of {this.props.courses.length}{" "}
@@ -98,15 +98,6 @@ const mapStateToProps = state => ({
   courses: state.Course.course
 });
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     handleSearch: keyword => {
-//       dispatch({
-//         type: SEARCH_COURSES,
-//         payload: keyword
-//       });
-//     }
-//   };
-// };
+
 
 export default connect(mapStateToProps)(Courses);

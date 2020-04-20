@@ -25,8 +25,8 @@ export default class CartPage extends Component {
   render() {
     return (
       <div>
-        <Header />
-        {this.state.loading ? <Loader/> : <Cart />}
+        <Header history={this.props.history} />
+        {this.state.loading ? <Loader/> : <Cart history={this.props.history} />}
 
         <Footer />
       </div>

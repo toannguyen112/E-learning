@@ -48,12 +48,12 @@ class CourseDetailPage extends Component {
         {this.state.loading ? (
           <Loader />
         ) : (
-          <CourseItem
-            courseDetail={courseDetail}
-            course={course}
-            history={this.props.history}
-          />
-        )}
+            <CourseItem
+              courseDetail={courseDetail}
+              course={course}
+              history={this.props.history}
+            />
+          )}
 
         <Footer />
       </div>

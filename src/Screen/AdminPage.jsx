@@ -2,8 +2,16 @@ import React, { Component } from "react";
 
 import Admin from "../Component/Admin/Admin";
 import LoadingAdmin from "../Component/Admin/LoadingAdmin";
+import { connect } from "react-redux";
 
-export default class AdminPage extends Component {
+import reduxAction from "../Store/Action/action";
+import { FETCH_COURSES } from "../Store/Action/type";
+import CourseService from "../Services/courseService";
+const courseService = new CourseService();
+class AdminPage extends Component {
+
+
+
   constructor(props) {
     super(props);
 
@@ -18,6 +26,15 @@ export default class AdminPage extends Component {
         loading: false
       });
     }, 3000);
+
+    courseService
+    .fetchCourses()
+    .then(res => {
+      this.props.dispatch(reduxAction(FETCH_COURSES, res.data));
+    })
+    .catch(err => {
+      console.log(err);
+    });
   }
   render() {
     return (
@@ -31,3 +48,4 @@ export default class AdminPage extends Component {
     );
   }
 }
+export default connect()(AdminPage)

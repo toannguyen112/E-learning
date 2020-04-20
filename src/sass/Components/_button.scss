@@ -6,13 +6,13 @@
     $color-white-0,
     $color-white-1
   );
-  padding-top: 3px;
-  margin: 0 10px;
+  padding: 0 10px;
+  margin-left: 10px;
   width: 100%;
-  height: 36px;
+
   border-radius: 3px;
   outline: none;
-
+  white-space: nowrap;
   &:hover {
     color: black;
     text-decoration: none;
@@ -27,10 +27,11 @@
     $color-red-1,
     transparent
   );
-  padding-top: 3px;
-  margin: 0 10px;
+  padding: 0 10px;
+  margin-left: 10px;
   width: 100%;
-  height: 36px;
+
+  white-space: nowrap;
   border-radius: 3px;
   outline: none;
   &:hover {
@@ -50,7 +51,6 @@
     $color-white-1
   );
 
-  padding: 10px 10px;
   height: 50px;
   border-radius: 3px;
 }
