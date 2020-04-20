@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Search from "../Search/Search";
 import { connect } from "react-redux";
 import _ from "lodash";
@@ -130,7 +130,7 @@ class Header extends Component {
   render() {
     let { cart, courseFavories } = this.props;
     let { searchKeyword } = this.props.display;
-    console.log(cart);
+    
 
     return (
       <header className="header ">
@@ -156,7 +156,7 @@ class Header extends Component {
             </div>
             <div className="col-6  d-flex  header__right">
               <div className="header-card">
-                <Link to="/cart" style={{ textDecoration: "none" }}>
+                <NavLink to="/cart" style={{ textDecoration: "none" }}>
                   <div className="alert-cart">
                     <i className="fa fa-shopping-cart" />
                     <span>{cart.length}</span>
@@ -167,7 +167,7 @@ class Header extends Component {
                       </div>
                     </div>
                   </div>
-                </Link>
+                </NavLink>
 
                 <Link to="./favorites" style={{ textDecoration: "none" }}>
                   <div className="alert-cart">

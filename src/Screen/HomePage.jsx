@@ -9,10 +9,16 @@ import Featured from "../Component/Featured/Featured";
 import Intro from "../Component/Intro/Intro";
 import Footer from "../Component/Footer/Footer";
 import ScrollUpButton from "react-scroll-up-button";
-
-import { connect } from "react-redux";
-import LoadingBackground from "../Component/LoadingBackground/loadingBackground";
+import CourseService from '../Services/courseService'
 import Hotline from "../Component/Hotline/Hotline";
+import { connect } from "react-redux";
+
+import reduxAction from "../Store/Action/action";
+import { FETCH_COURSES, FETCH_COURSES_CATALOG } from "../Store/Action/type";
+
+
+const courseService = new CourseService();
+
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -28,29 +34,49 @@ class HomePage extends Component {
         loading: false
       });
     }, 2000);
+
+    courseService
+      .fetchCourses()
+      .then(res => {
+        this.props.dispatch(reduxAction(FETCH_COURSES, res.data));
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    courseService
+      .fetchCourseCatalog()
+      .then(res => {
+        this.props.dispatch(reduxAction(FETCH_COURSES_CATALOG, res.data));
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+
   }
 
   render() {
     return (
       <div className="wrapper">
         <Fragment>
-            <Header history={this.props.history} />
+          <Header history={this.props.history} />
 
-            <Banner courseCatalog={this.props.courseCatalog} />
+          <Banner courseCatalog={this.props.courseCatalog} />
 
-            <Promotion courseList={this.props.courseList} />
+          <Promotion courseList={this.props.courseList} />
 
-            <TopSelling courseList={this.props.courseList} />
+          <TopSelling courseList={this.props.courseList} />
 
-            <Featured courseList={this.props.courseList} />
+          <Featured courseList={this.props.courseList} />
 
-            <Intro />
-            <Countdown />
+          <Intro />
+          <Countdown />
 
-            <Footer />
-            <ScrollUpButton EasingType="linear" />
-            <Hotline />
-          </Fragment>
+          <Footer />
+          <ScrollUpButton EasingType="linear" />
+          <Hotline />
+        </Fragment>
       </div>
     );
   }

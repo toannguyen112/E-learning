@@ -1,7 +1,9 @@
 import { resConnector } from "../Services/index";
 
 
-const accessToken = localStorage.getItem("userLogin") ? JSON.parse(localStorage.getItem("userLogin")).accessToken : null;
+const accessToken = localStorage.getItem("userLogin") ? JSON.parse(localStorage.getItem("userLogin")).accessToken : "";
+console.log(  typeof accessToken);
+
 class UserService {
   UserSignUp(user) {
     return resConnector({

@@ -1,15 +1,15 @@
 .header {
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-
-  z-index: 100;
+  position: fixed;
   top: 0;
-
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: rgb(255, 255, 255);
+  top: 0;
   transition: all ease 0.3s;
   box-shadow: 0 0 15px #d1d1d1;
   padding: 10px 0;
-
-  width: 100%;
+  height: 60px;
 
   .header__content {
     .header__left {
@@ -82,7 +82,6 @@
             left: -145%;
             z-index: 99;
             display: none;
-
             animation: headercart ease-in 0.1s;
 
             .header-item {
@@ -112,8 +111,8 @@
             &:before {
               position: absolute;
               content: "";
-              width: 20px;
-              height: 20px;
+              width: 15px;
+              height: 15px;
               top: -2%;
               right: 47%;
               background: #fff;

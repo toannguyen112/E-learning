@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import "./sass/main.scss";
-import "./App.css";
 import HomePage from "./Screen/HomePage";
 import CoursesPage from "./Screen/CoursePage";
 import LoginPage from "./Screen/LoginPage";
@@ -10,38 +8,16 @@ import CheckoutPage from "./Screen/CheckoutPage";
 import SignUpPage from "./Screen/SignUpPage";
 import UserPage from "./Screen/UserPage";
 import AdminPage from "./Screen/AdminPage";
-import CourseService from "./Services/courseService";
 import Auth from "./Component/Auth/auth";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-
-import reduxAction from "./Store/Action/action";
-import { FETCH_COURSES } from "./Store/Action/type";
-
-import { FETCH_COURSES_CATALOG } from "./Store/Action/type";
-import { connect } from "react-redux";
 import FavoritesPage from "./Screen/FavoritesPage";
-const courseService = new CourseService();
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
+import "./sass/main.scss";
+import "./App.css"
+
 
 class App extends Component {
-  componentDidMount() {
-    courseService
-      .fetchCourses()
-      .then(res => {
-        this.props.dispatch(reduxAction(FETCH_COURSES, res.data));
-      })
-      .catch(err => {
-        console.log(err);
-      });
-
-    courseService
-      .fetchCourseCatalog()
-      .then(res => {
-        this.props.dispatch(reduxAction(FETCH_COURSES_CATALOG, res.data));
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
+  componentDidMount() { }
   render() {
     return (
       <div className="App">
