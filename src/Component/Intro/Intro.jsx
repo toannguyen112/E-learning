@@ -10,74 +10,74 @@ export default class Intro extends Component {
           </div>
           <div className="intro__slider">
             <div className="row">
-              <div className="col-md-6 col-sm-6 col-lg-6 col-xl-6">
+              <div className=" big__img col-md-6 col-sm-6 col-lg-6 col-xl-6">
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_Edumallcombo_2_1.png"
                     alt=""
                   />
-                  
+
                 </div>
               </div>
-              <div className="col-md-6 col-sm-6 col-lg-6 col-xl-6">
+              <div className=" big__img col-md-6 col-sm-6 col-lg-6 col-xl-6">
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_digital-min_1_1_1_1.png"
                     alt=""
                   />
-                 
+
                 </div>
               </div>
-              <div className="col-md-4 col-sm-4 col-lg-4 col-xl-4">
+              <div className=" small__img col-md-4 col-sm-4 col-lg-4 col-xl-4">
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/child-reading-facebook-ai-tes_1.jpg"
                     alt=""
                   />
-                  
+
                 </div>
               </div>
-              <div className="col-md-4 col-sm-4 col-lg-4 col-xl-4">
+              <div className=" small__img col-md-4 col-sm-4 col-lg-4 col-xl-4">
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_ielts-min_2.png"
                     alt=""
                   />
-                  
+
                 </div>
               </div>
-              <div className="col-md-4 col-sm-4 col-lg-4 col-xl-4">
+              <div className=" small__img col-md-4 col-sm-4 col-lg-4 col-xl-4">
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_design-min_1_1_1_1.png"
                     alt=""
                   />
-                 
+
                 </div>
               </div>
-              <div className="col-md-4 col-sm-4 col-lg-4 col-xl-4">
+              <div className=" small__img col-md-4 col-sm-4 col-lg-4 col-xl-4">
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_bhonline-min_1_.png"
                     alt=""
                   />
-                 
+
                 </div>
               </div>
-              <div className="col-md-4 col-sm-4 col-lg-4 col-xl-4">
+              <div className=" small__img col-md-4 col-sm-4 col-lg-4 col-xl-4">
                 <div className="intro-banner">
                   <img
                     className="img-fluid"
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/roadmap_dtck-min_1_1.png"
                     alt=""
                   />
-                  
+
                 </div>
               </div>
             </div>

@@ -4,7 +4,11 @@ import Course from "../Course/Course";
 
 export default class TopSelling extends Component {
   render() {
-    let { courseList, } = this.props;
+    let { courseList } = this.props;
+    console.log(courseList);
+    
+   
+
     return (
       <div className="TopSelling">
         <div className="TopSelling__content container">
@@ -21,7 +25,7 @@ export default class TopSelling extends Component {
   showViewingItem = courseList => {
     let result = [];
     if (courseList && courseList.length > 0) {
-      for (let i = 10; i < 13; i++) {
+      for (let i = 0; i < 4; i++) {
         result.push(<Course key={i} course={courseList[i]} />);
       }
     }

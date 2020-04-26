@@ -1,6 +1,6 @@
 .courseDetail-content {
   margin-top: 60px;
-  padding-top: 20px;
+  padding-top: 50px;
   .row {
     .content {
       .intro-title {
@@ -150,7 +150,6 @@
             top: 0;
             left: 0;
             .play {
-             
               cursor: pointer;
               position: absolute;
               top: 50%;
@@ -163,7 +162,6 @@
               background-color: black;
               background: url("https://www.udemy.com/staticx/udemy/js/webpack/icon-play.ac3f32ecb72a0c3f674fa5a3f3062a56.svg")
                 no-repeat;
-                
             }
           }
         }

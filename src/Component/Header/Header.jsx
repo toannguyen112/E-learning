@@ -46,7 +46,7 @@ class Header extends Component {
 
     if (_.isEmpty(currentUser) && !userLogin) {
       return (
-        <div className="header-user nav-item">
+        <div className="header-user">
           <Link to="/login" className="btn--white ">
             Login{" "}
           </Link>
@@ -134,9 +134,8 @@ class Header extends Component {
 
     return (
       <header className="header ">
-
-        <nav className="navbar navbar-expand-sm  navbar-expand-md header__content container navbar-light bg-white">
-          <div className="d-flex header__left">
+        <div className="header__content container">
+          <div className="header__left">
             <Link
               to="/"
               style={{ textDecoration: "none" }}
@@ -149,63 +148,60 @@ class Header extends Component {
               />{" "}
             </Link>
 
-
+            <Search
+              searchKeyword={searchKeyword}
+              history={this.props.history}
+            />
           </div>
-          <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="collapse navbar-collapse header__right" id="collapsibleNavId">
 
+          <div className="header__right" >
 
-
-
-            <ul class="navbar-nav">
-              <Search 
-                searchKeyword={searchKeyword}
-                history={this.props.history}
-              />
-              <div className="header-card  nav-item">
-                <NavLink to="/cart" style={{ textDecoration: "none" }}>
-                  <div className="alert-cart">
-                    <i className="fa fa-shopping-cart" />
-                    <span>{cart.length}</span>
-
-                    <div className="header-cart-items">
-                      <div className="header-cart-item">
-                        {this.showHeaderCartItem(cart)}
-                      </div>
-                    </div>
-                  </div>
-                </NavLink>
-
-                <Link to="./favorites" style={{ textDecoration: "none" }}>
-                  <div className="alert-cart">
-                    <i className="fa fa-heart" aria-hidden="true" />
-                    <span>{courseFavories.length}</span>
-                    <div className="header-cart-items">
-                      <div className="header-cart-item">
-                        {this.showHeaderCourseFavories(courseFavories)}
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-
+            <div className="header-card ">
+              <NavLink to="/cart" style={{ textDecoration: "none" }}>
                 <div className="alert-cart">
-                  <i className="fa fa-bell" />
-                  <span>5</span>
+                  <i className="fa fa-shopping-cart" />
+                  <span>{cart.length}</span>
+
                   <div className="header-cart-items">
                     <div className="header-cart-item">
-                      {this.showNotifily()}
+                      {this.showHeaderCartItem(cart)}
                     </div>
                   </div>
                 </div>
-              </div>
-              {this.checkShowAccout(this.props.currentUser)}
+              </NavLink>
 
-            </ul>
+              <Link to="./favorites" style={{ textDecoration: "none" }}>
+                <div className="alert-cart">
+                  <i className="fa fa-heart" aria-hidden="true" />
+                  <span>{courseFavories.length}</span>
+                  <div className="header-cart-items">
+                    <div className="header-cart-item">
+                      {this.showHeaderCourseFavories(courseFavories)}
+                    </div>
+                  </div>
+                </div>
+              </Link>
+
+              <div className="alert-cart">
+                <i className="fa fa-bell" />
+                <span>5</span>
+                <div className="header-cart-items">
+                  <div className="header-cart-item">
+                    {this.showNotifily()}
+                  </div>
+                </div>
+              </div>
+            </div>
+            {this.checkShowAccout(this.props.currentUser)}
+
+
+
           </div>
 
-        </nav>
+        </div>
+
+
+
 
 
 

@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class HeaderItemCourseFavories extends Component {
     render() {
         let { courseFavories } = this.props;
         return (
-            <NavLink
+            <Link
                 to={`/coursedetail/${courseFavories.maKhoaHoc}`}
                 className="row header-item"
                 style={{ textDecoration: "none" }}
@@ -17,7 +17,9 @@ export default class HeaderItemCourseFavories extends Component {
                     <p>{courseFavories.tenKhoaHoc}</p>
                     <p style={{ color: "red" }}>$19.99</p>
                 </div>
-            </NavLink>
+            </Link>
+
+
         );
     }
 }

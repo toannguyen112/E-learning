@@ -57,13 +57,16 @@ class HomePage extends Component {
   }
 
   render() {
+    console.log(this.props.courseList);
+
+
     return (
       <div className="wrapper">
         <Fragment>
           <Header history={this.props.history} />
 
           <Banner courseCatalog={this.props.courseCatalog} />
-
+          
           <Promotion courseList={this.props.courseList} />
 
           <TopSelling courseList={this.props.courseList} />
@@ -88,4 +91,4 @@ const mapStateToProps = state => {
     courseCatalog: state.Course.courseCatalog
   };
 };
-export default connect(mapStateToProps)(HomePage);
+export default connect(mapStateToProps, null)(HomePage);

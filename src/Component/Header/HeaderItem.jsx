@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class HeaderItem extends Component {
     render() {
         let { course } = this.props;
         return (
-            <NavLink
+            <Link
                 to={`/coursedetail/${course.maKhoaHoc}`}
                 className="row header-item"
                 style={{ textDecoration: "none" }}
@@ -17,7 +17,8 @@ class HeaderItem extends Component {
                     <p>{course.tenKhoaHoc}</p>
                     <p style={{ color: "red" }}>$19.99</p>
                 </div>
-            </NavLink>
+            </Link>
+
         );
     }
 }

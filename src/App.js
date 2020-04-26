@@ -11,15 +11,12 @@ import AdminPage from "./Screen/AdminPage";
 import Auth from "./Component/Auth/auth";
 import FavoritesPage from "./Screen/FavoritesPage";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { connect } from "react-redux";
+
 import "./sass/main.scss";
-import "./App.css"
+import "./App.css";
 
-
-class App extends Component {
- 
+export default class App extends Component {
   render() {
-    
     return (
       <div className="App">
         <BrowserRouter>
@@ -46,4 +43,3 @@ class App extends Component {
     );
   }
 }
-export default connect()(App);

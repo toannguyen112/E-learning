@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { ADD_TO_CART, ADD_COURSE_FAVORIES } from "../../Store/Action/type";
 
@@ -25,7 +25,7 @@ class Course extends Component {
       this.setState({
         loader: true
       });
-    }, 1000);
+    }, 2000);
   };
 
   componentDidMount() {
@@ -47,16 +47,16 @@ class Course extends Component {
   }
 
   render() {
-    console.log(this.state.showGoCart);
-
     let { course } = this.props;
 
+
+
     return (
-      <div className="product__item col-md-3 col-sm-12 mt-2" to={`/coursedetail/${course.maKhoaHoc}`}>
+      <div className="product__item col-md-3 col-sm-12 mt-2" >
 
         <div className="product__item__content">
 
-          <img className="product__item__img" src={course.hinhAnh} alt="item" />
+          <NavLink className="product__wrapper__img" to={`/coursedetail/${course.maKhoaHoc}`} > <img className="img-fluid" src={course.hinhAnh} /></NavLink>
           <div className="item__info">
             <div className="Course__name">
               {course.tenKhoaHoc.length > 45
@@ -124,13 +124,13 @@ class Course extends Component {
             <div className="sub__button">
               <div className="sub__button-addtocart">
                 {this.state.showGoCart ? (
-                  <Link to="/cart">
+                  <NavLink to="/cart">
                     {this.state.loader ? (
                       <button className=" btn-handle go_toCart">Go to cart</button>
                     ) : (
                         <LoaderButton className="loading" />
                       )}
-                  </Link>
+                  </NavLink>
 
                 ) : (
                     <button
@@ -140,6 +140,7 @@ class Course extends Component {
                       Add to cart
                     </button>
                   )}
+
               </div>
               <div className="sub__heart">
                 <i
