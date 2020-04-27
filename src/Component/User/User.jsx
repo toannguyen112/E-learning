@@ -113,7 +113,7 @@ class User extends Component {
                   <i className="fa fa-cogs mr-2" aria-hidden="true" />
                   Edit Profile
                 </div>
-              </div>
+              </div>  
             </div>
             <div className="col-md-9 user__course">{this.showMenu()}</div>
           </div>

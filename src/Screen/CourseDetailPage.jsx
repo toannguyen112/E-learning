@@ -36,7 +36,7 @@ class CourseDetailPage extends Component {
       this.setState({
         loading: false
       });
-    }, 1000);
+    }, 2000);
   }
 
   render() {

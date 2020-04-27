@@ -98,10 +98,16 @@
           }
         }
 
-        &:hover{
+        &:hover {
           box-shadow: none;
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .promotion {
+    display: none;
   }
 }

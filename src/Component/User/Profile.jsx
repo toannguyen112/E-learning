@@ -31,22 +31,10 @@ export default class Profile extends Component {
                   aria-controls="pills-home"
                   aria-selected="true"
                 >
-                  My Wishlist
-                </a>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="nav-link"
-                  id="pills-profile-tab"
-                  data-toggle="pill"
-                  href="#pills-profile"
-                  role="tab"
-                  aria-controls="pills-profile"
-                  aria-selected="false"
-                >
                   My Courses
                 </a>
               </li>
+
               <li className="nav-item">
                 <a
                   className="nav-link"
@@ -87,20 +75,7 @@ export default class Profile extends Component {
                 <button className="showmore">SHOW MORE</button>
               </div>
 
-              <div
-                className="tab-pane fade"
-                id="pills-profile"
-                role="tabpanel"
-                aria-labelledby="pills-profile-tab"
-              >
-                <div className="product__items">
-                  <Viewing />
 
-                  
-                </div>
-
-                <button className="showmore">SHOW MORE</button>
-              </div>
               <div
                 className="tab-pane fade"
                 id="pills-contact"

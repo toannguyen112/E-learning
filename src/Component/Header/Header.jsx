@@ -66,7 +66,7 @@ class Header extends Component {
             role="button"
           >
             <div className="customer-name ">
-              <img src="/img/avatar.jpg" alt="avatar" />
+              <img src="http://graph.facebook.com/v2.10/172902427148211/picture" alt="avatar" />
               <span>{userLogin.hoTen}</span>
               <div className="fa fa-caret-down"></div>
             </div>
@@ -107,7 +107,15 @@ class Header extends Component {
         return <HeaderItem course={item} key={index} />;
       });
     } else {
-      return <div>cart (0)</div>;
+      return (
+        <div className="p-2 text-center" style={{
+          color: "#000", fontSize: "13px"
+        }} >
+          Your cart empty
+          <p style={{ color: "#007791", fontWeight: "700", marginTop: "10px" }} >Keep Shoping</p>
+
+        </div>
+      )
     }
   };
 
@@ -117,7 +125,13 @@ class Header extends Component {
         return <HeaderItemCourseFavories courseFavories={item} key={index} />;
       });
     } else {
-      return <div>item (0)</div>;
+      return (
+        <div className="p-2 text-center" style={{ color: "#000", fontSize: "13px" }} >
+          Your wishlist is empty.
+          <p style={{ color: "#007791", fontWeight: "700", marginTop: "10px" }} >Explore courses</p>
+
+        </div>
+      )
     }
   };
 
@@ -197,7 +211,10 @@ class Header extends Component {
 
 
           </div>
+          <div className="icon__menu">
+            <i className="fa fa-bars" aria-hidden="true" />
 
+          </div>
         </div>
 
 
