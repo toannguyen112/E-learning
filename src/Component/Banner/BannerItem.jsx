@@ -1,15 +1,23 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
+import CourseService from '../../Services/courseService'
+const courseService = new CourseService();
 export default class BannerItem extends Component {
+
+
   render() {
-    let { item } = this.props;
+
+    let { item } = this.props
+
+
+
     return (
       <li>
         <Link to="/courses">
-          
+
 
           {item.tenDanhMuc}
+
         </Link>
 
         <div className="banner-info">

@@ -2,9 +2,24 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import BannerItem from "./BannerItem";
 import { Link } from "react-router-dom";
+import CourseService from '../../Services/courseService'
+const courseService = new CourseService();
 export default class Banner extends Component {
+  // componentDidMount() {
+  
+  //   courseService.fetchCourseOnCatalog(maDanhMuc).then((res) => {
+  //     this.state.course = res.data
+
+  //   }).catch((err) => {
+  //     console.log(err);
+
+  //   })
+
+  // }
   render() {
     let { courseCatalog } = this.props
+    console.log(courseCatalog);
+    
     const settingBanner = {
       autoplaySpeed: 1000,
       autoplay: true,

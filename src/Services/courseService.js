@@ -15,6 +15,15 @@ class CourseService {
     });
   }
 
+
+
+  fetchCourseOnCatalog(data) {
+    return resConnector({
+      url: `/api/QuanLyKhoaHoc/LayKhoaHocTheoDanhMuc?maDanhMuc=${data}&MaNhom=GP01`,
+      method: "GET"
+    });
+  }
+
   fetchCourseDetail(courseid) {
     return resConnector({
       url: `/api/QuanLyKhoaHoc/LayThongTinKhoaHoc?maKhoaHoc=${courseid}`,

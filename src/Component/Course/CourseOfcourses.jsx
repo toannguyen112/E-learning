@@ -61,7 +61,8 @@ class CourseOfcourses extends Component {
           <div>
             <span className="old__price mr-1">$199.99</span>
             <span>
-              $199 <i class="fa fa-tag"></i>
+              $199 <i className="fa fa-tag" />
+
             </span>
           </div>
 

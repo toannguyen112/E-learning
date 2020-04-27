@@ -1,14 +1,15 @@
 .Course {
   .courses {
-   
     .sort__filter {
       padding-top: 20px;
       .sort {
         span {
-          border: 1px solid red;
+          border: 1px solid #666;
           padding: 10px;
           cursor: pointer;
           margin-right: 12px;
+        }
+        span.active {
           color: $color-blue-4;
           border-color: $color-blue-4;
         }
@@ -89,8 +90,6 @@
           font-size: 20px;
           color: #ffce55;
         }
-
-
       }
     }
   }

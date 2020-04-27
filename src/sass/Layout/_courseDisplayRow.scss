@@ -1,0 +1,51 @@
+.wrapper__content {
+  color: #686f7a;
+  padding: $pd-1 0;
+  border-top: 1px solid #dedfe0;
+
+  .course__img {
+    img {
+      width: 210px;
+      height: 118px;
+    }
+  }
+  .course__content {
+    .nameCourse {
+      font-weight: $fw-bold-0;
+      font-size: $fs-1 + 4;
+      color: #000;
+    }
+    .list__view {
+      .list__view--item {
+        font-size: $fs-1;
+      }
+    }
+    .headline {
+      font-size: $fs-1;
+    }
+  }
+  .course__price {
+    text-align: right;
+    .price {
+      display: block;
+    }
+    .course__price--new {
+      color: #000;
+      font-weight: $fw-bold-1;
+      font-size: 20px;
+    }
+    .course__price--old {
+      text-decoration: line-through;
+    }
+    .warpper__rating {
+      padding-top: 10px;
+      .raiting__icon {
+        display: block;
+        color: $color-yellow;
+      }
+      .rating__number {
+        font-size: $fs-1;
+      }
+    }
+  }
+}

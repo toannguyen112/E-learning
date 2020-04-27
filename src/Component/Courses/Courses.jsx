@@ -4,12 +4,32 @@ import Pagination from '../Pagination/Pagination'
 import "react-pagination-js/dist/styles.css";
 import { connect } from "react-redux";
 import CourseOfcourses from "../Course/CourseOfcourses";
+import CourseDisplayRow from "../Course/CourseDisplayRow";
 
 class Courses extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayListCourse: false
+    }
+  }
+
+  changeDisplay(data) {
+    this.setState({
+      displayListCourse: data
+    })
+
+  }
+
+
+
+
   render() {
-    let { courses } = this.props;
-    let { searchKeyword } = this.props;
-    console.log(searchKeyword);
+
+
+    let { courses, searchKeyword } = this.props;
+
+
 
     return (
       <div className="Course">
@@ -20,10 +40,10 @@ class Courses extends Component {
             <div className="row sort__filter align-items-center">
               <div className="col-md-6 col-sm-12 py-3">
                 <div className="sort">
-                  <span>
+                  <span className={!this.state.displayListCourse ? 'active' : ""} onClick={() => this.changeDisplay(false)} >
                     <i className="fa fa-th-list" aria-hidden="true" />
                   </span>
-                  <span>
+                  <span className={this.state.displayListCourse ? 'active' : ""} onClick={() => this.changeDisplay(true)} >
                     <i className="fa fa-th-list" aria-hidden="true" />
                   </span>
                   <select className="sort__select" disabled>
@@ -49,7 +69,8 @@ class Courses extends Component {
               </div>
             </div>
             <div className="row sort__items">
-              {this.showCourseItem(courses, searchKeyword)}
+
+              {!this.state.displayListCourse ? this.showCourseItem(courses, searchKeyword) : this.showCourseDisplayRow(courses, searchKeyword)}
             </div>
           </div>
           <Pagination />
@@ -91,6 +112,35 @@ class Courses extends Component {
 
     return result;
   };
+  showCourseDisplayRow = (courses, searchKeyword) => {
+    let result = null;
+    let newArr = [...courses];
+    if (courses && courses.length > 0) {
+      if (searchKeyword && searchKeyword.length > 0) {
+        newArr = newArr.filter(
+          item =>
+            item.tenKhoaHoc
+              .toLowerCase()
+              .indexOf(searchKeyword.toLowerCase().trim()) !== -1
+        );
+
+        result = newArr.map((course, index) => {
+          return (
+            <CourseDisplayRow course={course} />
+          );
+        });
+      } else {
+        result = newArr.map((course, index) => {
+          return (
+            <CourseDisplayRow course={course} />
+          );
+        });
+      }
+    }
+
+    return result;
+  };
+
 }
 
 const mapStateToProps = state => ({

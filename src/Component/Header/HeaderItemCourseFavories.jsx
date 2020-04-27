@@ -7,15 +7,19 @@ export default class HeaderItemCourseFavories extends Component {
         return (
             <Link
                 to={`/coursedetail/${courseFavories.maKhoaHoc}`}
-                className="row header-item"
+                className="header-item"
                 style={{ textDecoration: "none" }}
             >
-                <div className="col-4 p-0 header-img">
-                    <img src={courseFavories.hinhAnh} alt="" />
+                <div className=" header-img">
+                    <img className="img-fluid" src={courseFavories.hinhAnh} alt="" />
                 </div>
-                <div className="col-8 header-content ">
-                    <p>{courseFavories.tenKhoaHoc}</p>
-                    <p style={{ color: "red" }}>$19.99</p>
+                <div className="header-content ">
+                    <p className="name" >{courseFavories.tenKhoaHoc}</p>
+                    <p className="info"> By Chris Croft, Management Trainer</p>
+                    <p className="price" >$19.99  <span className="price-old">$89.99</span> </p>
+                    <button className="button__addToCart">
+                        Add to cart
+                    </button>
                 </div>
             </Link>
 

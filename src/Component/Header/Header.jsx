@@ -171,40 +171,46 @@ class Header extends Component {
           <div className="header__right" >
 
             <div className="header-card ">
-              <NavLink to="/cart" style={{ textDecoration: "none" }}>
-                <div className="alert-cart">
-                  <i className="fa fa-shopping-cart" />
-                  <span>{cart.length}</span>
+              <Link to="/cart" style={{ textDecoration: "none" }}>
+                <div className="header__card__noti">
+                  <i className=" icon__noti  fa fa-shopping-cart" />
+                  <span className="badge__length" >{cart.length}</span>
 
-                  <div className="header-cart-items">
-                    <div className="header-cart-item">
+                  <div className="header__items">
+                    <div className="header__item">
                       {this.showHeaderCartItem(cart)}
-                    </div>
-                  </div>
-                </div>
-              </NavLink>
-
-              <Link to="./favorites" style={{ textDecoration: "none" }}>
-                <div className="alert-cart">
-                  <i className="fa fa-heart" aria-hidden="true" />
-                  <span>{courseFavories.length}</span>
-                  <div className="header-cart-items">
-                    <div className="header-cart-item">
-                      {this.showHeaderCourseFavories(courseFavories)}
                     </div>
                   </div>
                 </div>
               </Link>
 
-              <div className="alert-cart">
-                <i className="fa fa-bell" />
-                <span>5</span>
-                <div className="header-cart-items">
-                  <div className="header-cart-item">
-                    {this.showNotifily()}
+              <Link to="./favorites" style={{ textDecoration: "none" }}>
+                <div className="header__card__noti">
+                  <i className=" icon__noti  fa fa-heart" aria-hidden="true" />
+                  <span className="badge__length" >{courseFavories.length}</span>
+                  <div className="header__items">
+                    <div className="header__item">
+                      {this.showHeaderCourseFavories(courseFavories)}
+
+                    </div>
+                    <div className="btn__goToWistlist">
+                      <button className="btn__goToWistlist__button">
+                        Go to Wishlist
+                        </button>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
+
+              {/* <div className="header__card__noti">
+                <i className=" icon__noti  fa fa-bell" />
+                <span className="badge__length"  > 5</span>
+                <div className="header__items">
+                  <div className="header__item">
+                    {this.showNotifily()} 
+                  </div>
+                </div>
+              </div> */}
             </div>
             {this.checkShowAccout(this.props.currentUser)}
 

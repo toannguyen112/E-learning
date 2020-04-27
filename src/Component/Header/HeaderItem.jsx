@@ -7,15 +7,19 @@ class HeaderItem extends Component {
         return (
             <Link
                 to={`/coursedetail/${course.maKhoaHoc}`}
-                className="row header-item"
+                className="header-item"
                 style={{ textDecoration: "none" }}
             >
-                <div className="col-4 p-0 header-img">
-                    <img src={course.hinhAnh} alt="" />
+                <div className=" header-img">
+                    <img className="img-fluid" src={course.hinhAnh} alt="" />
                 </div>
-                <div className="col-8 header-content ">
-                    <p>{course.tenKhoaHoc}</p>
-                    <p style={{ color: "red" }}>$19.99</p>
+                <div className="header-content ">
+                    <p className="name" >{course.tenKhoaHoc}</p>
+                    <p className="info"> By Chris Croft, Management Trainer, Speaker, Author</p>
+                    <p className="price" >$19.99  <span className="price-old">$89.99</span> </p>
+                    <button className="button__addToCart">
+                       Go to cart
+                    </button>
                 </div>
             </Link>
 

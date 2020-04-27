@@ -30,11 +30,13 @@ class CoursePage extends Component {
     return (
       <>
         <Header history={history} />
-        {
+        {/* {
           this.state.loading ? <Loader /> : <Fade bottom><Courses courses={courses} /></Fade>
-        }
+        } */}
 
-       
+
+        <Courses courses={courses} />
+
 
         <Footer />
         <ScrollUpButton EasingType="linear" />

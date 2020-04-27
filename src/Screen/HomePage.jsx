@@ -57,7 +57,7 @@ class HomePage extends Component {
   }
 
   render() {
-    console.log(this.props.courseList);
+   
 
 
     return (
