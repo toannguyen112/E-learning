@@ -20,7 +20,7 @@ class Header extends Component {
             "https://dvch1hlupt.cdn.hostvn.net/notification/image/1_1_3.png",
           moTa:
             " Receive VNTRIP 10% voucher instantly for any course purchased",
-          time: "25/11/2019 at 03:00"
+          time: "25/11/2019 at 03:00",
         },
         {
           title: " Online payment down 10%",
@@ -28,7 +28,7 @@ class Header extends Component {
             "https://dvch1hlupt.cdn.hostvn.net/notification/image/khuye_n_ma_i_16.png",
           moTa:
             " Receive VNTRIP 10% voucher instantly for any course purchased",
-          time: "25/11/2019 at 03:00"
+          time: "25/11/2019 at 03:00",
         },
         {
           title: " Enter DEAL200",
@@ -36,12 +36,12 @@ class Header extends Component {
             "https://dvch1hlupt.cdn.hostvn.net/notification/image/1_1_3.png",
           moTa:
             " Receive VNTRIP 10% voucher instantly for any course purchased",
-          time: "25/11/2019 at 03:00"
-        }
-      ]
+          time: "25/11/2019 at 03:00",
+        },
+      ],
     };
   }
-  checkShowAccout = currentUser => {
+  checkShowAccout = (currentUser) => {
     let userLogin = JSON.parse(localStorage.getItem("userLogin"));
 
     if (_.isEmpty(currentUser) && !userLogin) {
@@ -66,28 +66,62 @@ class Header extends Component {
             role="button"
           >
             <div className="customer-name ">
-              <img src="http://graph.facebook.com/v2.10/172902427148211/picture" alt="avatar" />
+              <img
+                src="http://graph.facebook.com/v2.10/172902427148211/picture"
+                alt="avatar"
+              />
               <span>{userLogin.hoTen}</span>
               <div className="fa fa-caret-down"></div>
             </div>
           </div>
           <ul className="dropdown dropdown-menu">
-            <Link to="./user" style={{ textDecoration: "none" }}>
-              <li className="drop-item">
-                <span>Account</span>
-                <i className="fa fa-user-o ml-2" aria-hidden="true" />
+            <Link to="/user" style={{ textDecoration: "none" }}>
+              <li className="menu__item menu__item__user  ">
+                <img
+                  src="http://graph.facebook.com/v2.10/172902427148211/picture"
+                  className="menu__item-img"
+                  alt=""
+                />
+                <div className="menu__item-info">
+                  <span className=" d-block menu__item-info__name">
+                    Nguyễn Công Toàn
+                  </span>
+                  <span className=" d-block menu__item-info__email">
+                    nguyencongtoan@gmail.com
+                  </span>
+                </div>
               </li>
             </Link>
-            <Link to="./favorites" style={{ textDecoration: "none" }}>
-              <li className="drop-item">
-                <span>Favorites</span>
-                <i className="fa fa-heart-o ml-2" aria-hidden="true" />
-              </li>
+            <li className="menu__item">Notifications</li>
+            <li className="menu__item">Messages</li>
+            <li className="menu__item">Purchase history</li>
+            <Link to="/user" style={{ textDecoration: "none" }}>
+              <li className="menu__item">Account</li>
             </Link>
-            <li className="drop-item" style={{ cursor: "pointer" }}>
-              <span onClick={this.handleLogOut}>Log out</span>
-              <i className="fa fa-power-off ml-3" aria-hidden="true" />
+            <li className="menu__item">Payment methods</li>
+            <li className="menu__item">Udemy credits</li>
+            <li className="menu__item">Help</li>
+            <li className="menu__item" onClick={this.handleLogOut}>
+              Log out
             </li>
+            <div className="wrapper__eduma">
+              <div className="eduma__for__business___teach">
+                <div className="eduma__for__business___teach--title">
+                  Udemy for Business
+                </div>
+                <div className="eduma__for__business___teach--body">
+                  Bring learning to your company
+                </div>
+              </div>
+              <div className="eduma__for__business___teach">
+                <div className="eduma__for__business___teach--title">
+                  Teach on Udemy
+                </div>
+                <div className="eduma__for__business___teach--body">
+                  Share your knowledge with the world
+                </div>
+              </div>
+            </div>
           </ul>
         </div>
       );
@@ -97,41 +131,49 @@ class Header extends Component {
     this.props.setCurrentUser({});
     localStorage.removeItem("userLogin");
     notify("success", "Logged out successfully");
-    this.props.history.push("/")
-
+    this.props.history.push("/");
   };
 
-  showHeaderCartItem = cart => {
+  showHeaderCartItem = (cart) => {
     if (cart.length > 0) {
       return cart.map((item, index) => {
         return <HeaderItem course={item} key={index} />;
       });
     } else {
       return (
-        <div className="p-2 text-center" style={{
-          color: "#000", fontSize: "13px"
-        }} >
+        <div
+          className="p-2 text-center"
+          style={{
+            color: "#000",
+            fontSize: "13px",
+          }}
+        >
           Your cart empty
-          <p style={{ color: "#007791", fontWeight: "700", marginTop: "10px" }} >Keep Shoping</p>
-
+          <p style={{ color: "#007791", fontWeight: "700", marginTop: "10px" }}>
+            Keep Shoping
+          </p>
         </div>
-      )
+      );
     }
   };
 
-  showHeaderCourseFavories = courseFavories => {
+  showHeaderCourseFavories = (courseFavories) => {
     if (courseFavories.length > 0) {
       return courseFavories.map((item, index) => {
         return <HeaderItemCourseFavories courseFavories={item} key={index} />;
       });
     } else {
       return (
-        <div className="p-2 text-center" style={{ color: "#000", fontSize: "13px" }} >
+        <div
+          className="p-2 text-center"
+          style={{ color: "#000", fontSize: "13px" }}
+        >
           Your wishlist is empty.
-          <p style={{ color: "#007791", fontWeight: "700", marginTop: "10px" }} >Explore courses</p>
-
+          <p style={{ color: "#007791", fontWeight: "700", marginTop: "10px" }}>
+            Explore courses
+          </p>
         </div>
-      )
+      );
     }
   };
 
@@ -144,7 +186,6 @@ class Header extends Component {
   render() {
     let { cart, courseFavories } = this.props;
     let { searchKeyword } = this.props.display;
-
 
     return (
       <header className="header ">
@@ -168,18 +209,31 @@ class Header extends Component {
             />
           </div>
 
-          <div className="header__right" >
-
+          <div className="header__right">
             <div className="header-card ">
               <Link to="/cart" style={{ textDecoration: "none" }}>
                 <div className="header__card__noti">
                   <i className=" icon__noti  fa fa-shopping-cart" />
-                  <span className="badge__length" >{cart.length}</span>
+                  <span className="badge__length">{cart.length}</span>
 
                   <div className="header__items">
-                    <div className="header__item">
+                    <div className="header__item__content">
                       {this.showHeaderCartItem(cart)}
                     </div>
+
+                    {cart.length ? (
+                      <div className="btn__goToWistlist">
+                        <div className="btn__goToWistlist__button__price">
+                          Total :<span className="price__new"> $75.6$</span><span className="price__old"> $64.903</span>
+                        </div>
+                        <button className="btn__goToWistlist__button">
+
+                          Go to Cart
+                        </button>
+                      </div>
+                    ) : (
+                        ""
+                      )}
                   </div>
                 </div>
               </Link>
@@ -187,72 +241,72 @@ class Header extends Component {
               <Link to="./favorites" style={{ textDecoration: "none" }}>
                 <div className="header__card__noti">
                   <i className=" icon__noti  fa fa-heart" aria-hidden="true" />
-                  <span className="badge__length" >{courseFavories.length}</span>
+                  <span className="badge__length">{courseFavories.length}</span>
                   <div className="header__items">
-                    <div className="header__item">
+                    <div className="header__item__content">
                       {this.showHeaderCourseFavories(courseFavories)}
+                    </div>
 
-                    </div>
-                    <div className="btn__goToWistlist">
-                      <button className="btn__goToWistlist__button">
-                        Go to Wishlist
+                    {courseFavories.length ? (
+                      <div className="btn__goToWistlist">
+                        <button className="btn__goToWistlist__button">
+                          Go to Wishlist
                         </button>
-                    </div>
+                      </div>
+                    ) : (
+                        ""
+                      )}
                   </div>
                 </div>
               </Link>
 
-              {/* <div className="header__card__noti">
+              <div className="header__card__noti">
                 <i className=" icon__noti  fa fa-bell" />
-                <span className="badge__length"  > 5</span>
+                <span className="badge__length"> 5</span>
                 <div className="header__items">
-                  <div className="header__item">
-                    {this.showNotifily()} 
+                  <div className="notify">
+                    <div className="notify__header">
+                      <div className="text-notify">Notifications</div>
+                      <div>
+                        <i
+                          className="fa fa-cog icon__noti "
+                          aria-hidden="true"
+                        />
+                      </div>
+                    </div>
+                    <div className="notify__body">No notifications.</div>
                   </div>
                 </div>
-              </div> */}
+              </div>
             </div>
             {this.checkShowAccout(this.props.currentUser)}
-
-
-
           </div>
           <div className="icon__menu">
             <i className="fa fa-bars" aria-hidden="true" />
-
           </div>
         </div>
-
-
-
-
-
-
-
       </header>
-
-
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     display: state.display,
     cart: state.cart,
     currentUser: state.currentUser,
-    courseFavories: state.courseFavories
+    courseFavories: state.courseFavories,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    setCurrentUser: user => {
+    setCurrentUser: (user) => {
       dispatch({
         type: "SET_CURRENT_USER",
-        user
+        user,
       });
-    }
+    },
   };
 };
 

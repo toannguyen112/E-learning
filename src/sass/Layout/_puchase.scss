@@ -1,0 +1,87 @@
+.pucharse {
+  color: $color-white-0;
+  .pucharse__header {
+    background-color: $color__black-10;
+
+    padding: 30px 0;
+    .pucharse__wrapper__route {
+      .pucharse__route {
+        .icon__home {
+          color: #8a92a3;
+          padding-right: 5px;
+        }
+        .route__text {
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+  .pucharse__body {
+    .pucharse__notify {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      color: #003440;
+      padding: 20px 0;
+      margin-top: 20px;
+      background-color: #e6f2f5;
+      .pucharse__notify-icon {
+        color: $color_medium_blue;
+      }
+      .fa-times {
+        color: #003440;
+        cursor: pointer;
+      }
+    }
+    .pucharse__list {
+      color: #000;
+      padding: 0;
+      .pucharse__list__header {
+        border-bottom: 1px solid #f2f3f5;
+        padding: 10px;
+        .purchase__left {
+          .purchase__left__title {
+            @include text($color-black-0, $fs-0, $fw-bold-1);
+          }
+        }
+        .purchase__right {
+          .purchase__right__content {
+            @include text($color-gray-4, $fs-1, $fw-normal);
+          }
+        }
+      }
+      .pucharse__list__item {
+        border-bottom: 1px solid #f2f3f5;
+        padding: 10px;
+        .pucharse__list__item--name {
+          display: flex;
+
+          .pucharse__img_course {
+            width: 135px;
+          }
+          .nameCourse {
+            @include text($color-black-0, $fs-1, $fw-bold-1);
+            padding-left: 10px;
+          }
+        }
+        .pucharse__list__item--content {
+          @include text($color-gray-4, $fs-0, $fw-normal);
+          .purchase__right__content {
+            font-size: $fs-1;
+            .price-bold {
+            
+              @include text($color_black,$fs-1,$fw-bold)
+            }
+            .Receipt {
+              background-color: #fff;
+              border: 1px solid $color_medium_blue;
+              padding: 4px;
+
+              @include text($color_medium_blue, $fs-1, $fw-bold);
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -19,15 +19,16 @@
 @import "./Layout/checkoutPage";
 @import "./Layout/admin";
 @import "./Layout/countdown";
-@import "./Layout//loading";
-@import "./Layout//viewing";
-@import "./Layout//search";
-@import "./Layout//pagination.scss";
-@import "./Layout//favorites";
+@import "./Layout/loading";
+@import "./Layout/viewing";
+@import "./Layout/search";
+@import "./Layout/puchase";
+@import "./Layout/pagination.scss";
+@import "./Layout/favorites";
 @import "./Layout/courseDisplayRow";
 @import "./Components/loader";
 @import "./Components/loadingAdmin";
 @import "./Layout/loadingB";
 @import "./Components//course";
 @import "./Components/hotLine";
-
+@import "./Components/loaderFavorities";

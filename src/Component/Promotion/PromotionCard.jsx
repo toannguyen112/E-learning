@@ -9,7 +9,7 @@ export default class PromotionCard extends Component {
         return (
             <NavLink to={`/coursedetail/${courseList.maKhoaHoc}`} style={{ textDecoration: "none" }} className="card">
                 <span className="sale">30%</span>
-                <img className="card-img-top" src={courseList.hinhAnh} alt="" />
+                <img className="card-img-top img-fluid " src={courseList.hinhAnh} alt="" />
                 <div className="card-body">
                     <div className="new-tag">New</div>
                     <h6 className="card-title">{courseList.tenKhoaHoc}</h6>

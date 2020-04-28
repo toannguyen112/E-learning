@@ -7,7 +7,7 @@ class HeaderItem extends Component {
         return (
             <Link
                 to={`/coursedetail/${course.maKhoaHoc}`}
-                className="header-item"
+                className="heade__item"
                 style={{ textDecoration: "none" }}
             >
                 <div className=" header-img">
@@ -17,9 +17,7 @@ class HeaderItem extends Component {
                     <p className="name" >{course.tenKhoaHoc}</p>
                     <p className="info"> By Chris Croft, Management Trainer, Speaker, Author</p>
                     <p className="price" >$19.99  <span className="price-old">$89.99</span> </p>
-                    <button className="button__addToCart">
-                       Go to cart
-                    </button>
+
                 </div>
             </Link>
 

@@ -4,13 +4,15 @@ import { connect } from "react-redux";
 import { ADD_TO_CART, ADD_COURSE_FAVORIES } from "../../Store/Action/type";
 
 import LoaderButton from "../LoaderButton/LoaderButton";
+import LoaderFavorites from '../LoaderButton/LoaderFavorites'
 class Course extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       showGoCart: false,
-      loader: false
+      loader: false,
+      loaderFavorities: false
     };
   }
 
@@ -41,9 +43,23 @@ class Course extends Component {
     if (index !== -1) {
       this.setState({
         showGoCart: true,
-        loader: true
+        loader: true,
+
+
       });
     }
+  }
+
+  onFavorites = (course) => {
+    this.props.addCourseFavories(course)
+    this.setState({
+      loaderFavorities: true
+    })
+    setTimeout(() => {
+      this.setState({
+        loaderFavorities: false
+      })
+    }, 2000);
   }
 
   render() {
@@ -143,11 +159,17 @@ class Course extends Component {
 
               </div>
               <div className="sub__heart">
-                <i
-                  onClick={() => this.props.addCourseFavories(course)}
+
+
+                {!this.state.loaderFavorities ? (<i
+                  onClick={() => this.onFavorites(course)}
                   className="fa fa-heart-o"
                   aria-hidden="true"
-                ></i>
+                ></i>) : <LoaderFavorites />}
+
+
+
+
               </div>
             </div>
           </div>

@@ -7,7 +7,7 @@ export default class HeaderItemCourseFavories extends Component {
         return (
             <Link
                 to={`/coursedetail/${courseFavories.maKhoaHoc}`}
-                className="header-item"
+                className="heade__item"
                 style={{ textDecoration: "none" }}
             >
                 <div className=" header-img">
