@@ -34,7 +34,7 @@ export default class Footer extends Component {
                     <div className="footer_bot">
                         <div className="row">
                             <div className="col-md-6 d-flex">
-                                <div className="footer_img"> <img className="img-fluid" src="https://edumall.vn/static/version1574786512/frontend/Edumall/winstrike/default/images/logo_full.svg" alt="" /></div>
+                                <div className="footer_img"> <img className="img-fluid" src="https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg" alt="" /></div>
                                 <span>Copyright © 2019 Udemy, Inc.</span>
                             </div>
                             <div className="col-md-6 ">

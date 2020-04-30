@@ -24,9 +24,7 @@
     .item__info {
       padding: 15px 15px;
       .Course__name {
-        font-weight: 300px;
-        font-size: 15px;
-        color: #29303b;
+        @include text($color-black,$fs-0,$fw-bold)
       }
       .Course__author {
         font-size: 12px;
@@ -103,7 +101,7 @@
       color: #686f7a;
     }
     .course__name {
-      font-weight: 700;
+      @include text($color-black, $fs-0 + 1, $fw-bold);
     }
     .sub-bestseller {
       display: flex;

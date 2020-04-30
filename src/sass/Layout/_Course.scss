@@ -1,4 +1,5 @@
 .Course {
+ 
   .courses {
     .sort__filter {
       padding-top: 20px;
@@ -16,6 +17,7 @@
         .sort__select {
           border: 1px solid #666;
           padding: 0.7em;
+          outline: none;
         }
       }
       .filter {
@@ -32,15 +34,17 @@
       }
     }
     .sort__items {
-      .card {
+      .wrapper__card {
         &:hover {
-          box-shadow: none;
+          box-shadow: -1px 2px 15px -4px rgba(0, 0, 0, 0.75);
+         
         }
+       
+       
         overflow: hidden;
-        box-shadow: -1px 2px 15px -4px rgba(0, 0, 0, 0.75);
         position: relative;
-        border: 1px solid gray;
-        border-radius: 10px;
+        border: .5px solid #000;
+        border-radius: 8px;
         height: 100%;
         text-decoration: none;
         .card-img {
@@ -76,8 +80,9 @@
           }
         }
         .card-body {
-          width: 100%;
-          height: 70px;
+          .card-title {
+            @include text($color-black, $fs-0, $fw-bold);
+          }
         }
 
         .button {

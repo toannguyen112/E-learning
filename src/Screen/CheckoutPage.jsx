@@ -24,7 +24,7 @@ export default class CheckoutPage extends Component {
     return (
       <div>
         <Header history={this.props.history} />
-        {this.state.loading ? <Loader /> : <Checkout history={this.props.history} />}
+        {this.state.loading ? <Loader /> :( <Checkout history={this.props.history} />)}
         <Viewing/>
         <Footer />
       </div>

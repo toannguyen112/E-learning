@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Search from "../Search/Search";
 import { connect } from "react-redux";
 import _ from "lodash";
@@ -84,15 +84,15 @@ class Header extends Component {
                 />
                 <div className="menu__item-info">
                   <span className=" d-block menu__item-info__name">
-                    Nguyễn Công Toàn
+                    {userLogin.hoTen}
                   </span>
                   <span className=" d-block menu__item-info__email">
-                    nguyencongtoan@gmail.com
+                    {userLogin.email}
                   </span>
                 </div>
               </li>
             </Link>
-            <li className="menu__item">Notifications</li>
+
             <Link to="/message" style={{ textDecoration: "none" }}> <li className="menu__item">Messages</li></Link>
             <Link to="/pucharse-history" style={{ textDecoration: "none" }} >
               <li className="menu__item">Purchase history</li>
@@ -100,7 +100,7 @@ class Header extends Component {
             <Link to="/user" style={{ textDecoration: "none" }}>
               <li className="menu__item">Account</li>
             </Link>
-            <li className="menu__item">Payment methods</li>
+
             <li className="menu__item">Help</li>
             <li className="menu__item" onClick={this.handleLogOut}>
 
@@ -184,6 +184,15 @@ class Header extends Component {
       return <HeaderItemNotify item={item} key={index} />;
     });
   };
+  goToCart = () => {
+    this.props.history.push("/cart")
+
+  }
+  goWishlist = () => {
+    this.props.history.push("/favorites")
+
+  }
+
 
   render() {
     let { cart, courseFavories } = this.props;
@@ -200,7 +209,7 @@ class Header extends Component {
             >
               <img
                 className="img-fluid mr-2"
-                src="https://edumall.vn/static/version1585153576/frontend/Edumall/winstrike/default/images/logo_full.svg"
+                src="https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg"
                 alt=""
               />{" "}
             </Link>
@@ -213,54 +222,52 @@ class Header extends Component {
 
           <div className="header__right">
             <div className="header-card ">
-              <Link to="/cart" style={{ textDecoration: "none" }}>
-                <div className="header__card__noti">
-                  <i className=" icon__noti  fa fa-shopping-cart" />
-                  <span className="badge__length">{cart.length}</span>
 
-                  <div className="header__items">
-                    <div className="header__item__content">
-                      {this.showHeaderCartItem(cart)}
-                    </div>
+              <div className="header__card__noti">
+                <i className=" icon__noti  fa fa-shopping-cart" />
+                <span className="badge__length">{cart.length}</span>
 
-                    {cart.length ? (
-                      <div className="btn__goToWistlist">
-                        <div className="btn__goToWistlist__button__price">
-                          Total :<span className="price__new"> $75.6$</span><span className="price__old"> $64.903</span>
-                        </div>
-                        <button className="btn__goToWistlist__button">
-
-                          Go to Cart
-                        </button>
-                      </div>
-                    ) : (
-                        ""
-                      )}
+                <div className="header__items">
+                  <div className="header__item__content">
+                    {this.showHeaderCartItem(cart)}
                   </div>
-                </div>
-              </Link>
 
-              <Link to="./favorites" style={{ textDecoration: "none" }}>
-                <div className="header__card__noti">
-                  <i className=" icon__noti  fa fa-heart" aria-hidden="true" />
-                  <span className="badge__length">{courseFavories.length}</span>
-                  <div className="header__items">
-                    <div className="header__item__content">
-                      {this.showHeaderCourseFavories(courseFavories)}
-                    </div>
-
-                    {courseFavories.length ? (
-                      <div className="btn__goToWistlist">
-                        <button className="btn__goToWistlist__button">
-                          Go to Wishlist
-                        </button>
+                  {cart.length ? (
+                    <div className="btn__goToWistlist">
+                      <div className="btn__goToWistlist__button__price">
+                        Total :<span className="price__new"> $75.6$</span><span className="price__old"> $64.903</span>
                       </div>
-                    ) : (
-                        ""
-                      )}
-                  </div>
+                      <button className="btn__goToWistlist__button" onClick={() => { this.goToCart() }}>
+                        Go to Cart
+
+                        </button>
+                    </div>
+                  ) : (
+                      ""
+                    )}
                 </div>
-              </Link>
+              </div>
+
+
+              <div className="header__card__noti">
+                <i className=" icon__noti  fa fa-heart" aria-hidden="true" />
+                <span className="badge__length">{courseFavories.length}</span>
+                <div className="header__items">
+                  <div className="header__item__content">
+                    {this.showHeaderCourseFavories(courseFavories)}
+                  </div>
+
+                  {courseFavories.length ? (
+                    <div className="btn__goToWistlist">
+                      <button className="btn__goToWistlist__button" onClick={() => { this.goWishlist() }} >
+                        Go to Wishlist
+                        </button>
+                    </div>
+                  ) : (
+                      ""
+                    )}
+                </div>
+              </div>
 
               <div className="header__card__noti">
                 <i className=" icon__noti  fa fa-bell" />

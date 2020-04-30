@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 export default class HeaderItemCourseFavories extends Component {
     addToCart = (course) => {
-        console.log(course);
+     
 
     }
     render() {
-        let { courseFavories } = this.props;
+        let { courseFavories ,history } = this.props;
         return (
             <Link
                 to={`/coursedetail/${courseFavories.maKhoaHoc}`}

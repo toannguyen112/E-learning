@@ -7,55 +7,52 @@ class CourseItem extends Component {
     super(props);
 
     this.state = {
-      showGotoCart: false
-      , trailer: false,
+      showGotoCart: false,
+      trailer: false,
     };
   }
 
-  addcart = course => {
+  addcart = (course) => {
     this.props.dispatch(reduxAction("ADD_TO_CART", course));
     this.setState({
-      showGotoCart: true
+      showGotoCart: true,
     });
     console.log("them thanh cong");
   };
 
-  buyNow = course => {
+  buyNow = (course) => {
     this.props.dispatch(reduxAction("ADD_TO_CART", course));
     this.props.history.push("/cart");
   };
 
-  static getDerivedStateFromProps = (props, state) => {
-    console.log("getDerivedStateFromProps");
+  // static getDerivedStateFromProps = (props, state) => {
+  //   let cart = JSON.parse(localStorage.getItem("cart"))
+  //     ? JSON.parse(localStorage.getItem("cart"))
+  //     : [];
+  //   console.log(cart);
 
-    let cart = JSON.parse(localStorage.getItem("cart"))
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-    console.log(cart);
-
-    let index = cart.findIndex(item => {
-      return item.maKhoaHoc === props.courseDetail.maKhoaHoc;
-    });
-    if (index !== -1) {
-      state.showGotoCart = true;
-    }
-    return null;
-  };
+  //   let index = cart.findIndex((item) => {
+  //     return item.maKhoaHoc === props.courseDetail.maKhoaHoc;
+  //   });
+  //   if (index !== -1) {
+  //     state.showGotoCart = true;
+  //   }
+  //   return null;
+  // };
 
   openTrailer = () => {
     this.setState({
-      trailer: true
-    })
-  }
+      trailer: true,
+    });
+  };
   closeTrailer = () => {
     this.setState({
-      trailer: false
-    })
-  }
+      trailer: false,
+    });
+  };
 
   render() {
-    let { courseDetail } = this.props;
-
+    let { course } = this.props;
 
     return (
       <div className="courseDetail-content">
@@ -63,11 +60,11 @@ class CourseItem extends Component {
           <div className="row">
             <div className="col-sm-8 col-md-8 col-lg-8 col-xl-8 pl-0 content">
               <div className="content__title">
-                <h1>{courseDetail.tenKhoaHoc}</h1>
+                <h1>{course.tenKhoaHoc}</h1>
               </div>
               <div className="intro-title">
                 <div className="teacher">
-                  <img src={courseDetail.hinhAnh} alt="" />
+                  <img src={course.hinhAnh} alt="" />
                   <div className="teacher-name">
                     <div>Teacher</div>
                     <div>Robert Richards</div>
@@ -317,37 +314,41 @@ class CourseItem extends Component {
             <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 pl-0 sidebar">
               <div className="sidebar__info">
                 <div className="info__img">
-                  <img
-                    src={courseDetail.hinhAnh}
-                    className="img-fluid"
-                    alt=""
-                  />
-
+                  <img src={course.hinhAnh} className="img-fluid" alt="" />
 
                   <div className="overplay">
-                    <div className="play" onClick={() => this.openTrailer()} >
-
-
-                    </div>
-                    {
-                      this.state.trailer ? (
-                        <div className="wrapper__trainer">
-
-                          <div className="wrapper__trainer__content">
-                            <div className="trailer__title">
-                              <span className="nameCourse">
-                                Course Preview : Become Time Management & Productivity...
-                          </span>
-                              <i className="fa fa-times" aria-hidden="true" onClick={() => this.closeTrailer()} />
-
-
-                            </div>
-                            <iframe className="trailer" width="1519" height="554" src="https://www.youtube.com/embed/0eWrpsCLMJQ?list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div
+                      className="play"
+                      onClick={() => this.openTrailer()}
+                    ></div>
+                    {this.state.trailer ? (
+                      <div className="wrapper__trainer">
+                        <div className="wrapper__trainer__content">
+                          <div className="trailer__title">
+                            <span className="nameCourse">
+                              Course Preview : Become Time Management &
+                              Productivity...
+                            </span>
+                            <i
+                              className="fa fa-times"
+                              aria-hidden="true"
+                              onClick={() => this.closeTrailer()}
+                            />
                           </div>
+                          <iframe
+                            className="trailer"
+                            width="1519"
+                            height="554"
+                            src="https://www.youtube.com/embed/0eWrpsCLMJQ?list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                          ></iframe>
                         </div>
-                      ) : ""
-                    }
-
+                      </div>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
                 <div className="info__inner">
@@ -371,23 +372,20 @@ class CourseItem extends Component {
                       </button>
                     </Link>
                   ) : (
-                      <button
-                        style={{
-                          backgroundColor: "white",
-                          border: "1px solid gray",
-                          color: "gray"
-                        }}
-                        className="add"
-                        onClick={() => this.addcart(courseDetail)}
-                      >
-                        ADD TO CART
-                      </button>
-                    )}
+                    <button
+                      style={{
+                        backgroundColor: "white",
+                        border: "1px solid gray",
+                        color: "gray",
+                      }}
+                      className="add"
+                      onClick={() => this.addcart(course)}
+                    >
+                      ADD TO CART
+                    </button>
+                  )}
 
-                  <button
-                    className="add"
-                    onClick={() => this.buyNow(courseDetail)}
-                  >
+                  <button className="add" onClick={() => this.buyNow(course)}>
                     BUY NOW
                   </button>
 
@@ -438,7 +436,6 @@ class CourseItem extends Component {
               </div>
             </div>
           </div>
-
         </div>
       </div>
     );

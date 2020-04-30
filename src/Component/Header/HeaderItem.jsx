@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 class HeaderItem extends Component {
     render() {
-        let { course } = this.props;
+        let { course ,history } = this.props;
         return (
             <Link
                 to={`/coursedetail/${course.maKhoaHoc}`}

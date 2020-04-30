@@ -42,7 +42,7 @@ class Courses extends Component {
                   >
                     <i className="fa fa-th-list" aria-hidden="true" />
                   </span>
-                  <select className="sort__select" disabled>
+                  <select className="sort__select" >
                     <option value="newness">Sort by name high to low</option>
                     <option value="popularity">Sort by name low to high</option>
                     <option value="low">Sort by price low to high</option>

@@ -38,7 +38,7 @@ class CourseOfcourses extends Component {
   render() {
     let { course } = this.props;
     return (
-      <div className="card">
+      <div className="wrapper__card">
         <Link
           to={`/coursedetail/${course.maKhoaHoc}`}
           style={{ textDecoration: "none" }}
