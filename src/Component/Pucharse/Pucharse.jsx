@@ -1,6 +1,20 @@
 import React, { Component } from "react";
+import Footer__inst from "../footer__inst/Footer__inst";
 
 export default class Pucharse extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            hiddeE: true
+        }
+    }
+    close = () => {
+        this.setState({
+            hiddeE: false
+        })
+    }
+
     render() {
         return (
             <div className="pucharse">
@@ -15,12 +29,12 @@ export default class Pucharse extends Component {
                     </div>
                 </div>
                 <div className="pucharse__body container ">
-                    <div className="pucharse__notify">
+                    {this.state.hiddeE ? (<div className="pucharse__notify">
                         <i className="fa fa-exclamation-circle pucharse__notify-icon " aria-hidden="true" />
                         <span className="pucharse__notify-text" >Invoices and credit notes are unavailable for most purchases made before April 2020 or for purchases without transaction taxes applied.</span>
-                        <i className="fa fa-times" aria-hidden="true" />
+                        <i className="fa fa-times" aria-hidden="true" onClick={() => this.close()} />
 
-                    </div>
+                    </div>) : ""}
 
                     <ul className="pucharse__list">
 
@@ -145,9 +159,7 @@ export default class Pucharse extends Component {
 
                     </ul>
                 </div>
-                <div className="footer__inst-banner">
-                    
-                </div>
+                <Footer__inst />
             </div>
         );
     }

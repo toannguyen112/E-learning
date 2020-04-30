@@ -47,10 +47,10 @@ class Header extends Component {
     if (_.isEmpty(currentUser) && !userLogin) {
       return (
         <div className="header-user">
-          <Link to="/login" className="btn--white ">
+          <Link to="/login" className="button__login ">
             Login{" "}
           </Link>
-          <Link to="/signup" className="btn--red">
+          <Link to="/signup" className="button__signup">
             Sign up
           </Link>
         </div>
@@ -93,15 +93,17 @@ class Header extends Component {
               </li>
             </Link>
             <li className="menu__item">Notifications</li>
-            <li className="menu__item">Messages</li>
-            <li className="menu__item">Purchase history</li>
+            <Link to="/message" style={{ textDecoration: "none" }}> <li className="menu__item">Messages</li></Link>
+            <Link to="/pucharse-history" style={{ textDecoration: "none" }} >
+              <li className="menu__item">Purchase history</li>
+            </Link>
             <Link to="/user" style={{ textDecoration: "none" }}>
               <li className="menu__item">Account</li>
             </Link>
             <li className="menu__item">Payment methods</li>
-            <li className="menu__item">Udemy credits</li>
             <li className="menu__item">Help</li>
             <li className="menu__item" onClick={this.handleLogOut}>
+
               Log out
             </li>
             <div className="wrapper__eduma">
@@ -262,17 +264,17 @@ class Header extends Component {
 
               <div className="header__card__noti">
                 <i className=" icon__noti  fa fa-bell" />
-                <span className="badge__length"> 5</span>
+                <span className="badge__length"> 0 </span>
                 <div className="header__items">
                   <div className="notify">
                     <div className="notify__header">
-                      <div className="text-notify">Notifications</div>
-                      <div>
-                        <i
-                          className="fa fa-cog icon__noti "
-                          aria-hidden="true"
-                        />
-                      </div>
+                      <span className="text-notify">
+                        Notifications
+                      </span>
+                      <i
+                        className="fa fa-cog icon__noti "
+                        aria-hidden="true"
+                      />
                     </div>
                     <div className="notify__body">No notifications.</div>
                   </div>

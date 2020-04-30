@@ -1,0 +1,41 @@
+.footer__inst-banner {
+    background-color: $color-gray-5;
+    @include text($color-black-0, $fs-0, $fw-normal);
+    .footer__inst-banner__content {
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      .footer__img {
+        img {
+          width: 98px;
+        }
+      }
+      .footer__text {
+        .text {
+          margin: 0;
+        }
+        .text-bold {
+          font-weight: $fw-bold;
+        }
+      }
+      .wrapper__btn {
+        margin-left: $mg-2 - 5;
+
+        .button__teach {
+          padding: $mg-1;
+
+          @include button(
+            $color_medium_blue,
+            $fw-bold,
+            $color_white,
+            $color_medium_blue,
+            $color_white
+          );
+          &:hover {
+            color: $color_black;
+              
+          }
+        }
+      }
+    }
+  }

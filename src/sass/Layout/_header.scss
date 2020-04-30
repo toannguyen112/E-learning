@@ -1,7 +1,7 @@
 .header {
   background-color: rgb(255, 255, 255);
   transition: all ease 0.3s;
-  box-shadow: 0 0 15px #d1d1d1;
+  box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
 
   .header__content {
     height: 60px;
@@ -28,6 +28,8 @@
       display: flex;
       .header-card,
       .header-user {
+        display: flex;
+        justify-content: flex-end;
         @extend .header-control;
       }
       .header-card {
@@ -115,7 +117,7 @@
                 .header-content {
                   padding-left: 24px;
                   p {
-                    color: #686f7a;
+                    color: $color-gray-4;
                     margin: 0;
                   }
                   .name {
@@ -159,10 +161,10 @@
               margin-top: 10px;
               background-color: #f2f3f5;
               .btn__goToWistlist__button__price {
-                @include text(#686f7a, $fs-1 + 1, $fw-normal);
+                @include text($color-gray-4, $fs-1 + 1, $fw-normal);
 
                 .price__new {
-                  @include text($color-black, $fs-0 + 5, $fw-bold-1);
+                  @include text($color-black-0, $fs-0 + 5, $fw-bold-1);
                 }
                 .price__old {
                   margin-left: 10px;
@@ -197,18 +199,19 @@
 
             // noti
             .notify {
-              color: #686f7a;
+              color: $color-gray-4;
               .notify__header {
                 display: flex;
                 justify-content: space-between;
-                padding: 15px 5px;
+                align-items: center;
+                padding: 10px 0px;
                 border-bottom: 1px solid rgba(222, 223, 224, 0.45);
                 .text-notify {
-                  color: #29303b;
-                  font-size: 15px;
+                  padding-left: 10px;
+                  @include text($color-black-0, $fs-0, $fw-normal);
                 }
                 .icon__noti {
-                  color: #686f7a;
+                  @include text($color-gray-4, $fs-0, $fw-normal);
                 }
               }
               .notify__body {
@@ -221,6 +224,29 @@
       }
       .header-user {
         text-align: center;
+        .button__login {
+          padding: 8px;
+          text-decoration: none;
+          margin-right: 10px;
+          @include button(
+            $color-black-0,
+            $fw-bold-1,
+            $color_white,
+            $color-black-0,
+            $color-white-0
+          );
+        }
+        .button__signup {
+          padding: 8px;
+          text-decoration: none;
+          @include button(
+            $color-white-0,
+            $fw-bold-1,
+            $color-red-0,
+            $color-red-0,
+            #992337
+          );
+        }
       }
 
       .customer-menu {
@@ -258,12 +284,11 @@
       }
 
       .dropdown-menu {
-        position: absolute;
-        top: 150% !important;
+        @include position(absolute, 150% !important, 50% !important);
         border: 0;
-        left: 50% !important;
         transform: translate(-50%, 0) !important;
         width: 300px;
+
         .menu__item {
           color: #29303b !important;
           cursor: pointer;
@@ -317,9 +342,7 @@
           z-index: 99;
           content: "";
           display: block;
-          height: 0;
           position: absolute;
-          width: 0;
           top: -14px !important;
         }
       }

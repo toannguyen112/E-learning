@@ -22,7 +22,7 @@ class FavoritesPage extends Component {
   render() {
     return (
       <Fragment>
-        <Header history={this.props} />
+        <Header history={this.props.history} />
 
         {this.state.loading ? (
           <Loader />

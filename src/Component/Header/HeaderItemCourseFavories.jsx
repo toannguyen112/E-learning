@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 
 export default class HeaderItemCourseFavories extends Component {
+    addToCart = (course) => {
+        console.log(course);
+
+    }
     render() {
         let { courseFavories } = this.props;
         return (
@@ -17,7 +21,7 @@ export default class HeaderItemCourseFavories extends Component {
                     <p className="name" >{courseFavories.tenKhoaHoc}</p>
                     <p className="info"> By Chris Croft, Management Trainer</p>
                     <p className="price" >$19.99  <span className="price-old">$89.99</span> </p>
-                    <button className="button__addToCart">
+                    <button className="button__addToCart" onClick={() => this.addToCart(courseFavories)} >
                         Add to cart
                     </button>
                 </div>

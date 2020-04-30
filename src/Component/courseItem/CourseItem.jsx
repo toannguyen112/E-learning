@@ -8,6 +8,7 @@ class CourseItem extends Component {
 
     this.state = {
       showGotoCart: false
+      , trailer: false,
     };
   }
 
@@ -40,6 +41,17 @@ class CourseItem extends Component {
     }
     return null;
   };
+
+  openTrailer = () => {
+    this.setState({
+      trailer: true
+    })
+  }
+  closeTrailer = () => {
+    this.setState({
+      trailer: false
+    })
+  }
 
   render() {
     let { courseDetail } = this.props;
@@ -310,13 +322,31 @@ class CourseItem extends Component {
                     className="img-fluid"
                     alt=""
                   />
-                 
+
 
                   <div className="overplay">
-                    <div className="play">
+                    <div className="play" onClick={() => this.openTrailer()} >
 
 
                     </div>
+                    {
+                      this.state.trailer ? (
+                        <div className="wrapper__trainer">
+
+                          <div className="wrapper__trainer__content">
+                            <div className="trailer__title">
+                              <span className="nameCourse">
+                                Course Preview : Become Time Management & Productivity...
+                          </span>
+                              <i className="fa fa-times" aria-hidden="true" onClick={() => this.closeTrailer()} />
+
+
+                            </div>
+                            <iframe className="trailer" width="1519" height="554" src="https://www.youtube.com/embed/0eWrpsCLMJQ?list=PLC3y8-rFHvwhBRAgFinJR8KHIrCdTkZcZ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </div>
+                        </div>
+                      ) : ""
+                    }
 
                   </div>
                 </div>

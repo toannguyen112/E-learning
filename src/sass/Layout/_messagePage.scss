@@ -1,0 +1,144 @@
+.wrapperMessage {
+  .message__header {
+    background-color: $color__black-10;
+    color: $color-white-0;
+    padding: $pd-2 + 5;
+  }
+  .message__body {
+    .message__body-left {
+      background-color: #F2F3F5;
+      .thead-tool-bar {
+        .thead--tool-bar--top {
+          display: flex;
+          align-items: center;
+          padding: 10px 0;
+          .button__compose {
+            @include buttonBorderColor();
+            padding: 10px 12px;
+            height: 44px;
+          }
+          .form-control {
+            @include buttonBorderColor();
+            padding: 10px 12px;
+            margin-left: 5px;
+            height: 44px;
+          }
+        }
+        .thead--tool-bar--bottom {
+          display: flex;
+          input {
+            padding: 8px;
+            width: 100%;
+          }
+          button {
+            @include btn-secondary();
+            padding: 10px;
+          }
+        }
+      }
+      .thead-tool-content {
+        .list__message {
+          .list_message__item {
+            margin-top: 10px;
+            background-color: $color-white-0;
+            padding: 20px;
+            .warpper__user {
+              display: flex;
+              align-items: center;
+              padding: 10px 0;
+              .user__content {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+                .user__content__img {
+                  display: flex;
+                  align-self: center;
+                  .img_user {
+                    width: 24px;
+                    border-radius: 50%;
+                  }
+                  .nameUserMessage {
+                    margin-left: 10px;
+                    @include text($color__black-10, $fs-0, $fw-bold-1);
+                  }
+                }
+                .time {
+                  @include text($color-gray-4, $fs-1, $fw-normal);
+                }
+              }
+            }
+            .wapper_user__sendMassage {
+              display: flex;
+              padding: 10px 0;
+              justify-content: space-between;
+              @include text($color-gray-4, $fs-1, $fw-normal) p {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .message__body-right {
+      .thead__header__user__message {
+        border-bottom: 1px solid #dedfe0;
+        padding: 10px 0;
+        @include alignCenter();
+        justify-content: space-between;
+
+        .thead__header__user__message-left {
+          @include alignCenter();
+          i {
+            @include alignCenter();
+            @include text($color-gray-4, $fs-0 + 1, $fw-bold-1);
+          }
+          .thead__header__info {
+            margin-left: 15px;
+            img {
+              width: 48px;
+              height: 48px;
+              border-radius: 50%;
+            }
+            .nameUser {
+              margin-left: 15px;
+              @include text($color_medium_blue, $fs-0, $fw-bold-1);
+            }
+          }
+        }
+        .thead__header__user__message-right {
+          @include alignCenter();
+          i {
+            color: #dedfe0;
+            font-size: 30px;
+            cursor: pointer;
+            &:hover {
+              color: #000;
+            }
+          }
+        }
+      }
+      .thead__body__user__message {
+        max-height: 400px;
+        overflow-y: auto;
+        padding: 12px 0;
+        .message__item {
+          max-width: 600px;
+          background-color: #f2f3f5;
+          white-space: pre-wrap;
+          border-radius: 2px;
+          padding: 12px;
+          .message_time {
+            @include text($color-gray-4, $fs-1, $fw-normal);
+          }
+          .message-list--message__content {
+            p {
+              @include text($color-gray-4, $fs-0 + 2, $fw-normal);
+              line-height: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

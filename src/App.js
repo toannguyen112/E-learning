@@ -15,6 +15,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./sass/main.scss";
 import "./App.css";
 import PucharseHistoryPage from "./Screen/PucharseHistoryPage";
+import messagePage from "./Screen/messagePage";
 
 export default class App extends Component {
   render() {
@@ -37,6 +38,7 @@ export default class App extends Component {
             <Route exact path="/checkout" component={CheckoutPage} />
             <Route exact path="/favorites" component={FavoritesPage} />
             <Route exact path="/pucharse-history" component={PucharseHistoryPage} />
+            <Route exact path="/message" component={messagePage} />
 
             <Auth path="/user" Component={UserPage} />
           </Switch>

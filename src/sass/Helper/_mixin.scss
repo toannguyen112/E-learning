@@ -1,9 +1,11 @@
+// Text
 @mixin text($color, $fs, $fw) {
   color: $color;
   font-size: $fs;
   font-weight: $fw;
 }
 
+// Button
 @mixin button($color, $fw, $bg-color, $border-color, $bg-color-hover) {
   color: $color;
   font-weight: $fw;
@@ -14,34 +16,44 @@
   }
 }
 
-/*--------------------------
-            BUTTON
- --------------------------*/
- @mixin btn__default($bgcolor, $color, $border, $width, $height, $font-size) {
-  background-color: $bgcolor;
-  color: $color;
-  border: $border;
-  width: $width;
-  height: $height;
+@mixin buttonBorderColor {
+  color: #007791;
+  background-color: #fff;
+  border: 1px solid #007791;
   font-weight: bold;
-  outline: none;
-  font-size: $font-size;
-  cursor: pointer;
+  border-radius: 2px;
+}
+
+// Position
+@mixin position($position, $top, $left) {
+  position: $position;
+  top: $top;
+  left: $left;
+}
+
+@mixin btn-secondary {
+  color: #fff;
+  background-color: #007791;
+  border: 1px solid transparent;
   &:hover {
-      opacity: .9;
+    background-color: #00576b;
   }
 }
 
-@mixin respond-to($breakpoint) {
-  @if map-has-key($map: $breakpoints, $key: $breakpoint) {
-    $value: map-get(
-      $map: $breakpoints,
-      $key: $breakpoint
-    );
-    @media screen and (max-width: $value) {
-      @content;
-    }
-  } @else {
-    @warn "breakpoints khong ton tai";
-  }
+@mixin alignCenter {
+  display: flex;
+ align-items: center;
+}
+
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+}
+
+@mixin sizeImg($w,$h) {
+  width: $w;
+  height: $h;
 }

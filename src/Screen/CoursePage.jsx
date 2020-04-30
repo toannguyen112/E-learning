@@ -3,23 +3,22 @@ import Header from "../Component/Header/Header";
 import Footer from "../Component/Footer/Footer";
 import Courses from "../Component/Courses/Courses";
 import { connect } from "react-redux";
-import Fade from 'react-reveal/Fade';
-import Loader from '../Component/Loader/Loader'
+import Fade from "react-reveal/Fade";
+import Loader from "../Component/Loader/Loader";
 import ScrollUpButton from "react-scroll-up-button";
 class CoursePage extends Component {
-
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      loading: true
-    }
+      loading: true,
+    };
   }
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        loading: false
+        loading: false,
       });
     }, 2000);
   }
@@ -28,27 +27,25 @@ class CoursePage extends Component {
     let { courses, history } = this.props;
 
     return (
-      <>
+      <div className="wrapper">
         <Header history={history} />
-        {/* {
-          this.state.loading ? <Loader /> : <Fade bottom><Courses courses={courses} /></Fade>
-        } */}
-
-
-        <Courses courses={courses} />
-
-
+        {this.state.loading ? (
+          <Loader />
+        ) : (
+          <Fade bottom>
+            <Courses courses={courses} />
+          </Fade>
+        )}
         <Footer />
         <ScrollUpButton EasingType="linear" />
-      </>
+      </div>
     );
   }
 }
 
-const mapStateTopProp = state => {
+const mapStateTopProp = (state) => {
   return {
-
-    courses: state.Course.course
+    courses: state.Course.course,
   };
 };
 
