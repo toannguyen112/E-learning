@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import CourseService from '../../Services/courseService'
-const courseService = new CourseService();
+
 export default class BannerItem extends Component {
 
 

@@ -25,20 +25,23 @@ class CourseItem extends Component {
     this.props.history.push("/cart");
   };
 
-  // static getDerivedStateFromProps = (props, state) => {
-  //   let cart = JSON.parse(localStorage.getItem("cart"))
-  //     ? JSON.parse(localStorage.getItem("cart"))
-  //     : [];
-  //   console.log(cart);
+  componentDidMount() {
+    let { course } = this.props;
+    let cart = JSON.parse(localStorage.getItem("cart"))
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
 
-  //   let index = cart.findIndex((item) => {
-  //     return item.maKhoaHoc === props.courseDetail.maKhoaHoc;
-  //   });
-  //   if (index !== -1) {
-  //     state.showGotoCart = true;
-  //   }
-  //   return null;
-  // };
+    let index = cart.findIndex((item) => {
+      return item.maKhoaHoc === course.maKhoaHoc;
+    });
+
+    if (index !== -1) {
+      this.setState({
+        showGotoCart: true,
+        loader: true,
+      });
+    }
+  }
 
   openTrailer = () => {
     this.setState({
@@ -364,29 +367,19 @@ class CourseItem extends Component {
 
                   {this.state.showGotoCart ? (
                     <Link to="/cart">
-                      <button
-                        className="add"
-                        style={{ backgroundColor: "blue", color: "white" }}
-                      >
-                        GO TO CART
-                      </button>
+                      <button className="add">Go to cart</button>
                     </Link>
                   ) : (
                     <button
-                      style={{
-                        backgroundColor: "white",
-                        border: "1px solid gray",
-                        color: "gray",
-                      }}
                       className="add"
                       onClick={() => this.addcart(course)}
                     >
-                      ADD TO CART
+                      Add to cart
                     </button>
                   )}
 
-                  <button className="add" onClick={() => this.buyNow(course)}>
-                    BUY NOW
+                  <button className="buy" onClick={() => this.buyNow(course)}>
+                    Buy now
                   </button>
 
                   <ul className="meta">

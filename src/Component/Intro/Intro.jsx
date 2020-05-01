@@ -4,9 +4,9 @@ export default class Intro extends Component {
   render() {
     return (
       <div className="intro">
-        <div className="intro__content container">
+        <div className="intro__content container p-0">
           <div className="intro__title">
-            <h2>Professional luggage for you</h2>
+            <h2 style={{paddingLeft :"15px"}} >Professional luggage for you</h2>
           </div>
           <div className="intro__slider">
             <div className="row">

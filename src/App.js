@@ -16,33 +16,52 @@ import "./sass/main.scss";
 import "./App.css";
 import PucharseHistoryPage from "./Screen/PucharseHistoryPage";
 import messagePage from "./Screen/messagePage";
+import LoadingBackground from './Component/LoadingBackground/loadingBackground'
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      courseCatalog: [],
+      loading: true,
+    };
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        loading: false,
+      });
+    }, 4000);
+  }
   render() {
     return (
       <div className="App">
-        <BrowserRouter>
-          <Switch>
-            <Route exact path="/admin" component={AdminPage} />
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/home" component={HomePage} />
-            <Route
-              exact
-              path="/coursedetail/:courseid"
-              component={CourseDetailPage}
-            />
-            <Route exact path="/courses" component={CoursesPage} />
-            <Route exact path="/cart" component={CartPage} />
-            <Route exact path="/signup" component={SignUpPage} />
-            <Route exact path="/login" component={LoginPage} />
-            <Route exact path="/checkout" component={CheckoutPage} />
-            <Route exact path="/favorites" component={FavoritesPage} />
-            <Route exact path="/pucharse-history" component={PucharseHistoryPage} />
-            <Route exact path="/message" component={messagePage} />
+        {this.state.loading ? <LoadingBackground /> : (
+          <BrowserRouter>
+            <Switch>
+              <Route exact path="/admin" component={AdminPage} />
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/home" component={HomePage} />
+              <Route
+                exact
+                path="/coursedetail/:courseid"
+                component={CourseDetailPage}
+              />
+              <Route exact path="/courses" component={CoursesPage} />
+              <Route exact path="/cart" component={CartPage} />
+              <Route exact path="/signup" component={SignUpPage} />
+              <Route exact path="/login" component={LoginPage} />
+              <Route exact path="/checkout" component={CheckoutPage} />
+              <Route exact path="/favorites" component={FavoritesPage} />
+              <Route exact path="/pucharse-history" component={PucharseHistoryPage} />
+              <Route exact path="/message" component={messagePage} />
 
-            <Auth path="/user" Component={UserPage} />
-          </Switch>
-        </BrowserRouter>
+              <Auth path="/user" Component={UserPage} />
+            </Switch>
+          </BrowserRouter>
+        )}
+
       </div>
     );
   }

@@ -1,11 +1,8 @@
 .TopSelling {
   background-color: $bg-color;
-  .TopSelling__content {
-    h5 {
-      color: #464646;
-      font-size: 20px;
-      font-weight: 700;
-    }
-    
+  .title {
+    color: #464646;
+    font-size: 20px;
+    font-weight: 700;
   }
 }

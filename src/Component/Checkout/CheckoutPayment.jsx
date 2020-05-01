@@ -11,7 +11,7 @@ class CheckoutPayment extends Component {
     if (user) {
       if (cart.length > 0) {
         localStorage.removeItem("cart");
-        this.props.dispatch(reduxAction(PAYMENT, []));
+        this.props.dispatch(reduxAction(PAYMENT, [])); // đưa lên redux
         notify("success", "Payment succsess");
         this.props.history.push("/");
       } else {
@@ -27,11 +27,11 @@ class CheckoutPayment extends Component {
       <div className="payment">
         <div className="card">
           <div className="card__header">
-            <div className="card__radio">
+            <div className="card__radio mr-4">
               <input type="radio" />
             </div>
             <div className="card__image">
-              <span>New Payment Cart</span>
+              <span className="mr-4" >New Payment Cart</span>
               <span>
                 <img
                   src="/img/payment-option.png"

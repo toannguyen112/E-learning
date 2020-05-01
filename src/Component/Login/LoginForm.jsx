@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { settings } from "../../config/settings";
 import UserService from "../../Services/userService";
 import reduxAction from "../../Store/Action/action";
-import { LOGIN } from "../../Store/Action/type";
+import { LOGIN, SET_CURRENT_USER } from "../../Store/Action/type";
 import { connect } from "react-redux";
 import { notify } from "../notify/Notify";
 let userService = new UserService();
@@ -30,7 +30,7 @@ class LoginForm extends Component {
       .then(res => {
         localStorage.setItem(settings.userLogin, JSON.stringify(res.data));
         localStorage.setItem(settings.token, res.data.accessToken);
-        this.props.dispatch(reduxAction(LOGIN, res.data));
+        this.props.dispatch(reduxAction(SET_CURRENT_USER, res.data));
 
         let user = JSON.parse(localStorage.getItem("userLogin"));
         if (user.maLoaiNguoiDung === "HV") {
@@ -42,7 +42,7 @@ class LoginForm extends Component {
         }
       })
       .catch(error => {
-        notify("error", "Login failed ");
+        notify("error", "User account or password is incorrect ");
       });
   };
 

@@ -2,51 +2,63 @@ import React, { Component } from "react";
 import UserService from "../../Services/userService";
 import { connect } from "react-redux";
 
-
 import { notify } from "../notify/Notify";
-let user = JSON.parse(localStorage.getItem("userLogin"))
-  ? JSON.parse(localStorage.getItem("userLogin"))
-  : {};
+// let user = JSON.parse(localStorage.getItem("userLogin"))
+//   ? JSON.parse(localStorage.getItem("userLogin"))
+//   : {};
 let userService = new UserService();
 class Edit extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      taiKhoan: user.taiKhoan,
+      taiKhoan: "",
       matKhau: "",
       hoTen: "",
       soDT: "",
       maLoaiNguoiDung: "HV",
       maNhom: "GP01",
-      email: user.email,
-      chiTietKhoaHocGhiDanh: []
+      email: "",
+      chiTietKhoaHocGhiDanh: [],
     };
   }
 
-  onChange = e => {
+  onChange = (e) => {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  onSubmit = e => {
+  onSubmit = (e) => {
+
+    const userUpdate = {
+      ...this.state,
+      taiKhoan: this.props.userProfile.taiKhoan,
+      email: this.props.userProfile.email,
+      soDT: "123",
+      
+    }
+    console.log(userUpdate);
+    
     e.preventDefault();
+
     userService
-      .fixPersonalUser(this.state)
-      .then(res => {
+      .fixPersonalUser(userUpdate)
+      .then((res) => {
         this.props.editUser(res.data);
         console.log(res);
         notify("success", "success ");
       })
-      .catch(err => {
+      .catch((err) => {
+        console.log(err);
+        
         notify("error", "Error");
       });
   };
 
   render() {
     let { userProfile } = this.props;
-    
+    console.log(userProfile);
 
     return (
       <div className="edit__profile">
@@ -54,7 +66,7 @@ class Edit extends Component {
         <form onSubmit={this.onSubmit}>
           <div className="fullname">
             <div className="row">
-              <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 p-0">
                 <label>User :</label>
                 <input
                   name="taiKhoan"
@@ -66,7 +78,7 @@ class Edit extends Component {
                 />
               </div>
 
-              <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6">
+              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 pr-0">
                 <label>Pass:</label>
                 <input
                   type="text"
@@ -82,7 +94,7 @@ class Edit extends Component {
             <label> Name:</label>
             <input
               name="hoTen"
-              value={userProfile.hoTen}
+              value={this.state.hoTen}
               type="text"
               placeholder={userProfile.hoTen}
               onChange={this.onChange}
@@ -96,6 +108,7 @@ class Edit extends Component {
               type="email"
               placeholder={userProfile.email}
               onChange={this.onChange}
+              disabled
             />
           </div>
           <div className="social__html_form">
@@ -142,18 +155,14 @@ class Edit extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  userProfile: state.editUser
-});
-
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    editUser: user => {
+    editUser: (user) => {
       dispatch({
         type: "EDIT_USER",
-        payload: user
+        payload: user,
       });
-    }
+    },
   };
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Edit);
+export default connect(null,mapDispatchToProps)(Edit);

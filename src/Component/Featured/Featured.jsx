@@ -16,7 +16,7 @@ export default class Featured extends Component {
 
     return (
       <div className="featured">
-        <div className="featured__content container">
+        <div className="featured__content container p-0">
           <div className="row">
             <div className="col-md-4 col-sm-4 featured__content__items ">
               <div className="featured__box">

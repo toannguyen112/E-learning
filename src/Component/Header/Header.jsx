@@ -6,41 +6,9 @@ import _ from "lodash";
 import { notify } from "../notify/Notify";
 import HeaderItem from "./HeaderItem";
 import HeaderItemCourseFavories from "./HeaderItemCourseFavories";
-import HeaderItemNotify from "./HeaderItemNotify";
+
 
 class Header extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      arrNotify: [
-        {
-          title: " 10% discount coupon ",
-          hinhAnh:
-            "https://dvch1hlupt.cdn.hostvn.net/notification/image/1_1_3.png",
-          moTa:
-            " Receive VNTRIP 10% voucher instantly for any course purchased",
-          time: "25/11/2019 at 03:00",
-        },
-        {
-          title: " Online payment down 10%",
-          hinhAnh:
-            "https://dvch1hlupt.cdn.hostvn.net/notification/image/khuye_n_ma_i_16.png",
-          moTa:
-            " Receive VNTRIP 10% voucher instantly for any course purchased",
-          time: "25/11/2019 at 03:00",
-        },
-        {
-          title: " Enter DEAL200",
-          hinhAnh:
-            "https://dvch1hlupt.cdn.hostvn.net/notification/image/1_1_3.png",
-          moTa:
-            " Receive VNTRIP 10% voucher instantly for any course purchased",
-          time: "25/11/2019 at 03:00",
-        },
-      ],
-    };
-  }
   checkShowAccout = (currentUser) => {
     let userLogin = JSON.parse(localStorage.getItem("userLogin"));
 
@@ -67,10 +35,11 @@ class Header extends Component {
           >
             <div className="customer-name ">
               <img
-                src="http://graph.facebook.com/v2.10/172902427148211/picture"
+                className="avarta"
+                src="https://image.freepik.com/free-vector/man-avatar-profile-round-icon_24640-14044.jpg"
                 alt="avatar"
               />
-              <span>{userLogin.hoTen}</span>
+              <span>{userLogin.hoTen.length > 5 ? userLogin.hoTen.substr(0, 5) + "..." : userLogin.hoTen}</span>
               <div className="fa fa-caret-down"></div>
             </div>
           </div>
@@ -78,7 +47,7 @@ class Header extends Component {
             <Link to="/user" style={{ textDecoration: "none" }}>
               <li className="menu__item menu__item__user  ">
                 <img
-                  src="http://graph.facebook.com/v2.10/172902427148211/picture"
+                  src="https://image.freepik.com/free-vector/man-avatar-profile-round-icon_24640-14044.jpg"
                   className="menu__item-img"
                   alt=""
                 />
@@ -93,17 +62,19 @@ class Header extends Component {
               </li>
             </Link>
 
-            <Link to="/message" style={{ textDecoration: "none" }}> <li className="menu__item">Messages</li></Link>
-            <Link to="/pucharse-history" style={{ textDecoration: "none" }} >
+            <Link to="/message" style={{ textDecoration: "none" }}>
+              {" "}
+              <li className="menu__item">Messages</li>
+            </Link>
+            <Link to="/pucharse-history" style={{ textDecoration: "none" }}>
               <li className="menu__item">Purchase history</li>
             </Link>
             <Link to="/user" style={{ textDecoration: "none" }}>
               <li className="menu__item">Account</li>
             </Link>
 
-            <li className="menu__item">Help</li>
+         
             <li className="menu__item" onClick={this.handleLogOut}>
-
               Log out
             </li>
             <div className="wrapper__eduma">
@@ -162,7 +133,13 @@ class Header extends Component {
   showHeaderCourseFavories = (courseFavories) => {
     if (courseFavories.length > 0) {
       return courseFavories.map((item, index) => {
-        return <HeaderItemCourseFavories courseFavories={item} key={index} />;
+        return (
+          <HeaderItemCourseFavories
+            addToCart={this.props.addToCart}
+            courseFavories={item}
+            key={index}
+          />
+        );
       });
     } else {
       return (
@@ -179,24 +156,19 @@ class Header extends Component {
     }
   };
 
-  showNotifily = () => {
-    return this.state.arrNotify.map((item, index) => {
-      return <HeaderItemNotify item={item} key={index} />;
-    });
-  };
   goToCart = () => {
-    this.props.history.push("/cart")
+    this.props.history.push("/cart");
+  };
 
-  }
   goWishlist = () => {
-    this.props.history.push("/favorites")
-
-  }
-
+    this.props.history.push("/favorites");
+  };
 
   render() {
     let { cart, courseFavories } = this.props;
     let { searchKeyword } = this.props.display;
+    console.log(this.props.currentUser);
+    
 
     return (
       <header className="header ">
@@ -208,7 +180,7 @@ class Header extends Component {
               className="header-image"
             >
               <img
-                className="img-fluid mr-2"
+                className="img-fluid mr-2 logo "
                 src="https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg"
                 alt=""
               />{" "}
@@ -222,9 +194,8 @@ class Header extends Component {
 
           <div className="header__right">
             <div className="header-card ">
-
               <div className="header__card__noti">
-                <i className=" icon__noti  fa fa-shopping-cart" />
+                <Link to="/cart"> <i className=" icon__noti  fa fa-shopping-cart" /></Link>
                 <span className="badge__length">{cart.length}</span>
 
                 <div className="header__items">
@@ -235,12 +206,17 @@ class Header extends Component {
                   {cart.length ? (
                     <div className="btn__goToWistlist">
                       <div className="btn__goToWistlist__button__price">
-                        Total :<span className="price__new"> $75.6$</span><span className="price__old"> $64.903</span>
+                        Total :<span className="price__new">{Math.ceil((cart.length * 19.99))} $</span>
+                        <span className="price__old"> $64.903</span>
                       </div>
-                      <button className="btn__goToWistlist__button" onClick={() => { this.goToCart() }}>
+                      <button
+                        className="btn__goToWistlist__button"
+                        onClick={() => {
+                          this.goToCart();
+                        }}
+                      >
                         Go to Cart
-
-                        </button>
+                      </button>
                     </div>
                   ) : (
                       ""
@@ -248,9 +224,8 @@ class Header extends Component {
                 </div>
               </div>
 
-
               <div className="header__card__noti">
-                <i className=" icon__noti  fa fa-heart" aria-hidden="true" />
+                <Link to="/favorites"> <i className=" icon__noti  fa fa-heart" aria-hidden="true" /></Link>
                 <span className="badge__length">{courseFavories.length}</span>
                 <div className="header__items">
                   <div className="header__item__content">
@@ -259,9 +234,14 @@ class Header extends Component {
 
                   {courseFavories.length ? (
                     <div className="btn__goToWistlist">
-                      <button className="btn__goToWistlist__button" onClick={() => { this.goWishlist() }} >
+                      <button
+                        className="btn__goToWistlist__button"
+                        onClick={() => {
+                          this.goWishlist();
+                        }}
+                      >
                         Go to Wishlist
-                        </button>
+                      </button>
                     </div>
                   ) : (
                       ""
@@ -275,13 +255,8 @@ class Header extends Component {
                 <div className="header__items">
                   <div className="notify">
                     <div className="notify__header">
-                      <span className="text-notify">
-                        Notifications
-                      </span>
-                      <i
-                        className="fa fa-cog icon__noti "
-                        aria-hidden="true"
-                      />
+                      <span className="text-notify">Notifications</span>
+                      <i className="fa fa-cog icon__noti " aria-hidden="true" />
                     </div>
                     <div className="notify__body">No notifications.</div>
                   </div>
@@ -314,6 +289,12 @@ const mapDispatchToProps = (dispatch) => {
       dispatch({
         type: "SET_CURRENT_USER",
         user,
+      });
+    },
+    addToCart: (course) => {
+      dispatch({
+        type: "ADD_TO_CART",
+        payload: course,
       });
     },
   };

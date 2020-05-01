@@ -6,6 +6,6 @@ export const notify = (type, text) => {
     icon: type,
     title: text,
     showConfirmButton: false,
-    timer: 2000
+    timer: 1000
   });
 };

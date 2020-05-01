@@ -3,7 +3,7 @@
   .row {
     .content {
       .intro-title {
-       @include alignCenter();
+        @include alignCenter();
         .teacher {
           display: flex;
           width: 25%;
@@ -12,7 +12,7 @@
             border-radius: 50%;
           }
           .teacher-name {
-           margin-left: 10px;
+            margin-left: 10px;
             div:first-child {
               @include text(#666, $fs-5, $fw-normal);
             }
@@ -181,7 +181,6 @@
                   }
                   i {
                     font-size: 22px;
-                    
                   }
                 }
                 @include center();
@@ -227,15 +226,26 @@
           }
           .add {
             border: none;
-            background-color: $color-red-0;
+            background-color: $color-red-0 !important;
             margin-bottom: 3%;
-            @include text($color-white-0, $fs-0, $fw-bold-1);
+            color: #fff;
+            font-weight: 700;
+            outline: none;
+            &:hover{
+              background-color: #992337!important;
+            }
           }
+
           .buy {
-            @extend .add;
-            color: #666;
+            color: #686f7a;
             background-color: #fff;
-            border: 1px solid $color-black-0;
+            border: 1px solid #686f7a;
+            font-weight: 700;
+            outline: none;
+            &:hover {
+              color: #000;
+              border: 1px solid #000;
+            }
           }
           .meta {
             list-style: none;

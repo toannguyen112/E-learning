@@ -24,7 +24,7 @@ export default class Footer extends Component {
                             <div className="col-sm-3 ">
                                
                                 <div className="btn-group dropup">
-                                    <button className="btn  dropdown-toggle btn--white " data-toggle="dropdown" >
+                                    <button disabled className="btn  dropdown-toggle btn--white " data-toggle="dropdown" >
                                         <i className="fa fa-globe" aria-hidden="true" /><span>English</span>
                                     </button>
                                 </div>

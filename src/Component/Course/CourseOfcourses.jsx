@@ -8,14 +8,14 @@ class CourseOfcourses extends Component {
     super(props);
 
     this.state = {
-      showGoCart: false
+      showGoCart: false,
     };
   }
 
-  onCart = course => {
+  onCart = (course) => {
     this.props.addToCart(course);
     this.setState({
-      showGoCart: true
+      showGoCart: true,
     });
   };
 
@@ -25,13 +25,13 @@ class CourseOfcourses extends Component {
       ? JSON.parse(localStorage.getItem("cart"))
       : [];
 
-    let index = cart.findIndex(item => {
+    let index = cart.findIndex((item) => {
       return item.maKhoaHoc === course.maKhoaHoc;
     });
 
     if (index !== -1) {
       this.setState({
-        showGoCart: true
+        showGoCart: true,
       });
     }
   }
@@ -47,7 +47,12 @@ class CourseOfcourses extends Component {
             <img className="img-fluid" src={course.hinhAnh} alt="" />
           </div>
           <div className="card-body">
-            <h5 className="card-title">{course.tenKhoaHoc}</h5>
+            <h5 className="card-title">
+              {" "}
+              {course.tenKhoaHoc.length > 30
+                ? course.tenKhoaHoc.substr(0, 30) + "..."
+                : course.tenKhoaHoc}
+            </h5>
           </div>
           <div className="ratings text-center">
             <i className="fa fa-star"></i>
@@ -62,7 +67,6 @@ class CourseOfcourses extends Component {
             <span className="old__price mr-1">$199.99</span>
             <span>
               $199 <i className="fa fa-tag" />
-
             </span>
           </div>
 
@@ -74,26 +78,27 @@ class CourseOfcourses extends Component {
                   className="fa fa-check"
                   aria-hidden="true"
                 ></i>
-              </span></Link>
-          ) : (
-              <span className="btn-addToCart" onClick={() => this.onCart(course)}>
-                <i className="fa fa-cart-plus" aria-hidden="true" />
               </span>
-            )}
+            </Link>
+          ) : (
+            <span className="btn-addToCart" onClick={() => this.onCart(course)}>
+              <i className="fa fa-cart-plus" aria-hidden="true" />
+            </span>
+          )}
         </div>
       </div>
     );
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    addToCart: course => {
+    addToCart: (course) => {
       dispatch({
         type: ADD_TO_CART,
-        payload: course
+        payload: course,
       });
-    }
+    },
   };
 };
 

@@ -57,10 +57,10 @@
       .card {
         background-color: transparent;
         .card__header {
-          display: flex;
-          align-items: center;
-          justify-content: flex-start;
+          @include alignCenter;
+          justify-content: space-between;
           border-bottom: 1px solid $color-gray-12;
+          
           padding: 3%;
         }
         .card__body {

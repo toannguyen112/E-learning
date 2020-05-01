@@ -40,6 +40,7 @@
   }
 }
 
+
 @mixin alignCenter {
   display: flex;
  align-items: center;
@@ -56,4 +57,22 @@
 @mixin sizeImg($w,$h) {
   width: $w;
   height: $h;
+}
+@mixin  borderColor($color) {
+  border: 1px solid  $color ;
+}
+
+@mixin btn__default($bgcolor, $color, $border, $width, $height, $font-size) {
+  background-color: $bgcolor;
+  color: $color;
+  border: $border;
+  width: $width;
+  height: $height;
+  font-weight: bold;
+  outline: none;
+  font-size: $font-size;
+  cursor: pointer;
+  &:hover {
+      opacity: .9;
+  }
 }

@@ -25,6 +25,8 @@ class User extends Component {
     userService
       .personalInfo(userLogin.taiKhoan)
       .then(res => {
+        console.log(res.data);
+        
         this.props.dispatch(reduxAction("USER_PROFILE", res.data));
       })
       .catch(err => {
@@ -70,7 +72,7 @@ class User extends Component {
               <div className="user__avatar">
                 <img
                   className="img-fluid"
-                  src="http://graph.facebook.com/v2.10/172902427148211/picture"
+                  src="https://image.freepik.com/free-vector/man-avatar-profile-round-icon_24640-14044.jpg"
                   alt=""
                 />
               </div>

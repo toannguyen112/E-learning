@@ -6,17 +6,17 @@ import Loader from "../Component/Loader/Loader";
 import Viewing from "../Component/Viewing/Viewing";
 export default class CheckoutPage extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      loading: true
-    }
+      loading: true,
+    };
   }
 
   componentDidMount() {
     setTimeout(() => {
       this.setState({
-        loading: false
+        loading: false,
       });
     }, 1500);
   }
@@ -24,8 +24,15 @@ export default class CheckoutPage extends Component {
     return (
       <div>
         <Header history={this.props.history} />
-        {this.state.loading ? <Loader /> :( <Checkout history={this.props.history} />)}
-        <Viewing/>
+        {this.state.loading ? (
+          <Loader />
+        ) : (
+          <div>
+            <Checkout history={this.props.history} />
+            <Viewing />
+          </div>
+        )}
+
         <Footer />
       </div>
     );

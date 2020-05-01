@@ -16,7 +16,7 @@ export default class FavoriesItem extends Component {
         </div>
         <div className="favories-card-info">
           <span>new</span>
-          <p>{course.tenKhoaHoc}</p>
+          <p>  {course.tenKhoaHoc.length > 20 ? course.tenKhoaHoc.substr(0, 20) + "..." : course.tenKhoaHoc}</p>
           <div className="favories-author">
             <div className="favories-author-img">
               <img
@@ -24,7 +24,7 @@ export default class FavoriesItem extends Component {
                 alt=""
               />
             </div>
-            <div className="favories-author-text">toan nguyen</div>
+            <div className="favories-author-text">Bassir</div>
           </div>
           <div className="favories-price">$19.99</div>
         </div>

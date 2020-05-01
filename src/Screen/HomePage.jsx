@@ -16,7 +16,6 @@ import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; //Add
 
 import reduxAction from "../Store/Action/action";
 import { FETCH_COURSES } from "../Store/Action/type";
-
 const courseService = new CourseService();
 
 class HomePage extends Component {
@@ -29,19 +28,13 @@ class HomePage extends Component {
     };
   }
 
-  getCatalog =(data) => {
+  getCatalog = (data) => {
     this.setState({
       courseCatalog: data,
     });
-  }
+  };
 
   componentDidMount() {
-    setTimeout(() => {
-      this.setState({
-        loading: false,
-      });
-    }, 2000);
-
     courseService
       .fetchCourses()
       .then((res) => {
@@ -62,9 +55,8 @@ class HomePage extends Component {
   }
 
   render() {
-
-    let { courseList, history, } = this.props
-    let { courseCatalog } = this.state
+    let { courseList, history } = this.props;
+    let { courseCatalog } = this.state;
     return (
       <div className="wrapper">
         <Fragment>

@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 
 export default class HeaderItemCourseFavories extends Component {
     addToCart = (course) => {
-     
+        this.props.addToCart(course)
+
+
 
     }
     render() {
-        let { courseFavories ,history } = this.props;
+        let { courseFavories } = this.props;
         return (
-            <Link
-                to={`/coursedetail/${courseFavories.maKhoaHoc}`}
+            <div
+
                 className="heade__item"
-                style={{ textDecoration: "none" }}
+
             >
                 <div className=" header-img">
                     <img className="img-fluid" src={courseFavories.hinhAnh} alt="" />
@@ -25,7 +26,7 @@ export default class HeaderItemCourseFavories extends Component {
                         Add to cart
                     </button>
                 </div>
-            </Link>
+            </div>
 
 
         );
