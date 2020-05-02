@@ -62,19 +62,19 @@ class CourseItem extends Component {
         <div className="container">
           <div className="row">
             <div className="col-sm-8 col-md-8 col-lg-8 col-xl-8 pl-0 content">
-              <div className="content__title">
+              <div className="content__title  ">
                 <h1>{course.tenKhoaHoc}</h1>
               </div>
-              <div className="intro-title">
-                <div className="teacher">
+              <div className="intro-title row">
+                <div className="teacher col-md-4 col-sm-12">
                   <img src={course.hinhAnh} alt="" />
-                  <div className="teacher-name">
+                  <div className="teacher-name ">
                     <div>Teacher</div>
                     <div>Robert Richards</div>
                   </div>
                 </div>
 
-                <div className="category">
+                <div className="category  col-md-4 col-sm-12 ">
                   <span className="lnr lnr-layers" />
 
                   <div className="category__name">
@@ -82,7 +82,7 @@ class CourseItem extends Component {
                     <div>Apache, Computer Science, PHP, CSS, JS</div>
                   </div>
                 </div>
-                <div className="rating">
+                <div className="rating  col-md-4 col-sm-12 ">
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star"></i>
                   <i className="fa fa-star"></i>
@@ -350,8 +350,8 @@ class CourseItem extends Component {
                         </div>
                       </div>
                     ) : (
-                      ""
-                    )}
+                        ""
+                      )}
                   </div>
                 </div>
                 <div className="info__inner">
@@ -370,13 +370,13 @@ class CourseItem extends Component {
                       <button className="add">Go to cart</button>
                     </Link>
                   ) : (
-                    <button
-                      className="add"
-                      onClick={() => this.addcart(course)}
-                    >
-                      Add to cart
-                    </button>
-                  )}
+                      <button
+                        className="add"
+                        onClick={() => this.addcart(course)}
+                      >
+                        Add to cart
+                      </button>
+                    )}
 
                   <button className="buy" onClick={() => this.buyNow(course)}>
                     Buy now

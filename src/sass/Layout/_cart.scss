@@ -93,7 +93,7 @@
           color: #666;
         }
         a {
-          .add{
+          .add {
             margin-bottom: 5%;
             background-color: #2abfd4;
             color: #fff;
@@ -105,11 +105,11 @@
             font-size: 1rem;
             cursor: pointer;
           }
-          .continue{
-              @extend .add;
-              color: #666;
-              background-color: transparent;
-              border: 1px solid #666;
+          .continue {
+            @extend .add;
+            color: #666;
+            background-color: transparent;
+            border: 1px solid #666;
           }
         }
       }
@@ -119,4 +119,21 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 375px) {
+  .container {
+    padding: 0;
+  }
+  .cart_page{
+    margin: 0;
+    .cart_item {
+      .cart_name {
+        font-size: 0.625rem;
+      }
+     
+     
+    }
+  }
+  
 }

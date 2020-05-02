@@ -37,7 +37,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        {this.state.loading ? <LoadingBackground /> : (
+        {/* {this.state.loading ? <LoadingBackground /> : (
           <BrowserRouter>
             <Switch>
               <Route exact path="/admin" component={AdminPage} />
@@ -60,8 +60,31 @@ export default class App extends Component {
               <Auth path="/user" Component={UserPage} />
             </Switch>
           </BrowserRouter>
-        )}
+        )} */}
 
+
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/admin" component={AdminPage} />
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/home" component={HomePage} />
+            <Route
+              exact
+              path="/coursedetail/:courseid"
+              component={CourseDetailPage}
+            />
+            <Route exact path="/courses" component={CoursesPage} />
+            <Route exact path="/cart" component={CartPage} />
+            <Route exact path="/signup" component={SignUpPage} />
+            <Route exact path="/login" component={LoginPage} />
+            <Route exact path="/checkout" component={CheckoutPage} />
+            <Route exact path="/favorites" component={FavoritesPage} />
+            <Route exact path="/pucharse-history" component={PucharseHistoryPage} />
+            <Route exact path="/message" component={messagePage} />
+
+            <Auth path="/user" Component={UserPage} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }

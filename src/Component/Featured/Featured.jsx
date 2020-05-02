@@ -473,21 +473,21 @@ export default class Featured extends Component {
             <div className="col-md-4 col-sm-4 featured__content__items ">
               <Slider {...settingFeatured}>
                 <div>
-                  <img
+                  <img style={{ height: "418px" }}
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/360x434_42.png"
                     className="img-fluid"
                     alt=""
                   />
                 </div>
                 <div>
-                  <img 
+                  <img style={{ height: "418px" }}
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/360x434_41.png"
                     className="img-fluid"
                     alt=""
                   />
                 </div>
                 <div>
-                  <img 
+                  <img style={{ height: "418px" }}
                     src="https://dvch1hlupt.cdn.hostvn.net/button/image/360x434_39.png"
                     className="img-fluid"
                     alt=""

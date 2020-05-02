@@ -3,12 +3,13 @@
   .row {
     .content {
       .intro-title {
-        @include alignCenter();
+        align-items: center;
         .teacher {
           display: flex;
           width: 25%;
           img {
-            @include sizeImg(50px, 50px);
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
           }
           .teacher-name {
@@ -231,8 +232,8 @@
             color: #fff;
             font-weight: 700;
             outline: none;
-            &:hover{
-              background-color: #992337!important;
+            &:hover {
+              background-color: #992337 !important;
             }
           }
 
@@ -287,6 +288,44 @@
           text-decoration: none;
           font-size: 1rem;
           font-weight: 700;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 740px) and (max-width: 1024px) {
+}
+@media screen and (max-width: 375px) {
+  .play {
+    display: none;
+  }
+  .courseDetail-content {
+    .row {
+      flex-direction: column-reverse;
+      .content {
+       padding: 10px!important;
+        margin-top: 10px;
+        .content__title {
+          h1 {
+            font-size: 1.3rem;
+          }
+        }
+        .intro-title {
+          display: none;
+        }
+      }
+      .sidebar {
+        padding: 0;
+      }
+    }
+  }
+
+  .lesson_content {
+    ul {
+      li {
+        span {
+          display: none;
         }
       }
     }

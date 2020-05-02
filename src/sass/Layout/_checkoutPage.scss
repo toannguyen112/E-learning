@@ -60,7 +60,7 @@
           @include alignCenter;
           justify-content: space-between;
           border-bottom: 1px solid $color-gray-12;
-          
+
           padding: 3%;
         }
         .card__body {
@@ -100,7 +100,7 @@
             }
             .card__footer {
               display: flex;
-              padding: 2% 0 ;
+              padding: 2% 0;
               align-items: center;
               button {
                 background-color: #ec5252;
@@ -135,6 +135,60 @@
                   color: #aaa;
                 }
               }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .checkout {
+    padding: 0;
+    margin: 0;
+    .container {
+      padding: 0;
+      .checkout__list {
+        padding: 0;
+        h4 {
+          text-align: center;
+        }
+        .cart__items {
+          overflow-y: hidden;
+          .cart__item {
+            flex-wrap: nowrap;
+            padding: 0;
+          }
+        }
+      }
+      .checkout__payment {
+        .payment {
+          .code {
+            display: flex;
+            .card__month,
+            .card__year {
+              width: 50% !important;
+            }
+
+            .card__code {
+              display: none;
+            }
+          }
+          .zip {
+            .country {
+              width: 100% !important;
+            }
+            .zipcode {
+              display: none;
+            }
+          }
+          .card__footer {
+            p {
+              display: none;
+            }
+            .lock {
+              display: none !important;
             }
           }
         }

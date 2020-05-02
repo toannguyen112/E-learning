@@ -27,7 +27,7 @@ class Courses extends Component {
       <div className="Course">
         <div className="courses">
           <div className="container">
-            <div className="row sort__filter align-items-center">
+            <div className="row sort__filter">
               <div className="col-md-6 col-sm-12 py-3">
                 <div className="sort">
                   <span

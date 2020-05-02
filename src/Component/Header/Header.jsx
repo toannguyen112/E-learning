@@ -9,6 +9,14 @@ import HeaderItemCourseFavories from "./HeaderItemCourseFavories";
 
 
 class Header extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      showSearchMobile: false
+    }
+  }
+
   checkShowAccout = (currentUser) => {
     let userLogin = JSON.parse(localStorage.getItem("userLogin"));
 
@@ -73,7 +81,7 @@ class Header extends Component {
               <li className="menu__item">Account</li>
             </Link>
 
-         
+
             <li className="menu__item" onClick={this.handleLogOut}>
               Log out
             </li>
@@ -163,16 +171,101 @@ class Header extends Component {
   goWishlist = () => {
     this.props.history.push("/favorites");
   };
+  showSearchMobile = () => {
+    this.setState({
+      showSearchMobile: true
+    })
+  }
+  closeSearchMobole = () => {
+    this.setState({
+      showSearchMobile: false
+    })
+  }
 
   render() {
     let { cart, courseFavories } = this.props;
     let { searchKeyword } = this.props.display;
     console.log(this.props.currentUser);
-    
+
 
     return (
       <header className="header ">
         <div className="header__content container">
+          <div className="icon__menu">
+            <i className="fa fa-bars" aria-hidden="true" />
+          </div>
+          {/* mobie-nav  */}
+          <div className="overPlay"></div>
+          <div className="warpper__mobile__nav">
+
+            <div className="warpper__signUP__login">
+              <button>
+                Sign up / Log in
+               </button>
+              <ul className="list__category">
+                <h3 className="list__header">
+                  Most popular
+                </h3>
+                <li className="li list__categpry__item">
+                  <span className="category"> Web Development</span>
+                  <i className="fa fa-angle-right" />
+                </li>
+                <li className="li list__categpry__item">
+                  <span className="category">  Mobile Apps</span>
+                  <i className="fa fa-angle-right" />
+                </li>
+                <li className="li list__categpry__item">
+                  <span className="category"> Game Development</span>
+                  <i className="fa fa-angle-right" />
+                </li>
+                <li className="li list__categpry__item">
+                  <span className="category"> Finance</span>
+                  <i className="fa fa-angle-right" />
+                </li>
+                <li className="li list__categpry__item">
+                  <span className="category"> Entrepreneurship</span>
+                  <i className="fa fa-angle-right" />
+                </li>
+                <li className="li list__categpry__item">
+                  <span className="category">Data & Analytics</span>
+                  <i className="fa fa-angle-right" />
+                </li>
+                <li className="li list__categpry__item">
+                  <span className="category">Personal Transformation</span>
+                  <i className="fa fa-angle-right" />
+                </li>
+                <li className="li list__categpry__item">
+                  <span className="category">Graphic Design</span>
+                  <i className="fa fa-angle-right" />
+                </li>
+                <li className="li list__categpry__item">
+                  <span className="category">Digital Marketing</span>
+                  <i className="fa fa-angle-right" />
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div className="search__mobile" onClick={() => this.showSearchMobile()} >
+            <i className="fa fa-search"></i>
+          </div>
+
+          {/* searchMoblieOnClick    */}
+
+          {
+            this.state.showSearchMobile ? (
+              <div className="search__mobolle__show__oncClick">
+                <div className="search__left">
+                  <i className="fa fa-search"></i>
+                  <input type="text" placeholder="Search for anything" />
+                </div>
+                <div className="search__close">
+                  <i className="fa fa-close" onClick={() => this.closeSearchMobole()} ></i>
+                </div>
+              </div>
+            ) : ""
+          }
+
           <div className="header__left">
             <Link
               to="/"
@@ -265,9 +358,7 @@ class Header extends Component {
             </div>
             {this.checkShowAccout(this.props.currentUser)}
           </div>
-          <div className="icon__menu">
-            <i className="fa fa-bars" aria-hidden="true" />
-          </div>
+
         </div>
       </header>
     );

@@ -2,11 +2,11 @@
   color: #686f7a;
   padding: $pd-1 0;
   border-top: 1px solid #dedfe0;
-
+  max-height: 300px;
   .course__img {
     img {
-      width: 210px;
-      height: 118px;
+      width: 13.125rem;
+      height: 7.375rem;
     }
   }
   .course__content {
@@ -48,4 +48,15 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 375px) {
+  .course__row {
+    padding: 0;
+  }
+  
+  .list__view,.headline{
+    display: none;
+  }
+
 }

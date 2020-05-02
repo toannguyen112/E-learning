@@ -3,52 +3,50 @@
   .footer_top {
     padding: 50px 0;
 
-    ul {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      height: 110px;
-      li {
-        list-style: none;
-        a {
-          text-decoration: none;
-          @include text($color-blue, $fs-1, $fw-normal);
-        }
-        .footer-text {
-          @include text($color-blue, $fs-1, $fw-bold);
-        }
+    .fotter__list-item {
+      .text-normal {
+        text-decoration: none;
+        @include text($color_medium_blue, $fs-1, $fw-normal);
       }
-      .footer_btn {
-        button {
-          border: 1px solid $color-black-0;
-        }
+      .footer__text-bold {
+        text-decoration: none;
+        @include text($color-blue, $fs-1, $fw-bold);
       }
     }
-    .btn-group {
-      width: 55%;
-      button {
-        i {
-          margin: 0 $mg-1;
-        }
-      }
+    .wrapper__btn {
     }
   }
   .footer_bot {
     padding: 40px 0;
-    .footer_img {
-      width: 15%;
-      margin-right: $mg-2;
-    }
-    span {
-      align-self: center;
-      @include text($color-gray-4, $fs-0, $fw-normal);
-    }
-    .footer_bot_info {
-      justify-content: flex-end;
-      a {
-        text-decoration: none;
-        @include text($color-blue, $fs-1, $fw-normal);
+    .footer__bot--left {
+      .footer_img {
+        width: 15%;
+        margin-right: $mg-2;
       }
+      .Copyright {
+        align-self: center;
+        @include text($color-gray-4, $fs-1, $fw-normal);
+      }
+    }
+    .footer__bot--right {
+      .footer_bot_info {
+       a{
+        text-decoration: none;
+        @include text($color_medium_blue, $fs-1, $fw-normal);
+
+       }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 740px) and (max-width: 1024px) {
+}
+@media screen and (max-width: 740px) {
+  .footer_top {
+    text-align: center;
+    .wrapper__btn {
+      text-align: center;
     }
   }
 }

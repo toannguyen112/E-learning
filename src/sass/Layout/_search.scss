@@ -102,3 +102,11 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .header-control {
+    .search__result {
+      display: none;
+    }
+  }
+}

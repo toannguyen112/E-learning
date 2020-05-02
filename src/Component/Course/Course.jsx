@@ -64,12 +64,12 @@ class Course extends Component {
     let { course } = this.props;
 
     return (
-     
+
 
 
       <div className="product__item col-md-3 col-sm-12 ">
-        <div className="product__item__content" style={{boxShadow :"0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1)"}} >
-          <Link to={`/courses/${course.maKhoaHoc}`}>
+        <div className="product__item__content" style={{ boxShadow: "0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1)" }} >
+          <Link to={`/coursedetail/${course.maKhoaHoc}`}>
             <div className="item__img">
               <img src={course.hinhAnh} alt="item" />
               <div className="img__overlay" />
@@ -94,15 +94,15 @@ class Course extends Component {
               </div>
             </div>
           </Link>
-        
-          <div className="sub__info">
+
+          <div className="sub__info  ">
             <p className="lastUpdate">Last update : 11/02/2000</p>
             <h4 className="course__name">{course.tenKhoaHoc}</h4>
             <div className="sub-bestseller">
               <div className="d-flex ml-2">
-                in <div className="ml-1"> Data AnaLysis</div>
+                in <div className="ml-2"> Data AnaLysis</div>
               </div>
-              <div>Development</div>
+              <div className="ml-2">Development</div>
             </div>
 
             <div className="sub__info__body">
@@ -170,6 +170,7 @@ class Course extends Component {
           </div>
 
         </div>
+        <span className="best__seller" >BESTSELLER</span>
       </div>
     );
   }
