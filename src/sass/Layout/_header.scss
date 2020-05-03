@@ -371,14 +371,67 @@
     top: 0;
     left: 0;
     bottom: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+
     z-index: 9;
-    background: rgba(30,30,28,0.8);
+    background: rgba(30, 30, 28, 0.8);
+    .closeSideBarMenu {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      @include sizeImg(50px, 50px);
+      background-color: #fff;
+      border-radius: 50%;
+      top: 2%;
+      right: 5%;
+      z-index: 99;
+      animation: scalecloseSideBarMenu ease 400ms;
+      .closeSideBarMenu__icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $color-gray-4;
+        font-size: 20px;
+
+      }
+    }
+
+    @keyframes scalecloseSideBarMenu {
+      from {
+        transform: scale(0);
+        visibility: hidden;
+      }
+      to {
+        transform: scale(1);
+        visibility: visible;
+      }
+    }
+  }
+  .MobileCart {
+    position: relative;
+    display: none;
+    margin-left: 20%;
+    .icon_cart {
+      @include text($color-gray-4, $fs-0 + 5, $fw-bold-1);
+    }
+    .cart__total {
+      position: absolute;
+      @include text($color-white-0, $fs-1, $fw-bold-1);
+      @include alignCenter;
+      @include sizeImg(2%, 2%);
+
+      justify-content: center;
+      top: -6px;
+      right: -75%;
+      background-color: $color-red-0;
+      padding: 10px;
+      border-radius: 50%;
+    }
   }
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 745px) {
   .header {
     .header__content {
       position: relative;
@@ -412,7 +465,8 @@
       }
 
       .search__mobolle__show__onClick,
-      .search__mobile {
+      .search__mobile,
+      .MobileCart {
         display: block;
       }
     }

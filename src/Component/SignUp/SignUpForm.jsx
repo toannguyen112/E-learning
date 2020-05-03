@@ -110,7 +110,7 @@ class SignUpForm extends Component {
                   of Edumall.
                 </p>
                 <button style={{ outline: "none" }} className="btn-sign">Sign up</button>
-                <span>
+                <span className="haveAccount" >
                   Already have an account ? <Link to="/login">Login</Link>
                 </span>
               </form>

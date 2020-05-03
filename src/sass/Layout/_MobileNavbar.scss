@@ -1,5 +1,3 @@
-
-
 .warpper__mobile__nav {
   position: fixed;
   display: none;
@@ -10,9 +8,9 @@
   background-color: #fff;
   z-index: 99;
   overflow-y: auto;
-  animation: showNavbarMobile ease 1s;
-  .warpper__signUP__login {
-    button {
+  animation: showNavbarMobile ease 300ms;
+  .warpper__mobile__nav__content {
+    .wrapper__loign__signup {
       width: 100%;
       padding: 8px 16px;
       font-weight: 700;
@@ -21,38 +19,129 @@
       background-color: $color_white;
       border: none;
     }
-    .list__category {
-      padding: 8px 16px;
-      .list__header {
-        font-size: 13px;
-        font-weight: bold;
-        color: $color-gray-4;
-        text-transform: uppercase;
-        padding-top: 10px;
-        letter-spacing: 1px;
-        border-top: 1px solid #dedfe0;
-        .icon__graph {
-          font-size: 20px;
-          color: dedfe0;
+    .warpper__userAcount {
+      background-color: #fbfbf8;
+      padding: 10px;
+      @include alignCenter;
+      justify-content: space-between;
+      .image__avarta {
+        position: relative;
+        img {
+          max-width: 64px;
+          max-height: 64px;
+          border-radius: 50%;
+        }
+        .circleRed {
+          position: absolute;
+          top: 0;
+          right: 7%;
+          @include sizeImg(15px, 15px);
+          border-radius: 50%;
+          background-color: $color_red;
         }
       }
-      .list__categpry__item {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 0;
-        .category {
-          font-size: 15px;
+      .userAccount {
+        padding-right: 20px;
+        .nameUser {
+          @include text($color_black-11, 0.9rem, bold);
+          word-break: break-word;
         }
+        .welcome {
+          margin: 0;
+          @include text(#73726c, 0.9rem, normal);
+        }
+      }
+      .arrow {
         i {
-          font-size: 20px;
-          font-weight: bold;
+          @include text($color_black-11, 20px, bold);
+        }
+      }
+    }
+    .warrper__list__content {
+      .list__header {
+        padding: 10px 15px 0 15px;
+        @include text($color-gray-4, 14px, bold);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin: 0;
+        border-top: 1px solid $color-gray-7;
+      }
+
+      .list__category {
+        padding: 8px 16px;
+
+        .list__categpry__item {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 0;
+          .category {
+            font-size: 15px;
+          }
+          .fa-angle-right {
+            @include text($color_black-11, 20px, bold);
+          }
         }
       }
     }
   }
+  .warpper__mobile__nav__sideDrawer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 10;
+    animation: showSideBarDrawer ease 400ms;
+    .header__title__sideDrawer {
+      background-color: #fbfbf8;
+      padding: 15px;
+      i {
+        @include text($color_black-11, 15px, bold);
+      }
+      .textMenu {
+        margin-left: 10px;
+        @include text($color_black-11, 15px, normal);
+      }
+    }
+
+    .list__mobile {
+      .list__header__sideDrawer {
+        @include text($color-gray-4, 15px, bold);
+        padding: 10px 15px;
+        margin: 0;
+        border-top: 1px solid $color-gray-7;
+      }
+
+      .list__category__sideDrawer {
+        padding: 0 15px;
+
+        .list__categpry__item {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 0;
+          .category {
+            font-size: 15px;
+          }
+          .fa-angle-right {
+            @include text($color_black-11, 20px, bold);
+          }
+        }
+      }
+    }
+  }
+
+  @keyframes showSideBarDrawer {
+    from {
+      right: -100%;
+    }
+    to {
+      right: 0;
+    }
+  }
 }
 
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 745px) {
   .overPlay,
   .warpper__mobile__nav {
     display: block;

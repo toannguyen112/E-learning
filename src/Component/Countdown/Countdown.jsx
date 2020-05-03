@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 
 export default class Countdown extends Component {
- 
+
   render() {
     return (
       <section className="countdown">
         <div className="container">
           <div className="row countdown__content">
-            <div className="col-sm-8 col-md-8 col-lg-8 col-xl-8 countdown__left pl-0">
+            <div className="col-md-8 col-lg-8 col-xl-8  col-sm-12 countdown__left ">
               <div className="count__img">
                 <img src="/img/countdown.png" alt="countdown" />
               </div>
@@ -22,7 +22,7 @@ export default class Countdown extends Component {
                 <button>LEARN MORE</button>
               </div>
             </div>
-            <div className="col-sm-4 col-md-4 col-lg-4 col-xl-4 countdown__right">
+            <div className="col-md-4 col-lg-4 col-xl-4  col-sm-12 countdown__right">
               <h6>HURRY UP! IT'S ONLY LEFT</h6>
               <div className="timer">
                 <div className="timer__inner">

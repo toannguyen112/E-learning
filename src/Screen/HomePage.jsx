@@ -70,7 +70,7 @@ class HomePage extends Component {
 
           <Footer />
           <ScrollUpButton />
-          <Hotline />
+          {/* <Hotline /> */}
         </Fragment>
       </div>
     );

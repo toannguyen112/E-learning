@@ -3,14 +3,38 @@
   .footer_top {
     padding: 50px 0;
 
-    .fotter__list-item {
-      .text-normal {
-        text-decoration: none;
-        @include text($color_medium_blue, $fs-1, $fw-normal);
+    .footer__item {
+      .fotter__list-item {
+        .text-normal {
+          text-decoration: none;
+          @include text($color_medium_blue, $fs-1, $fw-normal);
+        }
+        .footer__text-bold {
+          text-decoration: none;
+          @include text($color-blue, $fs-1, $fw-bold);
+        }
       }
-      .footer__text-bold {
-        text-decoration: none;
-        @include text($color-blue, $fs-1, $fw-bold);
+    }
+    .wrapper__btn {
+      text-align: right;
+      .wrapper__btn__content {
+        border: 1px solid $color-gray-4;
+        color: $color-gray-4;
+        background-color: transparent;
+        display: inline-block;
+        width: 160px;
+        height: 37px;
+        .box__globe {
+          @include alignCenter;
+          line-height: 37px;
+          padding: 0 10px;
+          justify-content: space-between;
+        }
+
+        &:hover {
+          border: 1px solid #000;
+          color: #000;
+        }
       }
     }
   }
@@ -43,7 +67,7 @@
   .footer_top {
     text-align: center;
     .wrapper__btn {
-      text-align: center;
+      display: none;
     }
   }
 }

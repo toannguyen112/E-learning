@@ -217,15 +217,15 @@ class Header extends Component {
                 onClick={() => this.openMobileNavbar()}
               />
             </div>
-
             {/* end icon menu  */}
+
             {/* mobie-nav  */}
 
             {this.state.showNavbarhMobile ? (
               <MobileNavBar closeMobileNavbar={this.closeMobileNavbar} />
             ) : (
-                ""
-              )}
+              ""
+            )}
 
             {/* end mobie-nav  */}
 
@@ -259,7 +259,6 @@ class Header extends Component {
                 handleSearch={this.props.handleSearch}
               />
             </div>
-
             <div className="header__right">
               <div className="header-card ">
                 <div className="header__card__noti">
@@ -293,8 +292,8 @@ class Header extends Component {
                         </button>
                       </div>
                     ) : (
-                        ""
-                      )}
+                      ""
+                    )}
                   </div>
                 </div>
 
@@ -324,8 +323,8 @@ class Header extends Component {
                         </button>
                       </div>
                     ) : (
-                        ""
-                      )}
+                      ""
+                    )}
                   </div>
                 </div>
 
@@ -348,23 +347,45 @@ class Header extends Component {
               </div>
               {this.checkShowAccout(this.props.currentUser)}
             </div>
+            <div className="MobileCart">
+              <Link to="/cart">
+                <i
+                  className=" icon_cart fa fa-shopping-cart"
+                  aria-hidden="true"
+                />
+              </Link>
+              <span className="cart__total">{cart.length}</span>
+            </div>
           </div>
         ) : (
-            <MobileSearch
-              history={this.props.history}
-              display={this.props.display}
-              searchKeyword={searchKeyword}
-              handleSearch={this.props.handleSearch}
-              closeSearchMobile={this.closeSearchMobile}
-            />
-          )}
-
+          <MobileSearch
+            history={this.props.history}
+            display={this.props.display}
+            searchKeyword={searchKeyword}
+            handleSearch={this.props.handleSearch}
+            closeSearchMobile={this.closeSearchMobile}
+          />
+        )}
 
         {this.state.showSearchMobile || this.state.showNavbarhMobile ? (
-          <div className="overPlay" onClick={() => this.closeMobileNavbar()}></div>
-
-        ) : ''}
-
+          <div className="overPlay">
+            {this.state.showNavbarhMobile ? (
+              <div
+                className="closeSideBarMenu"
+                onClick={() => this.closeMobileNavbar()}
+              >
+                <i
+                  className=" closeSideBarMenu__icon  fa fa-times"
+                  aria-hidden="true"
+                ></i>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+        ) : (
+          ""
+        )}
       </header>
     );
   }

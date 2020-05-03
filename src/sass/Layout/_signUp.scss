@@ -8,14 +8,12 @@
       font-weight: bold;
       color: red;
       img {
-        
         width: 30%;
       }
     }
     .sign-up-text {
       a {
         @include text($color-red-5, $fs-1 + 4, $fw-bold-0);
-        
       }
     }
   }
@@ -43,6 +41,7 @@
         height: 45px;
         border: none;
         border-radius: 7px;
+        cursor: default;
         margin: 0 5px;
         i {
           margin: 0 5px;
@@ -98,22 +97,30 @@
         }
       }
     }
-    .img-right{
-     img{
-      width: 100%;
-     }
+    .img-right {
+      img {
+        width: 100%;
+      }
     }
   }
 }
 
-
-
-@media all and ( max-width: 480px) {
- .sign-up-content{
-   .col-md-6:nth-child(2){
-     .img-fluid{
-       display: none;
-     }
-   }
- }
- }
+@media all and (max-width: 745px) {
+  
+  .sign__up {
+    padding: 0;
+    .singUp-header {
+      padding: 15px;
+    }
+    .sign-up-content {
+      .title-sso,
+      .img-right,
+      .haveAccount {
+        display: none;
+      }
+      form {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -2,34 +2,39 @@
   .courses {
     .sort__filter {
       padding-top: 20px;
-      .sort {
-        span {
-          border: 1px solid #666;
-          padding: 10px;
-          cursor: pointer;
-          margin-right: 12px;
-        }
-        span.active {
-          color: $color-blue-4;
-          border-color: $color-blue-4;
-        }
-        .sort__select {
-          border: 1px solid #666;
-          padding: 0.7em;
-          outline: none;
+      .sort__filter--top {
+        .sort {
+          span {
+            border: 1px solid #666;
+            padding: 10px;
+            cursor: pointer;
+            margin-right: 12px;
+          }
+          span.active {
+            color: $color-blue-4;
+            border-color: $color-blue-4;
+          }
+          .sort__select {
+            border: 1px solid #666;
+            padding: 0.7em;
+            outline: none;
+          }
         }
       }
-      .filter {
-        @include alignCenter;
-        span:first-child {
-          padding-right: 1.5rem !important;
-          border-right: 1px solid #000;
-        }
-        span:last-child {
-          padding-right: 1.5rem !important;
-          padding-left: 1.5rem !important;
-          color: red;
-          cursor: pointer;
+      .sort__filter--bot {
+        .filter {
+          justify-content: flex-end;
+          @include alignCenter;
+          span:first-child {
+            padding: 0 10px;
+            font-size: 13px;
+          }
+          span:last-child {
+            font-size: 13px;
+            padding-left: 0 10px;
+            color: red;
+            cursor: pointer;
+          }
         }
       }
     }
@@ -146,7 +151,11 @@
 }
 
 @media screen and (max-width: 375px) {
-  .filter  {
-    display: none;
+  .sort__filter {
+    .sort__filter--bot {
+      .filter {
+        justify-content: flex-start!important;
+      }
+    }
   }
 }

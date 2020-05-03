@@ -7,25 +7,36 @@ export default class Footer extends Component {
                 <div className="footer_content container">
                     <div className="footer_top row">
 
-                        <ul className="col-md-3  col-sm-12 footer__item">
+                        <ul className="col-3 footer__item">
 
                             <li className="fotter__list-item"><a className="footer__text-bold" href="https://www.facebook.com/">Udemy for Business</a></li>
                             <li className="fotter__list-item"><a className="footer__text-bold" href="https://www.facebook.com/">Teach on Udemy</a></li>
                             <li className="fotter__list-item"><a className="text-normal" href="https://www.facebook.com">Udemy app</a></li>
                             <li className="fotter__list-item"><a className="text-normal" href="https://www.facebook.com">About us</a></li>
                         </ul>
-                        <ul className="col-md-3  col-sm-12 footer__item">
+                        <ul className="col-3 footer__item">
                             <li className="fotter__list-item"><a className="text-normal" href="https://www.facebook.com">Careers</a></li>
                             <li className="fotter__list-item"><a className="text-normal" href="https://www.facebook.com">Blog</a></li>
                             <li className="fotter__list-item"><a className="text-normal" href="https://www.facebook.com">Help and Support</a></li>
                             <li className="fotter__list-item"><a className="text-normal" href="https://www.facebook.com">Affiliate</a></li>
                         </ul>
-                        <ul className="col-md-3  col-sm-12 footer__item">
+                        <ul className="col-3 footer__item">
                             <li className="fotter__list-item"><a className="text-normal" href="https://www.facebook.com">Sitemap</a></li>
                             <li className="fotter__list-item"><a className="text-normal" href="https://www.facebook.com">Popular courses</a></li>
                         </ul>
-                        <ul className="col-md-3  col-sm-12 footer__item  wrapper__btn">
-                          
+                        <ul className="col-3 footer__item  wrapper__btn">
+                            <div className="wrapper__btn__content">
+                                <div className="box__globe">
+                                    <div className="globe">
+                                        <i className="fa fa-globe  mr-4" aria-hidden="true" />
+                                        <span>English</span>
+                                    </div>
+                                    <div className="angle">
+                                       <i className="fa fa-angle-up" aria-hidden="true" />
+    
+                                    </div>
+                                </div>
+                            </div>
                         </ul>
                     </div>
                     <div className="footer_bot row" >

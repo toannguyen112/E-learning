@@ -1,7 +1,6 @@
 .countdown {
   padding: 4% 0;
 
-  padding: 4% 0;
   background: $bg-color;
   .countdown__content {
     align-items: center;
@@ -71,12 +70,10 @@
 }
 
 @media screen and (max-width: 375px) {
-  .count__img{
-    display: none;
+  .countdown__right {
+    padding: 15px;
+    h6 {
+      padding: 0!important;
+    }
   }
-
-  .countdown__right{
-    padding: 10px 0 ;
-  }
- 
 }
