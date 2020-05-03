@@ -7,9 +7,10 @@ import Footer from "../Component/Footer/Footer";
 // import CourseService from "../Services/courseService";
 
 import { connect } from "react-redux";
-
 import CourseItem from "../Component/courseItem/CourseItem";
 import Loader from "../Component/Loader/Loader";
+import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; 
+
 // const courseService = new CourseService();
 class CourseDetailPage extends Component {
   constructor(props) {
@@ -78,6 +79,8 @@ class CourseDetailPage extends Component {
         )}
 
         <Footer />
+        <ScrollUpButton/>
+        
       </div>
     );
   }

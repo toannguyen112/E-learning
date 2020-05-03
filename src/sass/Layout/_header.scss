@@ -44,7 +44,7 @@
         display: flex;
 
         i {
-          color: black;
+          color: $color_black;
           margin: 0 30px;
         }
 
@@ -356,68 +356,25 @@
     .search__mobile {
       display: none;
     }
-    .search__mobolle__show__oncClick {
-      width: 100%;
-      @include alignCenter;
-      .search__left {
-        @include alignCenter;
-      }
-    }
-    .overPlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 99;
-      background-color: rgba(41, 48, 59, 0.55);
-    }
 
-    .warpper__mobile__nav {
-      position: fixed;
-      width: 75%;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      background-color: #fff;
-      z-index: 99;
-      overflow-y: auto;
-      .warpper__signUP__login {
-        button {
-          width: 100%;
-          padding: 8px 16px;
-          font-weight: 700;
-          text-align: left;
-          color: #003845;
-          background-color: #f2f3f5;
-          border: none;
-        }
-        .list__category {
-          padding: 8px 16px;
-          .list__header {
-            font-size: 13px;
-            font-weight: bold;
-            color: #686f7a;
-            text-transform: uppercase;
-            padding-top: 10px;
-            letter-spacing: 1px;
-          }
-          .list__categpry__item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 0;
-            .category {
-              font-size: 15px;
-            }
-            i {
-              font-size: 20px;
-              font-weight: bold;
-            }
-          }
-        }
+    @keyframes showNavbarMobile {
+      from {
+        left: -100%;
+      }
+      to {
+        left: 0;
       }
     }
+  }
+  .overPlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background: rgba(30,30,28,0.8);
   }
 }
 
@@ -425,6 +382,10 @@
   .header {
     .header__content {
       position: relative;
+      padding: 15px;
+
+      box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
+        0 3px 1px 0 rgba(20, 23, 28, 0.1);
       .header__left {
         .header-control {
           display: none;
@@ -449,6 +410,8 @@
         text-align: center;
         font-size: 25px;
       }
+
+      .search__mobolle__show__onClick,
       .search__mobile {
         display: block;
       }

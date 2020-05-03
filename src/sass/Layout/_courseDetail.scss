@@ -22,7 +22,7 @@
         .category {
           width: 50%;
           padding-left: 3%;
-          display: flex;
+          @include alignCenter;
           span {
             @include text($color-blue, 3rem, $fw-normal);
           }
@@ -30,6 +30,9 @@
             padding-left: 20px;
             div:first-child {
               @include text(#666, $fs-5, $fw-normal);
+            }
+            div:last-child {
+              @include text(#666, $fs-0, $fw-normal);
             }
           }
         }
@@ -301,16 +304,14 @@
     display: none;
   }
   .courseDetail-content {
+    padding: 0;
     .row {
       flex-direction: column-reverse;
       .content {
-       padding: 10px!important;
+        padding: 10px !important;
         margin-top: 10px;
-        .content__title {
-          h1 {
-            font-size: 1.3rem;
-          }
-        }
+        .content__title,
+        .description,
         .intro-title {
           display: none;
         }
@@ -322,12 +323,8 @@
   }
 
   .lesson_content {
-    ul {
-      li {
-        span {
-          display: none;
-        }
-      }
+    span {
+      display: none;
     }
   }
 }

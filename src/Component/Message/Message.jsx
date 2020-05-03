@@ -17,7 +17,7 @@ export default class Message extends Component {
               <div className=" thead-tool-bar">
                 <div className="thead--tool-bar--top">
                   <button className="button__compose">Compose</button>
-                  <select class="form-control" name="" id="">
+                  <select className="form-control" name="" id="">
                     <option> All message</option>
                     <option> Unread</option>
                     <option> No response</option>
@@ -52,7 +52,7 @@ export default class Message extends Component {
                         it's...
                       </p>
                       <span className="close__massage">
-                        <i class="fa fa-ban" aria-hidden="true"></i>
+                        <i className="fa fa-ban" aria-hidden="true"></i>
                       </span>
                     </div>
                   </li>

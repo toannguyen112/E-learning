@@ -150,19 +150,10 @@
     .container {
       padding: 0;
       .checkout__list {
-        padding: 0;
-        h4 {
-          text-align: center;
-        }
-        .cart__items {
-          overflow-y: hidden;
-          .cart__item {
-            flex-wrap: nowrap;
-            padding: 0;
-          }
-        }
+        display: none;
       }
       .checkout__payment {
+        padding: 10px 15px;
         .payment {
           .code {
             display: flex;

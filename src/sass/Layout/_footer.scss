@@ -13,8 +13,6 @@
         @include text($color-blue, $fs-1, $fw-bold);
       }
     }
-    .wrapper__btn {
-    }
   }
   .footer_bot {
     padding: 40px 0;
@@ -30,11 +28,10 @@
     }
     .footer__bot--right {
       .footer_bot_info {
-       a{
-        text-decoration: none;
-        @include text($color_medium_blue, $fs-1, $fw-normal);
-
-       }
+        a {
+          text-decoration: none;
+          @include text($color_medium_blue, $fs-1, $fw-normal);
+        }
       }
     }
   }

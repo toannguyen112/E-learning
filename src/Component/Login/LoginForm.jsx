@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { settings } from "../../config/settings";
 import UserService from "../../Services/userService";
 import reduxAction from "../../Store/Action/action";
-import { LOGIN, SET_CURRENT_USER } from "../../Store/Action/type";
+import { SET_CURRENT_USER } from "../../Store/Action/type";
 import { connect } from "react-redux";
 import { notify } from "../notify/Notify";
 let userService = new UserService();

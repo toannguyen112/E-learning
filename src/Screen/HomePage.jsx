@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from "react";
-
 import Countdown from "../Component/Countdown/Countdown";
 import Header from "../Component/Header/Header";
 import Banner from "../Component/Banner/Banner";
@@ -8,13 +7,11 @@ import TopSelling from "../Component/Topselling/TopSelling";
 import Featured from "../Component/Featured/Featured";
 import Intro from "../Component/Intro/Intro";
 import Footer from "../Component/Footer/Footer";
-
 import CourseService from "../Services/courseService";
 import Hotline from "../Component/Hotline/Hotline";
+import reduxAction from "../Store/Action/action";
 import { connect } from "react-redux";
 import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; //Add this line Here
-
-import reduxAction from "../Store/Action/action";
 import { FETCH_COURSES } from "../Store/Action/type";
 const courseService = new CourseService();
 

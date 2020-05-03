@@ -5,7 +5,8 @@ import Courses from "../Component/Courses/Courses";
 import { connect } from "react-redux";
 import Fade from "react-reveal/Fade";
 import Loader from "../Component/Loader/Loader";
-import ScrollUpButton from "react-scroll-up-button";
+import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; 
+
 class CoursePage extends Component {
   constructor(props) {
     super(props);
@@ -37,7 +38,7 @@ class CoursePage extends Component {
           </Fade>
         )}
         <Footer />
-        <ScrollUpButton EasingType="linear" />
+        <ScrollUpButton />
       </div>
     );
   }

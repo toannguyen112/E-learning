@@ -1,20 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Search from "../Search/Search";
 import { connect } from "react-redux";
-import _ from "lodash";
 import { notify } from "../notify/Notify";
+import { SEARCH_COURSES } from "../../Store/Action/type";
+import _ from "lodash";
+import Search from "../Search/Search";
+import MobileNavBar from "../Mobile/MobileNavBar";
+import MobileSearch from "../Mobile/MobileSearch";
+
 import HeaderItem from "./HeaderItem";
 import HeaderItemCourseFavories from "./HeaderItemCourseFavories";
 
-
 class Header extends Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      showSearchMobile: false
-    }
+      showSearchMobile: false,
+      showNavbarhMobile: false,
+    };
   }
 
   checkShowAccout = (currentUser) => {
@@ -47,7 +51,11 @@ class Header extends Component {
                 src="https://image.freepik.com/free-vector/man-avatar-profile-round-icon_24640-14044.jpg"
                 alt="avatar"
               />
-              <span>{userLogin.hoTen.length > 5 ? userLogin.hoTen.substr(0, 5) + "..." : userLogin.hoTen}</span>
+              <span>
+                {userLogin.hoTen.length > 5
+                  ? userLogin.hoTen.substr(0, 5) + "..."
+                  : userLogin.hoTen}
+              </span>
               <div className="fa fa-caret-down"></div>
             </div>
           </div>
@@ -80,7 +88,6 @@ class Header extends Component {
             <Link to="/user" style={{ textDecoration: "none" }}>
               <li className="menu__item">Account</li>
             </Link>
-
 
             <li className="menu__item" onClick={this.handleLogOut}>
               Log out
@@ -173,193 +180,191 @@ class Header extends Component {
   };
   showSearchMobile = () => {
     this.setState({
-      showSearchMobile: true
-    })
-  }
-  closeSearchMobole = () => {
+      showSearchMobile: true,
+    });
+  };
+  openMobileNavbar = () => {
     this.setState({
-      showSearchMobile: false
-    })
-  }
+      showNavbarhMobile: true,
+    });
+  };
+
+  closeMobileNavbar = () => {
+    this.setState({
+      showNavbarhMobile: false,
+    });
+  };
+
+  closeSearchMobile = () => {
+    this.setState({
+      showSearchMobile: false,
+    });
+  };
 
   render() {
     let { cart, courseFavories } = this.props;
     let { searchKeyword } = this.props.display;
-    console.log(this.props.currentUser);
-
 
     return (
       <header className="header ">
-        <div className="header__content container">
-          <div className="icon__menu">
-            <i className="fa fa-bars" aria-hidden="true" />
-          </div>
-          {/* mobie-nav  */}
-          <div className="overPlay"></div>
-          <div className="warpper__mobile__nav">
-
-            <div className="warpper__signUP__login">
-              <button>
-                Sign up / Log in
-               </button>
-              <ul className="list__category">
-                <h3 className="list__header">
-                  Most popular
-                </h3>
-                <li className="li list__categpry__item">
-                  <span className="category"> Web Development</span>
-                  <i className="fa fa-angle-right" />
-                </li>
-                <li className="li list__categpry__item">
-                  <span className="category">  Mobile Apps</span>
-                  <i className="fa fa-angle-right" />
-                </li>
-                <li className="li list__categpry__item">
-                  <span className="category"> Game Development</span>
-                  <i className="fa fa-angle-right" />
-                </li>
-                <li className="li list__categpry__item">
-                  <span className="category"> Finance</span>
-                  <i className="fa fa-angle-right" />
-                </li>
-                <li className="li list__categpry__item">
-                  <span className="category"> Entrepreneurship</span>
-                  <i className="fa fa-angle-right" />
-                </li>
-                <li className="li list__categpry__item">
-                  <span className="category">Data & Analytics</span>
-                  <i className="fa fa-angle-right" />
-                </li>
-                <li className="li list__categpry__item">
-                  <span className="category">Personal Transformation</span>
-                  <i className="fa fa-angle-right" />
-                </li>
-                <li className="li list__categpry__item">
-                  <span className="category">Graphic Design</span>
-                  <i className="fa fa-angle-right" />
-                </li>
-                <li className="li list__categpry__item">
-                  <span className="category">Digital Marketing</span>
-                  <i className="fa fa-angle-right" />
-                </li>
-
-              </ul>
+        {!this.state.showSearchMobile ? (
+          <div className="header__content container">
+            {/* icon menu */}
+            <div className="icon__menu">
+              <i
+                className="fa fa-bars"
+                aria-hidden="true"
+                onClick={() => this.openMobileNavbar()}
+              />
             </div>
-          </div>
-          <div className="search__mobile" onClick={() => this.showSearchMobile()} >
-            <i className="fa fa-search"></i>
-          </div>
 
-          {/* searchMoblieOnClick    */}
+            {/* end icon menu  */}
+            {/* mobie-nav  */}
 
-          {
-            this.state.showSearchMobile ? (
-              <div className="search__mobolle__show__oncClick">
-                <div className="search__left">
-                  <i className="fa fa-search"></i>
-                  <input type="text" placeholder="Search for anything" />
-                </div>
-                <div className="search__close">
-                  <i className="fa fa-close" onClick={() => this.closeSearchMobole()} ></i>
-                </div>
-              </div>
-            ) : ""
-          }
+            {this.state.showNavbarhMobile ? (
+              <MobileNavBar closeMobileNavbar={this.closeMobileNavbar} />
+            ) : (
+                ""
+              )}
 
-          <div className="header__left">
-            <Link
-              to="/"
-              style={{ textDecoration: "none" }}
-              className="header-image"
+            {/* end mobie-nav  */}
+
+            {/* icon search__mobile */}
+            <div
+              className="search__mobile"
+              onClick={() => this.showSearchMobile()}
             >
-              <img
-                className="img-fluid mr-2 logo "
-                src="https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg"
-                alt=""
-              />{" "}
-            </Link>
-
-            <Search
-              searchKeyword={searchKeyword}
-              history={this.props.history}
-            />
-          </div>
-
-          <div className="header__right">
-            <div className="header-card ">
-              <div className="header__card__noti">
-                <Link to="/cart"> <i className=" icon__noti  fa fa-shopping-cart" /></Link>
-                <span className="badge__length">{cart.length}</span>
-
-                <div className="header__items">
-                  <div className="header__item__content">
-                    {this.showHeaderCartItem(cart)}
-                  </div>
-
-                  {cart.length ? (
-                    <div className="btn__goToWistlist">
-                      <div className="btn__goToWistlist__button__price">
-                        Total :<span className="price__new">{Math.ceil((cart.length * 19.99))} $</span>
-                        <span className="price__old"> $64.903</span>
-                      </div>
-                      <button
-                        className="btn__goToWistlist__button"
-                        onClick={() => {
-                          this.goToCart();
-                        }}
-                      >
-                        Go to Cart
-                      </button>
-                    </div>
-                  ) : (
-                      ""
-                    )}
-                </div>
-              </div>
-
-              <div className="header__card__noti">
-                <Link to="/favorites"> <i className=" icon__noti  fa fa-heart" aria-hidden="true" /></Link>
-                <span className="badge__length">{courseFavories.length}</span>
-                <div className="header__items">
-                  <div className="header__item__content">
-                    {this.showHeaderCourseFavories(courseFavories)}
-                  </div>
-
-                  {courseFavories.length ? (
-                    <div className="btn__goToWistlist">
-                      <button
-                        className="btn__goToWistlist__button"
-                        onClick={() => {
-                          this.goWishlist();
-                        }}
-                      >
-                        Go to Wishlist
-                      </button>
-                    </div>
-                  ) : (
-                      ""
-                    )}
-                </div>
-              </div>
-
-              <div className="header__card__noti">
-                <i className=" icon__noti  fa fa-bell" />
-                <span className="badge__length"> 0 </span>
-                <div className="header__items">
-                  <div className="notify">
-                    <div className="notify__header">
-                      <span className="text-notify">Notifications</span>
-                      <i className="fa fa-cog icon__noti " aria-hidden="true" />
-                    </div>
-                    <div className="notify__body">No notifications.</div>
-                  </div>
-                </div>
-              </div>
+              <i className="fa fa-search"></i>
             </div>
-            {this.checkShowAccout(this.props.currentUser)}
-          </div>
+            {/* end search__mobile  */}
 
-        </div>
+            <div className="header__left">
+              <Link
+                to="/"
+                style={{ textDecoration: "none" }}
+                className="header-image"
+              >
+                <img
+                  className="img-fluid mr-2 logo "
+                  src="https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg"
+                  alt=""
+                />{" "}
+              </Link>
+
+              <Search
+                display={this.props.display}
+                courses={this.props.courses}
+                searchKeyword={searchKeyword}
+                history={this.props.history}
+                handleSearch={this.props.handleSearch}
+              />
+            </div>
+
+            <div className="header__right">
+              <div className="header-card ">
+                <div className="header__card__noti">
+                  <Link to="/cart">
+                    {" "}
+                    <i className=" icon__noti  fa fa-shopping-cart" />
+                  </Link>
+                  <span className="badge__length">{cart.length}</span>
+
+                  <div className="header__items">
+                    <div className="header__item__content">
+                      {this.showHeaderCartItem(cart)}
+                    </div>
+
+                    {cart.length ? (
+                      <div className="btn__goToWistlist">
+                        <div className="btn__goToWistlist__button__price">
+                          Total :
+                          <span className="price__new">
+                            {Math.ceil(cart.length * 19.99)} $
+                          </span>
+                          <span className="price__old"> $64.903</span>
+                        </div>
+                        <button
+                          className="btn__goToWistlist__button"
+                          onClick={() => {
+                            this.goToCart();
+                          }}
+                        >
+                          Go to Cart
+                        </button>
+                      </div>
+                    ) : (
+                        ""
+                      )}
+                  </div>
+                </div>
+
+                <div className="header__card__noti">
+                  <Link to="/favorites">
+                    {" "}
+                    <i
+                      className=" icon__noti  fa fa-heart"
+                      aria-hidden="true"
+                    />
+                  </Link>
+                  <span className="badge__length">{courseFavories.length}</span>
+                  <div className="header__items">
+                    <div className="header__item__content">
+                      {this.showHeaderCourseFavories(courseFavories)}
+                    </div>
+
+                    {courseFavories.length ? (
+                      <div className="btn__goToWistlist">
+                        <button
+                          className="btn__goToWistlist__button"
+                          onClick={() => {
+                            this.goWishlist();
+                          }}
+                        >
+                          Go to Wishlist
+                        </button>
+                      </div>
+                    ) : (
+                        ""
+                      )}
+                  </div>
+                </div>
+
+                <div className="header__card__noti">
+                  <i className=" icon__noti  fa fa-bell" />
+                  <span className="badge__length"> 0 </span>
+                  <div className="header__items">
+                    <div className="notify">
+                      <div className="notify__header">
+                        <span className="text-notify">Notifications</span>
+                        <i
+                          className="fa fa-cog icon__noti "
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="notify__body">No notifications.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {this.checkShowAccout(this.props.currentUser)}
+            </div>
+          </div>
+        ) : (
+            <MobileSearch
+              history={this.props.history}
+              display={this.props.display}
+              searchKeyword={searchKeyword}
+              handleSearch={this.props.handleSearch}
+              closeSearchMobile={this.closeSearchMobile}
+            />
+          )}
+
+
+        {this.state.showSearchMobile || this.state.showNavbarhMobile ? (
+          <div className="overPlay" onClick={() => this.closeMobileNavbar()}></div>
+
+        ) : ''}
+
       </header>
     );
   }
@@ -371,6 +376,7 @@ const mapStateToProps = (state) => {
     cart: state.cart,
     currentUser: state.currentUser,
     courseFavories: state.courseFavories,
+    courses: state.Course.course,
   };
 };
 
@@ -386,6 +392,12 @@ const mapDispatchToProps = (dispatch) => {
       dispatch({
         type: "ADD_TO_CART",
         payload: course,
+      });
+    },
+    handleSearch: (keyword) => {
+      dispatch({
+        type: SEARCH_COURSES,
+        payload: keyword,
       });
     },
   };

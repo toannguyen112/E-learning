@@ -26,7 +26,7 @@
         .cart_thumbnail {
           text-align: center;
           img {
-            width: 150px;
+            width: 100%;
             height: 80px;
           }
         }
@@ -122,18 +122,33 @@
 }
 
 @media screen and (max-width: 375px) {
+  
   .container {
     padding: 0;
   }
   .cart_page{
     margin: 0;
-    .cart_item {
-      .cart_name {
-        font-size: 0.625rem;
+    .cart__body{
+      .cart_item {
+        .cart_name {
+          font-size: 0.625rem;
+        }
+       
+       
       }
-     
-     
+      .cart__footer{
+       
+        .cart__coupon {
+          input {
+            padding: 10px 20px!important;
+          }
+          .blog__button{
+            margin-left: 20px;
+          }
+        }
+      }
     }
+    
   }
   
 }

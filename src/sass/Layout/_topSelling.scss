@@ -13,7 +13,10 @@
   }
 }
 @media screen and (max-width: 375px) {
-  .title {
-    display: none;
+  .TopSelling {
+    background-color: #fff;
+    .title {
+      display: none;
+    }
   }
 }

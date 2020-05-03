@@ -1,0 +1,60 @@
+
+
+.warpper__mobile__nav {
+  position: fixed;
+  display: none;
+  width: 75%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 99;
+  overflow-y: auto;
+  animation: showNavbarMobile ease 1s;
+  .warpper__signUP__login {
+    button {
+      width: 100%;
+      padding: 8px 16px;
+      font-weight: 700;
+      text-align: left;
+      color: $color_medium_blue;
+      background-color: $color_white;
+      border: none;
+    }
+    .list__category {
+      padding: 8px 16px;
+      .list__header {
+        font-size: 13px;
+        font-weight: bold;
+        color: $color-gray-4;
+        text-transform: uppercase;
+        padding-top: 10px;
+        letter-spacing: 1px;
+        border-top: 1px solid #dedfe0;
+        .icon__graph {
+          font-size: 20px;
+          color: dedfe0;
+        }
+      }
+      .list__categpry__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        .category {
+          font-size: 15px;
+        }
+        i {
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .overPlay,
+  .warpper__mobile__nav {
+    display: block;
+  }
+}

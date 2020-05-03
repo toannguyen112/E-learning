@@ -1,0 +1,36 @@
+// searchMobile
+.search__mobolle__show__onClick {
+  height: 60px;
+  @include alignCenter;
+  justify-content: space-between;
+  padding: 15px;
+  position: relative;
+  height: 60px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
+    0 3px 1px 0 rgba(20, 23, 28, 0.1);
+  z-index: 99;
+  .search__left {
+    @include alignCenter;
+    color: $color__black-10;
+    .searchMoblie {
+      margin-right: 10px;
+    }
+    .inputSearchMoblie {
+      border: none;
+      outline: none;
+
+      font-size: 13px;
+      padding: 8px 0 8px 10px;
+      color: $color__black-10;
+      border-left: 1px solid $color-gray-4;
+    }
+  }
+  .search__close {
+    color: $color__black-10;
+    font-size: 15px;
+  }
+}

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import Header from "../Component/Header/Header";
 import Footer from "../Component/Footer/Footer";
-
 import  Cart  from "../Component/Cart/Cart";
 import Loader from "../Component/Loader/Loader";
+import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; 
 export default class CartPage extends Component {
 
 
@@ -29,6 +29,7 @@ export default class CartPage extends Component {
         {this.state.loading ? <Loader/> : <Cart history={this.props.history} />}
 
         <Footer />
+        <ScrollUpButton/>
       </div>
     );
   }
