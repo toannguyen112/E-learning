@@ -3,6 +3,9 @@ import FavoriesItem from "./FavoriesItem";
 
 import { connect } from "react-redux";
 import { DELETE_COURSE_FAVORIES, ADD_TO_CART } from "../../Store/Action/type";
+const user = localStorage.getItem("userLogin")
+  ? JSON.parse(localStorage.getItem("userLogin"))
+  : "";
 
 class Favories extends Component {
   showCourseFavories = () => {
@@ -49,13 +52,12 @@ class Favories extends Component {
                     />
                   </div>
                   <div className="favories-info">
-                    <span>Nguyen Toan</span>
+                    <span> {user.taiKhoan} </span>
                     <span>Member</span>
                   </div>
                 </div>
                 <div className="favories-content">
                   <ul>
-
                     <li className="active">Favorites list</li>
                   </ul>
                 </div>
@@ -76,27 +78,27 @@ class Favories extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    courseFavories: state.courseFavories
+    courseFavories: state.courseFavories,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    deleteCoureseFavorites: course => {
+    deleteCoureseFavorites: (course) => {
       dispatch({
         type: DELETE_COURSE_FAVORIES,
-        payload: course
+        payload: course,
       });
     },
 
-    addToCart: course => {
+    addToCart: (course) => {
       dispatch({
         type: ADD_TO_CART,
-        payload: course
+        payload: course,
       });
-    }
+    },
   };
 };
 

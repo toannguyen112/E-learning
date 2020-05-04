@@ -6,13 +6,13 @@ class CourseDisplayRow extends Component {
 
         let { course } = this.props
         return (
-            <div className="course__row col-md-12 col-sm-12">
+            <div className="course__row ">
                 <Link to={`/coursedetail/${course.maKhoaHoc}`} style={{ textDecoration: "none" }} >
                     <div className="wrapper__content row ">
-                        <div className="col-3 col-sm-3 course__img ">
+                        <div className=" col course__img ">
                             <img className="img-fluid" src={course.hinhAnh} alt="" />
                         </div>
-                        <div className="col-6 col-sm-6 course__content ">
+                        <div className=" col course__content ">
                             <h4 className="nameCourse">
                                 {course.tenKhoaHoc}
                             </h4>
@@ -31,7 +31,7 @@ class CourseDisplayRow extends Component {
                                 Excel with this A-Z Microsoft Excel Course. Microsoft Excel 2010, 2013, 2016, Excel 2019 and Office 365
                             </p>
                         </div>
-                        <div className="col-3 col-sm-3 course__price ">
+                        <div className=" col course__price ">
                             <span className=" price course__price--new">
                                 $29.99
                             </span>

@@ -1,62 +1,74 @@
-.wrapper__content {
-  color: #686f7a;
-  padding: $pd-1 0;
-  border-top: 1px solid #dedfe0;
-  max-height: 300px;
-  .course__img {
-    img {
-      width: 13.125rem;
-      height: 7.375rem;
+.course__row {
+  width: 100%;
+  .wrapper__content {
+    color: #686f7a;
+    padding: $pd-1 0;
+    // border-top: 1px solid #dedfe0;
+    max-height: 300px;
+    .course__img {
+      img {
+        width: 13.125rem;
+        height: 7.375rem;
+      }
     }
-  }
-  .course__content {
-    .nameCourse {
-      font-weight: $fw-bold-0;
-      font-size: $fs-1 + 4;
-      color: #000;
-    }
-    .list__view {
-      .list__view--item {
+    .course__content {
+      .nameCourse {
+        font-weight: $fw-bold-0;
+        font-size: $fs-1 + 4;
+        color: #000;
+      }
+      .list__view {
+        .list__view--item {
+          font-size: $fs-1;
+        }
+      }
+      .headline {
         font-size: $fs-1;
       }
     }
-    .headline {
-      font-size: $fs-1;
-    }
-  }
-  .course__price {
-    text-align: right;
-    .price {
-      display: block;
-    }
-    .course__price--new {
-      color: #000;
-      font-weight: $fw-bold-1;
-      font-size: 20px;
-    }
-    .course__price--old {
-      text-decoration: line-through;
-    }
-    .warpper__rating {
-      padding-top: 10px;
-      .raiting__icon {
+    .course__price {
+      text-align: right;
+      .price {
         display: block;
-        color: $color-yellow;
       }
-      .rating__number {
-        font-size: $fs-1;
+      .course__price--new {
+        color: #000;
+        font-weight: $fw-bold-1;
+        font-size: 20px;
+      }
+      .course__price--old {
+        text-decoration: line-through;
+      }
+      .warpper__rating {
+        padding-top: 10px;
+        .raiting__icon {
+          display: block;
+          color: $color-yellow;
+        }
+        .rating__number {
+          font-size: $fs-1;
+        }
       }
     }
   }
 }
 
-@media screen and (max-width: 640px) {
+
+@media screen and (max-width: 600px) {
   .course__row {
     padding: 0;
   }
-  
-  .list__view,.headline{
+
+  .list__view,
+  .headline {
     display: none;
   }
+  .filter {
+    padding: 10px 0;
+  }
+  .course__row {
+    border-top: 1px solid #dedfe0;
 
+    min-height: 150px;
+  }
 }

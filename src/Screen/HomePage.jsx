@@ -13,6 +13,7 @@ import reduxAction from "../Store/Action/action";
 import { connect } from "react-redux";
 import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; //Add this line Here
 import { FETCH_COURSES } from "../Store/Action/type";
+import Welcome from "../Component/Welcome/Welcome";
 const courseService = new CourseService();
 
 class HomePage extends Component {
@@ -51,6 +52,15 @@ class HomePage extends Component {
       });
   }
 
+  showWelcome = () => {
+    const user = JSON.parse(localStorage.getItem("userLogin"));
+    if (user) {
+      return <Welcome />;
+    } else {
+      return "";
+    }
+  };
+
   render() {
     let { courseList, history } = this.props;
     let { courseCatalog } = this.state;
@@ -58,16 +68,15 @@ class HomePage extends Component {
       <div className="wrapper">
         <Fragment>
           <Header history={history} />
+
+          {this.showWelcome()}
+
           <Banner courseCatalog={courseCatalog} />
           <Promotion courseList={courseList} />
-
           <TopSelling courseList={courseList} />
-
           <Featured courseList={courseList} />
-
           <Intro />
           <Countdown />
-
           <Footer />
           <ScrollUpButton />
           {/* <Hotline /> */}

@@ -28,7 +28,7 @@ class Courses extends Component {
         <div className="courses">
           <div className="container">
             <div className="row sort__filter">
-              <div className=" sort__filter--top  col-md-6 col-sm-12 py-3">
+              <div className=" sort__filter--top  col-md-6 col-sm-12 ">
                 <div className="sort">
                   <span
                     className={!this.state.displayListCourse ? "active" : ""}
@@ -50,7 +50,7 @@ class Courses extends Component {
                   </select>
                 </div>
               </div>
-              <div className=" sort__filter--bot  col-md-6 col-sm-12 py-3">
+              <div className=" sort__filter--bot  col-md-6 col-sm-12 ">
                 <div className="filter ">
                   <span>
                     Showing 1–{courses.length} of {this.props.courses.length}{" "}

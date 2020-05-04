@@ -16,7 +16,7 @@ import "./sass/main.scss";
 import "./App.css";
 import PucharseHistoryPage from "./Screen/PucharseHistoryPage";
 import messagePage from "./Screen/messagePage";
-import LoadingBackground from './Component/LoadingBackground/loadingBackground'
+import LoadingBackground from "./Component/LoadingBackground/loadingBackground";
 
 export default class App extends Component {
   constructor(props) {
@@ -62,7 +62,6 @@ export default class App extends Component {
           </BrowserRouter>
         )} */}
 
-
         <BrowserRouter>
           <Switch>
             <Route exact path="/admin" component={AdminPage} />
@@ -78,9 +77,14 @@ export default class App extends Component {
             <Route exact path="/signup" component={SignUpPage} />
             <Route exact path="/login" component={LoginPage} />
             <Route exact path="/checkout" component={CheckoutPage} />
-            <Route exact path="/favorites" component={FavoritesPage} />
-            <Route exact path="/pucharse-history" component={PucharseHistoryPage} />
+
+            <Route
+              exact
+              path="/pucharse-history"
+              component={PucharseHistoryPage}
+            />
             <Route exact path="/message" component={messagePage} />
+            <Auth path="/favorites" component={FavoritesPage} />
 
             <Auth path="/user" Component={UserPage} />
           </Switch>
