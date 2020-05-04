@@ -169,12 +169,12 @@
   }
 }
 
-@media screen and (min-width: 740px) and (max-width: 1024px) {
+@media screen and (min-width: 640px) and (max-width: 1024px) {
   .banner {
     display: none;
   }
 }
-@media screen and (max-width: 740px) {
+@media screen and (max-width: 640px) {
   .banner {
     display: none;
   }

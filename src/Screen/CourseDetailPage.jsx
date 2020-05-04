@@ -9,7 +9,7 @@ import Footer from "../Component/Footer/Footer";
 import { connect } from "react-redux";
 import CourseItem from "../Component/courseItem/CourseItem";
 import Loader from "../Component/Loader/Loader";
-import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; 
+import { VerticleButton as ScrollUpButton } from "react-scroll-up-button";
 
 // const courseService = new CourseService();
 class CourseDetailPage extends Component {
@@ -58,7 +58,7 @@ class CourseDetailPage extends Component {
       this.setState({
         loading: false,
       });
-    }, 2000)
+    }, 2000);
   }
 
   render() {
@@ -71,16 +71,17 @@ class CourseDetailPage extends Component {
         {this.state.loading ? (
           <Loader />
         ) : (
-          // <CourseItem
-          //   courseDetail={courseDetail}
-          //   history={this.props.history}
-          // />
-          this.showItem(courses, id)
-        )}
+            // <CourseItem
+            //   courseDetail={courseDetail}
+            //   history={this.props.history}
+            // />
+            <>
+              {this.showItem(courses, id)}
+              <Footer />
+            </>
+          )}
 
-        <Footer />
-        <ScrollUpButton/>
-        
+        <ScrollUpButton />
       </div>
     );
   }

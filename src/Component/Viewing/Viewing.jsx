@@ -7,7 +7,7 @@ class Viewing extends Component {
   showViewItem = (course) => {
     let res = []
     if (course && course.length > 0) {
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 4; i++) {
         res.push(<Viewingitem course={course[i]} key={i} />)
       }
     }
@@ -25,7 +25,7 @@ class Viewing extends Component {
 
             </div>
             <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12 px-0">
-              <div className="product__items">
+              <div className="product__items  row">
                 {this.showViewItem(course)}
               </div>
             </div>

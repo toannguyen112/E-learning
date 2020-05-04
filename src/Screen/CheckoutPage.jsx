@@ -28,11 +28,11 @@ export default class CheckoutPage extends Component {
         ) : (
             <div>
               <Checkout history={this.props.history} />
-
+              <Footer />
             </div>
           )}
 
-        <Footer />
+       
       </div>
     );
   }

@@ -35,9 +35,10 @@ class CoursePage extends Component {
         ) : (
           <Fade bottom>
             <Courses courses={courses} />
+            <Footer />
           </Fade>
         )}
-        <Footer />
+        
         <ScrollUpButton />
       </div>
     );

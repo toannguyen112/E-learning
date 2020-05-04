@@ -26,9 +26,12 @@ export default class messagePage extends Component {
                 {this.state.loading ? (
                     <Loader />
                 ) : (
-                    <Message />
+                    <>
+                        <Message />
+                        <Footer />
+                    </>
                     )}
-                <Footer />
+               
             </div>
         )
     }

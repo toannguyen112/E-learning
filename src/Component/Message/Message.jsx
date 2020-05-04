@@ -77,7 +77,7 @@ export default class Message extends Component {
                         it's...
                       </p>
                       <span className="close__massage">
-                        <i class="fa fa-ban" aria-hidden="true"></i>
+                        <i className="fa fa-ban" aria-hidden="true"></i>
                       </span>
                     </div>
                   </li>

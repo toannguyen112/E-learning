@@ -23,8 +23,12 @@ class PucharseHistoryPage extends Component {
         return (
             <div className="wrapper">
                 <Header history={this.props.history} />
-                {this.state.loading ? <Loader /> : <Pucharse />}
-                <Footer />
+                {this.state.loading ? <Loader /> :
+                    <>
+                        <Pucharse />
+                        <Footer />
+                    </>}
+
 
             </div>
         )

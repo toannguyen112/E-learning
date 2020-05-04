@@ -27,9 +27,12 @@ class FavoritesPage extends Component {
         {this.state.loading ? (
           <Loader />
         ) : (
-          <Favories history={this.props.history} />
+          <>
+            <Favories history={this.props.history} />
+            <Footer />
+          </>
         )}
-        <Footer />
+     
       </Fragment>
     );
   }

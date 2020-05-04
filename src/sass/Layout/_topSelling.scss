@@ -12,7 +12,7 @@
     display: none;
   }
 }
-@media screen and (max-width: 375px) {
+@media only screen and (max-width: 600px)  {
   .TopSelling {
     padding-top: 10px;
     background-color: #fff;

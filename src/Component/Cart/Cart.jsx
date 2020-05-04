@@ -17,10 +17,10 @@ class Cart extends Component {
       });
     }
     return (
-      <p className="text-center my-4" style={{ fontWeight: "400" }}>
+      <div className="text-center my-4" style={{ fontWeight: "400" }}>
         cart is empty <i className="fa fa-shopping-cart" aria-hidden="true" />{" "}
         (0)
-      </p>
+      </div>
     );
   };
 

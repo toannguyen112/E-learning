@@ -26,7 +26,7 @@ class User extends Component {
       .personalInfo(userLogin.taiKhoan)
       .then(res => {
         console.log(res.data);
-        
+
         this.props.dispatch(reduxAction("USER_PROFILE", res.data));
       })
       .catch(err => {
@@ -90,32 +90,42 @@ class User extends Component {
                 >
                   My profile
                 </button>
-                <div
-                  className={`edit__profile ${
-                    this.state.certificates ? "active" : ""
-                    }`}
-                  onClick={() => this.handleChangeMenu("certificates")}
-                >
-                  <i className="fa fa-certificate mr-2" aria-hidden="true" />
-                  Certificates
+                <div className="wrapper_choosen row ">
+                  <div
+                    className={`edit__profile   ${
+                      this.state.certificates ? "active" : ""
+                      }`}
+                    onClick={() => this.handleChangeMenu("certificates")}
+                  >
+                    <div className="edit__profile__center">
+                      <i className="fa fa-certificate mr-2" aria-hidden="true" />
+                      <span>Certificates</span>
+                    </div >
+                  </div>
+                  <div
+                    className={`edit__profile    ${
+                      this.state.account ? "active" : ""
+                      }`}
+                    onClick={() => this.handleChangeMenu("account")}
+                  >
+                    <div className="edit__profile__center">
+                      <i className="fa fa-user mr-2" aria-hidden="true" />
+                      <span>Account</span>
+                    </div>
+
+                  </div>
+                  <div
+                    className={`edit__profile   ${this.state.edit ? "active" : ""}`}
+                    onClick={() => this.handleChangeMenu("edit")}
+                  >
+                    <div className="edit__profile__center">
+                      <i className="fa fa-cogs mr-2" aria-hidden="true" />
+                      <span> Edit Profile</span>
+                    </div>
+
+                  </div>
                 </div>
-                <div
-                  className={`edit__profile ${
-                    this.state.account ? "active" : ""
-                    }`}
-                  onClick={() => this.handleChangeMenu("account")}
-                >
-                  <i className="fa fa-user mr-2" aria-hidden="true" />
-                  Account
-                </div>
-                <div
-                  className={`edit__profile ${this.state.edit ? "active" : ""}`}
-                  onClick={() => this.handleChangeMenu("edit")}
-                >
-                  <i className="fa fa-cogs mr-2" aria-hidden="true" />
-                  Edit Profile
-                </div>
-              </div>  
+              </div>
             </div>
             <div className="col-md-9 user__course">{this.showMenu()}</div>
           </div>

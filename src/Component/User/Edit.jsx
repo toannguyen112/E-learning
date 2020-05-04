@@ -36,10 +36,10 @@ class Edit extends Component {
       taiKhoan: this.props.userProfile.taiKhoan,
       email: this.props.userProfile.email,
       soDT: "123",
-      
+
     }
     console.log(userUpdate);
-    
+
     e.preventDefault();
 
     userService
@@ -51,7 +51,7 @@ class Edit extends Component {
       })
       .catch((err) => {
         console.log(err);
-        
+
         notify("error", "Error");
       });
   };
@@ -61,7 +61,7 @@ class Edit extends Component {
     console.log(userProfile);
 
     return (
-      <div className="edit__profile">
+      <div className="edit__profile edit " >
         <h1>Edit Profile</h1>
         <form onSubmit={this.onSubmit}>
           <div className="fullname">
@@ -78,7 +78,7 @@ class Edit extends Component {
                 />
               </div>
 
-              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 pr-0">
+              <div className=" pass col-sm-12 col-md-6 col-lg-6 col-xl-6 pr-0">
                 <label>Pass:</label>
                 <input
                   type="text"
@@ -165,4 +165,4 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
-export default connect(null,mapDispatchToProps)(Edit);
+export default connect(null, mapDispatchToProps)(Edit);

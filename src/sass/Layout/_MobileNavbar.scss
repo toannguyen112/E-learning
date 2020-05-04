@@ -1,7 +1,7 @@
 .warpper__mobile__nav {
   position: fixed;
   display: none;
-  width: 75%;
+  max-width: 70%;
   top: 0;
   left: 0;
   bottom: 0;
@@ -10,6 +10,7 @@
   overflow-y: auto;
   animation: showNavbarMobile ease 300ms;
   .warpper__mobile__nav__content {
+    background-color: #fff;
     .wrapper__loign__signup {
       width: 100%;
       padding: 8px 16px;
@@ -75,7 +76,7 @@
           justify-content: space-between;
           padding: 10px 0;
           .category {
-            font-size: 15px;
+            @include text($color-gray-4, 14px, normal);
           }
           .fa-angle-right {
             @include text($color_black-11, 20px, bold);
@@ -86,10 +87,11 @@
   }
   .warpper__mobile__nav__sideDrawer {
     position: absolute;
+    top: 0;
     right: 0;
     bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 200vh;
     background-color: #fff;
     z-index: 10;
     animation: showSideBarDrawer ease 400ms;
@@ -121,7 +123,7 @@
           justify-content: space-between;
           padding: 10px 0;
           .category {
-            font-size: 15px;
+            @include text($color-gray-4, 14px, normal);
           }
           .fa-angle-right {
             @include text($color_black-11, 20px, bold);
@@ -141,7 +143,7 @@
   }
 }
 
-@media screen and (max-width: 745px) {
+@media only screen and (max-width: 600px) {
   .overPlay,
   .warpper__mobile__nav {
     display: block;

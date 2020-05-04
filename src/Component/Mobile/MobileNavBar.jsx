@@ -187,6 +187,27 @@ export default class MobileNavBar extends Component {
                 <span className="category">Invite friends</span>
                 <i className="fa fa-angle-right" />
               </li>
+              <li
+                className="li list__categpry__item"
+                onClick={() => this.OnShowContentCategory()}
+              >
+                <span className="category">Invite friends</span>
+                <i className="fa fa-angle-right" />
+              </li>
+              <li
+                className="li list__categpry__item"
+                onClick={() => this.OnShowContentCategory()}
+              >
+                <span className="category">Invite friends</span>
+                <i className="fa fa-angle-right" />
+              </li>
+              <li
+                className="li list__categpry__item"
+                onClick={() => this.OnShowContentCategory()}
+              >
+                <span className="category">Invite friends</span>
+                <i className="fa fa-angle-right" />
+              </li>
             </ul>
           </div>
         </div>
@@ -212,12 +233,16 @@ export default class MobileNavBar extends Component {
                   <li className="li list__categpry__item">
                     <span className="category">Notifications</span>
                   </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">Messages</span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">Wishlist</span>
-                  </li>
+                  <Link to="/message">
+                    <li className="li list__categpry__item">
+                      <span className="category">Messages</span>
+                    </li>
+                  </Link>
+                  <Link to="/favorites">
+                    <li className="li list__categpry__item">
+                      <span className="category">Wishlist</span>
+                    </li>
+                  </Link>
                 </ul>
                 {/* account  */}
                 <h3 className="list__header__sideDrawer">
@@ -226,15 +251,17 @@ export default class MobileNavBar extends Component {
                 </h3>
 
                 <ul className="list__category__sideDrawer">
-                  <li className="li list__categpry__item">
-                    <span className="category">Account settings</span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">Payment methods </span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">Pucharse history</span>
-                  </li>
+                  <Link to="/user">
+                    <li className="li list__categpry__item">
+                      <span className="category">Account settings</span>
+                    </li>
+                  </Link>
+
+                  <Link to="/pucharse-history">
+                    <li className="li list__categpry__item">
+                      <span className="category">Pucharse history</span>
+                    </li>
+                  </Link>
                 </ul>
 
                 {/* profile  */}
@@ -244,12 +271,12 @@ export default class MobileNavBar extends Component {
                 </h3>
 
                 <ul className="list__category__sideDrawer">
-                  <li className="li list__categpry__item">
-                    <span className="category">Public profile</span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">Edit profile</span>
-                  </li>
+                  <Link to="/user">
+                    <li className="li list__categpry__item">
+                      <span className="category">Public profile</span>
+                    </li>
+                  </Link>
+
                   <li
                     className="li list__categpry__item"
                     onClick={() => this.handleLogOut()}
