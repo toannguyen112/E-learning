@@ -9,6 +9,8 @@ import Intro from "../Component/Intro/Intro";
 import Footer from "../Component/Footer/Footer";
 import CourseService from "../Services/courseService";
 import Hotline from "../Component/Hotline/Hotline";
+import LinkBar from "../Component/LinkBar/LinkBar";
+
 import reduxAction from "../Store/Action/action";
 import { connect } from "react-redux";
 import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; //Add this line Here
@@ -36,6 +38,8 @@ class HomePage extends Component {
     courseService
       .fetchCourses()
       .then((res) => {
+        console.log(res.data);
+        
         this.props.dispatch(reduxAction(FETCH_COURSES, res.data));
       })
       .catch((err) => {
@@ -67,11 +71,11 @@ class HomePage extends Component {
     return (
       <div className="wrapper">
         <Fragment>
-          <Header history={history} />
-
+          <Header history={history} courseCatalog={courseCatalog} />
+          <LinkBar  courseCatalog={courseCatalog} />
           {this.showWelcome()}
-
-          <Banner courseCatalog={courseCatalog} />
+          {/* 
+          <Banner courseCatalog={courseCatalog} /> */}
           <Promotion courseList={courseList} />
           <TopSelling courseList={courseList} />
           <Featured courseList={courseList} />

@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import BannerItem from "./BannerItem";
 import { Link } from "react-router-dom";
-import CourseService from "../../Services/courseService";
-const courseService = new CourseService();
+
 export default class Banner extends Component {
   render() {
     let { courseCatalog } = this.props;

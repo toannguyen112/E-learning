@@ -8,49 +8,52 @@ class CourseDisplayRow extends Component {
         return (
             <div className="course__row ">
                 <Link to={`/coursedetail/${course.maKhoaHoc}`} style={{ textDecoration: "none" }} >
-                    <div className="wrapper__content row ">
-                        <div className=" col course__img ">
-                            <img className="img-fluid" src={course.hinhAnh} alt="" />
-                        </div>
-                        <div className=" col course__content ">
-                            <h4 className="nameCourse">
-                                {course.tenKhoaHoc}
-                            </h4>
-                            <p className="list__view">
-                                <span className="list__view--item">
-                                    199 lecuters
+                    <div className="wrapper__content col-sm-12 ">
+                        <div className="row">
+                            <div className="col-md-3 col-sm-3 p-0  course__img ">
+                                <img className="img-fluid" src={course.hinhAnh} alt="" />
+                            </div>
+                            <div className="col-md-6 col-sm-6  p-0 course__content ">
+                                <h4 className="nameCourse">
+                                    {course.tenKhoaHoc}
+                                </h4>
+                                <p className="list__view">
+                                    <span className="list__view--item">
+                                        199 lecuters
                                 </span>
-                                <span className="list__view--item">
-                                    16.5 total hours
+                                    <span className="list__view--item">
+                                        16.5 total hours
                                     </span>
-                                <span className="list__view--item">
-                                    All levels
+                                    <span className="list__view--item">
+                                        All levels
                                 </span>
+                                </p>
+                                <p className="headline">
+                                    Excel with this A-Z Microsoft Excel Course. Microsoft Excel 2010, 2013, 2016, Excel 2019 and Office 365
                             </p>
-                            <p className="headline">
-                                Excel with this A-Z Microsoft Excel Course. Microsoft Excel 2010, 2013, 2016, Excel 2019 and Office 365
-                            </p>
-                        </div>
-                        <div className=" col course__price ">
-                            <span className=" price course__price--new">
-                                $29.99
+                            </div>
+                            <div className="col-md-3 col-sm-3  p-0 course__price ">
+                                <span className=" price course__price--new">
+                                    $29.99
                             </span>
-                            <span className=" price course__price--old">
-                                $29.99
+                                <span className=" price course__price--old">
+                                    $29.99
                             </span>
-                            <div className="warpper__rating">
-                                <span className="raiting__icon">
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                    <i className="fa fa-star"></i>
-                                </span>
-                                <span className="rating__number">
-                                    (115,675 ratings)
+                                <div className="warpper__rating">
+                                    <span className="raiting__icon">
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
+                                        <i className="fa fa-star"></i>
+                                    </span>
+                                    <span className="rating__number">
+                                        (115,675 ratings)
                                 </span>
 
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </Link>

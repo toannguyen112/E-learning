@@ -1,0 +1,15 @@
+.wrapper__category {
+  .jumboTron {
+    background: linear-gradient(220deg, #ec5252 -10%, #6e1a52 70%);
+    padding: 30px 0;
+    .jumboTron__name {
+      @include text(#fff, 36px, normal);
+    }
+  }
+  .courses {
+    .category__section {
+      @include text(#000, 24px, 700);
+      padding: 20px 0;
+    }
+  }
+}

@@ -17,6 +17,7 @@ import "./App.css";
 import PucharseHistoryPage from "./Screen/PucharseHistoryPage";
 import messagePage from "./Screen/messagePage";
 import LoadingBackground from "./Component/LoadingBackground/loadingBackground";
+import CoursesCategoryPage from "./Screen/CoursesCategoryPage";
 
 export default class App extends Component {
   constructor(props) {
@@ -84,6 +85,11 @@ export default class App extends Component {
               component={PucharseHistoryPage}
             />
             <Route exact path="/message" component={messagePage} />
+            <Route
+              exact
+              path="/category/:id"
+              component={CoursesCategoryPage}
+            />
             <Auth path="/favorites" component={FavoritesPage} />
 
             <Auth path="/user" Component={UserPage} />

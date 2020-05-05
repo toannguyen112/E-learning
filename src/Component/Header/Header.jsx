@@ -202,191 +202,197 @@ class Header extends Component {
   };
 
   render() {
-    let { cart, courseFavories } = this.props;
+    let { cart, courseFavories ,courseCatalog } = this.props;
     let { searchKeyword } = this.props.display;
-
+    
     return (
-      <header className="header ">
-        {!this.state.showSearchMobile ? (
-          <div className="header__content container">
-            {/* icon menu */}
-            <div className="icon__menu">
-              <i
-                className="fa fa-bars"
-                aria-hidden="true"
-                onClick={() => this.openMobileNavbar()}
-              />
-            </div>
-            {/* end icon menu  */}
-
-            {/* mobie-nav  */}
-
-            {this.state.showNavbarhMobile ? (
-              <MobileNavBar closeMobileNavbar={this.closeMobileNavbar} />
-            ) : (
-              ""
-            )}
-
-            {/* end mobie-nav  */}
-
-            {/* icon search__mobile */}
-            <div
-              className="search__mobile"
-              onClick={() => this.showSearchMobile()}
-            >
-              <i className="fa fa-search"></i>
-            </div>
-            {/* end search__mobile  */}
-
-            <div className="header__left">
-              <Link
-                to="/"
-                style={{ textDecoration: "none" }}
-                className="header-image"
-              >
-                <img
-                  className="img-fluid mr-2 logo "
-                  src="https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg"
-                  alt=""
-                />{" "}
-              </Link>
-
-              <Search
-                display={this.props.display}
-                courses={this.props.courses}
-                searchKeyword={searchKeyword}
-                history={this.props.history}
-                handleSearch={this.props.handleSearch}
-              />
-            </div>
-            <div className="header__right">
-              <div className="header-card ">
-                <div className="header__card__noti">
-                  <Link to="/cart">
-                    {" "}
-                    <i className=" icon__noti  fa fa-shopping-cart" />
-                  </Link>
-                  <span className="badge__length">{cart.length}</span>
-
-                  <div className="header__items">
-                    <div className="header__item__content">
-                      {this.showHeaderCartItem(cart)}
-                    </div>
-
-                    {cart.length ? (
-                      <div className="btn__goToWistlist">
-                        <div className="btn__goToWistlist__button__price">
-                          Total :
-                          <span className="price__new">
-                            {Math.ceil(cart.length * 19.99)} $
-                          </span>
-                          <span className="price__old"> $64.903</span>
-                        </div>
-                        <button
-                          className="btn__goToWistlist__button"
-                          onClick={() => {
-                            this.goToCart();
-                          }}
-                        >
-                          Go to Cart
-                        </button>
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                </div>
-
-                <div className="header__card__noti">
-                  <Link to="/favorites">
-                    {" "}
-                    <i
-                      className=" icon__noti  fa fa-heart"
-                      aria-hidden="true"
-                    />
-                  </Link>
-                  <span className="badge__length">{courseFavories.length}</span>
-                  <div className="header__items">
-                    <div className="header__item__content">
-                      {this.showHeaderCourseFavories(courseFavories)}
-                    </div>
-
-                    {courseFavories.length ? (
-                      <div className="btn__goToWistlist">
-                        <button
-                          className="btn__goToWistlist__button"
-                          onClick={() => {
-                            this.goWishlist();
-                          }}
-                        >
-                          Go to Wishlist
-                        </button>
-                      </div>
-                    ) : (
-                      ""
-                    )}
-                  </div>
-                </div>
-
-                <div className="header__card__noti">
-                  <i className=" icon__noti  fa fa-bell" />
-                  <span className="badge__length"> 0 </span>
-                  <div className="header__items">
-                    <div className="notify">
-                      <div className="notify__header">
-                        <span className="text-notify">Notifications</span>
-                        <i
-                          className="fa fa-cog icon__noti "
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <div className="notify__body">No notifications.</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {this.checkShowAccout(this.props.currentUser)}
-            </div>
-            <div className="MobileCart">
-              <Link to="/cart">
+      <>
+        <header className="header ">
+          {!this.state.showSearchMobile ? (
+            <div className="header__content ">
+              {/* icon menu */}
+              <div className="icon__menu">
                 <i
-                  className=" icon_cart fa fa-shopping-cart"
+                  className="fa fa-bars"
                   aria-hidden="true"
+                  onClick={() => this.openMobileNavbar()}
                 />
-              </Link>
-              <span className="cart__total">{cart.length}</span>
-            </div>
-          </div>
-        ) : (
-          <MobileSearch
-            history={this.props.history}
-            display={this.props.display}
-            searchKeyword={searchKeyword}
-            handleSearch={this.props.handleSearch}
-            closeSearchMobile={this.closeSearchMobile}
-          />
-        )}
-
-        {this.state.showSearchMobile || this.state.showNavbarhMobile ? (
-          <div className="overPlay">
-            {this.state.showNavbarhMobile ? (
-              <div
-                className="closeSideBarMenu"
-                onClick={() => this.closeMobileNavbar()}
-              >
-                <i
-                  className=" closeSideBarMenu__icon  fa fa-times"
-                  aria-hidden="true"
-                ></i>
               </div>
-            ) : (
+              {/* end icon menu  */}
+
+              {/* mobie-nav  */}
+
+              {this.state.showNavbarhMobile ? (
+                <MobileNavBar closeMobileNavbar={this.closeMobileNavbar} />
+              ) : (
+                  ""
+                )}
+
+              {/* end mobie-nav  */}
+
+              {/* icon search__mobile */}
+              <div
+                className="search__mobile"
+                onClick={() => this.showSearchMobile()}
+              >
+                <i className="fa fa-search"></i>
+              </div>
+              {/* end search__mobile  */}
+
+              <div className="header__left">
+                <Link
+                  to="/"
+                  style={{ textDecoration: "none" }}
+                  className="header-image"
+                >
+                  <img
+                    className="img-fluid mr-2 logo "
+                    src="https://www.udemy.com/staticx/udemy/images/v6/logo-coral.svg"
+                    alt=""
+                  />{" "}
+                </Link>
+
+                <Search
+                  display={this.props.display}
+                  courses={this.props.courses}
+                  searchKeyword={searchKeyword}
+                  history={this.props.history}
+                  handleSearch={this.props.handleSearch}
+                />
+              </div>
+              <div className="header__right">
+                <div className="header-card ">
+                  <div className="header__card__noti">
+                    <Link to="/cart">
+                      {" "}
+                      <i className=" icon__noti  fa fa-shopping-cart" />
+                    </Link>
+                    <span className="badge__length">{cart.length}</span>
+
+                    <div className="header__items">
+                      <div className="header__item__content">
+                        {this.showHeaderCartItem(cart)}
+                      </div>
+
+                      {cart.length ? (
+                        <div className="btn__goToWistlist">
+                          <div className="btn__goToWistlist__button__price">
+                            Total :
+                            <span className="price__new">
+                              {Math.ceil(cart.length * 19.99)} $
+                            </span>
+                            <span className="price__old"> $64.903</span>
+                          </div>
+                          <button
+                            className="btn__goToWistlist__button"
+                            onClick={() => {
+                              this.goToCart();
+                            }}
+                          >
+                            Go to Cart
+                          </button>
+                        </div>
+                      ) : (
+                          ""
+                        )}
+                    </div>
+                  </div>
+
+                  <div className="header__card__noti">
+                    <Link to="/favorites">
+                      {" "}
+                      <i
+                        className=" icon__noti  fa fa-heart"
+                        aria-hidden="true"
+                      />
+                    </Link>
+                    <span className="badge__length">{courseFavories.length}</span>
+                    <div className="header__items">
+                      <div className="header__item__content">
+                        {this.showHeaderCourseFavories(courseFavories)}
+                      </div>
+
+                      {courseFavories.length ? (
+                        <div className="btn__goToWistlist">
+                          <button
+                            className="btn__goToWistlist__button"
+                            onClick={() => {
+                              this.goWishlist();
+                            }}
+                          >
+                            Go to Wishlist
+                          </button>
+                        </div>
+                      ) : (
+                          ""
+                        )}
+                    </div>
+                  </div>
+
+                  <div className="header__card__noti">
+                    <i className=" icon__noti  fa fa-bell" />
+                    <span className="badge__length"> 0 </span>
+                    <div className="header__items">
+                      <div className="notify">
+                        <div className="notify__header">
+                          <span className="text-notify">Notifications</span>
+                          <i
+                            className="fa fa-cog icon__noti "
+                            aria-hidden="true"
+                          />
+                        </div>
+                        <div className="notify__body">No notifications.</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {this.checkShowAccout(this.props.currentUser)}
+              </div>
+              <div className="MobileCart">
+                <Link to="/cart">
+                  <i
+                    className=" icon_cart fa fa-shopping-cart"
+                    aria-hidden="true"
+                  />
+                </Link>
+                <span className="cart__total">{cart.length}</span>
+              </div>
+            </div>
+          ) : (
+              <MobileSearch
+                history={this.props.history}
+                display={this.props.display}
+                searchKeyword={searchKeyword}
+                handleSearch={this.props.handleSearch}
+                closeSearchMobile={this.closeSearchMobile}
+              />
+            )}
+
+          {this.state.showSearchMobile || this.state.showNavbarhMobile ? (
+            <div className="overPlay">
+              {this.state.showNavbarhMobile ? (
+                <div
+                  className="closeSideBarMenu"
+                  onClick={() => this.closeMobileNavbar()}
+                >
+                  <i
+                    className=" closeSideBarMenu__icon  fa fa-times"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+              ) : (
+                  ""
+                )}
+            </div>
+          ) : (
               ""
             )}
-          </div>
-        ) : (
-          ""
-        )}
-      </header>
+
+
+        </header>
+       
+
+      </>
     );
   }
 }

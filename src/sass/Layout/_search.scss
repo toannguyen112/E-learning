@@ -10,7 +10,7 @@
       margin-left: 35px;
       padding: 0 14px;
       outline: none;
-      width: 100%;
+      width: 80%;
     }
     position: relative;
     .search__input:focus ~ .search__result {
@@ -41,8 +41,7 @@
         max-height: 300px;
         overflow-y: auto;
 
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
+        
 
         opacity: 0;
         transition: 0.5s;
@@ -92,7 +91,7 @@
       background-color: #df322f;
       width: 40px;
       box-shadow: none;
-      border-radius: 4px !important;
+      
       border: none;
       outline: none;
 
