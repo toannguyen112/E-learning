@@ -4,6 +4,8 @@ import User from "../Component/User/User";
 import Header from "../Component/Header/Header";
 import Footer from "../Component/Footer/Footer";
 import Loader from "../Component/Loader/Loader";
+import Footer__inst from "../Component/footer__inst/Footer__inst";
+
 export default class UserPage extends Component {
 
 
@@ -27,12 +29,12 @@ export default class UserPage extends Component {
       <div>
         <Header history={this.props.history} />
         {this.state.loading ? <Loader /> :
-         <>
-           <User history={this.props.history} />
-            <Footer />
-         </>
-       }
-
+          <>
+            <User history={this.props.history} />
+          </>
+        }
+        <Footer__inst />
+        <Footer />
       </div>
     );
   }

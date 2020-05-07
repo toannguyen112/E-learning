@@ -17,7 +17,38 @@ import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; //Add
 import { FETCH_COURSES } from "../Store/Action/type";
 import Welcome from "../Component/Welcome/Welcome";
 const courseService = new CourseService();
-
+const courseCatalog = [
+  {
+    maDanhMuc: "BackEnd",
+    tenDanhMuc: "Lập trình Backend",
+    icon: "./img/interface.png",
+  },
+  {
+    maDanhMuc: "Design",
+    tenDanhMuc: "Thiết kế Web",
+    icon: "./img/web.png",
+  },
+  {
+    maDanhMuc: "Mobile",
+    tenDanhMuc: "Lập trình di động",
+    icon: "./img/touch-screen.png",
+  },
+  {
+    maDanhMuc: "FrontEnd",
+    tenDanhMuc: "Lập trình Front end",
+    icon: "./img/pencil.png",
+  },
+  {
+    maDanhMuc: "FullStack",
+    tenDanhMuc: "Lập trình Full Stack",
+    icon: "./img/computer.png",
+  },
+  {
+    maDanhMuc: "Thinking",
+    tenDanhMuc: "Tư duy lập trình",
+    icon: "./img/thinking.png",
+  },
+];
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -38,8 +69,6 @@ class HomePage extends Component {
     courseService
       .fetchCourses()
       .then((res) => {
-        console.log(res.data);
-        
         this.props.dispatch(reduxAction(FETCH_COURSES, res.data));
       })
       .catch((err) => {
@@ -67,15 +96,20 @@ class HomePage extends Component {
 
   render() {
     let { courseList, history } = this.props;
-    let { courseCatalog } = this.state;
+    // let { courseCatalog } = this.state;
+    console.log(courseCatalog);
     return (
       <div className="wrapper">
         <Fragment>
           <Header history={history} courseCatalog={courseCatalog} />
-          <LinkBar  courseCatalog={courseCatalog} />
+          {/* courseCate call api  */}
+          {/* <LinkBar courseCatalog={courseCatalog} /> */}
+
+          {/* courseCate ko call api  */}
+          <LinkBar courseCatalog={courseCatalog} />
+
           {this.showWelcome()}
-          {/* 
-          <Banner courseCatalog={courseCatalog} /> */}
+          <Banner />
           <Promotion courseList={courseList} />
           <TopSelling courseList={courseList} />
           <Featured courseList={courseList} />

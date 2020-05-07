@@ -3,8 +3,9 @@ import Header from "../Component/Header/Header";
 import Footer from "../Component/Footer/Footer";
 import Favories from "../Component/Favorites/Favories";
 import Loader from "../Component/Loader/Loader";
+import Footer__inst from '../Component/footer__inst/Footer__inst'
 
-class FavoritesPage extends Component {
+export default class FavoritesPage extends Component {
   constructor(props) {
     super(props);
 
@@ -27,15 +28,15 @@ class FavoritesPage extends Component {
         {this.state.loading ? (
           <Loader />
         ) : (
-          <>
-            <Favories history={this.props.history} />
-            <Footer />
-          </>
-        )}
-     
+            <>
+              <Favories history={this.props.history} />
+            </>
+          )}
+        <Footer__inst />
+        <Footer />
       </Fragment>
     );
   }
 }
 
-export default FavoritesPage;
+;

@@ -90,7 +90,7 @@ export default class App extends Component {
               path="/category/:id"
               component={CoursesCategoryPage}
             />
-            <Auth path="/favorites" component={FavoritesPage} />
+            <Auth path="/favorites" Component={FavoritesPage} />
 
             <Auth path="/user" Component={UserPage} />
           </Switch>

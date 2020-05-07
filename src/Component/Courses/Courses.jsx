@@ -121,11 +121,11 @@ class Courses extends Component {
         );
 
         result = newArr.map((course, index) => {
-          return <CourseDisplayRow course={course} />;
+          return <CourseDisplayRow course={course} key={index} />;
         });
       } else {
         result = newArr.map((course, index) => {
-          return <CourseDisplayRow course={course} />;
+          return <CourseDisplayRow course={course} key={index} />;
         });
       }
     }

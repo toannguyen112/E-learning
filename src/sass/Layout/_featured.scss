@@ -75,11 +75,14 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 600px) {
   .featured {
     background-color: #fff;
     .featured__content__items {
       border: 1px solid $color-gray-1;
+    }
+    .featured__content__items:last-child {
+      display: none;
     }
   }
 }

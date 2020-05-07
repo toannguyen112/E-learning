@@ -3,6 +3,8 @@ import Header from "../Component/Header/Header";
 import Footer from "../Component/Footer/Footer";
 import Checkout from "../Component/Checkout/Checkout";
 import Loader from "../Component/Loader/Loader";
+import Footer__inst from '../Component/footer__inst/Footer__inst'
+
 export default class CheckoutPage extends Component {
   constructor(props) {
     super(props);
@@ -28,11 +30,11 @@ export default class CheckoutPage extends Component {
         ) : (
             <div>
               <Checkout history={this.props.history} />
-              <Footer />
             </div>
           )}
+        <Footer__inst />
+        <Footer />
 
-       
       </div>
     );
   }

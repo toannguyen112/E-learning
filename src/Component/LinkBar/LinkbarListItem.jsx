@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 export default class LinkbarListItem extends Component {
   render() {
     let { courseCatalog, imgCataloge } = this.props;
+    console.log(courseCatalog);
 
     return (
       <div className="col-md-2 p-0">
@@ -13,66 +14,18 @@ export default class LinkbarListItem extends Component {
           to={`/category/${courseCatalog.maDanhMuc}`}
         >
           <li className="linkBarList__item">
-            <img
+            {/* <img
               className="linkBarList__item__img"
               src={imgCataloge.icon}
               alt=""
+            /> */}
+              <img
+              className="linkBarList__item__img"
+              src={courseCatalog.icon}
+              alt=""
             />
-            {courseCatalog.tenDanhMuc}
-            <div className="wrapper__linkBarList__item__showContent">
-              <ul className="showContent__list container ">
-                <div className="row showContent__list__row ">
-                  <div className="col-md-2">
-                    <li className="showContent__list__item">
-                      <div className="caterogy">
-                        <i className="fa fa-apple" aria-hidden="true" />
-                        <span>Web Development</span>
-                      </div>
-                    </li>
-                  </div>
-                  <div className="col-md-2">
-                    <li className="showContent__list__item">
-                      <div className="caterogy">
-                        <i className="fa fa-apple" aria-hidden="true" />
-                        <span>Web Development</span>
-                      </div>
-                    </li>
-                  </div>
-                  <div className="col-md-2">
-                    <li className="showContent__list__item">
-                      <div className="caterogy">
-                        <i className="fa fa-apple" aria-hidden="true" />
-                        <span>Web Development</span>
-                      </div>
-                    </li>
-                  </div>
-                  <div className="col-md-2">
-                    <li className="showContent__list__item">
-                      <div className="caterogy">
-                        <i className="fa fa-apple" aria-hidden="true" />
-                        <span>Web Development</span>
-                      </div>
-                    </li>
-                  </div>
-                  <div className="col-md-2">
-                    <li className="showContent__list__item">
-                      <div className="caterogy">
-                        <i className="fa fa-apple" aria-hidden="true" />
-                        <span>Web Development</span>
-                      </div>
-                    </li>
-                  </div>
-                  <div className="col-md-2">
-                    <li className="showContent__list__item">
-                      <div className="caterogy">
-                        <i className="fa fa-apple" aria-hidden="true" />
-                        <span>Web Development</span>
-                      </div>
-                    </li>
-                  </div>
-                </div>
-              </ul>
-            </div>
+            {courseCatalog.maDanhMuc}
+            
           </li>
         </Link>
       </div>

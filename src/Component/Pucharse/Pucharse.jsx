@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Footer__inst from "../footer__inst/Footer__inst";
 
 export default class Pucharse extends Component {
     constructor(props) {
@@ -159,7 +158,7 @@ export default class Pucharse extends Component {
 
                     </ul>
                 </div>
-                <Footer__inst />
+               
             </div>
         );
     }

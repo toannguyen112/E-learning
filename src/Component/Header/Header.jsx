@@ -209,7 +209,7 @@ class Header extends Component {
       <>
         <header className="header ">
           {!this.state.showSearchMobile ? (
-            <div className="header__content ">
+            <div className="header__content container ">
               {/* icon menu */}
               <div className="icon__menu">
                 <i

@@ -15,21 +15,20 @@ export default class CartItem extends Component {
           <div>By Jonas Schmedtmann, Web Developer, Designer...</div>
         </td>
         <td className="cart_price">
-          <div className="amount">
-            $19.90 <i className="fa fa-tag"></i>
-          </div>
+          <div className="amount">$19.90</div>
           <div className="oldamount">$199.90</div>
         </td>
         <td className="cart_remove">
           <div className="btn__remove">
-            
-         <i style={{ cursor: "pointer" }} className="fa fa-trash" aria-hidden="true" onClick={() => deleteCart(course)} />
-
-
+            <i
+              style={{ cursor: "pointer" }}
+              className="fa fa-trash"
+              aria-hidden="true"
+              onClick={() => deleteCart(course)}
+            />
           </div>
         </td>
       </tr>
     );
-
   }
 }

@@ -48,6 +48,9 @@
           display: flex;
           align-items: center;
         }
+        .icon__user {
+          padding-right: 20px;
+        }
       }
     }
   }
@@ -301,7 +304,7 @@
       .pass {
         padding: 0;
       }
-  
+
       .social__wrapper {
         .row {
           .col-sm-6 {
@@ -317,7 +320,7 @@
     .user {
       padding: 0;
     }
-  
+
     td {
       font-size: 0.6rem;
       text-align: center;
@@ -328,7 +331,6 @@
           .email {
             h4 {
               font-size: 1rem !important;
-
             }
           }
           .password {
@@ -349,7 +351,7 @@
         .order__id {
           font-size: 0.7rem !important;
         }
-  
+
         .order__success,
         .order__time,
         .order__Pending {
@@ -358,7 +360,4 @@
       }
     }
   }
- 
-
- 
 }

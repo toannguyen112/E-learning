@@ -42,7 +42,7 @@
         }
       }
       .userAccount {
-        padding-right: 20px;
+        padding-right: 55px;
         .nameUser {
           @include text($color_black-11, 0.9rem, bold);
           word-break: break-word;
@@ -140,6 +140,21 @@
     to {
       right: 0;
     }
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .overPlay,
+  .warpper__mobile__nav {
+    display: block;
+    .warpper__mobile__nav__content{
+      .warpper__userAcount {
+        .userAccount {
+          padding-right: 50%;
+        }
+      }
+    }
+   
   }
 }
 

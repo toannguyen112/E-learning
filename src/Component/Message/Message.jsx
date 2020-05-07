@@ -120,7 +120,6 @@ export default class Message extends Component {
             </div>
           </div>
         </div>
-        <Footer__inst />
       </div>
     );
   }

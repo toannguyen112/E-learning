@@ -3,6 +3,7 @@ import Header from "../Component/Header/Header";
 import Footer from "../Component/Footer/Footer";
 import Cart from "../Component/Cart/Cart";
 import Loader from "../Component/Loader/Loader";
+import Footer__inst from '../Component/footer__inst/Footer__inst'
 import { VerticleButton as ScrollUpButton } from "react-scroll-up-button";
 export default class CartPage extends Component {
 
@@ -30,11 +31,11 @@ export default class CartPage extends Component {
           <>
             <Cart history={this.props.history} />
 
-            <Footer />
           </>
         }
 
-
+        <Footer__inst/>
+        <Footer />
         <ScrollUpButton />
       </div>
     );

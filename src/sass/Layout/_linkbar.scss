@@ -3,17 +3,19 @@
   border-bottom: 1px solid$color-gray-7;
   margin-top: 3px;
   position: relative;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+  @media only screen and (min-width: 600px) and (max-width: 1024px) {
+    display: none;
+  }
+
   .linkBarList {
     .linkBarList__item {
       cursor: pointer;
       @include alignCenter;
       &:hover {
         background-color: #e8e9eb;
-      }
-      &:hover {
-        .wrapper__linkBarList__item__showContent {
-          display: block;
-        }
       }
 
       text-align: center;
@@ -25,45 +27,7 @@
       }
       .linkBarList__item__img {
         width: 20px;
-        margin-right: 2%;
-      }
-
-      .wrapper__linkBarList__item__showContent {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #29303b;
-        z-index: 99;
-        width: 100%;
-        display: none;
-
-        .showContent__list {
-          height: 100%;
-
-          .showContent__list__row {
-            display: flex;
-            height: 100%;
-            @include text(#fff, 24px, normal);
-            .showContent__list__item {
-              height: 100%;
-              @include alignCenter;
-              justify-content: center;
-              .caterogy {
-                cursor: pointer;
-
-                i {
-                  display: block;
-                }
-                span {
-                  margin-top: 8px;
-                  display: block;
-                  @include text(#fff, 12px, normal);
-                }
-              }
-            }
-          }
-        }
+        margin-right: 8%;
       }
     }
   }

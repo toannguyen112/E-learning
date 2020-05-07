@@ -108,7 +108,7 @@ class User extends Component {
                       }`}
                     onClick={() => this.handleChangeMenu("account")}
                   >
-                    <div className="edit__profile__center">
+                    <div className="edit__profile__center  icon__user ">
                       <i className="fa fa-user mr-2" aria-hidden="true" />
                       <span>Account</span>
                     </div>

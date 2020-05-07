@@ -2,55 +2,52 @@ import React, { Component } from "react";
 import LinkbarListItem from "./LinkbarListItem";
 
 export default class LinkBar extends Component {
-    showListCatefory = () => {
-        let imgCataloge = [
-            {
-                icon: "./img/interface.png",
-            },
+  showListCatefory = () => {
+    let { courseCatalog } = this.props;
 
-            {
-                icon: "./img/web.png",
-            },
+    // let imgCataloge = [
+    //     {
+    //         icon: "./img/interface.png",
+    //     },
 
-            {
-                icon: "./img/touch-screen.png",
-            },
+    //     {
+    //         icon: "./img/web.png",
+    //     },
 
-            {
-                icon: "./img/pencil.png",
-            },
+    //     {
+    //         icon: "./img/touch-screen.png",
+    //     },
 
-            {
-                icon: "./img/computer.png",
-            },
+    //     {
+    //         icon: "./img/pencil.png",
+    //     },
 
-            {
-                icon: "./img/thinking.png",
-            },
-        ];
-        return this.props.courseCatalog.map((courseCatalog, index) => {
-            return (
-                <LinkbarListItem
-                    courseCatalog={courseCatalog}
-                    key={index}
-                    imgCataloge={imgCataloge[index]}
-                />
-            );
-        });
-    };
-    render() {
-        let { courseCatalog } = this.props;
+    //     {
+    //         icon: "./img/computer.png",
+    //     },
 
-        return (
-            <div className="WrapperLinkBar">
-                <div className="container">
-                    <ul className="linkBarList  row">
-                        {this.showListCatefory()}
-                        {/* <LinkbarListItem courseCatalog={courseCatalog} /> */}
-                    </ul>
-                </div>
-
-            </div>
-        );
-    }
+    //     {
+    //         icon: "./img/thinking.png",
+    //     },
+    // ];
+    return courseCatalog.map((courseCatalog, index) => {
+      return (
+        // <LinkbarListItem
+        //     courseCatalog={courseCatalog}
+        //     key={index}
+        //     imgCataloge={imgCataloge[index]}
+        // />
+        <LinkbarListItem courseCatalog={courseCatalog} key={index} />
+      );
+    });
+  };
+  render() {
+    return (
+      <div className="WrapperLinkBar">
+        <div className="container">
+          <ul className="linkBarList  row">{this.showListCatefory()}</ul>
+        </div>
+      </div>
+    );
+  }
 }

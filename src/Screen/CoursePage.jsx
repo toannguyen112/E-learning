@@ -5,6 +5,7 @@ import Courses from "../Component/Courses/Courses";
 import { connect } from "react-redux";
 import Fade from "react-reveal/Fade";
 import Loader from "../Component/Loader/Loader";
+import Footer__inst from "../Component/footer__inst/Footer__inst";
 import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; 
 
 class CoursePage extends Component {
@@ -35,10 +36,10 @@ class CoursePage extends Component {
         ) : (
           <Fade bottom>
             <Courses courses={courses} />
-            <Footer />
           </Fade>
         )}
-        
+        <Footer__inst/>
+        <Footer />
         <ScrollUpButton />
       </div>
     );

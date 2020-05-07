@@ -1,11 +1,11 @@
 .header {
   background-color: rgb(255, 255, 255);
   transition: all ease 0.3s;
+  position: relative;
   box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
     0 3px 1px 0 rgba(20, 23, 28, 0.1);
   max-width: 100%;
   .header__content {
-    padding: 0 10%;
     height: 60px;
     @include alignCenter;
 
@@ -51,7 +51,7 @@
 
         .header__card__noti {
           position: relative;
-        
+
           cursor: pointer;
           margin: 0 10px;
           &:hover {
@@ -228,6 +228,8 @@
         text-align: center;
         .button__login {
           padding: 8px;
+          white-space: nowrap;
+
           text-decoration: none;
           margin-right: 10px;
           @include button(
@@ -245,6 +247,8 @@
         }
         .button__signup {
           padding: 8px;
+          white-space: nowrap;
+
           text-decoration: none;
           @include button(
             $color-white-0,
@@ -287,14 +291,14 @@
               width: 125px;
               font-size: 15px;
             }
-          } 
+          }
         }
       }
 
       .dropdown-menu {
         @include position(absolute, 150% !important, 50% !important);
         border: 0;
-        box-shadow: 0 4px 16px rgba(20,23,28,.25);
+        box-shadow: 0 4px 16px rgba(20, 23, 28, 0.25);
         transform: translate(-50%, 0) !important;
         width: 300px;
         border-radius: 0;
@@ -437,16 +441,45 @@
   }
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  .header {
+    .header__content {
+      .header__left {
+        .header-control {
+          display: none;
+        }
+        .header-image {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      .header__right {
+        display: none;
+      }
+      .search__mobile {
+        margin-left: 20px;
+        font-size: 20px;
+      }
+      .icon__menu {
+        width: 10%;
+        display: block;
+        text-align: center;
+        font-size: 25px;
+      }
+
+      .search__mobolle__show__onClick,
+      .search__mobile,
+      .MobileCart {
+        display: block;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 600px) {
   .header {
     .header__content {
-      position: relative;
-      padding: 15px;
-
-      box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
-        0 3px 1px 0 rgba(20, 23, 28, 0.1);
       .header__left {
         .header-control {
           display: none;

@@ -46,7 +46,7 @@ class Favories extends Component {
                 <div className="favories-member">
                   <div className="favories-img">
                     <img
-                      src="http://graph.facebook.com/v2.10/172902427148211/picture"
+                      src="https://image.freepik.com/free-vector/man-avatar-profile-round-icon_24640-14044.jpg"
                       alt="img"
                       className="img-fluid"
                     />
