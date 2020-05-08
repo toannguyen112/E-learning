@@ -28,7 +28,6 @@
       font-weight: bold;
     }
     .welcome__ready {
-     
       padding: 18px 15px;
       display: flex;
       justify-content: space-between;
@@ -50,12 +49,18 @@
       .welcome__body__item {
         box-shadow: 0 0 1px 1px rgba(59, 105, 185, 0.1),
           0 3px 1px 0 rgba(20, 23, 28, 0.1);
+
         .welcome__body__item__content {
           display: flex;
           cursor: pointer;
 
           .welcome__img__course {
             position: relative;
+
+            .courseImg {
+              width: 250px;
+              height: 158px;
+            }
 
             .play {
               position: absolute;
@@ -133,25 +138,43 @@
       }
     }
   }
+}
 
-  @media screen and (max-width: 600px) {
-    .welcomeBanner__text {
-      .banner-title {
-        font-size: 1rem !important;
-      }
-      .banner-sub {
-        display: none;
-      }
+@media screen and (min-width: 740px) and (max-width: 1024px) {
+  .welcomeBanner__text {
+    left: 35% !important;
+    .banner-title {
+      font-size: 1.5rem !important;
     }
-    .welcome__body__item {
-      margin: 10px 0;
+    .banner-sub {
+      font-size: 20px;
+    }
+  }
+  .welcome__body__item {
+    margin: 10px 0;
 
-      .courseImg {
-        max-width: 150px;
-       
-        height: 100%;
-      }
+    .courseImg {
+      max-width: 150px;
+      height: 100%;
     }
-    
+  }
+}
+@media screen and (max-width: 600px) {
+  .welcomeBanner__text {
+    .banner-title {
+      font-size: 1rem !important;
+    }
+    .banner-sub {
+      display: none;
+    }
+  }
+  .welcome__body__item {
+    margin: 10px 0;
+
+    .courseImg {
+      max-width: 150px;
+
+      height: 100%;
+    }
   }
 }

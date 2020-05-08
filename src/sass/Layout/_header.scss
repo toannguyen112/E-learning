@@ -36,13 +36,14 @@
       }
       .header-card {
         padding: 0 25px;
+        display: flex;
+        justify-content: space-around;
 
         &:hover {
           .header-items {
             display: block;
           }
         }
-        display: flex;
 
         i {
           color: $color_black;
@@ -54,6 +55,9 @@
 
           cursor: pointer;
           margin: 0 10px;
+          img {
+            width: 20px;
+          }
           &:hover {
             .header__items {
               display: block;
@@ -69,8 +73,9 @@
             font-weight: 700;
             position: absolute;
             top: -45%;
-            right: 20%;
-            background: #d41701;
+            right: -46%;
+
+            background: #ec5252;
             color: $color-white-0;
             height: 20px;
             line-height: 20px;
@@ -422,6 +427,10 @@
     position: relative;
     display: none;
     margin-left: 20%;
+    img {
+      color: #ec5252;
+      width: 20px;
+    }
     .icon_cart {
       @include text($color-gray-4, $fs-0 + 5, $fw-bold-1);
     }
@@ -441,7 +450,7 @@
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
   .header {
     .header__content {
       .header__left {
@@ -477,7 +486,7 @@
     }
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 740px) {
   .header {
     .header__content {
       .header__left {

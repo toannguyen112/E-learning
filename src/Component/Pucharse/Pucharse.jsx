@@ -17,14 +17,18 @@ export default class Pucharse extends Component {
     render() {
         return (
             <div className="pucharse">
-                <div className="pucharse__header">
+                <div className="pucharse__header ">
                     <div className="pucharse__wrapper__route container">
-                        <div className="pucharse__route">
-                            <i className=" icon__home fa fa-home" aria-hidden="true" />
+                        <div className="row">
+                            <div className="col-12">
+                                <div className="pucharse__route">
+                                    <i className=" icon__home fa fa-home" aria-hidden="true" />
                 /
                 <span className="route__text">Purchase history</span>
+                                </div>
+                                <h2 className="pucharse__name">Purchase history</h2>
+                            </div>
                         </div>
-                        <h2 className="pucharse__name">Purchase history</h2>
                     </div>
                 </div>
                 <div className="pucharse__body container ">
@@ -158,7 +162,7 @@ export default class Pucharse extends Component {
 
                     </ul>
                 </div>
-               
+
             </div>
         );
     }

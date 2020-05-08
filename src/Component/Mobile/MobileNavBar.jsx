@@ -43,17 +43,20 @@ export default class MobileNavBar extends Component {
           className="warpper__userAcount"
           onClick={() => this.changeShowSideBar()}
         >
-          <div className="image__avarta">
-            <img
-              className=""
-              src="https://image.freepik.com/free-vector/man-avatar-profile-round-icon_24640-14044.jpg"
-              alt=""
-            />
-            <div className="circleRed"></div>
-          </div>
-          <div className="userAccount">
-            <h4 className="nameUser">Hi, {userLogin.taiKhoan} </h4>
-            <h3 className="welcome">Welcome back</h3>
+          <div className="warpper__user__info">
+            <div className="image__avarta">
+              <img
+                className=""
+                src="https://image.freepik.com/free-vector/man-avatar-profile-round-icon_24640-14044.jpg"
+                alt=""
+              />
+              <div className="circleRed"></div>
+            </div>
+            <div className="userAccount">
+              <h4 className="nameUser">Hi, {userLogin.taiKhoan} </h4>
+              <h3 className="welcome">Welcome back</h3>
+            </div>
+
           </div>
           <div className="arrow">
             <i className="fa fa-angle-right"></i>
@@ -286,47 +289,47 @@ export default class MobileNavBar extends Component {
                 </ul>
               </div>
             ) : (
-              <div className="list__mobile">
-                <h3 className="list__header__sideDrawer">
-                  <div className="fa fa-setting"></div>
+                <div className="list__mobile">
+                  <h3 className="list__header__sideDrawer">
+                    <div className="fa fa-setting"></div>
                   All Web Development
                 </h3>
 
-                <ul className="list__category__sideDrawer">
-                  <li className="li list__categpry__item">
-                    <span className="category">Web Development</span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">JavaScript</span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">React</span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">Angular</span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">Css</span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">PHP</span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">Node.Js</span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">Python</span>
-                  </li>
-                  <li className="li list__categpry__item">
-                    <span className="category">WordPress</span>
-                  </li>
-                </ul>
-              </div>
-            )}
+                  <ul className="list__category__sideDrawer">
+                    <li className="li list__categpry__item">
+                      <span className="category">Web Development</span>
+                    </li>
+                    <li className="li list__categpry__item">
+                      <span className="category">JavaScript</span>
+                    </li>
+                    <li className="li list__categpry__item">
+                      <span className="category">React</span>
+                    </li>
+                    <li className="li list__categpry__item">
+                      <span className="category">Angular</span>
+                    </li>
+                    <li className="li list__categpry__item">
+                      <span className="category">Css</span>
+                    </li>
+                    <li className="li list__categpry__item">
+                      <span className="category">PHP</span>
+                    </li>
+                    <li className="li list__categpry__item">
+                      <span className="category">Node.Js</span>
+                    </li>
+                    <li className="li list__categpry__item">
+                      <span className="category">Python</span>
+                    </li>
+                    <li className="li list__categpry__item">
+                      <span className="category">WordPress</span>
+                    </li>
+                  </ul>
+                </div>
+              )}
           </div>
         ) : (
-          ""
-        )}
+            ""
+          )}
       </div>
     );
   }

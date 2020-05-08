@@ -70,6 +70,7 @@ class CourseDetailPage extends Component {
     return (
       <div>
         <Header history={this.props.history} />
+          
         {this.state.loading ? (
           <Loader />
         ) : (

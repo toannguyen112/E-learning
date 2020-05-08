@@ -202,9 +202,9 @@ class Header extends Component {
   };
 
   render() {
-    let { cart, courseFavories ,courseCatalog } = this.props;
+    let { cart, courseFavories, courseCatalog } = this.props;
     let { searchKeyword } = this.props.display;
-    
+
     return (
       <>
         <header className="header ">
@@ -264,8 +264,7 @@ class Header extends Component {
                 <div className="header-card ">
                   <div className="header__card__noti">
                     <Link to="/cart">
-                      {" "}
-                      <i className=" icon__noti  fa fa-shopping-cart" />
+                      <img src="../img/cartHeader.png" alt="cart" />
                     </Link>
                     <span className="badge__length">{cart.length}</span>
 
@@ -300,13 +299,11 @@ class Header extends Component {
 
                   <div className="header__card__noti">
                     <Link to="/favorites">
-                      {" "}
-                      <i
-                        className=" icon__noti  fa fa-heart"
-                        aria-hidden="true"
-                      />
+                    <img src="../img/heart.png" alt="cart" />
                     </Link>
-                    <span className="badge__length">{courseFavories.length}</span>
+                    <span className="badge__length">
+                      {courseFavories.length}
+                    </span>
                     <div className="header__items">
                       <div className="header__item__content">
                         {this.showHeaderCourseFavories(courseFavories)}
@@ -330,12 +327,13 @@ class Header extends Component {
                   </div>
 
                   <div className="header__card__noti">
-                    <i className=" icon__noti  fa fa-bell" />
+                  <img src="../img/bell.png" alt="cart" />
                     <span className="badge__length"> 0 </span>
                     <div className="header__items">
                       <div className="notify">
                         <div className="notify__header">
                           <span className="text-notify">Notifications</span>
+
                           <i
                             className="fa fa-cog icon__noti "
                             aria-hidden="true"
@@ -350,10 +348,7 @@ class Header extends Component {
               </div>
               <div className="MobileCart">
                 <Link to="/cart">
-                  <i
-                    className=" icon_cart fa fa-shopping-cart"
-                    aria-hidden="true"
-                  />
+                <img src="../img/cartHeader.png" alt="cart" />
                 </Link>
                 <span className="cart__total">{cart.length}</span>
               </div>
@@ -387,11 +382,7 @@ class Header extends Component {
           ) : (
               ""
             )}
-
-
         </header>
-       
-
       </>
     );
   }

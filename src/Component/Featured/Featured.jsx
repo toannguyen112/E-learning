@@ -1,500 +1,139 @@
 import React, { Component } from "react";
-import Slider from "react-slick";
-import { Link } from "react-router-dom";
+import FeaturedItem from "./FeaturedItem";
+
+const arrAngularJs = [
+  {
+    name: "Spring Framework Development (Java JEE) with AngularJS UI",
+    img: "https://img-a.udemycdn.com/course/240x135/2308032_fcc7.jpg ",
+  },
+  {
+    name: "AngularJS JumpStart with Dan Wahlin",
+    img: "https://img-a.udemycdn.com/course/125_H/164554_a2dd_7.jpg",
+  },
+  {
+    name: "Angular JS [Beginner to Advance] with Bootstrap",
+    img: "https://img-a.udemycdn.com/course/125_H/2698780_228e_2.jpg ",
+  },
+];
+const arrTypescript = [
+  {
+    name: "Understanding TypeScript - 2020 Edition",
+    img: "https://img-a.udemycdn.com/course/125_H/947098_02ec.jpg ",
+  },
+  {
+    name: "Understanding TypeScript - 2020 Edition",
+    img: "https://img-a.udemycdn.com/course/125_H/2337318_abfd_4.jpg",
+  },
+  {
+    name: "Angular Crash Course for Busy Developers",
+    img: "https://img-a.udemycdn.com/course/125_H/719002_af70_3.jpg",
+  },
+];
+const arrMicrosoftWindows = [
+  {
+    name: "Mastering Windows 10 Made Easy Training Tutorial",
+    img: "https://img-a.udemycdn.com/course/125_H/622228_6c89.jpg ",
+  },
+  {
+    name: "Learn Microsoft Windows 10 the Easy Way for Beginners",
+    img: "https://img-a.udemycdn.com/course/125_H/1140314_ee12_2.jpg",
+  },
+  {
+    name: "Windows 10",
+    img: "https://img-a.udemycdn.com/course/125_H/566534_2374_2.jpg ",
+  },
+];
 export default class Featured extends Component {
-  render() {
-    const settingFeatured = {
-      autoplaySpeed: 3000,
-      autoplay: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      Angularjs: true,
+      Typescript: false,
+      MicrosoftWindows: false,
     };
+  }
 
+  handleChangeList = (param) => {
+    this.setState(() => {
+      return {
+        Angularjs: false,
+        Typescript: false,
+        MicrosoftWindows: false,
+        [param]: true,
+      };
+    });
+  };
 
+  renderlistCourse = (arrAngularJs) => {
+    return (
+      <ul className="topic__course__list">
+        {arrAngularJs.map((course, index) => {
+          return <FeaturedItem course={course} key={index} />;
+        })}
+      </ul>
+    )
+  };
 
+  showList = (value) => {
+    let { Angularjs, Typescript, MicrosoftWindows } = this.state;
+    console.log(value);
+    if (Angularjs) {
+      return (
+        <ul className="topic__course__list">
+          {this.renderlistCourse(arrAngularJs)}
+        </ul>
+      );
+    } else if (Typescript) {
+      return (
+        <ul className="topic__course__list">
+          {this.renderlistCourse(arrTypescript)}
+        </ul>
+      );
+    } else if (MicrosoftWindows) {
+      return (
+        <ul className="topic__course__list">
+          {this.renderlistCourse(arrMicrosoftWindows)}
+        </ul>
+      );
+    }
+  };
+
+  render() {
     return (
       <div className="featured">
-        <div className="featured__content container p-0">
-          <div className="row">
-            <div className="col-md-4 col-sm-4 featured__content__items ">
-              <div className="featured__box">
-                <div className="featured__title">
-                  <h5>
-                    appreciate</h5>
-                  <Link to="/courses">
-                    View more...
-                    <i
-                      className="fa fa-arrow-circle-right"
-                      aria-hidden="true"
-                    />
-                  </Link>
-                </div>
-                <Slider {...settingFeatured}>
-                  <div className="featured__list">
-                    <div className="featured__list__item">
-                      <div className="num">1</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img src="/img/item1.jpg" className="img-fluid" alt="" />
-                        </div>
-                        <div className="course-description">
-                          <p>Node js</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">2</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="/img/item2.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>IOS</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">3</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="/img/item3.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>React js</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="featured__list">
-                    <div className="featured__list__item">
-                      <div className="num">1</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="./img/item4.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>Angular 4</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">2</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="/img/item5.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>Lập trình IOS</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">3</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="/img/item6.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>Swift</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="featured__list">
-                    <div className="featured__list__item">
-                      <div className="num">1</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="/img/item7.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>Khóa học PHP</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">2</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRxitReVU1jc49PLvzwWlnpwxW6dl2V1Dv4VQ1o8E2ZdmCGklYv"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>SQL Server</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">3</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS8kytrfOGRmDKCDjKE9kXqud6MZN3uqOuBGJqqxMTKA7vDIa35"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>Lập trình androi</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Slider>
-              </div>
+        <div className="container">
+          <h2 className="featured__head">What people who learn </h2>
+          <div className="wrapper__topic row">
+            <div className="col-md-3 pl-0">
+              <ul className="topic__title__list">
+                <li
+                  className={`topic__title__list__item ${
+                    this.state.Angularjs ? "active" : ""
+                    }`}
+                  onClick={() => this.handleChangeList("Angularjs")}
+                >
+                  Angular Js
+                </li>
+                <li
+                  className={`topic__title__list__item ${
+                    this.state.Typescript ? "active" : ""
+                    }`}
+                  onClick={() => this.handleChangeList("Typescript")}
+                >
+                  Typescript
+                </li>
+                <li
+                  className={`topic__title__list__item ${
+                    this.state.MicrosoftWindows ? "active" : ""
+                    }`}
+                  onClick={() => this.handleChangeList("MicrosoftWindows")}
+                >
+                  Microsoft Windows
+                </li>
+              </ul>
             </div>
-            <div className="col-md-4 col-sm-4 featured__content__items ">
-              <div className="featured__box">
-                <div className="featured__title">
-                  <h5>
-                    appreciate</h5>
-                  <Link to="/courses">
-                    View more...
-                    <i className="fa fa-arrow-circle-right" aria-hidden="true" />
-
-                  </Link>
-                </div>
-                <Slider {...settingFeatured}>
-                  <div className="featured__list">
-                    <div className="featured__list__item">
-                      <div className="num">1</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="./img/item7.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>MySQL</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">2</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="./img/item8.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>SQL</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">3</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="./img/item9.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>Vue js</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="featured__list">
-                    <div className="featured__list__item">
-                      <div className="num">1</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="./img/item10.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>Android</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">2</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="./img/item11.jpg"
-                            className="img-fluid" alt="img"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>Angular js</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">3</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="./img/item12.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>React js</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="featured__list">
-                    <div className="featured__list__item">
-                      <div className="num">1</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="./img/item13.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>Mobile</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">2</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img
-                            src="./img/item14.jpg"
-                            alt=""
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>Node js</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="featured__list__item">
-                      <div className="num">3</div>
-                      <div className="course">
-                        <div className="course-img">
-                          {" "}
-                          <img alt="img"
-                            src="./img/item15.jpg"
-                            className="img-fluid"
-                          />
-                        </div>
-                        <div className="course-description">
-                          <p>React js</p>
-                          <div className="star-rating">
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                            <i className="fa fa-star"></i>
-                          </div>
-                          <span>499.000 ₫</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </Slider>
-              </div>
-            </div>
-            <div className="col-md-4 col-sm-4 featured__content__items ">
-              <Slider {...settingFeatured}>
-                <div>
-                  <img style={{ height: "418px" }}
-                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/360x434_42.png"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <img style={{ height: "418px" }}
-                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/360x434_41.png"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div>
-                  <img style={{ height: "418px" }}
-                    src="https://dvch1hlupt.cdn.hostvn.net/button/image/360x434_39.png"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-              </Slider>
-            </div>
+            <div className="col-md-9 ">{this.showList()}</div>
           </div>
         </div>
       </div>

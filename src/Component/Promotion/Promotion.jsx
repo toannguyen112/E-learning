@@ -33,12 +33,20 @@ export default class Promotion extends Component {
             </Link>
           </div>
           <div className="promotion__content__product">
-            <div className="card " id="item-1">
-              <img
+            <div className="card description" id="item-1">
+              <div className="description__content">
+                <div className="description_text--top">
+                  The world’s largest selection of courses
+               </div>
+                <div className="description_text--bot">
+                  Choose from over 100,000 online video courses with new additions published every month
+               </div>
+              </div>
+              {/* <img
                 className="card-img-top"
                 src="https://dvch1hlupt.cdn.hostvn.net/HOTDEAL.png"
                 alt=""
-              />
+              /> */}
             </div>
             {this.showViewingItem(courseList)}
           </div>

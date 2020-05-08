@@ -25,33 +25,38 @@
       padding: 10px;
       @include alignCenter;
       justify-content: space-between;
-      .image__avarta {
-        position: relative;
-        img {
-          max-width: 64px;
-          max-height: 64px;
-          border-radius: 50%;
+      .warpper__user__info {
+        @include alignCenter;
+        justify-content: space-between;
+        .image__avarta {
+          position: relative;
+          img {
+            max-width: 64px;
+            max-height: 64px;
+            border-radius: 50%;
+          }
+          .circleRed {
+            position: absolute;
+            top: 0;
+            right: 7%;
+            @include sizeImg(15px, 15px);
+            border-radius: 50%;
+            background-color: $color_red;
+          }
         }
-        .circleRed {
-          position: absolute;
-          top: 0;
-          right: 7%;
-          @include sizeImg(15px, 15px);
-          border-radius: 50%;
-          background-color: $color_red;
+        .userAccount {
+          padding-right: 55px;
+          .nameUser {
+            @include text($color_black-11, 0.9rem, bold);
+            word-break: break-word;
+          }
+          .welcome {
+            margin: 0;
+            @include text(#73726c, 0.9rem, normal);
+          }
         }
       }
-      .userAccount {
-        padding-right: 55px;
-        .nameUser {
-          @include text($color_black-11, 0.9rem, bold);
-          word-break: break-word;
-        }
-        .welcome {
-          margin: 0;
-          @include text(#73726c, 0.9rem, normal);
-        }
-      }
+
       .arrow {
         i {
           @include text($color_black-11, 20px, bold);
@@ -143,22 +148,21 @@
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 1024px) {
+@media only screen and (min-width: 740px) and (max-width: 1024px) {
   .overPlay,
   .warpper__mobile__nav {
     display: block;
-    .warpper__mobile__nav__content{
+    .warpper__mobile__nav__content {
       .warpper__userAcount {
         .userAccount {
           padding-right: 50%;
         }
       }
     }
-   
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 740px) {
   .overPlay,
   .warpper__mobile__nav {
     display: block;

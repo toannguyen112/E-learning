@@ -24,7 +24,7 @@ export default class LinkbarListItem extends Component {
               src={courseCatalog.icon}
               alt=""
             />
-            {courseCatalog.maDanhMuc}
+            {courseCatalog.tenDanhMuc}
             
           </li>
         </Link>

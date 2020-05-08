@@ -1,9 +1,9 @@
 .TopSelling {
-  // background-color: $bg-color;
   .title {
-    color: #464646;
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.47em;
+    color: #505763;
   }
 }
 
@@ -12,7 +12,7 @@
     display: none;
   }
 }
-@media only screen and (max-width: 600px)  {
+@media only screen and (max-width: 740px)  {
   .TopSelling {
     padding-top: 10px;
     background-color: #fff;

@@ -5,49 +5,51 @@ import Banner from "../Component/Banner/Banner";
 import Promotion from "../Component/Promotion/Promotion";
 import TopSelling from "../Component/Topselling/TopSelling";
 import Featured from "../Component/Featured/Featured";
-import Intro from "../Component/Intro/Intro";
+import Skill from "../Component/Skill/Skill";
 import Footer from "../Component/Footer/Footer";
 import CourseService from "../Services/courseService";
 import Hotline from "../Component/Hotline/Hotline";
 import LinkBar from "../Component/LinkBar/LinkBar";
-
+import Recom from '../Component/Recommended/Recom'
 import reduxAction from "../Store/Action/action";
 import { connect } from "react-redux";
 import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; //Add this line Here
 import { FETCH_COURSES } from "../Store/Action/type";
 import Welcome from "../Component/Welcome/Welcome";
+import SmartBar from "../Component/SmartBar/SmartBar";
 const courseService = new CourseService();
 const courseCatalog = [
   {
     maDanhMuc: "BackEnd",
-    tenDanhMuc: "Lập trình Backend",
+    tenDanhMuc: "Database",
     icon: "./img/interface.png",
   },
   {
     maDanhMuc: "Design",
-    tenDanhMuc: "Thiết kế Web",
+    tenDanhMuc: "Web Development",
     icon: "./img/web.png",
   },
   {
     maDanhMuc: "Mobile",
-    tenDanhMuc: "Lập trình di động",
+    tenDanhMuc: "Mobile Apps",
     icon: "./img/touch-screen.png",
   },
   {
     maDanhMuc: "FrontEnd",
-    tenDanhMuc: "Lập trình Front end",
+    tenDanhMuc: "Front end ",
     icon: "./img/pencil.png",
   },
   {
     maDanhMuc: "FullStack",
-    tenDanhMuc: "Lập trình Full Stack",
+    tenDanhMuc: "Full Stack ",
     icon: "./img/computer.png",
   },
   {
     maDanhMuc: "Thinking",
-    tenDanhMuc: "Tư duy lập trình",
+    tenDanhMuc: "Thinking Programming",
     icon: "./img/thinking.png",
   },
+
 ];
 class HomePage extends Component {
   constructor(props) {
@@ -101,6 +103,7 @@ class HomePage extends Component {
     return (
       <div className="wrapper">
         <Fragment>
+          <SmartBar />
           <Header history={history} courseCatalog={courseCatalog} />
           {/* courseCate call api  */}
           {/* <LinkBar courseCatalog={courseCatalog} /> */}
@@ -111,9 +114,10 @@ class HomePage extends Component {
           {this.showWelcome()}
           <Banner />
           <Promotion courseList={courseList} />
+          <Recom />
           <TopSelling courseList={courseList} />
           <Featured courseList={courseList} />
-          <Intro />
+          <Skill   courseList={courseList} />
           <Countdown />
           <Footer />
           <ScrollUpButton />

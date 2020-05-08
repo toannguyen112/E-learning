@@ -55,7 +55,7 @@ class Search extends Component {
             value={this.state.keyword}
             className="search__input"
             type="text"
-            placeholder="Type Keyword"
+            placeholder="Search for anything"
             autoComplete="off"
           />
           <div

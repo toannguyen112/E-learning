@@ -164,6 +164,7 @@
               background: url("https://www.udemy.com/staticx/udemy/js/webpack/icon-play.ac3f32ecb72a0c3f674fa5a3f3062a56.svg")
                 no-repeat;
             }
+           
             .wrapper__trainer {
               position: fixed;
               top: 0;
@@ -297,9 +298,9 @@
   }
 }
 
-@media screen and (min-width: 640px) and (max-width: 1024px) {
+@media screen and (min-width: 740px) and (max-width: 1024px) {
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 740px) {
   .play {
     display: none;
   }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-let user = JSON.parse(localStorage.getItem("userLogin"))
+let user = JSON.parse(localStorage.getItem("userLogin")) ? JSON.parse(localStorage.getItem("userLogin")) : ""
 export default class Welcome extends Component {
   constructor(props) {
     super(props);

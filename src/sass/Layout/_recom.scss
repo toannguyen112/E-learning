@@ -1,0 +1,49 @@
+.warpperRecom {
+  .warpperRecom__title {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.47em;
+    color: #505763;
+    margin-bottom: 10px;
+  }
+  .RecomBody {
+    .listRecom {
+      display: flex;
+      padding: 0;
+      width: 100%;
+      .listRecom__item {
+        height: 54px;
+        padding: 10px 14px;
+        width: calc(100% - 15px);
+        font-size: 15px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+        @include alignCenter;
+        color: #505763;
+        box-shadow: 0 0 1px 1px rgba(59, 105, 185, 0.1),
+          0 3px 1px 0 rgba(20, 23, 28, 0.1);
+        &:hover {
+          box-shadow: 0 2px 8px 2px rgba(20, 23, 28, 0.15);
+        }
+      }
+      .listRecom__item:last-child {
+        margin: 0;
+      }
+    }
+  }
+}
+@media screen and (max-width: 740px) {
+  .container {
+    padding: 0 15px;
+  }
+  .warpperRecom {
+    .RecomBody {
+      .listRecom {
+        flex-direction: column;
+        .listRecom__item {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}

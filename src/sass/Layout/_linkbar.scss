@@ -3,10 +3,10 @@
   border-bottom: 1px solid$color-gray-7;
   margin-top: 3px;
   position: relative;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 740px) {
     display: none;
   }
-  @media only screen and (min-width: 600px) and (max-width: 1024px) {
+  @media only screen and (min-width: 740px) and (max-width: 1024px) {
     display: none;
   }
 
@@ -21,13 +21,13 @@
       text-align: center;
       padding: 10px 10px;
       justify-content: center;
-      @include text($color-gray-4, $fs-0, normal);
+      @include text($color-gray-4, 12px, normal);
       .item__icon {
         margin-right: 5px;
       }
       .linkBarList__item__img {
-        width: 20px;
-        margin-right: 8%;
+        width: 15px;
+        margin-right: 5px;
       }
     }
   }

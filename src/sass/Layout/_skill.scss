@@ -1,0 +1,48 @@
+.Skill {
+    padding: 20px;
+  .skill__header {
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 1.47em;
+    color: #505763;
+    a {
+      color: #007791;
+      font-weight: 400;
+      text-decoration: none;
+    }
+  }
+  .skill__tab {
+    display: flex;
+    color: #14171c;
+    border-bottom: 0.5px solid #dedfe0;
+    margin-bottom: 15px;
+    
+
+    .tab__item {
+      border-color: #007791;
+      color: #14171c;
+      padding: 20px 0;
+      margin-right: 15px;
+    }
+    .tab__item.active {
+      border-bottom: 8px solid #007791;
+    }
+  }
+  .tab__content {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .tab__content {
+    grid-template-columns: repeat(1, 1fr) !important;
+    .product__item {
+      width: 100% !important;
+
+      .sub__info {
+        display: none;
+      }
+    }
+  }
+}
