@@ -20,6 +20,11 @@ class CourseItem extends Component {
     console.log("them thanh cong");
   };
 
+  addFavories = (course) => {
+    this.props.dispatch(reduxAction("ADD_COURSE_FAVORIES", course));
+
+  }
+
   buyNow = (course) => {
     this.props.dispatch(reduxAction("ADD_TO_CART", course));
     this.props.history.push("/cart");
@@ -357,7 +362,7 @@ class CourseItem extends Component {
                 <div className="info__inner">
                   <div className="wishlist">
                     <div className="add__list">
-                      <div className="heart">
+                      <div className="heart" onClick={() => this.addFavories(course)}  >
                         <i className="fa fa-heart" aria-hidden="true" />
                       </div>
                       <span>Add to Wishlist</span>

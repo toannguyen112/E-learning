@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import Header from "../Component/Header/Header";
 import Footer from "../Component/Footer/Footer";
 
-// import reduxAction from "../Store/Action/action";
-// import { FETCH_COURSE_DETAIL } from "../Store/Action/type";
-// import CourseService from "../Services/courseService";
+import reduxAction from "../Store/Action/action";
+import { FETCH_COURSE_DETAIL, ADD_COURSE_FAVORIES } from "../Store/Action/type";
+import CourseService from "../Services/courseService";
 
 import { connect } from "react-redux";
 import CourseItem from "../Component/courseItem/CourseItem";
 import Loader from "../Component/Loader/Loader";
-import Footer__inst from '../Component/footer__inst/Footer__inst'
+import Footer__inst from "../Component/footer__inst/Footer__inst";
 
 import { VerticleButton as ScrollUpButton } from "react-scroll-up-button";
 
@@ -65,25 +65,23 @@ class CourseDetailPage extends Component {
 
   render() {
     let { courseDetail, id } = this.state;
-    let { courses } = this.props;
+    let { courses, addFavories } = this.props;
 
     return (
       <div>
         <Header history={this.props.history} />
-          
+
         {this.state.loading ? (
           <Loader />
         ) : (
-            // <CourseItem
-            //   courseDetail={courseDetail}
-            //   history={this.props.history}
-            // />
-            <>
-              {this.showItem(courses, id)}
-            </>
-          )}
-          <Footer__inst/>
-          <Footer />
+          // <CourseItem
+          //   courseDetail={courseDetail}
+          //   history={this.props.history}
+          // />
+          <>{this.showItem(courses, id)}</>
+        )}
+        <Footer__inst />
+        <Footer />
         <ScrollUpButton />
       </div>
     );
@@ -100,7 +98,13 @@ class CourseDetailPage extends Component {
       return;
     }
 
-    result = <CourseItem course={thisItem} history={this.props.history} />;
+    result = (
+      <CourseItem
+        course={thisItem}
+        history={this.props.history}
+       
+      />
+    );
 
     return result;
   };
@@ -112,4 +116,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, null)(CourseDetailPage);
+export default connect(mapStateToProps)(CourseDetailPage);
