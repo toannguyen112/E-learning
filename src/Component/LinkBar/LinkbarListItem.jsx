@@ -14,11 +14,11 @@ export default class LinkbarListItem extends Component {
           to={`/category/${courseCatalog.maDanhMuc}`}
         >
           <li className="linkBarList__item">
-            {/* <img
+            <img
               className="linkBarList__item__img"
-              src={imgCataloge.icon}
+              src={imgCataloge}
               alt=""
-            /> */}
+            />
               <img
               className="linkBarList__item__img"
               src={courseCatalog.icon}

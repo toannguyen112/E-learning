@@ -51,14 +51,14 @@ export default class Skill extends Component {
   }
   render() {
 
-    let { courseList } = this.props
+    let { courseList ,title } = this.props
 
 
     return (
       <div className="Skill">
         <div className="container">
           <div className="skill__header">
-            Featured courses in <a href="">Vue JS</a>
+           {title} <a href="">  </a>
           </div>
           <ul className="skill__tab">
             <li className={`tab__item  ${this.state.Most ? 'active' :""}`} onClick={() => this.handleChange("Most")} >Most popular</li>

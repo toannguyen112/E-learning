@@ -100,10 +100,11 @@ export default class Featured extends Component {
   };
 
   render() {
+    let {title} = this.props
     return (
       <div className="featured">
         <div className="container">
-          <h2 className="featured__head">What people who learn </h2>
+          <h2 className="featured__head"> {title} </h2>
           <div className="wrapper__topic row">
             <div className="col-md-3 pl-0">
               <ul className="topic__title__list">

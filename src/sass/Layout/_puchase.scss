@@ -86,18 +86,14 @@
       }
     }
   }
+  
 }
 
 @media only screen and (max-width: 740px) {
-  .pucharse__body {
+  .pucharse__body{
     .pucharse__notify {
-      display: none !important;
-    }
-    .pucharse__list {
-      .purchase__right,
-      .purchase__right__content {
-        display: none;
-      }
+      display: none!important;
     }
   }
+  
 }

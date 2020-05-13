@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import UserService from '../../Services/userService'
 import { notify } from '../notify/Notify'
+import Swal from "sweetalert2";
 let userService = new UserService()
 
 
@@ -32,13 +33,23 @@ class SignUpForm extends Component {
     e.preventDefault();
     userService.UserSignUp(this.state).then((res) => {
 
-      notify("success", "Registration successful")
+     
+      
+      Swal.fire({
+        title: "Đăng Kí thành công",
+        icon: "success"
+      })
       this.props.history.push("/login")
 
 
 
     }).catch((error) => {
-      notify("error", "Registration failed")
+      console.log(error);
+      
+      Swal.fire({
+        title: `${error}`,
+        icon: "warning"
+      })
 
     })
 

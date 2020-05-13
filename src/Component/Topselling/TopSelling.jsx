@@ -4,12 +4,13 @@ import Course from "../Course/Course";
 
 export default class TopSelling extends Component {
   render() {
-    let { courseList } = this.props;
+    let { courseList, title } = this.props;
+    console.log(title);
 
     return (
       <div className="TopSelling">
         <div className=" container ">
-          <h5  className="title">Top Selling</h5>
+          <h5 className="title"> {title} </h5>
           <div className=" product__items">
             {this.showViewingItem(courseList)}
           </div>

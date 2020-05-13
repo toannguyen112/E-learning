@@ -35,14 +35,16 @@ class LoginForm extends Component {
         let user = JSON.parse(localStorage.getItem("userLogin"));
         if (user.maLoaiNguoiDung === "HV") {
           this.props.history.push("./");
-          notify("success", "Logged in successfully");
+          notify("success", "Đăng nhập thành công");
         }
         if (user.maLoaiNguoiDung === "GV") {
           this.props.history.push("./admin");
         }
       })
       .catch(error => {
-        notify("error", "User account or password is incorrect ");
+       
+        
+        notify("error", `${error.response.data}`);
       });
   };
 

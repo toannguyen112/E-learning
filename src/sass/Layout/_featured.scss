@@ -48,11 +48,11 @@
           .courseHour {
             position: absolute;
             bottom: 0;
-            width: 100%;
+           
             background-color: rgba(255, 255, 255, 0.95);
             height: 25px;
             text-align: center;
-            @include text(#000, 15px, normal);
+            @include text(#000, 14px, normal);
           }
         }
 

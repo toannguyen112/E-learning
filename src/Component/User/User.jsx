@@ -16,7 +16,7 @@ class User extends Component {
       profile: true,
       certificates: false,
       account: false,
-      edit: false
+      edit: false,
     };
   }
 
@@ -24,24 +24,24 @@ class User extends Component {
     let userLogin = JSON.parse(localStorage.getItem("userLogin"));
     userService
       .personalInfo(userLogin.taiKhoan)
-      .then(res => {
+      .then((res) => {
         console.log(res.data);
 
         this.props.dispatch(reduxAction("USER_PROFILE", res.data));
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }
 
-  handleChangeMenu = param => {
+  handleChangeMenu = (param) => {
     this.setState(() => {
       return {
         profile: false,
         certificates: false,
         account: false,
         edit: false,
-        [param]: true
+        [param]: true,
       };
     });
   };
@@ -79,7 +79,6 @@ class User extends Component {
               <div className="user__info ">
                 <h5> {userProfile.hoTen} </h5>
 
-
                 <p>Front-end Developer</p>
               </div>
               <div className="user__edit">
@@ -94,35 +93,38 @@ class User extends Component {
                   <div
                     className={`edit__profile   ${
                       this.state.certificates ? "active" : ""
-                      }`}
+                    }`}
                     onClick={() => this.handleChangeMenu("certificates")}
                   >
                     <div className="edit__profile__center">
-                      <i className="fa fa-certificate mr-2" aria-hidden="true" />
+                      <i
+                        className="fa fa-certificate mr-2"
+                        aria-hidden="true"
+                      />
                       <span>Certificates</span>
-                    </div >
+                    </div>
                   </div>
                   <div
                     className={`edit__profile    ${
                       this.state.account ? "active" : ""
-                      }`}
+                    }`}
                     onClick={() => this.handleChangeMenu("account")}
                   >
                     <div className="edit__profile__center  icon__user ">
                       <i className="fa fa-user mr-2" aria-hidden="true" />
                       <span>Account</span>
                     </div>
-
                   </div>
                   <div
-                    className={`edit__profile   ${this.state.edit ? "active" : ""}`}
+                    className={`edit__profile   ${
+                      this.state.edit ? "active" : ""
+                    }`}
                     onClick={() => this.handleChangeMenu("edit")}
                   >
                     <div className="edit__profile__center">
                       <i className="fa fa-cogs mr-2" aria-hidden="true" />
                       <span> Edit Profile</span>
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -135,9 +137,9 @@ class User extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    userProfile: state.editUser
+    userProfile: state.editUser,
   };
 };
 
