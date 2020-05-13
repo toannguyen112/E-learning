@@ -1,6 +1,4 @@
-.row {
-  margin: 0;
-}
+
 .pucharse {
   color: $color-white-0;
   .pucharse__header {
@@ -93,6 +91,9 @@
   .pucharse__body{
     .pucharse__notify {
       display: none!important;
+    }
+    .pucharse__list__item--content,.purchase__right {
+      display: none;
     }
   }
   
