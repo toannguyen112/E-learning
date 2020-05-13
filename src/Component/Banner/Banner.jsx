@@ -6,7 +6,7 @@ export default class Banner extends Component {
       <div className="wrapper__banner" >
         <div className="wrapper__banner__content container">
           <div className="row">
-            <div className="col-sm-12 p-0">
+            <div className="col-sm-12 ">
               <div className="banner__img">
                 <div className="row">
                   <div className="col-sm-6">

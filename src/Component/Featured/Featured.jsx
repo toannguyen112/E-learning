@@ -72,7 +72,7 @@ export default class Featured extends Component {
           return <FeaturedItem course={course} key={index} />;
         })}
       </ul>
-    )
+    );
   };
 
   showList = (value) => {
@@ -100,18 +100,18 @@ export default class Featured extends Component {
   };
 
   render() {
-    let {title} = this.props
+    let { title } = this.props;
     return (
       <div className="featured">
         <div className="container">
           <h2 className="featured__head"> {title} </h2>
-          <div className="wrapper__topic row">
-            <div className="col-md-3 pl-0">
+          <div className="wrapper__topic ">
+            <div className="col-md-3 ">
               <ul className="topic__title__list">
                 <li
                   className={`topic__title__list__item ${
                     this.state.Angularjs ? "active" : ""
-                    }`}
+                  }`}
                   onClick={() => this.handleChangeList("Angularjs")}
                 >
                   Angular Js
@@ -119,7 +119,7 @@ export default class Featured extends Component {
                 <li
                   className={`topic__title__list__item ${
                     this.state.Typescript ? "active" : ""
-                    }`}
+                  }`}
                   onClick={() => this.handleChangeList("Typescript")}
                 >
                   Typescript
@@ -127,7 +127,7 @@ export default class Featured extends Component {
                 <li
                   className={`topic__title__list__item ${
                     this.state.MicrosoftWindows ? "active" : ""
-                    }`}
+                  }`}
                   onClick={() => this.handleChangeList("MicrosoftWindows")}
                 >
                   Microsoft Windows

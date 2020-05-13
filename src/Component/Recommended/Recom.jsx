@@ -5,7 +5,7 @@ export default class Recom extends Component {
         return (
             <div className="warpperRecom">
                 <div className="container">
-                    <h2 className="warpperRecom__title row">Topics recommended for you</h2>
+                    <h5 className="warpperRecom__title ">Topics recommended for you</h5>
                     <div className=" RecomBody">
                         <ul className="listRecom">
                             <li className="listRecom__item">
