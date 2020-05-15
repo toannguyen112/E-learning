@@ -12,9 +12,10 @@ import Hotline from "../Component/Hotline/Hotline";
 import LinkBar from "../Component/LinkBar/LinkBar";
 import Recom from "../Component/Recommended/Recom";
 import reduxAction from "../Store/Action/action";
+
 import { connect } from "react-redux";
 import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; //Add this line Here
-import { FETCH_COURSES } from "../Store/Action/type";
+import { FETCH_COURSES ,SEARCH_COURSES} from "../Store/Action/type";
 import Welcome from "../Component/Welcome/Welcome";
 import SmartBar from "../Component/SmartBar/SmartBar";
 const courseService = new CourseService();
@@ -109,4 +110,26 @@ const mapStateToProps = (state) => {
     courseList: state.Course.course,
   };
 };
-export default connect(mapStateToProps, null)(HomePage);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCurrentUser: (user) => {
+      dispatch({
+        type: "SET_CURRENT_USER",
+        user,
+      });
+    },
+    addToCart: (course) => {
+      dispatch({
+        type: "ADD_TO_CART",
+        payload: course,
+      });
+    },
+    handleSearch: (keyword) => {
+      dispatch({
+        type: SEARCH_COURSES,
+        payload: keyword,
+      });
+    },
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

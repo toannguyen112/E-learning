@@ -17,7 +17,7 @@ class Courses extends Component {
     super(props);
     this.state = {
       displayType: false,
-      value: "nameHighToLow",
+      value: "priceLowToHigh",
       itemsPerPage: 1,
       itemsPerPage: 16,
     };
@@ -40,13 +40,13 @@ class Courses extends Component {
   };
   sortCourse = (value) => {
     if (value == "priceLowToHigh") {
-      this.props.dispatch(reduxAction(SORT_PRICE_LOW_TO_HIGH));
+      this.props.dispatch(reduxAction(SORT_PRICE_LOW_TO_HIGH, 4));
     } else if (value == "priceHighToLow") {
-      this.props.dispatch(reduxAction(SORT_PRICE_HIGH_TO_LOW));
+      this.props.dispatch(reduxAction(SORT_PRICE_HIGH_TO_LOW, 3));
     } else if (value == "nameHighToLow") {
-      this.props.dispatch(reduxAction(SORT_NAME_HIGH_TO_LOW));
+      this.props.dispatch(reduxAction(SORT_NAME_HIGH_TO_LOW, 2));
     } else if (value == "nameLowToHigh") {
-      this.props.dispatch(reduxAction(SORT_NAME_LOW_TO_HIGH));
+      this.props.dispatch(reduxAction(SORT_NAME_LOW_TO_HIGH, 1));
     }
   };
 
@@ -83,8 +83,10 @@ class Courses extends Component {
   };
 
   render() {
-    let { courses, searchKeyword } = this.props;
+    let { courses, searchKeyword, sort } = this.props;
     let { displayType } = this.state;
+    console.log(sort);
+
 
     return (
       <div className="Course">
@@ -110,17 +112,17 @@ class Courses extends Component {
                     onChange={this.handleChange}
                     className="sort__select"
                   >
-                    <option value="nameHighToLow">
-                      Sort by name high to low
-                    </option>
-                    <option value="nameLowToHigh">
-                      Sort by name low to high
-                    </option>
                     <option value="priceLowToHigh">
                       Sort by price low to high
                     </option>
                     <option value="priceHighToLow">
                       Sort by price high to low
+                    </option>
+                    <option value="nameHighToLow">
+                      Sort by name high to low
+                    </option>
+                    <option value="nameLowToHigh">
+                      Sort by name low to high
                     </option>
                   </select>
                 </div>
@@ -152,12 +154,14 @@ class Courses extends Component {
     );
   }
 
- 
+
 }
 
 const mapStateToProps = (state) => ({
   searchKeyword: state.display.searchKeyword,
   courses: state.Course.course,
+  sort: state.sort
 });
+
 
 export default connect(mapStateToProps)(Courses);

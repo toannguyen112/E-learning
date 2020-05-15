@@ -44,64 +44,7 @@ const Course = (state = initialState, action) => {
       state.course = newArr;
       return { ...state };
     }
-    case SORT_PRICE_LOW_TO_HIGH: {
-      console.log("lowtohigh");
-
-      let newArr = [...state.course];
-      newArr.sort((a, b) => {
-        return a.price - b.price;
-      });
-
-      state.course = newArr;
-      return { ...state };
-    }
-    case SORT_PRICE_HIGH_TO_LOW: {
-      console.log("hightolow");
-
-      let newArr = [...state.course];
-      newArr.sort((a, b) => {
-        return b.price - a.price;
-      });
-
-      state.course = newArr;
-      return { ...state };
-    }
-    case SORT_NAME_HIGH_TO_LOW: {
-      let newArr = [...state.course];
-      newArr.sort((a, b) => {
-        var nameA = a.tenKhoaHoc.toUpperCase();
-        var nameB = b.tenKhoaHoc.toUpperCase();
-        if (nameA < nameB) {
-          return -1;
-        }
-        if (nameA > nameB) {
-          return 1;
-        }
-
-        return 0;
-      });
-
-      state.course = newArr;
-      return { ...state };
-    }
-    case SORT_NAME_LOW_TO_HIGH: {
-      let newArr = [...state.course];
-      newArr.sort((a, b) => {
-        var nameA = a.tenKhoaHoc.toUpperCase();
-        var nameB = b.tenKhoaHoc.toUpperCase();
-        if (nameA > nameB) {
-          return -1;
-        }
-        if (nameA < nameB) {
-          return 1;
-        }
-
-        return 0;
-      });
-
-      state.course = newArr;
-      return { ...state };
-    }
+  
 
     default:
       return { ...state };

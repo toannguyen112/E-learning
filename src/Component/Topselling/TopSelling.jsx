@@ -5,7 +5,6 @@ import Course from "../Course/Course";
 export default class TopSelling extends Component {
   render() {
     let { courseList, title } = this.props;
-    console.log(title);
 
     return (
       <div className="TopSelling">

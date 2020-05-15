@@ -24,7 +24,7 @@ export default class Skill extends Component {
   showCourseitemMost = (courseList) => {
     let res = [];
     for (let i = 0; i < 5; i++) {
-      res.push(<Course course={courseList[i]} />)
+      res.push(<Course  key={i} course={courseList[i]} />)
     }
 
     return res;
@@ -32,7 +32,7 @@ export default class Skill extends Component {
   showCourseitemIntermediate = (courseList) => {
     let res = [];
     for (let i = 15; i < 20; i++) {
-      res.push(<Course course={courseList[i]} />)
+      res.push(<Course  key={i} course={courseList[i]} />)
     }
 
     return res;

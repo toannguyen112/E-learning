@@ -7,107 +7,108 @@
     color: #505763;
   }
   .wrapper__topic {
-    display: flex;
     box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1),
       0 3px 1px 0 rgba(20, 23, 28, 0.1);
-    min-height: 350px;
+    
+      min-height: 350px;
 
-    .topic__title__list {
-      padding: 20px 0;
-      margin: 0;
-      height: 100%;
+      .topic__title__list {
+        padding: 20px 0;
+        margin: 0;
+        height: 100%;
 
-      border-right: 1px solid $color-gray-7;
-      .topic__title__list__item {
-        color: #29303b;
-        padding: 10px 20px;
-        border-left: 8px solid #fff;
-        cursor: pointer;
+        border-right: 1px solid $color-gray-7;
+        .topic__title__list__item {
+          color: #29303b;
+          padding: 10px 20px;
+          border-left: 8px solid #fff;
+          cursor: pointer;
+        }
+        .topic__title__list__item.active {
+          border-left: 8px solid #007791;
+          font-weight: 700;
+          color: #14171c;
+        }
       }
-      .topic__title__list__item.active {
-        border-left: 8px solid #007791;
-        font-weight: 700;
-        color: #14171c;
-      }
-    }
-    .topic__course__list {
-      margin: 10px 0;
+      .topic__course__list {
+        margin: 10px 0;
 
-      .item {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px;
-        border-bottom: 1px solid $color-gray-7;
-        &:hover {
-          background-color: $color-gray-7;
-        }
-        .item__img {
-          position: relative;
-          img {
-            @include sizeImg(125px, 70px);
-          }
-          .courseHour {
-            position: absolute;
-            bottom: 0;
-           
-            background-color: rgba(255, 255, 255, 0.95);
-            height: 25px;
-            text-align: center;
-            @include text(#000, 14px, normal);
-          }
-        }
+        .item {
+        
 
-        .item__title {
-          .title {
-            @include text(#29303b, $fs-0, $fw-bold);
+          padding: 20px;
+          border-bottom: 1px solid $color-gray-7;
+          &:hover {
+            background-color: $color-gray-7;
           }
-          .update {
-            @include text(#686f7a, 13px, normal);
-          }
-        }
-        .item__rating {
-          i {
-            color: #f4c150;
-            margin-right: 6px;
-          }
-          .rating__number {
-            font-size: 15px;
-          }
-        }
-        .item__student {
-          font-size: 15px;
-          i {
-            margin-right: 6px;
-          }
-        }
-        .warpperPrice {
-          display: flex;
-
-          .price {
-            margin-right: 20px;
-            .price--new {
-              @include text(#29303b, 18px, $fw-bold);
+          .item__img {
+            position: relative;
+            img {
+              @include sizeImg(125px, 70px);
             }
-            .price--old {
-              text-align: right;
+            .courseHour {
+              position: absolute;
+              bottom: 0;
+
+              background-color: rgba(255, 255, 255, 0.95);
+              height: 25px;
+              text-align: center;
+              @include text(#000, 14px, normal);
+            }
+          }
+
+          .item__title {
+            .title {
+              @include text(#29303b, $fs-0, $fw-bold);
+            }
+            .update {
               @include text(#686f7a, 13px, normal);
-              text-decoration: line-through;
             }
           }
-          .heart {
+          .item__rating {
             i {
-              color: #ec5252;
-              font-size: 20px;
+              color: #f4c150;
+              margin-right: 6px;
+            }
+            .rating__number {
+              font-size: 15px;
+            }
+          }
+          .item__student {
+            font-size: 15px;
+            i {
+              margin-right: 6px;
+            }
+          }
+          .warpperPrice {
+            display: flex;
+
+            .price {
+              margin-right: 20px;
+              .price--new {
+                @include text(#29303b, 18px, $fw-bold);
+              }
+              .price--old {
+                text-align: right;
+                @include text(#686f7a, 13px, normal);
+                text-decoration: line-through;
+              }
+            }
+            .heart {
+              i {
+                color: #ec5252;
+                font-size: 20px;
+              }
             }
           }
         }
-      }
-      .item:last-child {
-        border: none;
+        .item:last-child {
+          border: none;
+        }
       }
     }
   }
-}
+
 
 @media screen and (max-width: 740px) {
   .featured {

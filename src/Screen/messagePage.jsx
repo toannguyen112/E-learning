@@ -5,7 +5,7 @@ import Footer from '../Component/Footer/Footer'
 import Loader from "../Component/Loader/Loader";
 import Footer__inst from "../Component/footer__inst/Footer__inst";
 
-export default class messagePage extends Component {
+class MessagePage extends Component {
     constructor(props) {
         super(props);
 
@@ -38,3 +38,4 @@ export default class messagePage extends Component {
         )
     }
 }
+export default  MessagePage

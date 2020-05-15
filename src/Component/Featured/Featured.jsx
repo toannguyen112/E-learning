@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import FeaturedItem from "./FeaturedItem";
 
 const arrAngularJs = [
@@ -67,17 +67,18 @@ export default class Featured extends Component {
 
   renderlistCourse = (arrAngularJs) => {
     return (
-      <ul className="topic__course__list">
+      <Fragment>
         {arrAngularJs.map((course, index) => {
           return <FeaturedItem course={course} key={index} />;
         })}
-      </ul>
+      </Fragment>
+
     );
   };
 
   showList = (value) => {
     let { Angularjs, Typescript, MicrosoftWindows } = this.state;
-    console.log(value);
+
     if (Angularjs) {
       return (
         <ul className="topic__course__list">
@@ -105,36 +106,39 @@ export default class Featured extends Component {
       <div className="featured">
         <div className="container">
           <h2 className="featured__head"> {title} </h2>
-          <div className="wrapper__topic ">
-            <div className="col-md-3 ">
-              <ul className="topic__title__list">
-                <li
-                  className={`topic__title__list__item ${
-                    this.state.Angularjs ? "active" : ""
-                  }`}
-                  onClick={() => this.handleChangeList("Angularjs")}
-                >
-                  Angular Js
+          <div className="wrapper__topic">
+            <div className="row">
+              <div className="col-md-3 ">
+                <ul className="topic__title__list">
+                  <li
+                    className={`topic__title__list__item ${
+                      this.state.Angularjs ? "active" : ""
+                      }`}
+                    onClick={() => this.handleChangeList("Angularjs")}
+                  >
+                    Angular Js
                 </li>
-                <li
-                  className={`topic__title__list__item ${
-                    this.state.Typescript ? "active" : ""
-                  }`}
-                  onClick={() => this.handleChangeList("Typescript")}
-                >
-                  Typescript
+                  <li
+                    className={`topic__title__list__item ${
+                      this.state.Typescript ? "active" : ""
+                      }`}
+                    onClick={() => this.handleChangeList("Typescript")}
+                  >
+                    Typescript
                 </li>
-                <li
-                  className={`topic__title__list__item ${
-                    this.state.MicrosoftWindows ? "active" : ""
-                  }`}
-                  onClick={() => this.handleChangeList("MicrosoftWindows")}
-                >
-                  Microsoft Windows
+                  <li
+                    className={`topic__title__list__item ${
+                      this.state.MicrosoftWindows ? "active" : ""
+                      }`}
+                    onClick={() => this.handleChangeList("MicrosoftWindows")}
+                  >
+                    Microsoft Windows
                 </li>
-              </ul>
+                </ul>
+              </div>
+              <div className="col-md-9 ">{this.showList()}</div>
+
             </div>
-            <div className="col-md-9 ">{this.showList()}</div>
           </div>
         </div>
       </div>
