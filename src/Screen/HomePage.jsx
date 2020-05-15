@@ -8,14 +8,13 @@ import Featured from "../Component/Featured/Featured";
 import Skill from "../Component/Skill/Skill";
 import Footer from "../Component/Footer/Footer";
 import CourseService from "../Services/courseService";
-import Hotline from "../Component/Hotline/Hotline";
+// import Hotline from "../Component/Hotline/Hotline";
 import LinkBar from "../Component/LinkBar/LinkBar";
 import Recom from "../Component/Recommended/Recom";
-import reduxAction from "../Store/Action/action";
 
 import { connect } from "react-redux";
 import { VerticleButton as ScrollUpButton } from "react-scroll-up-button"; //Add this line Here
-import { FETCH_COURSES ,SEARCH_COURSES} from "../Store/Action/type";
+import { FETCH_COURSES, SEARCH_COURSES, SET_CURRENT_USER, ADD_TO_CART } from "../Store/Action/type";
 import Welcome from "../Component/Welcome/Welcome";
 import SmartBar from "../Component/SmartBar/SmartBar";
 const courseService = new CourseService();
@@ -40,7 +39,7 @@ class HomePage extends Component {
     courseService
       .fetchCourses()
       .then((res) => {
-        this.props.dispatch(reduxAction(FETCH_COURSES, res.data));
+        this.props.getCourse(res.data)
       })
       .catch((err) => {
         console.log(err);
@@ -88,12 +87,12 @@ class HomePage extends Component {
             courseList={courseList}
           />
 
-          <Featured  title={"Featured courses in Angular"} courseList={courseList} />
+          <Featured title={"Featured courses in Angular"} courseList={courseList} />
 
-          <Skill  title={"What people who learn Angular take next"} courseList={courseList} />
-          <Skill   title={"Featured courses in Vue JS"} courseList={courseList} />
-          <Featured  title={"Featured courses in React Js"} courseList={courseList} />
-          <Skill  title={"What people who learn Angular take next"} courseList={courseList} />
+          <Skill title={"What people who learn Angular take next"} courseList={courseList} />
+          <Skill title={"Featured courses in Vue JS"} courseList={courseList} />
+          <Featured title={"Featured courses in React Js"} courseList={courseList} />
+          <Skill title={"What people who learn Angular take next"} courseList={courseList} />
 
           <Countdown />
           <Footer />
@@ -112,15 +111,21 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
+    getCourse: (courses) => {
+      dispatch({
+        type: FETCH_COURSES,
+        payload: courses
+      })
+    },
     setCurrentUser: (user) => {
       dispatch({
-        type: "SET_CURRENT_USER",
-        user,
+        type: SET_CURRENT_USER,
+        payload: user
       });
     },
     addToCart: (course) => {
       dispatch({
-        type: "ADD_TO_CART",
+        type: ADD_TO_CART,
         payload: course,
       });
     },

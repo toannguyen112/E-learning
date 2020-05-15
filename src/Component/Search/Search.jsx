@@ -10,7 +10,7 @@ class Search extends Component {
   }
 
   showSearchIem = (courses, searchKeyword) => {
-    let res = null;
+    let result = null;
     if (searchKeyword.length > 0 && searchKeyword.length !== "") {
       courses = courses.filter(
         (course) =>
@@ -19,11 +19,11 @@ class Search extends Component {
             .indexOf(searchKeyword.toLowerCase().trim()) !== -1
       );
 
-      res = courses.map((course, index) => {
+      result = courses.map((course, index) => {
         return <SearchItem course={course} key={index} />;
       });
     }
-    return res;
+    return result;
   };
 
   onChange = (e) => {

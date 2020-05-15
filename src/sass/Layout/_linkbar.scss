@@ -2,7 +2,6 @@
   background-color: #f7f8fa;
   border-bottom: 1px solid$color-gray-7;
   margin-top: 3px;
-  position: relative;
   @media screen and (max-width: 740px) {
     display: none;
   }
@@ -11,6 +10,7 @@
   }
 
   .linkBarList {
+    margin: 0;
     .linkBarList__item {
       cursor: pointer;
       @include alignCenter;

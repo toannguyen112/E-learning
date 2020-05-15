@@ -27,7 +27,12 @@ export default class LinkBar extends Component {
     return (
       <div className="WrapperLinkBar">
         <div className="container">
-          <ul className="linkBarList  row">{this.showListCatefory()}</ul>
+          <ul className="linkBarList  
+          ">
+            <div className="row">
+              {this.showListCatefory()}
+            </div>
+          </ul>
         </div>
       </div>
     );

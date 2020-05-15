@@ -66,7 +66,7 @@ class CourseOfcourses extends Component {
           <div>
             <span className="old__price mr-1">$199.99</span>
             <span>
-              $199 <i className="fa fa-tag" />
+              {course.price} <i className="fa fa-tag" />
             </span>
           </div>
 
@@ -81,10 +81,10 @@ class CourseOfcourses extends Component {
               </span>
             </Link>
           ) : (
-            <span className="btn-addToCart" onClick={() => this.onCart(course)}>
-              <i className="fa fa-cart-plus" aria-hidden="true" />
-            </span>
-          )}
+              <span className="btn-addToCart" onClick={() => this.onCart(course)}>
+                <i className="fa fa-cart-plus" aria-hidden="true" />
+              </span>
+            )}
         </div>
       </div>
     );

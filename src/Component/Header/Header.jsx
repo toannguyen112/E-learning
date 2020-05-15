@@ -202,7 +202,7 @@ class Header extends Component {
   };
 
   render() {
-    let { cart, courseFavories, courseCatalog } = this.props;
+    let { cart, courseFavories } = this.props;
     let { searchKeyword } = this.props.display;
 
     return (

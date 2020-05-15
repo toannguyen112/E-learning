@@ -5,7 +5,7 @@ import "react-pagination-js/dist/styles.css";
 import { connect } from "react-redux";
 import CourseOfcourses from "../Course/CourseOfcourses";
 import CourseDisplayRow from "../Course/CourseDisplayRow";
-import reduxAction from '../../Store/Action/action'
+import reduxAction from "../../Store/Action/action";
 import {
   SORT_PRICE_HIGH_TO_LOW,
   SORT_PRICE_LOW_TO_HIGH,
@@ -17,9 +17,7 @@ class Courses extends Component {
     super(props);
     this.state = {
       displayType: false,
-      value: "priceLowToHigh",
-      itemsPerPage: 1,
-      itemsPerPage: 16,
+      typeSort: "priceLowToHigh",
     };
   }
 
@@ -29,28 +27,23 @@ class Courses extends Component {
     });
   }
   handleChange = (event) => {
-    this.setState(
-      {
-        value: event.target.value,
-      },
-      () => {
-        this.sortCourse(this.state.value);
-      }
-    );
+    this.setState({
+      typeSort: event.target.value,
+    });
   };
-  sortCourse = (value) => {
-    if (value == "priceLowToHigh") {
-      this.props.dispatch(reduxAction(SORT_PRICE_LOW_TO_HIGH, 4));
-    } else if (value == "priceHighToLow") {
-      this.props.dispatch(reduxAction(SORT_PRICE_HIGH_TO_LOW, 3));
-    } else if (value == "nameHighToLow") {
-      this.props.dispatch(reduxAction(SORT_NAME_HIGH_TO_LOW, 2));
-    } else if (value == "nameLowToHigh") {
-      this.props.dispatch(reduxAction(SORT_NAME_LOW_TO_HIGH, 1));
-    }
-  };
+  // sortCourse = (typeSort) => {
+  //   if (typeSort == "priceLowToHigh") {
+  //     this.props.dispatch(reduxAction(SORT_PRICE_LOW_TO_HIGH, 1));
+  //   } else if (typeSort == "priceHighToLow") {
+  //     this.props.dispatch(reduxAction(SORT_PRICE_HIGH_TO_LOW, 2));
+  //   } else if (typeSort == "nameHighToLow") {
+  //     this.props.dispatch(reduxAction(SORT_NAME_HIGH_TO_LOW, 3));
+  //   } else if (typeSort == "nameLowToHigh") {
+  //     this.props.dispatch(reduxAction(SORT_NAME_LOW_TO_HIGH, 4));
+  //   }
+  // };
 
-  showItem = (courses, displayType, searchKeyword) => {
+  showItem = (courses, displayType, searchKeyword, sort) => {
     let result = null;
     let newArrCourses = [...courses];
 
@@ -63,7 +56,15 @@ class Courses extends Component {
               .toLowerCase()
               .indexOf(searchKeyword.toLowerCase().trim()) !== -1
         );
+
+        result = newArrCourses;
       }
+
+      // sort
+      this.sort(newArrCourses, sort);
+
+
+      // display type course
       if (!displayType) {
         result = newArrCourses.map((course, index) => {
           return (
@@ -82,11 +83,66 @@ class Courses extends Component {
     return result;
   };
 
+  sort = (newArrCourses, sort) => {
+    switch (sort) {
+      case 'priceLowToHigh':
+        newArrCourses.sort((a, b) => {
+          return a.price - b.price;
+        });
+        break;
+
+      case 'priceHighToLow': {
+        newArrCourses.sort((a, b) => {
+          return b.price - a.price;
+        });
+        break;
+
+      }
+
+      case 'nameHighToLow': {
+        newArrCourses.sort((a, b) => {
+          var nameA = a.tenKhoaHoc.toUpperCase(); // bỏ qua hoa thường
+          var nameB = b.tenKhoaHoc.toUpperCase(); // bỏ qua hoa thường
+          if (nameA < nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+
+          // name trùng nhau
+          return 0;
+        })
+        break;
+
+      }
+      case 'nameLowToHigh': {
+        newArrCourses.sort((c, d) => {
+          var nameA = c.tenKhoaHoc.toUpperCase(); // bỏ qua hoa thường
+          var nameB = d.tenKhoaHoc.toUpperCase(); // bỏ qua hoa thường
+          if (nameA > nameB) {
+            return -1;
+          }
+          if (nameA > nameB) {
+            return 1;
+          }
+
+          // name trùng nhau
+          return 0;
+        })
+        break
+      }
+
+      default:
+        break;
+    }
+
+  }
+
   render() {
     let { courses, searchKeyword, sort } = this.props;
-    let { displayType } = this.state;
-    console.log(sort);
-
+    let { displayType, typeSort } = this.state;
+    console.log(typeSort);
 
     return (
       <div className="Course">
@@ -108,7 +164,7 @@ class Courses extends Component {
                     <i className="fa fa-th-list" aria-hidden="true" />
                   </span>
                   <select
-                    value={this.state.value}
+                    value={this.state.typeSort}
                     onChange={this.handleChange}
                     className="sort__select"
                   >
@@ -142,7 +198,7 @@ class Courses extends Component {
               </div>
             </div>
             <div className="row sort__items">
-              {this.showItem(courses, displayType, searchKeyword)}
+              {this.showItem(courses, displayType, searchKeyword, typeSort)}
             </div>
           </div>
           <Pagination
@@ -153,15 +209,12 @@ class Courses extends Component {
       </div>
     );
   }
-
-
 }
 
 const mapStateToProps = (state) => ({
   searchKeyword: state.display.searchKeyword,
   courses: state.Course.course,
-  sort: state.sort
+  sort: state.sort,
 });
-
 
 export default connect(mapStateToProps)(Courses);
