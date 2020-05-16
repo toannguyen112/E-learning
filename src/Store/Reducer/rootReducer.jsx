@@ -18,7 +18,7 @@ const rootReducer = combineReducers({
   editCourse,
   user,
   courseFavories
-  ,sort
+  
 });
 
 export default rootReducer;
