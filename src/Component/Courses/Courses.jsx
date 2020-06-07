@@ -5,13 +5,8 @@ import "react-pagination-js/dist/styles.css";
 import { connect } from "react-redux";
 import CourseOfcourses from "../Course/CourseOfcourses";
 import CourseDisplayRow from "../Course/CourseDisplayRow";
-import reduxAction from "../../Store/Action/action";
-import {
-  SORT_PRICE_HIGH_TO_LOW,
-  SORT_PRICE_LOW_TO_HIGH,
-  SORT_NAME_LOW_TO_HIGH,
-  SORT_NAME_HIGH_TO_LOW,
-} from "../../Store/Action/type";
+
+
 class Courses extends Component {
   constructor(props) {
     super(props);
@@ -31,17 +26,7 @@ class Courses extends Component {
       typeSort: event.target.value,
     });
   };
-  // sortCourse = (typeSort) => {
-  //   if (typeSort == "priceLowToHigh") {
-  //     this.props.dispatch(reduxAction(SORT_PRICE_LOW_TO_HIGH, 1));
-  //   } else if (typeSort == "priceHighToLow") {
-  //     this.props.dispatch(reduxAction(SORT_PRICE_HIGH_TO_LOW, 2));
-  //   } else if (typeSort == "nameHighToLow") {
-  //     this.props.dispatch(reduxAction(SORT_NAME_HIGH_TO_LOW, 3));
-  //   } else if (typeSort == "nameLowToHigh") {
-  //     this.props.dispatch(reduxAction(SORT_NAME_LOW_TO_HIGH, 4));
-  //   }
-  // };
+
 
   showItem = (courses, displayType, searchKeyword, sort) => {
     let result = null;

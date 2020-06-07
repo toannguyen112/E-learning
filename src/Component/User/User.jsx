@@ -62,7 +62,7 @@ class User extends Component {
 
   render() {
     let { userProfile } = this.props;
-    console.log(userProfile);
+   
 
     return (
       <div className="user">

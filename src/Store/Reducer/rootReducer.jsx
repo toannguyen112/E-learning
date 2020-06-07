@@ -7,7 +7,7 @@ import editUser from '../Reducer/editUser'
 import editCourse from '../Reducer/editCourse'
 import user from '../Reducer/User'
 import courseFavories from '../Reducer/courseFavories'
-import sort from '../Reducer/sort'
+
 
 const rootReducer = combineReducers({
   Course,
@@ -17,7 +17,7 @@ const rootReducer = combineReducers({
   editUser, 
   editCourse,
   user,
-  courseFavories
+  courseFavories,
   
 });
 
